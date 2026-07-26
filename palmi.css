@@ -1202,3 +1202,131 @@ header.palmi-realnav::after {
 .input-subtle:hover, .input-subtle:focus, .inputbox:hover, .inputbox:focus, .gensmall:hover, .gensmall:focus, select:hover, select:focus {
   border-color: transparent;
 }
+/* === Habillage generique pages FA (profil, groupes, MP, activite) === */
+.page-header {
+  font-family: var(--font-title);
+  color: var(--text);
+  border-bottom: var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.block, .cp {
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.block-header {
+  background: var(--bg-soft) !important;
+  color: var(--text) !important;
+  font-family: var(--font-title);
+  padding: 10px 16px;
+}
+.block-content {
+  padding: 14px 16px;
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+.cp-sidebar {
+  background: var(--bg-soft);
+  border-right: var(--border);
+}
+.tabs a {
+  font-family: var(--font-label);
+  color: var(--text);
+}
+.tabs .active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.btn, .btn-default, .btn-flat, .btn-red, .btn-fixed {
+  font-family: var(--font-label);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.btn-default {
+  background: var(--accent) !important;
+  color: #101014 !important;
+}
+.btn-flat {
+  background: transparent;
+  border: var(--border) !important;
+  color: var(--text);
+}
+.btn-red {
+  background: #e4613e !important;
+  color: #fff !important;
+}
+
+input.inputbox, textarea.inputbox, select.select, .select {
+  background: var(--bg-soft);
+  border: var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font-body);
+  padding: 6px 10px;
+}
+input.inputbox:focus, textarea.inputbox:focus, select.select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.gensmall, .description {
+  color: var(--muted);
+  font-family: var(--font-body);
+}
+
+.form-buttons {
+  border-top: var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.pagination a, .pagination span {
+  font-family: var(--font-label);
+  border-radius: 6px;
+}
+.pagination a {
+  background: var(--bg-soft);
+  border: var(--border);
+  color: var(--text);
+}
+.pagination .active, .pagination strong {
+  background: var(--accent) !important;
+  color: #101014 !important;
+}
+
+.group-icon {
+  border-radius: 8px;
+}
+
+.box {
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.box-head {
+  background: var(--bg-soft);
+  color: var(--text);
+  font-family: var(--font-title);
+  padding: 8px 12px;
+}
+.box-body {
+  padding: 10px 12px;
+  color: var(--text);
+}
+
+.activity-feed, .feed-item {
+  color: var(--text);
+  font-family: var(--font-body);
+}
+.activity-date-group {
+  font-family: var(--font-label);
+  color: var(--muted);
+}
