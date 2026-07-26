@@ -1,1 +1,1175 @@
 
+/* === Palmi v2 theme - Red & Bread === */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+
+body {
+  /* --- Fonts : un seul endroit a toucher --- */
+  --font-title: 'Sharpie', sans-serif;
+  --font-label: 'Clash Display', sans-serif;
+  --font-body: 'General Sans', sans-serif;
+
+  /* --- Theme : nuit par defaut --- */
+  --bg: #1A181B;
+  --bg-soft: #221F24;
+  --panel: #2A262E;
+  --line: #564d65;
+  --text: #EDEAF0;
+  --muted: #B6ADC2;
+  --accent: #2CDA9D;
+  --accent2: #3e8989;
+  --flash: #F0F600;
+  --nav-bg: #1A181B;
+  --nav-text: #EDEAF0;
+  --nav-accent: #2CDA9D;
+  --hero-overlay: linear-gradient(180deg, rgba(26,24,27,.15) 0%, rgba(26,24,27,.55) 70%, rgba(26,24,27,.85) 100%);
+  --accent-panel: #233b3a;
+  --accent-panel-text: #9BF3D6;
+  --border-width: 2px;
+  --border: var(--border-width) solid var(--line);
+
+  min-width: 800px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  transition: background .3s, color .3s;
+  display: flex;
+  flex-direction: column;
+}
+
+body.day {
+  --bg: #EAE6F1;
+  --bg-soft: #F2EFF6;
+  --panel: #F7F4FA;
+  --line: #CBBEDD;
+  --text: #2E2140;
+  --muted: #796988;
+  --accent: #00E5E8;
+  --accent2: #FF3CC7;
+  --flash: #F0F600;
+  --nav-bg: #3A2A52;
+  --nav-text: #F1EAF9;
+  --nav-accent: #00E5E8;
+  --hero-overlay: linear-gradient(180deg, rgba(58,42,82,.1) 0%, rgba(58,42,82,.35) 70%, rgba(58,42,82,.6) 100%);
+  --accent-panel: #3A2A52;
+  --accent-panel-text: #F1EAF9;
+}
+
+#palmi-page * { box-sizing: border-box; }
+#palmi-page a { color: inherit; }
+#palmi-page ::selection { background: #2CDA9D; color: #1A181B; }
+
+
+/* HEADER / HERO */
+.palmi-header { position: relative; width: 100%; overflow: hidden; border-bottom: 3px solid var(--line); }
+.palmi-hero-wrap { position: relative; width: 100%; aspect-ratio: 16/6; min-height: 280px; }
+.palmi-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.palmi-hero-overlay { position: absolute; inset: 0; background: var(--hero-overlay); pointer-events: none; }
+
+.palmi-theme-toggle {
+  position: absolute; top: 18px; right: 18px; display: flex; align-items: center; gap: 8px;
+  padding: 6px 14px 6px 6px; border-radius: 999px; border: 2px solid var(--line); background: var(--panel);
+  cursor: pointer; z-index: 5;
+}
+.palmi-theme-dot { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); display: block; box-shadow: 0 0 12px var(--accent); }
+.palmi-theme-label { font-family: var(--font-label); font-size: 13px; letter-spacing: .06em; color: var(--text); }
+
+.palmi-hero-title-wrap {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; pointer-events: none;
+}
+.palmi-hero-title {
+  margin: 0; font-family: var(--font-title); font-size: 130px; line-height: 1; color: #EDEAF0;
+  text-shadow: 0 4px 24px rgba(0,0,0,.65), 0 0 40px rgba(0,0,0,.4); letter-spacing: .03em;
+}
+.palmi-hero-sub { margin: 10px 0 0; font-family: var(--font-label); font-size: 16px; color: #EDEAF0; text-shadow: 0 2px 10px rgba(0,0,0,.6);     text-transform: uppercase;}
+
+.palmi-hero-badges-left, .palmi-hero-badges-right { position: absolute; bottom: 14px; display: flex; gap: 8px; }
+.palmi-hero-badges-left { left: 16px; }
+.palmi-hero-badges-right { right: 16px; }
+.palmi-badge-flash { font-family: var(--font-label); font-size: 12px; letter-spacing: .08em; padding: 5px 10px; border-radius: 10px; background: var(--flash); color: #1A181B; font-weight: 700; }
+.palmi-badge-dim { font-family: var(--font-label); font-size: 12px; letter-spacing: .08em; padding: 5px 10px; border-radius: 10px; background: rgba(0,0,0,.45); border: var(--border); color: #EDEAF0; }
+
+/* MAIN */
+.palmi-main { max-width: 1100px; min-width: 800px; margin: 0 auto; padding: 15px 10px 40px; display: flex; flex-direction: column; gap: 15px; }
+.palmi-h2 { font-family: var(--font-title); font-size: 20px; margin: 0 0 12px; color: var(--text); }
+.palmi-h3 { font-family: var(--font-title); font-size: 15px; margin: 0 0 8px; color: var(--text); }
+.palmi-body-text { font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--text); opacity: .9; margin: 0 0 10px; }
+.palmi-link { font-family: var(--font-label); font-size: 13px; color: var(--accent); text-decoration: none; }
+
+/* Contexte / Event / Guide row */
+.palmi-inforow { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; }
+.palmi-info-card { padding: 12px 14px; }
+.palmi-info-card h2 { font-family: var(--font-title); font-size: 15px; margin: 0 0 5px; color: var(--text); }
+.palmi-info-card p { font-family: var(--font-body); font-size: 12px; line-height: 1.4; margin: 0 0 5px; color: var(--text); opacity: .9; }
+.palmi-guide-card { text-decoration: none; }
+.palmi-guide-inner {
+  padding: 12px 14px;
+  width: 110px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 6px;
+}
+.palmi-guide-inner h2 { font-family: var(--font-title); font-size: 14px; line-height: 1.2; margin: 0; color: var(--accent-panel-text); }
+.palmi-guide-inner span { font-family: var(--font-label); font-size: 11px; color: var(--accent-panel-text); white-space: nowrap; }
+
+/* Nouveautes / Staff / Top sites */
+.palmi-triorow { background: var(--panel); border: var(--border); border-radius: 10px; padding: 12px 16px; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 16px; }
+.palmi-trio-col { border-right: var(--border); padding-right: 16px; }
+.palmi-trio-col:last-child { border-right: none; padding-right: 0; }
+.palmi-trio-title { font-family: var(--font-title); font-size: 12px; letter-spacing: .05em; margin: 0 0 6px; opacity: .8; color: var(--text); }
+.palmi-chrono-row { display: flex; align-items: center; gap: 8px; padding: 2px 0; }
+.palmi-chrono-date { font-family: var(--font-label); font-size: 10.5px; color: var(--muted); min-width: 44px; }
+.palmi-chrono-title { font-family: var(--font-body); font-size: 11.5px; color: var(--text); opacity: .9; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.palmi-staff-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.palmi-staff-avatar { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: var(--border); }
+.palmi-topsites-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 4px; }
+.palmi-topsite { aspect-ratio: 1; border-radius: 6px; overflow: hidden; border: var(--border); }
+
+/* ZONES = vrai BOARD_INDEX restyle */
+.palmi-forum-section { padding: 0; }
+.palmi-cat-title { font-family: var(--font-title); font-size: 20px; margin: 20px 0 12px; color: var(--text); }
+.palmi-zones-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.palmi-zone { }
+.palmi-zone-media { min-height: 150px; display: flex; align-items: flex-end; }
+.palmi-zone-caption { margin: 10px; padding: 12px 15px; border-radius: 10px; background: rgba(245,242,248,.94); max-width: 78%; }
+.palmi-zone-tag { font-family: var(--font-label); font-size: 10px; letter-spacing: .06em; color: var(--accent2); }
+.palmi-zone-caption h3 { font-family: var(--font-title); font-size: 18px; margin: 2px 0 4px; color: #1A181B; }
+.palmi-zone-caption h3 a { color: #1A181B; text-decoration: none; }
+.palmi-zone-caption p { font-family: var(--font-body); font-size: 12.5px; margin: 0; color: #3a3440; }
+.palmi-zone-links { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 14px 0; }
+.palmi-zone-links a { font-family: var(--font-label); font-size: 11px; letter-spacing: .02em; color: var(--text); text-decoration: none; padding: 4px 10px; border-radius: 10px; border: var(--border); background: var(--bg-soft); }
+.palmi-zone-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; }
+.palmi-zone-stats { font-family: var(--font-label); font-size: 11px; color: var(--muted); white-space: nowrap; }
+.palmi-zone-last { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.palmi-zone-avatar { width: 24px; height: 24px; border-radius: 50%; overflow: hidden; border: var(--border); flex-shrink: 0; }
+.palmi-zone-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.palmi-zone-last-text { min-width: 0; line-height: 1.25; }
+.palmi-zone-last-title { font-family: var(--font-body); font-size: 11px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; display: block; text-decoration: none; }
+.palmi-zone-last-meta { font-family: var(--font-label); font-size: 10px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; display: block; }
+
+/* FOOTER */
+.palmi-footer { width: 100%; background: var(--bg-soft); border-top: 3px solid var(--line); }
+.palmi-footer-inner { max-width: 1100px; min-width: 800px; margin: 0 auto; padding: 20px 10px 30px; display: flex; flex-direction: column; gap: 18px; }
+.palmi-footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+.palmi-footer-card { padding: 14px 16px; }
+.palmi-footer-card h3 { font-family: var(--font-title); font-size: 15px; margin: 0 0 8px; color: var(--text); }
+.palmi-footer-card p { font-family: var(--font-body); font-size: 13px; line-height: 1.55; color: var(--text); opacity: .9; margin: 0; }
+.palmi-partners-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; }
+.palmi-partner { width: 50px; height: 50px; border-radius: 10px; overflow: hidden; border: var(--border); }
+.palmi-credit { text-align: center; font-family: var(--font-label); font-size: 11px; letter-spacing: .05em; color: var(--muted); margin: 6px 0 0; }
+.palmi-credit span { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .palmi-inforow, .palmi-triorow, .palmi-footer-grid { grid-template-columns: 1fr; }
+  .palmi-zones-grid { grid-template-columns: 1fr; }
+  .palmi-hero-title { font-size: 70px; }
+}
+
+
+/* === Full width global + masquage chrome FA (site entier) === */
+#wrap {
+  max-width: none !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.navbar.navlinks,
+#header-banner {
+  display: none !important;
+}
+
+/* === Badges & boutons communs (un seul endroit a toucher) === */
+.palmi-badge {
+  font-family: var(--font-label);
+  font-size: 12px;
+  letter-spacing: .08em;
+  padding: 5px 10px;
+  border-radius: 10px;
+  line-height: normal;
+  display: inline-flex;
+  align-items: center;
+}
+.palmi-badge--flash {
+  background: var(--flash);
+  color: #1A181B;
+  font-weight: 700;
+}
+.palmi-badge--dim {
+  background: rgba(0,0,0,.45);
+  border: var(--border);
+  color: #EDEAF0;
+}
+
+.palmi-btn {
+  font-family: var(--font-label);
+  font-size: 13px;
+  line-height: normal;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 16px;
+}
+.palmi-btn--accent {
+  background: var(--accent);
+  color: #101014;
+}
+.palmi-btn--outline {
+  background: transparent;
+  border: 2px dashed var(--accent);
+  color: var(--accent);
+}
+
+/* line-height auto (normal) sur tous les elements bouton/badge existants */
+.palmi-theme-toggle,
+.palmi-theme-label,
+.palmi-switcher-slot,
+.palmi-switcher-add,
+.palmi-login-btn,
+.palmi-nav a,
+.palmi-guide-inner span { line-height: normal; }
+
+/* === Nav fusionnee avec le vrai header FA (menu/avatar/notifs/recherche conserves) === */
+header.palmi-realnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: var(--nav-bg);
+  border-bottom: 3px solid var(--accent);
+  box-shadow: 0 4px 18px rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 16px;
+  flex-wrap: wrap;
+  font-family: var(--font-label);
+}
+header.palmi-realnav #main-menu-btn {
+  color: var(--nav-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+header.palmi-realnav #logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+header.palmi-realnav #logo img {
+  height: 32px;
+  width: auto;
+  border-radius: 6px;
+}
+header.palmi-realnav #logo-text h1 {
+  font-family: var(--font-title);
+  font-size: 16px;
+  color: var(--nav-accent);
+  margin: 0;
+  line-height: normal;
+}
+header.palmi-realnav .button {
+  font-family: var(--font-label);
+  font-size: 13px;
+  line-height: normal;
+  color: #101014;
+  background: var(--accent);
+  padding: 6px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+header.palmi-realnav #header-user,
+header.palmi-realnav #header-notif {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--nav-text);
+  text-decoration: none;
+  line-height: normal;
+}
+header.palmi-realnav #header-user img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+header.palmi-realnav #search-main {
+  display: flex;
+  align-items: center;
+  background: var(--bg-soft);
+  border: var(--border);
+  border-radius: 10px;
+  padding: 2px 4px 2px 10px;
+}
+header.palmi-realnav #search-main input {
+  background: transparent;
+  border: none;
+  color: var(--nav-text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  width: 130px;
+  line-height: normal;
+}
+header.palmi-realnav #search-main input:focus { outline: none; }
+header.palmi-realnav #search-main button {
+  background: transparent;
+  border: none;
+  color: var(--nav-text);
+  cursor: pointer;
+  display: flex;
+  line-height: normal;
+}
+header.palmi-realnav #header-navigation {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+header.palmi-realnav #header-navigation li a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: .03em;
+  padding: 8px 10px;
+  border-radius: 8px;
+  line-height: normal;
+  white-space: nowrap;
+}
+header.palmi-realnav #header-navigation li a:hover,
+header.palmi-realnav #header-navigation li a.active {
+  color: var(--nav-accent);
+  background: var(--bg-soft);
+}
+
+
+/* === Slots widgets FA (news/staff/event/contexte) === */
+.palmi-widget-slot {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.palmi-widget-slot:empty::after {
+  content: 'En attente de contenu (widget FA)';
+  opacity: .4;
+  font-style: italic;
+  font-size: 12px;
+}
+.palmi-widget-slot.palmi-staff-row:empty::after {
+  display: block;
+}
+
+
+/* === Switcheroo (multi-comptes) style Palmi === */
+nav#switcheroo.switcheroo {
+  position: fixed;
+  z-index: 60;
+  top: 120px;
+  left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  background: transparent;
+}
+.switcheroo__squircles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.switcheroo__squircle {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-family: var(--font-label);
+  font-size: 20px;
+  line-height: normal;
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.switcheroo__squircle:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.switcheroo__squircle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.switcheroo__popper {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease;
+  z-index: 61;
+}
+.switcheroo__squircle:hover .switcheroo__popper {
+  opacity: 1;
+}
+.switcheroo__popper-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text);
+  line-height: normal;
+}
+
+
+/* === Navbar retouches (inspecteur) === */
+.palmi-nav-inner {
+  max-width: 100vw;
+  min-width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0px 20px;
+  flex-wrap: nowrap;
+  overflow-x: visible;
+  height: 40px;
+}
+
+
+
+ul#header-navigation > li > a > span {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#header-navigation i+span {
+  margin-left: 4px;
+  padding-right: 0;
+}
+
+ul#header-navigation > li > a > i {
+  font-size: 13px;
+}
+
+header.palmi-realnav #header-navigation {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+header.palmi-realnav #header-navigation li a {
+  display: flex;
+  align-items: center;
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 0;
+  border-radius: 8px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+
+/* === Switcheroo inline dans la nav + labels nav masques (icones seules) === */
+#switcheroo.switcheroo {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 0;
+}
+
+ul#header-navigation > li > a > span {
+  font-size: 12px;
+  text-transform: uppercase;
+  display: none;
+}
+
+
+/* === Retouches navbar 2 (switcheroo important, icones 18px, liens hauteur fixe) === */
+#switcheroo.switcheroo {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  padding: 0 !important;
+}
+
+ul#header-navigation > li > a > i {
+  font-size: 18px;
+}
+
+header.palmi-realnav #header-navigation li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 10px;
+  border-radius: 8px;
+  line-height: normal;
+  white-space: nowrap;
+  height: 40px;
+}
+
+
+/* === Switcheroo : positionnement + modale de connexion stylee Palmi === */
+nav#switcheroo.switcheroo {
+  z-index: 60;
+  top: 0;
+  left: 0;
+}
+
+.switcheroo__squircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.monomer-overlay.monomer-open {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: #00000030;
+}
+
+.monomer-modal.monomer-open {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  min-width: 280px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.5);
+  font-family: var(--font-body);
+}
+.monomer-close.close-button {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+  line-height: normal;
+}
+.monomer-close.close-button:hover {
+  color: var(--accent);
+}
+.switcheroo__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.switcheroo__form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.switcheroo__form-label {
+  font-family: var(--font-label);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+}
+.switcheroo__form-input {
+  background: var(--bg);
+  border: var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: normal;
+}
+.switcheroo__form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.switcheroo__form-button {
+  background: var(--accent);
+  color: #101014;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: var(--font-label);
+  font-size: 13px;
+  cursor: pointer;
+  line-height: normal;
+}
+
+
+/* === Fix z-index header (surpasse la regle native FA header{z-index:10000}) === */
+header.palmi-realnav {
+  z-index: 10 !important;
+}
+
+
+/* === .palmi-header z-index === */
+.palmi-header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 3px solid var(--line);
+  z-index: 10;
+}
+
+
+/* === .palmi-card : base commune pour toutes les cards === */
+.palmi-card {
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.palmi-card--accent {
+  background: var(--accent-panel);
+}
+
+
+/* === #page-footer (liens legaux FA) fondu dans le theme === */
+#page-footer {
+  background: var(--bg-soft);
+  border-top: var(--border);
+  padding: 14px 20px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--muted);
+}
+#page-footer .wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#page-footer .navbar .linklist {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+#page-footer .navbar .linklist li {
+  display: flex;
+  align-items: center;
+}
+#page-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+#page-footer a:hover {
+  color: var(--accent);
+}
+#page-footer .footer-to-top a,
+#page-footer .footer-home a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  line-height: normal;
+}
+#page-footer .footer-to-top i {
+  font-size: 16px;
+}
+#page-footer .rightside {
+  margin-left: auto;
+  font-size: 11px;
+}
+#page-footer .rightside strong a {
+  color: var(--text);
+}
+#page-footer .copyright {
+  margin: 8px 0 0;
+  font-size: 10px;
+  color: var(--muted);
+  text-align: center;
+}
+#page-footer .copyright a {
+  color: var(--muted);
+}
+
+
+/* === Pimp index : images de widgets, partenaires 50x50, categories multiples, "en ligne" === */
+.palmi-widget-slot img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+.palmi-widget-slot p:first-child { margin-top: 0; }
+.palmi-widget-slot p:last-child { margin-bottom: 0; }
+
+.palmi-partner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.palmi-partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.palmi-cat-title {
+  margin-top: 32px;
+}
+.palmi-footer-card p a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.palmi-footer-card p a:hover {
+  text-decoration: underline;
+}
+
+
+.palmi-newest-user {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+
+/* === Switcheroo squircles/avatars === */
+.switcheroo__squircles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.switcheroo__squircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.switcheroo__avatar {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.switcheroo__squircle img {
+  width: 200%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+
+/* === Batch de retouches (h2, cards, event img, bouton) === */
+h2 {
+  text-transform: uppercase;
+  font-size: 25px;
+  text-shadow: 0px 3px var(--accent2);
+  font-family: var(--font-label);
+}
+
+.palmi-card {
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.palmi-widget-slot[data-widget="event"] img {
+  width: 100%;
+  max-height: unset;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 20%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.palmi-card img {
+  max-height: 100px;
+}
+
+a {
+  font-family: var(--font-label);
+}
+
+.bouton {
+  background: var(--accent);
+  border-radius: 5px;
+  padding: 0px 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 5%;
+}
+
+
+/* === Bouton class + titres info-card/trio (font-label) === */
+.bouton {
+  background: var(--accent);
+  border-radius: 5px;
+  padding: 0 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 5%;
+  color: var(--accent-panel) !important;
+}
+
+.palmi-info-card h2 {
+  font-family: var(--font-label);
+  font-size: 25px;
+  margin: 0 0 5px;
+  color: var(--text);
+}
+
+.palmi-trio-title {
+  font-family: var(--font-label);
+  font-size: 25px;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+
+/* === Staff row : hover reveal, bouton, styling === */
+.palmi-staff-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.palmi-staff-row > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  height: 100px;
+  width: 120px;
+  transition: all 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.palmi-staff-row > div > a {
+  opacity: 0;
+}
+
+.palmi-staff-row > div > a > span {
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: -10px;
+  position: relative;
+}
+
+.palmi-staff-row > div > a:first-child {
+  font-size: 17px;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  background: #1a181b94;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  color: white;
+}
+
+.palmi-staff-row > div:hover > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+}
+
+.palmi-staff-row > div > .bouton {
+  font-size: 9px;
+  width: fit-content;
+  position: absolute;
+  bottom: 10px;
+  padding: 2px 5px 0;
+  left: 12%;
+}
+
+
+/* === Legende masquee partout === */
+.palmi-zone-tag { display: none; }
+
+/* === Administration : plus dense (3 colonnes), description masquee === */
+.palmi-zones-grid.palmi-cat-administration {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.palmi-zones-grid.palmi-cat-administration .palmi-zone-caption {
+  padding: 10px 14px;
+}
+.palmi-zones-grid.palmi-cat-administration .palmi-zone-caption h3 {
+  font-size: 15px;
+}
+.palmi-zones-grid.palmi-cat-administration .palmi-zone-caption p {
+  display: none;
+}
+.palmi-zones-grid.palmi-cat-administration .palmi-zone-media {
+  min-height: 110px;
+}
+
+/* === Autres categories (RP) : immersif, plein cadre === */
+.palmi-zones-grid:not(.palmi-cat-administration) {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.palmi-zones-grid:not(.palmi-cat-administration) .palmi-zone-media {
+  min-height: 260px;
+}
+.palmi-zones-grid:not(.palmi-cat-administration) .palmi-zone-caption {
+  max-width: 55%;
+  padding: 18px 22px;
+}
+.palmi-zones-grid:not(.palmi-cat-administration) .palmi-zone-caption h3 {
+  font-size: 24px;
+}
+
+/* === Hover effect === */
+.palmi-zone {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.palmi-zone:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  border-color: var(--accent);
+}
+
+/* === Etat "nouveau message" === */
+.palmi-zone.cat_new,
+.palmi-zone.forum_new {
+  border-color: var(--flash);
+}
+.palmi-zone.cat_new .palmi-zone-caption h3::after,
+.palmi-zone.forum_new .palmi-zone-caption h3::after {
+  content: '\25CF';
+  color: var(--accent2);
+  font-size: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+
+/* === Administration : bento (forum 1 pleine hauteur + 4 autres a droite en 2 colonnes) === */
+.palmi-zones-grid.palmi-cat-administration {
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-auto-rows: minmax(160px, auto);
+  gap: 14px;
+}
+.palmi-zones-grid.palmi-cat-administration .palmi-forum-1 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+/* Description reactivee pour le forum 1 (contenu HTML riche) */
+.palmi-zones-grid.palmi-cat-administration .palmi-forum-1 .palmi-zone-caption p {
+  display: block;
+}
+
+/* === Image de fond via img> dans la description (FORUM_DESC) === */
+#palmi-page { z-index: 0; }
+.palmi-zone { z-index: 0; }
+.palmi-zone-caption p img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: inherit;
+}
+.palmi-zone-caption p span {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+.palmi-zone-caption p img {
+  max-height: none !important;
+}
+
+
+/* === Session CSS : zone-links, zone-footer === */
+.palmi-zone-links a {
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: .02em;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 10px !important;
+  border: var(--border);
+  background: var(--bg-soft);
+  max-width: fit-content;
+}
+
+.palmi-zone-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 10px 14px 0;
+  font-size: 0;
+}
+
+.palmi-zone-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg);
+  flex-direction: row-reverse;
+}
+
+
+.palmi-ph {
+  pointer-events: none;
+}
+
+
+/* === Banque d'icones (voir module JS "Palmi - Icones") === */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+}
+.icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+/* === Zone avatar === */
+.palmi-zone-avatar {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: var(--border);
+  flex-shrink: 0;
+}
+
+
+/* === Masquer l'icone du dernier message, tout le bloc devient cliquable === */
+.palmi-zone-last-meta .last-post-icon {
+  display: none;
+}
+.palmi-zone-last-meta {
+  cursor: pointer;
+}
+
+
+/* === Session CSS : cat-title, main, forum-1 bento, zone-stats/footer === */
+.palmi-cat-title {
+  font-family: var(--font-title);
+  font-size: 20px;
+  margin: 20px 0 12px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-wrap: nowrap;
+}
+
+.palmi-cat-title i svg {
+  filter: drop-shadow(0 3px 0 var(--accent2));
+}
+
+.palmi-cat-title::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  box-shadow: 0 3px var(--accent2);
+}
+
+.palmi-cat-title i {
+  width: 30px;
+  height: 30px;
+}
+
+.palmi-cat-title {
+  margin-top: 40px;
+}
+
+.palmi-main {
+  max-width: 1100px;
+  min-width: 800px;
+  margin: 0 auto;
+  padding: 40px 10px 40px;
+}
+
+.palmi-zones-grid.palmi-cat-administration .palmi-forum-1 .palmi-zone-caption {
+  width: 150%;
+}
+
+.palmi-zones-grid.palmi-cat-administration .palmi-forum-1 .palmi-zone-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.palmi-zone-stats {
+  font-family: var(--font-label);
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  position: absolute;
+  top: -17px;
+  background: var(--bg);
+  padding: 0 4px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.palmi-zone-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg);
+  flex-direction: row;
+  border: 0;
+}
