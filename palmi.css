@@ -1006,7 +1006,7 @@ a {
   display: block;
 }
 
-/* === Image de fond via img> dans la description (FORUM_DESC) === */
+/* === Image de fond via img dans la description (FORUM_DESC) === */
 #palmi-page { z-index: 0; }
 .palmi-zone { z-index: 0; }
 .palmi-zone-caption p img {
@@ -1172,4 +1172,33 @@ a {
   background: var(--bg);
   flex-direction: row;
   border: 0;
+}
+header.palmi-realnav::after {
+  display: none;
+}
+
+.palmi-zone-last-title {
+  font-family: var(--font-body);
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+  display: block;
+  text-decoration: none;
+}
+
+.palmi-zone-caption h3 {
+  font-family: var(--font-title);
+  margin: 1px 0 0;
+  color: #1A181B;
+}
+
+.palmi-zones-grid.palmi-cat-administration .palmi-forum-1 .palmi-zone-caption {
+  max-width: 150%;
+  width: 150%;
+}
+
+.input-subtle:hover, .input-subtle:focus, .inputbox:hover, .inputbox:focus, .gensmall:hover, .gensmall:focus, select:hover, select:focus {
+  border-color: transparent;
 }
