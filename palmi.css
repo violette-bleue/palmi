@@ -3,10 +3,24 @@
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
 
 body {
+  /*CIVILS*/
+  --group-3: #4ca25d;
+  /*RANGERS*/
+  --group-4: #d84646;
+  /*COMPETITEURS*/
+  --group-5: #46afd8;
+  /*AVENTURIERS*/
+  --group-6: #d87646;
+  /*ELEVEURS*/
+  --group-7: #944dcf;
+  /*CHERCHEURS*/
+  --group-8: #fddc2d;
+
   /* --- Fonts: un seul endroit a toucher --- */
   --font-title: 'Sharpie', sans-serif;
   --font-label: 'Clash Display', sans-serif;
   --font-body: 'General Sans', sans-serif;
+
   /* --- Theme: nuit par defaut --- */
   --bg: #1A181B;
   --bg-soft: #221F24;
@@ -35,6 +49,10 @@ body {
 }
 
 body.day {
+  /*CHERCHEURS AJUSTEMENT*/
+  --group-8: #c5ac29;
+
+
   --bg: #EAE6F1;
   --bg-soft: #F2EFF6;
   --panel: #F7F4FA;
@@ -159,7 +177,7 @@ body.day {
 .palmi-zones-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
 .palmi-zone { z-index: 0; transition: transform .2s ease, box-shadow .2s ease; }
-.palmi-zone:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.35); border-color: var(--accent); }
+.palmi-zone:hover { transform: translateY(-3px); border-color: var(--accent); }
 
 .palmi-zone.cat_new, .palmi-zone.forum_new { border-color: var(--flash); }
 .palmi-zone.cat_new .palmi-zone-caption h3::after,
@@ -337,7 +355,7 @@ header.palmi-realnav #header-navigation li a.active { color: var(--nav-accent); 
 .palmi-nav-inner {
   max-width: 100vw; min-width: 100vw; margin: 0 auto;
   display: flex; align-items: center; gap: 14px; padding: 0 20px;
-  flex-wrap: nowrap; overflow-x: visible; height: 40px;
+  flex-wrap: nowrap; overflow-x: visible; height: 40px; position: relative;
 }
 ul#header-navigation > li > a > span { font-size: 12px; text-transform: uppercase; display: none; }
 ul#header-navigation > li > a > i { font-size: 18px; }
@@ -698,14 +716,7 @@ div#breadcrumbs {
 .avatar-big a {
   font-size: 0;
 }
-:root {
-  --group-3: #fff;
-  --group-4: #fff;
-  --group-5: #fff;
-  --group-6: #fff;
-  --group-7: #fff;
-  --group-8: #fff;
-}
+
 [href^="/g3"], .group-3 { color: var(--group-3) !important; }
 [href^="/g4"], .group-4 { color: var(--group-4) !important; }
 [href^="/g5"], .group-5 { color: var(--group-5) !important; }
@@ -869,11 +880,14 @@ body.day {
   position: relative;
 }
 .quick-reply-textarea-wrap #quick-reply-avatar {
-  top: 53px;
+  top: 48px;
   left: 0;
   z-index: 10;
   width: 200px;
+  height: 215px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 .quick-reply-textarea-wrap .sceditor-container iframe, .quick-reply-textarea-wrap .sceditor-container textarea {
   padding: 16px 16px 9px 220px !important;
@@ -914,20 +928,14 @@ header.palmi-realnav #header-navigation li a:hover, header.palmi-realnav #header
 .quick-reply-textarea-wrap .sceditor-container {
   border: none !important;
   border-radius: 0 !important;
+  height: 131px !important;
 }
 header.palmi-realnav #header-navigation {
   list-style: none;
-  display: flex;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  max-width: 100vw;
-  min-width: 100vw;
   margin: 0 auto;
-  display: flex;
   align-items: center;
   gap: 14px;
-  padding: 0px 0;
+  padding: 0;
 }
 header.palmi-realnav {
   position: sticky;
@@ -935,7 +943,6 @@ header.palmi-realnav {
   width: 100%;
   background: var(--nav-bg);
   border-bottom: 3px solid var(--accent);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, .25);
   display: flex;
   align-items: center;
   gap: 14px;
@@ -953,9 +960,30 @@ header.palmi-realnav {
   color: var(--text);
 }
 .quick-reply-upload {
-  right: 125px;
+  right: 125px !important;
   top: -1px;
   z-index: 5;
+  left: unset;
+}
+
+div.sceditor-toolbar {
+  background: var(--bg-soft) !important;
+  border: none !important;
+}
+
+.quick-reply-textarea-wrap .sceditor-button {
+  margin: 4px;
+  border: none;
+  background: var(--accent);
+  border-radius: 8px;
+}
+
+.avatar-default img {
+  box-shadow: none;
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  width: 100%;
 }
 .cp-sidebar {
   width: 100vw !important;
