@@ -1494,3 +1494,31 @@ input.inputbox:focus, textarea.inputbox:focus, select.select:focus {
   font-style: italic;
   color: var(--muted);
 }
+main#topic {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0 0 0;
+}
+
+main#topic > div {
+  width: 1000px;
+}
+
+div#breadcrumbs {
+  width: 100%;
+  margin: 0;
+  position: sticky;
+  top: 55px;
+  background: var(--bg-soft);
+  z-index: 100;
+}
+
+#breadcrumbs a:last-child::after {
+  display: none;
+}
+
+.post {
+  background: var(--bg-soft);
+}
