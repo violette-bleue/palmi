@@ -1522,3 +1522,42 @@ div#breadcrumbs {
 .post {
   background: var(--bg-soft);
 }
+div#breadcrumbs {
+  width: 100% !important;
+  margin: 0;
+  position: sticky;
+  top: 55px;
+  background: var(--bg-soft);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+div#breadcrumbs > div {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+main#topic {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topic-header {
+  margin: 20px 0 0 0;
+}
+
+.topic-actions-inline {
+  height: 100%;
+}
+.topic-actions-inline > a {
+  height: 80%;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center;
+  margin: 0;
+}
