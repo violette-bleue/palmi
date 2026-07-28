@@ -471,7 +471,7 @@ ul#header-navigation > li > a > i { font-size: 18px; }
 
 
 /* === Cards communes === */
-.palmi-card { background: var(--panel); border: var(--border); border-radius: 10px; overflow: hidden; position: relative; padding: 20px; }
+.palmi-card { background: var(--panel); border: var(--border); border-radius: 10px; overflow: hidden; position: relative; }
 .palmi-card--accent { background: var(--accent-panel); }
 section.palmi-card.palmi-profile-fields {
   display: none;
@@ -479,7 +479,9 @@ section.palmi-card.palmi-profile-fields {
 .palmi-short-card {
   width: 890px;
 }
-
+.palmi-profile-page .palmi-card {
+    padding: 20px;
+}
 
 /* === Widgets === */
 .palmi-widget-slot { font-family: var(--font-body); font-size: 13px; line-height: 1.5; color: var(--text); }
@@ -535,6 +537,7 @@ section.palmi-card.palmi-profile-fields {
 /* === Typographie globale === */
 h2 { text-transform: uppercase; font-size: 25px; text-shadow: 0px 3px var(--accent2); font-family: var(--font-label); }
 section h2 { margin-bottom: 20px; }
+section#forum-list h2 { margin: 0; }
 a { font-family: var(--font-label); }
 
 .palmi-ph { pointer-events: none; }
