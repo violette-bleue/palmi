@@ -551,6 +551,10 @@ a { font-family: var(--font-label); }
   margin: 0 !important;
   height: auto;
 }
+.input-subtle, .inputbox, .gensmall, select {
+  border: none;
+  margin: 0;
+}
 
 
 /* === Icones === */
@@ -1421,16 +1425,18 @@ section.palmi-card.palmi-profile-contact {
 
 /* === Topics list === */
 .palmi-topics-header {
+  font-weight: 700;
   display: grid;
-  grid-template-columns: 1fr 60px 60px 200px;
+  grid-template-columns: 1fr 100px 100px 200px;
   gap: 10px;
-  padding: 6px 14px;
+  padding: 10px 15px;
   font-family: var(--font-label);
   font-size: 11px;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: .05em;
   border-bottom: var(--border);
+  align-items: center;
 }
 
 .palmi-topics-separator {
@@ -1449,16 +1455,16 @@ section.palmi-card.palmi-profile-contact {
 
 .palmi-topic-row {
   display: grid;
-  grid-template-columns: 32px 1fr 120px 200px;
+  grid-template-columns: 0 1fr 120px 200px;
   gap: 10px;
   align-items: center;
   padding: 10px 14px;
   border-bottom: 1px solid var(--line);
-  transition: background .15s ease;
+  transition: background .3s ease;
 }
 
 .palmi-topic-row:hover {
-  background: var(--bg-soft);
+  background: var(--bg);
 }
 
 .palmi-topic-row:last-child {
@@ -1491,25 +1497,31 @@ section.palmi-card.palmi-profile-contact {
   min-width: 0;
 }
 
+.palmi-topic-type:empty {
+  display: none;
+}
+
 .palmi-topic-type {
   font-family: var(--font-label);
-  font-size: 9px;
+  font-size: 14px;
   padding: 2px 6px;
   border-radius: 6px;
   background: var(--accent-panel);
   color: var(--accent-panel-text);
   white-space: nowrap;
   flex-shrink: 0;
+  font-weight: 500;
 }
 
 .palmi-topic-link {
-  font-family: var(--font-title);
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: 17px;
   color: var(--text);
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-right: 20px;
 }
 
 .palmi-topic-link:hover { color: var(--accent); }
@@ -1526,21 +1538,26 @@ section.palmi-card.palmi-profile-contact {
 
 .palmi-topic-meta {
   font-family: var(--font-label);
-  font-size: 10px;
+  font-size: 14px;
   color: var(--muted);
 }
 
 .palmi-topic-stats {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  gap: 20px;
   align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  right: 10px;
 }
 
 .palmi-topic-stat {
   font-family: var(--font-label);
   font-size: 12px;
   color: var(--text);
+  width: 100%;
+  display: block;
 }
 
 .palmi-topic-lastpost {
