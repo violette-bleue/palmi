@@ -903,7 +903,7 @@ div:has(.group-8) > span.post-author-title {
 }
 .quick-reply-side-btns input {
   color: var(--text);
-}
+} 
 
 div.sceditor-toolbar {
   background: var(--bg-soft) !important;
