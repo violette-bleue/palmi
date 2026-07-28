@@ -552,6 +552,9 @@ div#palmi-tip {
   font-weight: 600;
   font-size: 12px;
 }
+#palmi-tip:empty {
+  display: none;
+}
 h1 { font-family: var(--font-title); text-transform: uppercase; font-size: 65px; margin: 0 !important; }
 
 .block, .cp { border-radius: 10px; overflow: hidden; }
@@ -729,6 +732,14 @@ span.post-heading-wrap > a { display: none; }
   border-radius: 0;
 }
 .post-content { font-family: 'General Sans', sans-serif; font-size: 14px; line-height: 1.6; color: var(--text); }
+.post-content a, .block-content>a {
+  text-decoration: none;
+  background: var(--accent);
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: var(--bg) !important;
+  font-weight: 600;
+}
 .post-signature { border-top: var(--border); padding-top: 8px; margin-top: 10px; font-family: 'General Sans', sans-serif; font-size: 11.5px; font-style: italic; color: var(--muted); }
 
 #breadcrumbs a:first-child {
@@ -1089,6 +1100,22 @@ div.sceditor-toolbar {
   z-index: 2;
   position: relative;
 }
+.palmi-profile-admin-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: fit-content;
+}
+.palmi-profile-admin-link:hover {
+  color: var(--accent);
+  transform: translate(0px, -8px);
+}
+.palmi-profile-admin-link span {
+  font-size: 13px;
+}
 .palmi-profile-username {
   font-family: var(--font-title);
   font-size: 60px;
@@ -1100,6 +1127,8 @@ div.sceditor-toolbar {
 .palmi-profile-rank {
   display: inline-block;
   margin-bottom: 8px;
+  border-radius: 8px;
+  padding: 2px 10px 0;
 }
 .palmi-profile-groups {
   display: flex;
@@ -1121,6 +1150,9 @@ div.sceditor-toolbar {
   display: flex;
   align-items: center;
   gap: 6px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .palmi-profile-status-dot {
   width: 9px;
@@ -1227,16 +1259,26 @@ div.sceditor-toolbar {
 .palmi-profile-stat-row {
   display: flex;
   justify-content: space-between;
-  padding: 5px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 3px 0;
+  /* border-bottom: 1px solid var(--line); */
   font-family: var(--font-body);
   font-size: 12px;
 }
 .palmi-profile-stat-row:last-child { border-bottom: none; }
 .palmi-profile-stat-row dt { color: var(--muted); }
+.palmi-profile-stat-row dt:has(span) { font-size: 0; }
 .palmi-profile-stat-row dd { margin: 0; color: var(--text); }
+.palmi-profile-stat-row span {
+  font-size: 12px;
+  color: var(--muted) !important;
+}
 
 /* Contact */
+section.palmi-card.palmi-profile-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
 .palmi-profile-contact-item {
   display: flex;
   align-items: center;
@@ -1245,6 +1287,17 @@ div.sceditor-toolbar {
   font-family: var(--font-label);
   font-size: 12px;
   color: var(--text);
+}
+.palmi-profile-contact-item a {
+  background: var(--bg);
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 2px solid var(--line);
+}
+.palmi-profile-contact-item a:hover {
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  transform: translate(0px, -5px);
 }
 .palmi-profile-contact-icon {
   width: 8px;
