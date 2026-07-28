@@ -718,6 +718,7 @@ span.mod-recent-author i {
   z-index: 0; display: flex; flex-direction: column; align-items: center;
 }
 #palmi-page > div { width: 1000px; margin: 20px auto; }
+#palmi-page > div:empty { margin: 0; }
 
 
 /* === viewtopic === */
@@ -769,6 +770,21 @@ span.post-heading-wrap > a { display: none; }
   margin-bottom: 12px;
   position: relative;
   z-index: 1;
+}
+.post-wrap.dice aside {
+  display: none;
+}
+.post-wrap.dice::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent);
+  position: absolute;
+  top: 45px;
+  z-index: 1;
+  mask-size: 40px;
+  mask-image: url(https://violette-bleue.github.io/palmi/dice.svg);
 }
 
 .post-header {
@@ -1424,6 +1440,12 @@ section.palmi-card.palmi-profile-contact {
 
 
 /* === Topics list === */
+main#forum {
+  width: 1000px;
+  background: var(--bg-soft);
+  border-radius: 10px;
+  border: 2px solid var(--line);
+}
 .palmi-topics-header {
   font-weight: 700;
   display: grid;
@@ -1455,7 +1477,7 @@ section.palmi-card.palmi-profile-contact {
 
 .palmi-topic-row {
   display: grid;
-  grid-template-columns: 0 1fr 120px 200px;
+  grid-template-columns: 0 1fr 200px 200px;
   gap: 10px;
   align-items: center;
   padding: 10px 14px;
@@ -1610,4 +1632,45 @@ section.palmi-card.palmi-profile-contact {
   color: var(--accent);
   text-decoration: none;
   flex-shrink: 0;
+}
+
+/* === Dice === */
+.palmi-dice-pokemon {
+  width: 200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.palmi-dice-pokemon > div > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+}
+.palmi-dice-pokemon-info {
+  background: var(--bg-soft);
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+span.palmi-dice-type {
+  display: flex;
+  width: 30px;
+}
+.palmi-dice-block {
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+}
+.palmi-dice-block span.palmi-dice-label {
+  position: absolute;
+  top: 0;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: 700;
 }
