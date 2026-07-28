@@ -539,10 +539,21 @@ a { font-family: var(--font-label); }
 
 /* === Pages generiques FA (profil, groupes, MP, activite) === */
 .page-header { color: var(--text); padding-bottom: 10px; margin-bottom: 0 !important; }
+.page-header h1 { font-size: 60px; }
+div#palmi-tip {
+  background: var(--accent);
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: var(--bg);
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 12px;
+}
 h1 { font-family: var(--font-title); text-transform: uppercase; font-size: 65px; margin: 0 !important; }
 
 .block, .cp { border-radius: 10px; overflow: hidden; }
 .block { margin-bottom: 22px; border: 2px solid var(--line); }
+.cp { margin-left: 272px; order: 1; }
 .block-header { background: var(--bg-soft) !important; color: var(--accent) !important; font-family: var(--font-label); padding: 10px 16px; font-weight: 500; font-size: 20px; }
 .block-content { padding: 14px 16px !important; color: var(--text); font-family: var(--font-body); background: var(--bg-soft) !important; }
 
@@ -929,8 +940,8 @@ div.sceditor-toolbar {
 #tabs, .tabs {
   margin-bottom: 0;
 }
-#tabs span {
-  color: var(--text);
+#tabs span, #tabs a {
+  color: var(--text) !important;
   text-transform: uppercase;
 }
 #tabs li, .tabs li {
@@ -1004,3 +1015,201 @@ div.sceditor-toolbar {
 #tabs li a, .tabs li a {
   height: auto;
 }
+
+/* === Profil Palmi === */
+.palmi-profile-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Header */
+.palmi-profile-header { overflow: visible; }
+
+.palmi-profile-banner {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.palmi-profile-banner > .avatar-big:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.palmi-profile-avatar-wrap {
+  position: absolute;
+  left: 20px;
+  bottom: -40px;
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid var(--panel);
+  box-shadow: 0 4px 14px rgba(0,0,0,.4);
+}
+.palmi-profile-avatar-wrap .avatar-big { width: 100%; height: 100%; }
+.palmi-profile-header-content {
+  padding: 50px 20px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.palmi-profile-username {
+  font-family: var(--font-title);
+  font-size: 24px;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+.palmi-profile-rank {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.palmi-profile-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.palmi-profile-group-tag {
+  font-family: var(--font-label);
+  font-size: 11px;
+  color: var(--text);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 10px;
+  border: var(--border);
+  background: var(--bg-soft);
+}
+.palmi-profile-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.palmi-profile-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: block;
+  flex-shrink: 0;
+}
+.palmi-profile-status-label {
+  font-family: var(--font-label);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Grille */
+.palmi-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 15px;
+  align-items: start;
+}
+.palmi-profile-main,
+.palmi-profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Équipe Pokémon */
+.palmi-poke-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.palmi-poke-slot {
+  border: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  display: flex;
+  flex-direction: column;
+}
+.palmi-poke-slot img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: var(--bg);
+}
+.palmi-poke-name {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 11px;
+  text-align: center;
+  padding: 6px;
+  color: var(--text);
+}
+.palmi-poke-slot--empty {
+  aspect-ratio: 1;
+  opacity: .3;
+  background: var(--bg-soft);
+}
+
+/* Champs profil */
+.palmi-profile-field {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+  margin: 0;
+}
+.palmi-profile-field:last-child { border-bottom: none; }
+.palmi-profile-field dt {
+  font-family: var(--font-label);
+  font-size: 11px;
+  color: var(--muted);
+  min-width: 120px;
+}
+.palmi-profile-field dd {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+}
+
+/* Stats */
+.palmi-profile-stats-list { margin: 0; }
+.palmi-profile-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+.palmi-profile-stat-row:last-child { border-bottom: none; }
+.palmi-profile-stat-row dt { color: var(--muted); }
+.palmi-profile-stat-row dd { margin: 0; color: var(--text); }
+
+/* Contact */
+.palmi-profile-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-family: var(--font-label);
+  font-size: 12px;
+  color: var(--text);
+}
+.palmi-profile-contact-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent);
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Follow */
+.palmi-profile-follow .btn { width: 100%; justify-content: center; }
