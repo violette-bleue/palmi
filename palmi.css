@@ -380,7 +380,7 @@ header.palmi-realnav #header-navigation li a {
   padding: 0 10px; border-radius: 8px; line-height: normal; white-space: nowrap; height: 40px;
 }
 header.palmi-realnav #header-navigation li a:hover,
-header.palmi-realnav #header-navigation li a.active { color: var(--nav-accent); background: var(--bg-soft); }
+header.palmi-realnav #header-navigation li a.active { color: var(--nav-accent); transform: translateY(-5px); }
 
 .palmi-nav-inner {
   width: auto;
@@ -489,6 +489,16 @@ a { font-family: var(--font-label); }
 .palmi-ph { pointer-events: none; }
 
 
+/* === Defauts === */
+.select-wrap select, .jumpbox-wrap select, .quickmod-wrap select {
+  border: none;
+  background: var(--bg-soft);
+  color: var(--accent);
+  margin: 0 !important;
+  height: auto;
+}
+
+
 /* === Icones === */
 .icon { display: inline-block; width: 1em; height: 1em; vertical-align: -0.15em; }
 .icon svg { width: 100%; height: 100%; display: block; }
@@ -528,11 +538,13 @@ a { font-family: var(--font-label); }
 
 
 /* === Pages generiques FA (profil, groupes, MP, activite) === */
-.page-header { font-family: var(--font-title); color: var(--text); border-bottom: var(--border); padding-bottom: 10px; margin-bottom: 16px; }
+.page-header { color: var(--text); padding-bottom: 10px; margin-bottom: 0 !important; }
+h1 { font-family: var(--font-title); text-transform: uppercase; font-size: 65px; margin: 0 !important; }
 
 .block, .cp { border-radius: 10px; overflow: hidden; }
+.block { margin-bottom: 22px; border: 2px solid var(--line); }
 .block-header { background: var(--bg-soft) !important; color: var(--accent) !important; font-family: var(--font-label); padding: 10px 16px; font-weight: 500; font-size: 20px; }
-.block-content { padding: 14px 16px; color: var(--text); font-family: var(--font-body); background: var(--bg-soft); }
+.block-content { padding: 14px 16px !important; color: var(--text); font-family: var(--font-body); background: var(--bg-soft) !important; }
 
 .cp-sidebar {
   background: var(--bg-soft);
