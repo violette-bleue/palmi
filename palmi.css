@@ -1,7 +1,7 @@
 /* === Palmi === */
 
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
-
+ 
 body {
   /*CIVILS*/
   --group-3: #4ca25d;
@@ -530,7 +530,7 @@ a { font-family: var(--font-label); }
 /* === Pages generiques FA (profil, groupes, MP, activite) === */
 .page-header { font-family: var(--font-title); color: var(--text); border-bottom: var(--border); padding-bottom: 10px; margin-bottom: 16px; }
 
-.block, .cp { background: var(--panel); border: var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 16px; }
+.block, .cp { border-radius: 10px; overflow: hidden; }
 .block-header { background: var(--bg-soft) !important; color: var(--accent) !important; font-family: var(--font-label); padding: 10px 16px; font-weight: 500; font-size: 20px; }
 .block-content { padding: 14px 16px; color: var(--text); font-family: var(--font-body); background: var(--bg-soft); }
 
@@ -912,6 +912,7 @@ div.sceditor-toolbar {
   align-items: center;
   justify-content: flex-start;
   gap: 25px;
+  height: 40px;
 }
 #tabs, .tabs {
   margin-bottom: 0;
@@ -933,10 +934,14 @@ div.sceditor-toolbar {
   flex-wrap: wrap;
   gap: 15px;
   position: relative;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 10px 0px;
 }
 .cp .block-content label {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
