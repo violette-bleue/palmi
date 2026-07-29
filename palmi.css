@@ -642,8 +642,15 @@ h1 { font-family: var(--font-title); text-transform: uppercase; font-size: 65px;
 .block, .cp { border-radius: 10px; overflow: hidden; }
 .block { margin-bottom: 22px; border: 2px solid var(--line); }
 .cp { margin-left: 272px; order: 1; }
-.block-header { background: var(--bg-soft) !important; color: var(--accent) !important; font-family: var(--font-label); padding: 10px 16px; font-weight: 500; font-size: 20px; }
-.block-content { padding: 14px 16px !important; color: var(--text); font-family: var(--font-body); background: var(--bg-soft) !important; }
+.block-header {
+    background: var(--bg-soft) !important;
+    color: var(--accent) !important;
+    font-family: var(--font-label);
+    padding: 10px 16px;
+    font-weight: 500;
+    font-size: 20px;
+    box-shadow: none !important;
+}.block-content { padding: 14px 16px !important; color: var(--text); font-family: var(--font-body); background: var(--bg-soft) !important; }
 
 .cp-sidebar {
   background: var(--bg-soft);
@@ -760,11 +767,32 @@ div#breadcrumbs > div {
   right: 28px;
   display: flex;
   flex-direction: row-reverse;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
 }
 #breadcrumbs a:last-child::after { display: none; }
-
+dd.palmi-detail-messages::before {
+    font-family: 'Material Symbols Outlined';
+    content: 'sticky_note_2';
+    font-size: 18px;
+    line-height: 1;
+    display: inline-block;
+}
+dd.palmi-detail-date-d-inscription::before {
+    font-family: 'Material Symbols Outlined';
+    content: 'calendar_month';
+    font-size: 18px;
+    line-height: 1;
+    display: inline-block;
+}
+.post-author-details dd {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background: var(--line);
+    border-radius: 10px;
+    padding: 1px 10px 0;
+}
 /* === Masquages === */
 .post-header::after { display: none; }
 .post-header h2 i, .post-header h2 img { display: none; }
@@ -953,8 +981,16 @@ span.post-heading-wrap > a { display: none; }
   object-fit: cover;
   min-height: 300px;
 }
-.post-author-details { font-family: var(--font-label); font-size: 9.5px; color: var(--muted); margin: 0; }
-.post-author-details dt { font-weight: 600; }
+.post-author-details {
+    font-family: var(--font-label);
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-weight: 500;
+}.post-author-details dt { font-weight: 600; }
 .post-author-details dd { margin: 0 0 4px; }
 .post-author-rpg { font-size: 10px; color: var(--muted); }
 
@@ -1002,6 +1038,9 @@ span.post-heading-wrap > a { display: none; }
   height: 100%;
   align-items: center; font-weight: 600;
 }
+#breadcrumbs a:hover {
+    background-color: unset !important;
+}
 #breadcrumbs > a:hover span, .topic-actions-inline a:hover{
   background-color: unset !important;
   color: var(--accent) !important;
@@ -1009,19 +1048,20 @@ span.post-heading-wrap > a { display: none; }
   transform: translate(0px, -2px);
 }
 
-#breadcrumbs > a span::before {
-  content: '' !important;
-  display: inline-block;
-  width: 16px;
-  height: 20px;
-  background-color: currentColor;
-  -webkit-mask-image: var(--icon-pokeball);
-  mask-image: var(--icon-pokeball);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  position: absolute;
+#breadcrumbs > a+a::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 16px;
+    height: 20px;
+    background-color: currentColor;
+    -webkit-mask-image: var(--icon-pokeball);
+    mask-image: var(--icon-pokeball);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    position: absolute;
+    left: 0;
 }
 
 #breadcrumbs > a span {
@@ -1042,7 +1082,7 @@ span.post-heading-wrap > a { display: none; }
   display: flex;
   align-items: center;
   gap: 10px;
-  padding-left: 25px;
+  padding-left: 15px;
 }
 
 #breadcrumbs i+span {
@@ -1062,13 +1102,13 @@ div#breadcrumbs {
   display: flex;
   align-items: center;
   padding: 0px 28px 0px 28px;
-  gap: 5px;
+  gap: 8px;
   text-transform: uppercase;
   border-bottom: 2px solid var(--line);
   height: 40px;
 }
 #breadcrumbs a i {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .avatar-big img, .avatar-big i {
@@ -1982,7 +2022,7 @@ note {
     flex-direction: column;
     gap: 5px;
 }
-.post-content ul li br {
+.post-content ul li br, .post-aside br {
     display: none;
 }
 .post-content ul li {
