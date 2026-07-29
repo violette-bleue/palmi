@@ -1008,6 +1008,42 @@ span.post-heading-wrap > a { display: none; }
   transform: translate(0px, -2px);
 }
 
+#breadcrumbs > a span::before {
+  content: '' !important;
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--icon-pokeball);
+  mask-image: var(--icon-pokeball);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  position: absolute;
+}
+
+#breadcrumbs > a span {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#breadcrumbs > a:first-child span::before { display: none; }
+
+#breadcrumbs > a:hover span::before {
+  color: var(--text);
+}
+
+#breadcrumbs > a+a span {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 25px;
+}
+
 #breadcrumbs i+span {
   margin-left: 0;
 }
@@ -1893,8 +1929,8 @@ note {
     letter-spacing: 1px;
 }
 .hljs-deletion {
-    background: transparent;
-    color: #ff6d6d;
+    background-color: unset !important;
+    color: #ff6d6d !important;
 }
 .post-content h2 {
     font-size: 30px;
