@@ -69,15 +69,7 @@ body.day {
   --accent-panel: #3A2A52;
   --accent-panel-text: #F1EAF9;
 }
-.post-author-links [data-tip-content="Inventaire"]::before {
-    content: 'Inventaire';
-}
-.post-author-links [data-tip-content="Carnet"]::before {
-    content: 'Carnet';
-}
-.post-author-links [data-tip-content="Fiche"]::before {
-    content: 'Fiche de présentation';
-}
+
 
 #palmi-page * { box-sizing: border-box; }
 #palmi-page a { color: inherit; }
@@ -93,13 +85,28 @@ body.day {
 .palmi-hero-overlay { position: absolute; inset: 0; background: var(--hero-overlay); pointer-events: none; }
 
 .palmi-theme-toggle {
-  position: absolute; top: 18px; right: 18px; display: flex; align-items: center; gap: 8px;
-  padding: 6px 14px 6px 6px; border-radius: 999px; border: 2px solid var(--line); background: var(--panel);
-  cursor: pointer; z-index: 5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 5px;
+    border-radius: 999px;
+    border: 2px solid var(--line);
+    background: var(--panel);
+    cursor: pointer;
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    height: auto;
 }
-.palmi-theme-dot { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); display: block; box-shadow: 0 0 12px var(--accent); }
-.palmi-theme-label { font-family: var(--font-label); font-size: 13px; letter-spacing: .06em; color: var(--text); line-height: normal; }
-
+.palmi-theme-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--accent); display: block; box-shadow: 0 0 12px var(--accent); }
+.palmi-theme-label {
+    font-family: var(--font-label);
+    font-size: 11px;
+    color: var(--text);
+    line-height: normal;
+    font-weight: 600;
+}
 .palmi-hero-title-wrap {
   position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; pointer-events: none;
@@ -414,7 +421,7 @@ header.palmi-realnav #search-main button {
   background: transparent; border: none; color: var(--nav-text); cursor: pointer; display: flex; line-height: normal;
 }
 header.palmi-realnav #header-navigation {
-  list-style: none; display: flex; margin: 0 auto; gap: 14px; padding: 0; align-items: center;
+  list-style: none; display: flex; margin: 0; gap: 14px; padding: 0; align-items: center;
 }
 header.palmi-realnav #header-navigation li a {
   display: flex; align-items: center; gap: 6px; color: var(--nav-text);
@@ -425,16 +432,16 @@ header.palmi-realnav #header-navigation li a:hover,
 header.palmi-realnav #header-navigation li a.active { color: var(--nav-accent); transform: translateY(-5px); background: unset; }
 
 .palmi-nav-inner {
-  width: auto;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 0 20px;
-  flex-wrap: nowrap;
-  overflow-x: visible;
-  height: 40px;
-  position: relative;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    height: 40px;
+    position: relative;
 }
 ul#header-navigation > li > a > span { font-size: 12px; text-transform: uppercase; display: none; }
 ul#header-navigation > li > a > i { font-size: 18px; }
@@ -831,13 +838,18 @@ dd.palmi-detail-date-d-inscription::before {
 
 .post-author-details dd, .post-author-links a {
     margin: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    background: var(--line);
+    background: var(--bg);
+    border: 2px solid var(--line);
     border-radius: 10px;
-    padding: 1px 10px 0;
+    padding: 4px 10px 3px;    gap: 5px;
 }
-
+.post-author-links {
+    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* === Masquages === */
 .post-header::after { display: none; }
@@ -1039,8 +1051,8 @@ span.post-heading-wrap > a { display: none; }
     flex-wrap: wrap;
     gap: 5px;
     font-weight: 500;
+    padding: 0 0 0 10px;
 }.post-author-details dt { font-weight: 600; }
-.post-author-details dd { margin: 0 0 4px; }
 .post-author-rpg { font-size: 10px; color: var(--muted); }
 
 .post {
@@ -1703,7 +1715,8 @@ section.palmi-card.palmi-profile-contact {
   background: var(--bg);
   padding: 5px 10px;
   border-radius: 8px;
-  border: 2px solid var(--line);
+  border: 2px solid var(--line);    font-weight: 500;
+
 }
 .palmi-profile-contact-item a:hover {
   border-color: var(--accent);
