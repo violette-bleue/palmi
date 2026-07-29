@@ -814,7 +814,7 @@ span.post-heading-wrap > a { display: none; }
     justify-content: flex-start;
     box-shadow: none;
     border-bottom: 2px solid var(--line);
-    border-radius: 6px 5px 0 0px;gap: 15px;
+    border-radius: 8px 8px 0 0px;gap: 15px;
 }
 .post-header h2 { display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin: 0; font-size: 11px; text-shadow: none; }
 .post-date {
@@ -1724,11 +1724,30 @@ main#forum {
   content: '';
   mask-image: url(https://violette-bleue.github.io/palmi/d20.svg);
   display: block;
-  width: 20px;
-  height: 20px;
-  background: red;
+  width: 100px;
+  height: 100px;
+  background: var(--accent);
   mask-position: center;
   mask-size: contain;
+  mask-repeat: no-repeat;
+  position: absolute;
+}
+.palmi-dice-result.palmi-dice-result--number {
+  width: 100px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.palmi-dice-result.palmi-dice-result--number span.palmi-dice-value {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  padding: 0 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 30px;
 }
 .palmi-dice-pokemon {
   width: 200px;
