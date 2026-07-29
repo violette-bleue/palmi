@@ -20,6 +20,7 @@ body {
   --font-title: 'Sharpie', sans-serif;
   --font-label: 'Clash Display', sans-serif;
   --font-body: 'General Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* --- Theme: nuit par defaut --- */
   --bg: #1A181B;
@@ -57,9 +58,9 @@ body.day {
   --line: #CBBEDD;
   --text: #2E2140;
   --muted: #796988;
-  --accent: #d092a1;
-  --accent2: #FF3CC7;
-  --flash: #F0F600;
+--accent: #9453dc;  
+--accent2: #d092a1;
+  --flash: #FF3CC7;
   --nav-bg: #3A2A52;
   --nav-text: #F1EAF9;
   --nav-accent: #d092a1;
@@ -71,7 +72,9 @@ body.day {
 #palmi-page * { box-sizing: border-box; }
 #palmi-page a { color: inherit; }
 #palmi-page ::selection { background: #2CDA9D; color: #1A181B; }
-
+#palmi-page > form {
+    width: 1000px;
+}
 
 /* HEADER / HERO */
 .palmi-header { position: relative; width: 100%; overflow: hidden; border-bottom: 3px solid var(--line); z-index: 10; }
@@ -268,7 +271,7 @@ section.palmi-card:has(.palmi-topsites-grid) {
   text-overflow: ellipsis;
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
 }
 .palmi-zone-last-meta .last-post-icon { display: none; }
 
@@ -282,12 +285,30 @@ section.palmi-card:has(.palmi-topsites-grid) {
 .palmi-zones-grid.palmi-cat-administration .palmi-forum-1 { grid-column: 1; grid-row: 1 / span 2; }
 .palmi-zones-grid.palmi-cat-administration .palmi-zone-caption { padding: 10px 14px; }
 .palmi-zones-grid.palmi-cat-administration .palmi-zone-caption h3 { font-size: 15px; }
-.palmi-zones-grid.palmi-cat-administration .palmi-zone-caption p { display: none; }
 .palmi-zones-grid.palmi-cat-administration .palmi-zone-media { min-height: 110px; }
 .palmi-zones-grid.palmi-cat-administration .palmi-forum-1 .palmi-zone-caption p { display: block; }
 .palmi-zones-grid.palmi-cat-administration .palmi-forum-1 .palmi-zone-caption { width: 150%; max-width: 150%; }
 .palmi-zones-grid.palmi-cat-administration .palmi-forum-1 .palmi-zone-footer { position: absolute; bottom: 0; width: 100%; }
-
+.palmi-zone-caption ul {
+    display: flex;
+    list-style: none;
+    gap: 0 10px;
+    margin: 10px 0 0 0;
+    flex-wrap: wrap;
+}
+.palmi-zone-caption ul a {
+    background: var(--accent);
+    color: var(--bg) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 10px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+.palmi-zone-caption ul a:hover {
+    background: var(--bg);
+    color: var(--accent) !important;
+}
 /* === Autres categories (RP) : immersif === */
 .palmi-zones-grid:not(.palmi-cat-administration) { grid-template-columns: 1fr; gap: 20px; }
 .palmi-zones-grid:not(.palmi-cat-administration) .palmi-zone-media { min-height: 180px; }
@@ -879,6 +900,7 @@ span.post-heading-wrap > a { display: none; }
     min-width: 200px;
     height: 40px;
     overflow: visible;
+    position: relative;
 }
 .post-author-name {
     color: var(--text);
@@ -935,17 +957,27 @@ span.post-heading-wrap > a { display: none; }
     border-radius: 0;
     box-shadow: none;
 }
-.post-content { font-family: 'General Sans', sans-serif; font-size: 14px; line-height: 1.6; color: var(--text); z-index: 1; }
+.post-content { font-family: 'General Sans', sans-serif; font-size: 14px; line-height: 1.6; color: var(--text); z-index: 1; 
+    padding: 10px 15px 10px 15px;}
 .post-content a, .block-content>a {
   text-decoration: none;
   background: var(--accent);
   border-radius: 8px;
-  padding: 5px 10px;
+  padding: 0px 10px;
   color: var(--bg) !important;
   font-weight: 600;
 }
-.post-signature { border-top: var(--border); padding-top: 8px; margin-top: 10px; font-family: 'General Sans', sans-serif; font-size: 11.5px; font-style: italic; color: var(--muted); }
-
+.post-signature {
+    border-top: var(--border);
+    padding-top: 8px;
+    margin-top: 10px;
+    font-family: 'General Sans', sans-serif;
+    font-size: 11.5px;
+    font-style: italic;
+    color: var(--muted);
+    max-height: 300px;
+    overflow: hidden;
+}
 #breadcrumbs a:first-child {
   padding: 0 !important;
 }
@@ -1012,13 +1044,15 @@ section.palmi-profile-header.palmi-card:has(.group-5) .palmi-profile-banner { bo
 section.palmi-profile-header.palmi-card:has(.group-6) .palmi-profile-banner { border-color: var(--group-6);}
 section.palmi-profile-header.palmi-card:has(.group-7) .palmi-profile-banner { border-color: var(--group-7);}
 section.palmi-profile-header.palmi-card:has(.group-8) .palmi-profile-banner { border-color: var(--group-8);}
+section.palmi-profile-header.palmi-card:has(.group-9) .palmi-profile-banner { border-color: var(--group-9);}
 
-[href^="/g3"], .group-3 { color: var(--group-3) !important; }
-[href^="/g4"], .group-4 { color: var(--group-4) !important; }
-[href^="/g5"], .group-5 { color: var(--group-5) !important; }
-[href^="/g6"], .group-6 { color: var(--group-6) !important; }
-[href^="/g7"], .group-7 { color: var(--group-7) !important; }
-[href^="/g8"], .group-8 { color: var(--group-8) !important; }
+[href^="/g3"], .group-3, g3 { color: var(--group-3) !important; }
+[href^="/g4"], .group-4, g4 { color: var(--group-4) !important; }
+[href^="/g5"], .group-5, g5 { color: var(--group-5) !important; }
+[href^="/g6"], .group-6, g6 { color: var(--group-6) !important; }
+[href^="/g7"], .group-7, g7 { color: var(--group-7) !important; }
+[href^="/g8"], .group-8, g8 { color: var(--group-8) !important; }
+[href^="/g9"], .group-9, g9 { color: var(--group-9) !important; }
 
 div:has(.group-3) > span.post-author-title {
   background: var(--group-3);
@@ -1061,11 +1095,18 @@ div:has(.group-8) > span.post-author-title {
 .post-group-8 .post-header {
   background: var(--group-8);
 }
+div:has(.group-9) > span.post-author-title {
+  background: var(--group-9);
+}
+.post-group-9 .post-header {
+  background: var(--group-9);
+}
 
 .topic-header h1 a {
-  font-family: var(--font-title);
-  text-transform: uppercase;
-  font-size: 50px;
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 500;
 }
 .topic-header h1 {
   margin: 0;
@@ -1786,4 +1827,107 @@ span.palmi-dice-type {
   padding: 10px 0;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+/** MISE EN PAGE **/
+info, blockquote, note, .codebox {
+    border-radius: 10px !important;
+display: block;
+    width: fit-content;
+        padding: 5px 15px;
+    color: var(--text);
+    border: 2px solid var(--line);
+    margin: 10px 0;
+    background: var(--bg);
+}
+info {
+    border-color: var(--accent);
+}
+note {
+    border-color: var(--accent2);
+}
+.codebox {
+    background: #494949;    width: 100%;
+    padding: 15px 25px;
+}
+.codebox code {
+    font-family: var(--font-mono);
+}
+.post-content h2 {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: var(--font-label);
+}
+.post-content ul, .post-content ol {
+    margin-left: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.post-content ul li br {
+    display: none;
+}
+.post-content ul li {
+    list-style: none;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.post-content ul li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: currentColor;
+    -webkit-mask-image: var(--icon-pokeball);
+    mask-image: var(--icon-pokeball);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+.spoiler_title {
+    background: var(--accent);
+    border-radius: 10px;    z-index: 2;
+}
+.spoiler_content {
+    padding: 23px 15px 8px 15px;
+    margin: -15px 0 0 0;
+    background: var(--bg);
+    border-radius: 10px;
+    border: 2px solid var(--line);
+}
+tagg1, tagg2, tagg3, tagg4, tagg5, tagg6, tagg7, tagg8, tagg9 {
+    border-radius: 10px;
+    padding: 0px 10px;
+    font-weight: 500;
+    font-family: var(--font-label);
+}
+tagg1 {
+    background: var(--group-1);
+}
+tagg2 {
+    background: var(--group-2);
+}
+tagg3 {
+    background: var(--group-3);
+}
+tagg4 {
+    background: var(--group-4);
+}
+tagg5 {
+    background: var(--group-5);
+}
+tagg6 {
+    background: var(--group-6);
+}
+tagg7 {
+    background: var(--group-7);
+}
+tagg8 {
+    background: var(--group-8);
+}
+tagg9 {
+    background: var(--group-9);
 }
