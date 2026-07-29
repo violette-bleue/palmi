@@ -144,15 +144,19 @@ body.day {
 .palmi-chrono-date { font-family: var(--font-label); font-size: 10.5px; color: var(--muted); min-width: 44px; }
 .palmi-chrono-title { font-family: var(--font-body); font-size: 11.5px; color: var(--text); opacity: .9; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .palmi-staff-avatar { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: var(--border); }
-.palmi-topsites-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 4px; }
-.palmi-topsite { aspect-ratio: 1; border-radius: 6px; overflow: hidden; border: var(--border); }
+.palmi-topsites-grid {
+    display: flex;
+    gap: 4px;
+    min-width: 150px;
+    flex-wrap: wrap;
+}.palmi-topsite { aspect-ratio: 1; border-radius: 6px; overflow: hidden; border: var(--border); }
 .palmi-topsites-grid a { font-size: 37px; transition: transform .5s ease; }
 .palmi-topsites-grid a path { fill: var(--text); transition: all .3s ease; }
 .palmi-topsites-grid a:hover path { fill: var(--accent); }
 .palmi-topsites-grid a:hover { transform: translate(0px, -10px) rotate(180deg); }
 
 section.palmi-card:has(.palmi-topsites-grid) {
-  width: fit-content;
+  min-width: 185px;
 }
 
 /* === ZONES (BOARD_INDEX) === */
@@ -490,6 +494,7 @@ section.palmi-card.palmi-profile-fields {
 .palmi-widget-slot img { max-width: 100%; height: auto; border-radius: 8px; display: block; }
 .palmi-widget-slot p:first-child { margin-top: 0; }
 .palmi-widget-slot p:last-child { margin-bottom: 0; }
+.palmi-widget-slot .box-head { display: none; }
 .palmi-widget-slot[data-widget="event"] img {
   width: 100%; max-height: unset; position: absolute;
   top: 0; left: 0; opacity: 20%; z-index: 0; pointer-events: none;
@@ -536,7 +541,7 @@ section.palmi-card.palmi-profile-fields {
 
 /* === Typographie globale === */
 h2 { text-transform: uppercase; font-size: 25px; text-shadow: 0px 3px var(--accent2); font-family: var(--font-label); }
-section h2 { margin-bottom: 20px; }
+section h2 { margin-bottom: 20px; WHITE-SPACE: nowrap;}
 section#forum-list h2 { margin: 0; }
 a { font-family: var(--font-label); }
 
@@ -669,6 +674,7 @@ input.inputbox:focus, textarea.inputbox:focus, select.select:focus { outline: no
   justify-content: space-between;
   padding: 0;
   box-shadow: none;
+    height: 170px;
 }
 
 [data-widget="recents"] .box-body > div {
@@ -811,10 +817,18 @@ span.post-heading-wrap > a { display: none; }
 .post-buttons ul { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
 .post-buttons a {
   font-family: var(--font-label); font-size: 11px; color: var(--muted);
-  background: transparent; border: var(--border); border-radius: 10px;
-  padding: 4px 10px; text-decoration: none; display: inline-flex; align-items: center;
+  background: transparent; border-radius: 10px;
+  padding: 0; text-decoration: none; display: inline-flex; align-items: center;
 }
-
+.post-buttons a, .post-buttons span {
+    background: none;
+    padding: 0;
+}
+.post-buttons li+li {
+    margin-left: 0;
+    display: flex;
+    height: 100%;
+}
 .post-body {
   display: flex;
   position: relative;
