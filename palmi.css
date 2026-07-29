@@ -795,7 +795,8 @@ span.mod-recent-author i {
 #palmi-page {
   z-index: 0; display: flex; flex-direction: column; align-items: center;
 }
-#palmi-page > div { width: 1000px; margin: 20px auto; }
+#palmi-page > div { width: 1000px; margin: 20px auto; 
+    position: relative;}
 #palmi-page > div:empty { margin: 0; }
 
 
@@ -804,7 +805,17 @@ main#topic {
   width: 100%; display: flex; flex-direction: column; align-items: center;
 }
 main#topic > div { width: 1000px; }
-
+.block-comment .avatar-default img {
+    height: auto;
+    width: 150px;
+    border: 2px solid var(--line);
+    position: absolute;
+    left: -50px;
+    top: 20px;
+}
+.block.block-comment .block-content {
+    padding-left: 50px !important;
+}
 div#breadcrumbs > div {
   position: absolute;
   right: 28px;
@@ -955,7 +966,7 @@ span.post-heading-wrap > a { display: none; }
 }
 .post-buttons a:hover, .post-buttons span:hover {
     background-color: unset;
-    transform: translate(0px, -5px);
+    transform: translate(0px, -2px);
 }
 
 .post-buttons li+li {
@@ -1271,7 +1282,7 @@ div:has(.group-9) > span.post-author-title {
   text-shadow: 0px 2px var(--accent);
 }
 .topic-header i {
-  font-size: 40px;
+  font-size: 110px;
   filter: drop-shadow(0 3px 0 var(--accent));
 }
 .topic-header::after {
@@ -2162,3 +2173,21 @@ tagg9 {
 }
 
 a:hover { color: var(--accent); }
+
+/*ENVOIS MESSAGE*/
+#palmi-page > form {
+    width: 1300px;
+}
+form >div {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    overflow: visible;
+    flex-direction: row-reverse;
+}
+form > div > div > .block {
+    width: 300px;
+}
+div#postingbox {
+    width: 800px;
+}
