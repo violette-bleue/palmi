@@ -47,6 +47,7 @@ body {
   transition: background .3s, color .3s;
   display: flex;
   flex-direction: column;
+  
 }
 
 body.day {
@@ -67,6 +68,15 @@ body.day {
   --hero-overlay: linear-gradient(180deg, rgba(58,42,82,.1) 0%, rgba(58,42,82,.35) 70%, rgba(58,42,82,.6) 100%);
   --accent-panel: #3A2A52;
   --accent-panel-text: #F1EAF9;
+}
+.post-author-links [data-tip-content="Inventaire"]::before {
+    content: 'Inventaire';
+}
+.post-author-links [data-tip-content="Carnet"]::before {
+    content: 'Carnet';
+}
+.post-author-links [data-tip-content="Fiche"]::before {
+    content: 'Fiche de présentation';
 }
 
 #palmi-page * { box-sizing: border-box; }
@@ -608,12 +618,38 @@ a { font-family: var(--font-label); }
 
 
 /* === #page-footer === */
-#page-footer { background: var(--bg-soft); border-top: var(--border); padding: 14px 20px; font-family: var(--font-body); font-size: 11px; color: var(--muted); }
-#page-footer .wrap { max-width: 1100px; margin: 0 auto; }
+#page-footer {
+    background: var(--bg-soft);
+    border-top: var(--border);
+    padding: 10px 0px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--muted);
+}#page-footer .wrap {
+    /* max-width: 1100px; */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 0;
+    padding: 0;
+}
+#page-footer .wrap strong {
+    display: none;
+}
+#page-footer .wrap a {
+    font-size: 12px;
+    font-weight: 500;
+}
+#page-footer .wrap a:last-of-type {
+    position: absolute;
+    right: 20px;
+}
 #page-footer .navbar .linklist { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; padding: 0; }
 #page-footer .navbar .linklist li { display: flex; align-items: center; }
 #page-footer a { color: var(--muted); text-decoration: none; }
-#page-footer a:hover { color: var(--accent); }
 #page-footer .footer-to-top a, #page-footer .footer-home a { display: flex; align-items: center; gap: 4px; color: var(--muted); line-height: normal; }
 #page-footer .footer-to-top i { font-size: 16px; }
 #page-footer .rightside { margin-left: auto; font-size: 11px; }
@@ -771,7 +807,11 @@ div#breadcrumbs > div {
   align-items: center;
 }
 #breadcrumbs a:last-child::after { display: none; }
-dd.palmi-detail-messages::before {
+dd.palmi-detail-messages::before, 
+dd.palmi-detail-date-d-inscription::before,
+.post-author-links [data-tip-content="Inventaire"]::after, 
+.post-author-links [data-tip-content="Carnet"]::after, 
+.post-author-links [data-tip-content="Fiche"]::after {
     font-family: 'Material Symbols Outlined';
     content: 'sticky_note_2';
     font-size: 18px;
@@ -779,13 +819,17 @@ dd.palmi-detail-messages::before {
     display: inline-block;
 }
 dd.palmi-detail-date-d-inscription::before {
-    font-family: 'Material Symbols Outlined';
     content: 'calendar_month';
-    font-size: 18px;
-    line-height: 1;
-    display: inline-block;
 }
-.post-author-details dd {
+.post-author-links [data-tip-content="Inventaire"]::after {
+    content: 'backpack';
+}.post-author-links [data-tip-content="Carnet"]::after {
+    content: 'menu_book';
+}.post-author-links [data-tip-content="Fiche"]::after {
+    content: 'history_edu';
+}
+
+.post-author-details dd, .post-author-links a {
     margin: 0;
     display: flex;
     align-items: center;
@@ -793,6 +837,8 @@ dd.palmi-detail-date-d-inscription::before {
     border-radius: 10px;
     padding: 1px 10px 0;
 }
+
+
 /* === Masquages === */
 .post-header::after { display: none; }
 .post-header h2 i, .post-header h2 img { display: none; }
@@ -937,6 +983,9 @@ span.post-heading-wrap > a { display: none; }
     height: 40px;
     overflow: visible;
     position: relative;
+}
+.post-author-links img {
+    display: none;
 }
 .post-author-name {
     color: var(--text);
@@ -2098,3 +2147,5 @@ tagg9 {
     font-weight: 500;
     color: var(--muted);
 }
+
+a:hover { color: var(--accent); }
