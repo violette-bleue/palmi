@@ -549,6 +549,7 @@ a { font-family: var(--font-label); }
 
 
 /* === Defauts === */
+.mod-recent-row+.mod-recent-row { margin: 0; }
 .select-wrap select, .jumpbox-wrap select, .quickmod-wrap select {
   border: none;
   background: var(--bg-soft);
@@ -772,13 +773,19 @@ span.post-heading-wrap > a { display: none; }
   background: var(--panel);
   border: var(--border);
   border-radius: 10px;
-  overflow: hidden;
   margin-bottom: 12px;
   position: relative;
   z-index: 1;
 }
-.post-wrap.dice aside {
+.post-wrap.dice aside,
+.dice .post-author {
   display: none;
+}
+.dice .post-header h2 {
+    padding-left: 10px;
+}
+.dice .post-date, .dice i.material-symbols-outlined {
+    color: var(--text)!important;
 }
 .post-wrap.dice .post-header {
   background: var(--panel);
@@ -799,13 +806,14 @@ span.post-heading-wrap > a { display: none; }
 }
 
 .post-header {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 20px 10px;
-  height: 20px;
-  z-index: auto;
-  justify-content: space-between;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    justify-content: flex-start;
+    box-shadow: none;
+    border-bottom: 2px solid var(--line);
+    border-radius: 6px 5px 0 0px;gap: 15px;
 }
 .post-header h2 { display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin: 0; font-size: 11px; text-shadow: none; }
 .post-date {
@@ -814,16 +822,27 @@ span.post-heading-wrap > a { display: none; }
   font-size: 12px;
   font-weight: 600;
 }
-.post-buttons ul { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
-.post-buttons a {
+.post-buttons { margin: 0; }
+.post-buttons ul {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}.post-buttons a {
   font-family: var(--font-label); font-size: 11px; color: var(--muted);
   background: transparent; border-radius: 10px;
-  padding: 0; text-decoration: none; display: inline-flex; align-items: center;
+  padding: 5px!important; text-decoration: none; display: inline-flex; align-items: center;
 }
 .post-buttons a, .post-buttons span {
     background: none;
-    padding: 0;
 }
+.post-buttons a:hover, .post-buttons span:hover {
+    background-color: unset;
+    transform: translate(0px, -5px);
+}
+
 .post-buttons li+li {
     margin-left: 0;
     display: flex;
@@ -833,17 +852,61 @@ span.post-heading-wrap > a { display: none; }
   display: flex;
   position: relative;
   z-index: 1;
+    background: var(--bg-soft);
+    border-radius: 0 0 8px 8px;
 }
-
-.post-author { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.post-author-name { font-family: var(--font-title); font-size: 14px; color: var(--text); }
+@media (min-width: 961px) {
+  .post-body {
+    margin: 0;
+  }
+}
+.post-buttons
+ {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    right: 10px;
+}
+.post-buttons li {
+    float: left;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.post-author {
+    min-width: 200px;
+    height: 40px;
+    overflow: visible;
+}
+.post-author-name {
+    color: var(--text);
+    height: 40px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-left: 10px;
+}
+.post-author-name span {
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    font-size: 25px;
+    color: var(--bg) !important;
+}
 .post-author-title {
-  font-family: var(--font-label);
-  font-size: 9.5px;
-  letter-spacing: .05em;
-  background: var(--accent);
-  color: #1A181B;
-  padding: 2px 8px 0;
+    font-family: var(--font-label);
+    font-size: 11px;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 2px 8px 0;
+    width: fit-content;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;
+    top: 38px;
+    right: 12px;
+    font-weight: 600;
 }
 .post-author-avatar { order: -1; margin: 0; }
 .post-author-avatar .avatar-big {
@@ -866,10 +929,11 @@ span.post-heading-wrap > a { display: none; }
 .post-author-rpg { font-size: 10px; color: var(--muted); }
 
 .post {
-  padding: 16px 20px;
-  background: var(--bg-soft);
-  margin: 0;
-  border-radius: 0;
+    padding: 16px 20px;
+    background: transparent;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 .post-content { font-family: 'General Sans', sans-serif; font-size: 14px; line-height: 1.6; color: var(--text); z-index: 1; }
 .post-content a, .block-content>a {
@@ -923,21 +987,21 @@ div#breadcrumbs {
   border-radius: 0px 0 30px 30px;
 }
 .post-aside {
-  order: -1;
-  background: var(--bg);
-  border-right: var(--border);
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-  width: 200px;
-  margin: 0;
-  height: auto;
-  border-radius: 0;
-  position: sticky;
-}
+    order: -1;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    width: 200px;
+    margin: 0;
+    height: fit-content;
+    border-radius: 0;
+    position: sticky;
+top: 90px;}
 .avatar-big a {
   font-size: 0;
 }
@@ -1655,6 +1719,16 @@ main#forum {
 }
 
 /* === Dice === */
+.palmi-dice-result.palmi-dice-result--number::before {
+  content: '';
+  mask-image: url(https://violette-bleue.github.io/palmi/d20.svg);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: red;
+  mask-position: center;
+  mask-size: contain;
+}
 .palmi-dice-pokemon {
   width: 200px;
   position: relative;
