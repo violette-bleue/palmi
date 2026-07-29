@@ -74,9 +74,7 @@ body.day {
 #palmi-page * { box-sizing: border-box; }
 #palmi-page a { color: inherit; }
 #palmi-page ::selection { background: #2CDA9D; color: #1A181B; }
-#palmi-page > form {
-    width: 1000px;
-}
+
 
 /* HEADER / HERO */
 .palmi-header { position: relative; width: 100%; overflow: hidden; border-bottom: 3px solid var(--line); z-index: 10; }
@@ -712,7 +710,7 @@ h1 { font-family: var(--font-title); text-transform: uppercase; font-size: 65px;
 .btn-flat { background: transparent; border: var(--border) !important; color: var(--text); }
 .btn-red { background: #e4613e !important; color: #fff !important; }
 
-input.inputbox, textarea.inputbox, select.select, .select {
+input.inputbox, textarea.inputbox, select.select {
   background: var(--bg-soft);
   border: var(--border);
   border-radius: 8px !important;
@@ -2176,7 +2174,7 @@ a:hover { color: var(--accent); }
 
 /*ENVOIS MESSAGE*/
 #palmi-page > form {
-    width: 1300px;
+    width: 1100px;
 }
 form >div {
     display: flex;
@@ -2187,7 +2185,391 @@ form >div {
 }
 form > div > div > .block {
     width: 300px;
+    margin-bottom: 10px;
 }
 div#postingbox {
     width: 800px;
+}
+#list_dice .single-roll>.label, #list_dice .single-roll>label, #list_dice .single-roll>#dice_to_del {
+    display: flex;
+    float: left;
+    margin-right: 11px;
+    flex-direction: column;
+    gap: 5px;
+}
+#list_dice .single-roll {
+    float: left;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background-color: unset;
+    border-radius: 0;
+    position: relative;
+}
+#list_dice .single-roll>#dice_to_del {
+    margin: 0;
+    position: absolute;
+    right: -15px;
+    bottom: 0;
+}
+input:checked+.checkbox-check:after {
+    opacity: 1;
+    content: "adjust";
+}
+
+.checkbox-check:after {
+    content: "circle";
+    height: auto;
+    font-size: 20px;
+    opacity: 1;
+    border: none;
+    opacity: .4;
+}
+.checkbox {
+    border: none;
+}
+    
+
+
+/* ============================================= */
+/* === GUIDEBOOK === */
+/* ============================================= */
+
+.palmi-gb {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 10px 60px;
+}
+
+/* --- Header --- */
+.palmi-gb-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.palmi-gb-title {
+  font-family: var(--font-title);
+  font-size: 42px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 8px;
+  text-shadow: 0 3px 0 var(--accent);
+}
+.palmi-gb-sub {
+  font-family: var(--font-body);
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+.palmi-gb-search-wrap {
+  max-width: 420px;
+  margin: 0 auto;
+}
+.palmi-gb-search {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+.palmi-gb-search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* --- Menu mobile (masqué en desktop) --- */
+.palmi-gb-mobile-bar {
+  display: none;
+}
+
+/* --- Layout --- */
+.palmi-gb-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* --- Sidebar desktop --- */
+.palmi-gb-sidebar {
+  position: sticky;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.palmi-gb-cat-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font-label);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.palmi-gb-cat-btn:hover {
+  background: var(--bg-soft);
+}
+.palmi-gb-cat-btn span {
+  flex: 1;
+}
+.palmi-gb-cat-btn .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--muted);
+}
+.palmi-gb-cat-chevron {
+  transition: transform .2s ease;
+}
+.palmi-gb-cat.open .palmi-gb-cat-chevron {
+  transform: rotate(180deg);
+}
+
+.palmi-gb-cat-items {
+  display: none;
+  flex-direction: column;
+  padding-left: 30px;
+  gap: 2px;
+  margin: 2px 0 6px;
+}
+.palmi-gb-cat.open .palmi-gb-cat-items {
+  display: flex;
+}
+
+.palmi-gb-item {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.palmi-gb-item:hover {
+  color: var(--text);
+  background: var(--bg-soft);
+}
+.palmi-gb-item.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+/* --- Contenu central --- */
+.palmi-gb-content {
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 12px;
+  padding: 30px 36px;
+  min-height: 400px;
+}
+
+.palmi-gb-section {
+  display: none;
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.7;
+}
+.palmi-gb-section.active {
+  display: block;
+  animation: palmiGbFadeIn .25s ease;
+}
+@keyframes palmiGbFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.palmi-gb-section h2 {
+  font-family: var(--font-title);
+  font-size: 26px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: var(--border);
+}
+.palmi-gb-section h3 {
+  font-family: var(--font-label);
+  font-size: 16px;
+  color: var(--accent);
+  margin: 24px 0 10px;
+}
+.palmi-gb-section p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.palmi-gb-section strong {
+  color: var(--text);
+}
+.palmi-gb-section a {
+  color: var(--accent);
+}
+.palmi-gb-section ul, .palmi-gb-section ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.palmi-gb-section img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.palmi-gb-section blockquote {
+  border-left: 3px solid var(--accent);
+  background: var(--bg-soft);
+  padding: 12px 16px;
+  margin: 0 0 14px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* --- Sidebar mobile (slide-in) --- */
+.palmi-gb-mobile-overlay {
+  display: none;
+}
+.palmi-gb-mobile-sidebar {
+  display: none;
+}
+
+/* ============================================= */
+/* === RESPONSIVE === */
+/* ============================================= */
+@media (max-width: 900px) {
+
+  .palmi-gb-title {
+    font-size: 30px;
+  }
+
+  .palmi-gb-mobile-bar {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg-soft);
+    border-bottom: var(--border);
+    margin: 0 -10px 16px;
+    padding: 10px 10px;
+  }
+  .palmi-gb-mobile-cat-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--panel);
+    border: var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--font-label);
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .palmi-gb-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .palmi-gb-sidebar {
+    display: none;
+  }
+
+  .palmi-gb-content {
+    padding: 20px;
+  }
+
+  /* Overlay + sidebar slide-in mobile */
+  .palmi-gb-mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+  }
+  .palmi-gb-mobile-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .palmi-gb-mobile-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80%;
+    max-width: 320px;
+    background: var(--panel);
+    border-left: var(--border);
+    z-index: 91;
+    transform: translateX(100%);
+    transition: transform .25s ease;
+  }
+  .palmi-gb-mobile-sidebar.open {
+    transform: translateX(0);
+  }
+  .palmi-gb-mobile-sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: var(--border);
+    font-family: var(--font-label);
+    color: var(--text);
+    font-size: 14px;
+  }
+  .palmi-gb-mobile-sidebar-head button {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .palmi-gb-mobile-sidebar-items {
+    padding: 10px 16px;
+    overflow-y: auto;
+  }
+  .palmi-gb-mobile-group {
+    margin-bottom: 16px;
+  }
+  .palmi-gb-mobile-group-title {
+    font-family: var(--font-label);
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: .05em;
+    margin-bottom: 6px;
+  }
+  .palmi-gb-mobile-item {
+    display: block;
+    padding: 8px 10px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 6px;
+  }
+  .palmi-gb-mobile-item:hover {
+    background: var(--bg-soft);
+  }
 }
