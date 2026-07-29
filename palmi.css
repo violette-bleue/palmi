@@ -937,7 +937,7 @@ span.post-heading-wrap > a { display: none; }
     right: 12px;
     font-weight: 600;
 }
-.post-author-avatar { order: -1; margin: 0; }
+.post-author-avatar { order: -1; margin: 0; z-index: 0; }
 .post-author-avatar .avatar-big {
   width: 100%;
   height: auto;
@@ -1000,6 +1000,12 @@ span.post-heading-wrap > a { display: none; }
   background: unset;
   height: 100%;
   align-items: center; font-weight: 600;
+}
+#breadcrumbs > a:hover span, .topic-actions-inline a:hover{
+  background-color: unset !important;
+  color: var(--accent) !important;
+  box-shadow: none;
+  transform: translate(0px, -2px);
 }
 
 #breadcrumbs i+span {
@@ -1489,6 +1495,24 @@ div.sceditor-toolbar {
   aspect-ratio: 1;
   opacity: .3;
   background: var(--bg-soft);
+}
+
+.palmi-poke-header-row {
+  order: -1;
+  width: 100%;
+  /* margin-top: -40px; */
+  z-index: -1;
+}
+.palmi-poke-header-slot img {
+  height: 60px;
+}
+.palmi-poke-header-wrapper {
+  /* background: var(--line); */
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0 0 30px 30px;
+  padding-top: 0px;
+  justify-content: space-between;
 }
 
 /* Champs profil */
