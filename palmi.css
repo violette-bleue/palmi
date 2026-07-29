@@ -806,7 +806,8 @@ span.post-heading-wrap > a { display: none; }
   z-index: 1;
 }
 .post-wrap.dice aside,
-.dice .post-author {
+.dice .post-author,
+.post-author-details dt {
   display: none;
 }
 .dice .post-header h2 {
@@ -1920,8 +1921,30 @@ note {
     border-color: var(--accent2);
 }
 .codebox {
-    background: #494949;    width: 100%;
+    background: #494949;
+    width: 100%;
     padding: 15px 25px;
+    position: relative;
+}
+.codebox .palmi-code-copy-btn {
+    position: absolute;
+    right: 25px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--flash);
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 600;
+}
+.codebox p, blockquote cite {
+    display: inline-block;
+    background: var(--line);
+    padding: 0px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 600;
+    font-style: normal;
 }
 .codebox code {
     font-family: var(--font-mono);
@@ -1931,6 +1954,22 @@ note {
 .hljs-deletion {
     background-color: unset !important;
     color: #ff6d6d !important;
+}
+.hljs-symbol, .hljs-bullet, .hljs-built_in, .hljs-builtin-name, .hljs-attr, .hljs-link {
+    color: var(--group-5);
+}
+.hljs-string, .hljs-number, .hljs-regexp, .hljs-variable, .hljs-template-variable {
+    color: var(--group-3);
+}
+.hljs-tag, .hljs-name {
+    color: var(--accent2);
+}
+.hljs-comment, .hljs-quote {
+    color: var(--muted);
+    font-style: italic;
+}
+.hljs-keyword, .hljs-selector-tag {
+    color: var(--group-6);
 }
 .post-content h2 {
     font-size: 30px;
@@ -2015,7 +2054,7 @@ tagg8 {
 tagg9 {
     border-color: var(--group-11);
 }
-i {
+.post i {
     font-weight: 500;
     color: var(--muted);
 }
