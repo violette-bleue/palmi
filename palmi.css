@@ -2015,14 +2015,34 @@ span.palmi-dice-type {
 }
 
 /** MISE EN PAGE **/
-hr {
+hr, hrpoke {
     border: none;
     background: var(--accent);
     height: 3px;
     border-radius: 20px;
     margin: 30px 0 40px 0px;
+    display: flex;
+    align-items: center;
 }
-
+hrpoke {
+    margin-left: 25px;
+    position: relative;
+}
+hrpoke::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent);
+    -webkit-mask-image: var(--icon-pokeball);
+    mask-image: var(--icon-pokeball);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    position: absolute;
+    left: -25px;
+}
 info, blockquote, note, .codebox {
     border-radius: 10px !important;
 display: block;
@@ -2112,7 +2132,7 @@ note {
 .post-content ul li br, .post-aside br {
     display: none;
 }
-.post-content ul li {
+.post-content ul li, .palmi-gb-section ul li  {
     list-style: none;
     height: fit-content;
     display: flex;
@@ -2246,4 +2266,135 @@ input:checked+.checkbox-check:after {
     border: none;
 }
     
+
+/* ============================================= */
+/* === FICHE DE PRÉSENTATION === */
+/* ============================================= */
+
+.pfiche {
+  background: var(--panel);
+  border: var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--text);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pfiche-header {
+  padding: 20px 24px;
+  border-bottom: var(--border);
+  text-align: center;
+}
+.pfiche-title {
+  font-family: var(--font-title);
+  font-size: 26px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-shadow: 0 2px 0 var(--accent);
+}
+
+/* --- Onglets CSS purs (radio hack) --- */
+.pfiche-radio {
+  display: none;
+}
+
+.pfiche-tabbar {
+  display: flex;
+  border-bottom: var(--border);
+}
+.pfiche-tab-label {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  font-family: var(--font-label);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+
+.pfiche-panel {
+  display: none;
+  padding: 24px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#pfiche-tab1:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab1"],
+#pfiche-tab2:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab2"],
+#pfiche-tab3:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab3"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+#pfiche-tab1:checked ~ .pfiche-panel-1,
+#pfiche-tab2:checked ~ .pfiche-panel-2,
+#pfiche-tab3:checked ~ .pfiche-panel-3 {
+  display: flex;
+}
+
+/* --- Champs --- */
+.pfiche-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pfiche-label {
+  font-family: var(--font-label);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+}
+.pfiche-value {
+  font-size: 14px;
+}
+.pfiche-hint {
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+}
+.pfiche-optional {
+  opacity: .6;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.pfiche-subtitle {
+  font-family: var(--font-title);
+  font-size: 17px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-top: var(--border);
+  padding-top: 16px;
+  margin-top: 4px;
+}
+.pfiche-panel > .pfiche-subtitle:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.pfiche-text {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.pfiche-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-top: var(--border);
+  padding-top: 14px;
+  margin-top: 6px;
+}
+.pfiche-row .pfiche-field {
+  flex: 1;
+  min-width: 180px;
+}
 
