@@ -2281,14 +2281,28 @@ input:checked+.checkbox-check:after {
   max-width: 700px;
   margin: 0 auto;
 }
-.post-wrap:has(#pfiche) .post-aside, .post-wrap:has(#pfiche) .post-author-title, .post-wrap:has(#pfiche) .post-date {
+.post-wrap:has(#pfiche) .post-aside, .post-wrap:has(#pfiche) .post-author-title, .post-wrap:has(#pfiche) .post-date, div#pfiche > br, div#pfiche > div > br {
     display: none;
 }
-div#pfiche > br, div#pfiche > div > br {
-    display: none;
+.post-wrap:has(#pfiche) .post, .post-wrap:has(#pfiche) .post-content {
+    padding: 0;
 }
-
-
+.pfiche-banniere {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+.pfiche-avatar {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+}
 /* --- Onglets CSS purs (radio hack) --- */
 .pfiche-radio {
   display: none;
