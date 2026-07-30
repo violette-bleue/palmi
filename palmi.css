@@ -2281,19 +2281,13 @@ input:checked+.checkbox-check:after {
   max-width: 700px;
   margin: 0 auto;
 }
+.post-wrap:has(#pfiche) .post-aside, .post-wrap:has(#pfiche) .post-author-title, .post-wrap:has(#pfiche) .post-date {
+    display: none;
+}
+div#pfiche > br, div#pfiche > div > br {
+    display: none;
+}
 
-.pfiche-header {
-  padding: 20px 24px;
-  border-bottom: var(--border);
-  text-align: center;
-}
-.pfiche-title {
-  font-family: var(--font-title);
-  font-size: 26px;
-  text-transform: uppercase;
-  color: var(--text);
-  text-shadow: 0 2px 0 var(--accent);
-}
 
 /* --- Onglets CSS purs (radio hack) --- */
 .pfiche-radio {
@@ -2302,7 +2296,6 @@ input:checked+.checkbox-check:after {
 
 .pfiche-tabbar {
   display: flex;
-  border-bottom: var(--border);
 }
 .pfiche-tab-label {
   flex: 1;
@@ -2311,10 +2304,8 @@ input:checked+.checkbox-check:after {
   font-family: var(--font-label);
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: .04em;
   color: var(--muted);
   cursor: pointer;
-  border-bottom: 2px solid transparent;
   transition: color .15s ease, border-color .15s ease;
 }
 
@@ -2339,62 +2330,18 @@ input:checked+.checkbox-check:after {
 }
 
 /* --- Champs --- */
-.pfiche-field {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+
+
+
+/* TEXTEDITOR FA*/
+.sceditor-container iframe, .sceditor-container textarea {
+    color: var(--text);
 }
-.pfiche-label {
-  font-family: var(--font-label);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  color: var(--muted);
-}
-.pfiche-value {
-  font-size: 14px;
-}
-.pfiche-hint {
-  font-size: 14px;
-  color: var(--muted);
-  font-style: italic;
-}
-.pfiche-optional {
-  opacity: .6;
-  text-transform: none;
-  letter-spacing: normal;
+#message-box textarea {
+    width: 100% !important;
+    background: var(--accent-panel) !important;
+    border-radius: 10px;
+    padding: 20px !important;
 }
 
-.pfiche-subtitle {
-  font-family: var(--font-title);
-  font-size: 17px;
-  text-transform: uppercase;
-  color: var(--accent);
-  border-top: var(--border);
-  padding-top: 16px;
-  margin-top: 4px;
-}
-.pfiche-panel > .pfiche-subtitle:first-child {
-  border-top: none;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-.pfiche-text {
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.pfiche-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  border-top: var(--border);
-  padding-top: 14px;
-  margin-top: 6px;
-}
-.pfiche-row .pfiche-field {
-  flex: 1;
-  min-width: 180px;
-}
 
