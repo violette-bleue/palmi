@@ -2281,7 +2281,7 @@ input:checked+.checkbox-check:after {
   max-width: 700px;
   margin: 0 auto;
 }
-.post-wrap:has(#pfiche) .post-aside, .post-wrap:has(#pfiche) .post-author-title, .post-wrap:has(#pfiche) .post-date, div#pfiche > br, div#pfiche > div > br {
+.post-wrap:has(#pfiche) .post-aside, .post-wrap:has(#pfiche) .post-author-title, .post-wrap:has(#pfiche) .post-date, div#pfiche br {
     display: none;
 }
 .post-wrap:has(#pfiche) .post, .post-wrap:has(#pfiche) .post-content {
@@ -2296,12 +2296,35 @@ input:checked+.checkbox-check:after {
     overflow: hidden;
     pointer-events: none;
     z-index: -1;
+    border-bottom: 2px solid var(--line);
 }
 .pfiche-avatar {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 170px;
     overflow: hidden;
     border-radius: 10px;
+    position: absolute;
+    left: 15px;
+    border: 2px solid var(--accent);
+}
+.pfiche-infos {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    margin-left: 220px;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 200px;
+    align-content: flex-end;
+    width: 60%;
+}
+.pfiche-title {
+    position: absolute;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    font-size: 60px;
+    top: -5px;
+    text-shadow: 0px 0 20px black;
 }
 /* --- Onglets CSS purs (radio hack) --- */
 .pfiche-radio {
