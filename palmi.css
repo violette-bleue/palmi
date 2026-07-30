@@ -2032,20 +2032,28 @@ note {
     border-color: var(--accent2);
 }
 .codebox {
-    background: #494949;
+    background: var(--bg);
     width: 100%;
-    padding: 15px 25px;
+    padding: 5px 25px;
     position: relative;
 }
 .codebox .palmi-code-copy-btn {
     position: absolute;
     right: 25px;
-    padding: 2px 8px;
+    padding: 0px 8px;
     border-radius: 10px;
     background: var(--flash);
     text-transform: uppercase;
-    color: var(--text);
+    color: var(--bg);
     font-weight: 600;
+    font-size: 10px;
+    top: -8px;
+}
+.codebox p {
+    height: 0;
+    display: block;
+    margin: 0;
+    font-size: 0;
 }
 .codebox p, blockquote cite {
     display: inline-block;

@@ -2,6 +2,21 @@
 /* ============================================= */
 /* === GUIDEBOOK === */
 /* ============================================= */
+.palmi-hero-wrap {
+    max-height: 200px;
+    min-height: auto;
+}
+.palmi-hero-sub, .palmi-hero-title {
+    font-size: 0;
+}
+.palmi-hero-title::before {
+    content: 'GUIDE DU NOUVEAU';
+    font-size: 70px;
+}
+p.palmi-hero-sub:before {
+    content: 'Toutes les informations pour bien démarrer et évoluer sur Palmi.';
+    font-size: 16px;
+}
 
 .palmi-gb {
   max-width: 1200px;
@@ -29,8 +44,7 @@
   margin: 0 0 20px;
 }
 .palmi-gb-search-wrap {
-  max-width: 420px;
-  margin: 0 auto;
+    width: 100%;
 }
 .palmi-gb-search {
   width: 100%;
@@ -66,7 +80,7 @@
   top: 70px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   background: var(--panel);
   border: var(--border);
   border-radius: 12px;
@@ -74,30 +88,33 @@
 }
 
 .palmi-gb-cat-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  background: transparent;
-  border: none;
-  border-radius: 8px;
-  color: var(--text);
-  font-family: var(--font-label);
-  font-size: 13px;
-  text-align: left;
-  cursor: pointer;
-  transition: background .15s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text);
+    font-family: var(--font-label);
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: background .15s ease;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 .palmi-gb-cat-btn:hover {
-  background: var(--bg-soft);
+    background: var(--accent);
+    color: var(--bg);
 }
 .palmi-gb-cat-btn span {
   flex: 1;
 }
 .palmi-gb-cat-btn .material-symbols-outlined {
-  font-size: 18px;
-  color: var(--muted);
+    font-size: 18px;
+    color: inherit;
 }
 .palmi-gb-cat-chevron {
   transition: transform .2s ease;
@@ -118,27 +135,48 @@
 }
 
 .palmi-gb-item {
-  display: block;
-  padding: 7px 10px;
-  border-radius: 6px;
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--muted);
-  text-decoration: none;
-  border-left: 2px solid transparent;
-  transition: color .15s ease, border-color .15s ease, background .15s ease;
+    display: flex;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--muted) !important;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: all .15s ease;
+    align-items: center;
+    gap: 5px;
 }
 .palmi-gb-item:hover {
-  color: var(--text);
-  background: var(--bg-soft);
+    color: var(--accent) !important;
+    transform: translate(0px, -3px);
 }
 .palmi-gb-item.active {
-  color: var(--accent);
-  border-left-color: var(--accent);
-  font-weight: 600;
+    color: var(--accent) !important;
+    font-weight: 600;
 }
 
+.palmi-gb-item::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 20px;
+    background-color: currentColor;
+    -webkit-mask-image: var(--icon-pokeball);
+    mask-image: var(--icon-pokeball);
+    -webkit-mask-size: contain;
+    mask-size: 20px;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: width .5s ease;
+}
+.palmi-gb-item.active::before {
+    width: 20px;
+}
 /* --- Contenu central --- */
+.codebox {
+    width: fit-content;
+}
 .palmi-gb-content {
   background: var(--panel);
   border: var(--border);
@@ -222,9 +260,10 @@
 /* ============================================= */
 @media (max-width: 900px) {
 
-  .palmi-gb-title {
-    font-size: 30px;
-  }
+    .palmi-gb-content {
+        padding: 20px;
+        width: 97vw;
+    }
 
   .palmi-gb-mobile-bar {
     display: block;
@@ -236,8 +275,11 @@
     margin: 0 -10px 16px;
     padding: 10px 10px;
   }
+  .palmi-gb-header {
+    width: 97vw;
+}
   .palmi-gb-mobile-cat-btn {
-    width: 100%;
+    width: 97vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
