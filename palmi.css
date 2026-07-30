@@ -1073,7 +1073,7 @@ span.post-heading-wrap > a { display: none; }
 }
 .post-content { font-family: 'General Sans', sans-serif; font-size: 14px; line-height: 1.6; color: var(--text); z-index: 1; 
     padding: 10px 15px 10px 15px;}
-.post-content a, .block-content>a {
+.post-content a, .block-content>a, .palmi-gb-section a {
   text-decoration: none;
   background: var(--accent);
   border-radius: 8px;
@@ -2015,6 +2015,14 @@ span.palmi-dice-type {
 }
 
 /** MISE EN PAGE **/
+hr {
+    border: none;
+    background: var(--accent);
+    height: 3px;
+    border-radius: 20px;
+    margin: 30px 0 40px 0px;
+}
+
 info, blockquote, note, .codebox {
     border-radius: 10px !important;
 display: block;
@@ -2111,7 +2119,8 @@ note {
     align-items: center;
     gap: 7px;
 }
-.post-content ul li::before {
+.post-content ul li::before,
+.palmi-gb-section ul li::before {
     content: '';
     display: inline-block;
     width: 20px;
