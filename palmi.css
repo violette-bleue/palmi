@@ -4091,8 +4091,12 @@ div#pfiche br, .pjournal br {
   gap: 12px;
   margin-bottom: 8px;
 }
-.pjournal-pc-slot {
-  display: flex;
+
+.pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled {
+    height: 50px;
+    display: flex;
+    align-items: center;
+      display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
@@ -4104,16 +4108,11 @@ div#pfiche br, .pjournal br {
     height: fit-content;
     position: relative;
 }
-.pjournal-pc-slot .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled {
-    height: 50px;
-    display: flex;
-    align-items: center;
-}
-.pjournal-pc-slot > div > span {
+.pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled  > div > span {
     display: none;
 }
 
-.pjournal-pc-slot > span {
+.pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled  > span {
     font-family: var(--font-label);
     font-size: 11px;
     color: var(--bg);
@@ -4128,39 +4127,89 @@ div#pfiche br, .pjournal br {
 
 /* --- Inventaire : objets --- */
 .pjournal-item-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
 }
 .pjournal-item-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px 12px;
-  border: var(--border);
-  border-radius: 8px;
-  background: var(--bg-soft);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px 12px;
+    border: var(--border);
+    border-radius: 8px;
+    background: var(--bg-soft);
+    flex-direction: column;
+    gap: 10px;
 }
-.pjournal-item-name {
-  font-family: var(--font-label);
-  font-size: 13px;
-  color: var(--text);
+.pjournal-item-row div {
+    order: -1;
+    background: var(--accent2);
+    line-height: normal;
+    border-radius: 10px;
+    padding: 2px 10px 0;
+    color: var(--bg);
+    font-weight: 600;
+    font-family: var(--font-label);
+margin: 5px 0 0px 0;
 }
-.pjournal-item-desc {
-  font-size: 12px;
-  color: var(--muted);
-  text-align: right;
-  flex: 1;
+.pjournal-item-row:has(img) div {
+    margin-left: 35px;
 }
-.pjournal-item-qty {
-  font-family: var(--font-label);
-  font-size: 12px;
-  color: var(--accent);
-  flex-shrink: 0;
+.pjournal-item-row img {
+    height: 30px;
+    position: absolute;
+    border-radius: 10px;
 }
-
+.pjournal-item-row span {
+    display: inline;
+    overflow-y: auto;
+    line-height: 15px;
+    height: 100%;
+    font-size: 11px;
+}
+.pjournal-item-list.--conso {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+.pjournal-item-list.--conso .pjournal-item-row {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background: none;
+    border: none;
+    padding: 0;
+    position: relative;
+    max-width: 80%;
+}
+.pjournal-item-list.--conso .pjournal-item-row div {
+    margin: 0;
+    z-index: 1;
+}
+.pjournal-item-list.--conso .pjournal-item-row span {
+    background: var(--bg);
+    width: 20px;
+    height: fit-content;
+    padding: 2px 10px;
+    overflow: visible;
+    min-width: 60px;
+    position: absolute;
+    right: -30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--accent);
+    font-weight: 600;
+    top: 0px;
+}
+.pjournal-item-list.--conso .pjournal-item-row span::before {
+    content: 'x';
+}
 /* --- Équipe : grille 6 cartes --- */
 .pjournal-team-grid {
   display: grid;
