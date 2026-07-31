@@ -1748,12 +1748,6 @@ select:focus {
   font-family: var(--font-body);
 }
 
-.form-buttons {
-  border-top : var(--border);
-  padding-top: 12px;
-  margin-top : 12px;
-}
-
 .pagination a,
 .pagination span {
   font-family  : var(--font-label);
@@ -3727,10 +3721,10 @@ input:checked+.checkbox-check:after {
 /* =============================================================== */
 /* FICHES ET JOURNAUX */
 /* =============================================================== */
+/* ============================================= */
+/* === FICHE DE PRÉSENTATION === */
+/* ============================================= */
 
-/* 1. Conteneur principal */
-/* AVANT : .pfiche { ... } */
-/* APRÈS : */
 .pfiche, .pjournal {
   background: var(--panel);
   border: var(--border);
@@ -3742,28 +3736,137 @@ input:checked+.checkbox-check:after {
   margin: 0 auto;
 }
 .pjournal {
-  max-width: 900px; /* override : le journal est plus large */
+  max-width: 900px;
 }
 
-/* 2. En-tête */
-/* AVANT : .pfiche-header { ... } */
-/* APRÈS : */
 .pfiche-header, .pjournal-header {
   padding: 20px 24px;
   border-bottom: var(--border);
   text-align: center;
 }
 
-/* 3. Radios (onglets, invisibles) */
-/* AVANT : .pfiche-radio { display: none; } */
-/* APRÈS : */
+/* --- Masquage éléments post natifs FA quand la fiche est présente --- */
+.post-wrap:has(#pfiche) .post-aside,
+.post-wrap:has(#pfiche) .post-author-title,
+.post-wrap:has(#pfiche) .post-date,
+.post-wrap:has(#pfiche) .post-author-name,
+div#pfiche br {
+  display: none;
+}
+
+.post-wrap:has(#pfiche) .post,
+.post-wrap:has(#pfiche) .post-content {
+  padding: 0;
+  line-height: normal;
+}
+
+/* --- Bannière et avatar --- */
+.pfiche-banniere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  border-bottom: 2px solid var(--line);
+}
+
+.pfiche-avatar {
+  width: 200px;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: absolute;
+  left: 15px;
+  border: 2px solid var(--accent);
+}
+
+.pfiche-infos {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  margin-left: 220px;
+  flex-wrap: wrap;
+  gap: 5px 5px;
+  height: 200px;
+  align-content: flex-end;
+  width: 60%;
+}
+.pfiche-infos > div:not(.pfiche-title, .pfiche-legend, .pfiche-avatar) {
+  background: var(--accent);
+  border-radius: 10px;
+  font-family: var(--font-label);
+  font-weight: 600;
+  padding: 2px 10px 0px;
+  color: var(--bg);
+}
+
+/* --- Titre et légende (superposés à la bannière) --- */
+.pfiche-title {
+  position: absolute;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  font-size: 60px;
+  top: 0px;
+  text-shadow: 0px 0 20px black;
+  background: none;
+}
+
+.pfiche-legend {
+  position: absolute;
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  top: 70px;
+  text-shadow: 0 0 10px black;
+  font-weight: 500;
+  background: none;
+}
+
+/* --- Tag (badge coin) --- */
+.pfiche-tag {
+  display: inline-flex;
+  background: var(--panel);
+  width: fit-content;
+  border-radius: 10px;
+  padding: 0px 10px 0;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+}
+.pfiche-panel.pfiche-panel-2 .pfiche-tag {
+  top: initial;
+  display: flex;
+  justify-content: flex-end;
+  right: 870px;
+  left: unset;
+}
+
+/* --- Titre de section h2 --- */
+.pfiche-h2 {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  font-size: 30px;
+  width: fit-content;
+  background: none !important;
+  border: none !important;
+}
+.pfiche-h2:empty {
+  display: none;
+}
+
+/* --- Onglets CSS purs (radio hack) --- */
 .pfiche-radio, .pjournal-radio {
   display: none;
 }
 
-/* 4. Barre d'onglets */
-/* AVANT : .pfiche-tabbar { ... } */
-/* APRÈS : */
 .pfiche-tabbar, .pjournal-tabbar {
   display: flex;
   background: var(--bg);
@@ -3772,9 +3875,6 @@ input:checked+.checkbox-check:after {
   align-items: flex-end;
 }
 
-/* 5. Label d'onglet */
-/* AVANT : .pfiche-tab-label { ... } */
-/* APRÈS : */
 .pfiche-tab-label, .pjournal-tab-label {
   flex: 1;
   text-align: center;
@@ -3793,9 +3893,6 @@ input:checked+.checkbox-check:after {
   padding-bottom: 10px;
 }
 
-/* 6. Panneau de contenu */
-/* AVANT : .pfiche-panel { ... } */
-/* APRÈS : */
 .pfiche-panel, .pjournal-panel {
   display: none;
   padding: 24px;
@@ -3804,13 +3901,6 @@ input:checked+.checkbox-check:after {
   line-height: 27px;
 }
 
-/* 7. États actifs des onglets (checked) — ajouter les sélecteurs pjournal à la liste */
-/* AVANT :
-#pfiche-tab1:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab1"],
-#pfiche-tab2:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab2"],
-#pfiche-tab3:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab3"] { ... }
-*/
-/* APRÈS : */
 #pfiche-tab1:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab1"],
 #pfiche-tab2:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab2"],
 #pfiche-tab3:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab3"],
@@ -3821,8 +3911,6 @@ input:checked+.checkbox-check:after {
   border-bottom: 2px solid var(--accent);
 }
 
-/* 8. Affichage du panneau actif — idem, ajouter les sélecteurs pjournal */
-/* APRÈS : */
 #pfiche-tab1:checked ~ .pfiche-panel-1,
 #pfiche-tab2:checked ~ .pfiche-panel-2,
 #pfiche-tab3:checked ~ .pfiche-panel-3,
@@ -3834,18 +3922,33 @@ input:checked+.checkbox-check:after {
   position: relative;
 }
 
-/* 9. Optionnel (texte grisé entre parenthèses) */
-/* AVANT : .pfiche-optional { ... } */
-/* APRÈS : */
+/* --- Champs --- */
+.pfiche-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pfiche-label {
+  font-family: var(--font-label);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+}
+.pfiche-value {
+  font-size: 14px;
+}
+.pfiche-hint {
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+}
 .pfiche-optional, .pjournal-optional {
   opacity: .6;
   text-transform: none;
   letter-spacing: normal;
 }
 
-/* 10. Sous-titre de section */
-/* AVANT : .pfiche-subtitle { ... } */
-/* APRÈS : */
 .pfiche-subtitle, .pjournal-subtitle {
   font-family: var(--font-title);
   font-size: 17px;
@@ -3862,6 +3965,116 @@ input:checked+.checkbox-check:after {
   margin-top: 0;
 }
 
+/* --- Réponses Oui/Non stylées en badge --- */
+.pfiche-label[data-reponse] {
+  background: var(--accent);
+  border-radius: 10px;
+  color: var(--bg);
+  font-weight: 600;
+  font-family: var(--font-label);
+  padding: 2px 10px 0px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.pfiche-label[data-reponse*="ui"]::before {
+  font-family: 'Material Icons';
+  content: 'check_circle';
+  font-size: 18px;
+  line-height: 1;
+}
+.pfiche-label[data-reponse*="on"]::before {
+  font-family: 'Material Icons';
+  content: 'cancel';
+  font-size: 18px;
+  line-height: 1;
+}
+.pfiche-label[data-reponse*="on"] {
+  background: var(--group-4);
+  opacity: .2;
+}
+
+/* --- Texte narratif (histoire) --- */
+.pfiche-text > span br {
+  display: block !important;
+}
+.pfiche-text {
+  width: 700px;
+  font-size: 15px;
+  line-height: 1.7;
+  border-left: 2px solid var(--line);
+  padding-left: 20px;
+  margin: 20px auto;
+}
+
+.pfiche-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-top: var(--border);
+  padding-top: 14px;
+  margin-top: 6px;
+}
+.pfiche-row .pfiche-field {
+  flex: 1;
+  min-width: 180px;
+}
+
+/* --- Panel 3 (Starter) : layout spécifique avec artwork Pokémon --- */
+.pfiche-panel.pfiche-panel-3 {
+  padding: 20px 100px;
+  gap: 15px;
+}
+.pfiche-panel.pfiche-panel-3 > div {
+  display: flex;
+  position: relative;
+  gap: 15px;
+}
+.pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) {
+  height: 300px;
+  padding-left: 320px;
+  flex-direction: column;
+}
+.pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) > div {
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+.pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) > div .pfiche-label {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled {
+  position: absolute;
+  left: 0;
+  width: auto;
+  height: 100%;
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  z-index: -1;
+}
+.pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled img {
+  height: 100%;
+}
+.pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled span {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: var(--bg);
+  padding: 5px 20px 0;
+  font-family: var(--font-label);
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+}
 /* JOURNAL SPE */
 
 .pjournal-subtitle-main {
@@ -4080,4 +4293,23 @@ input:checked+.checkbox-check:after {
   background   : var(--accent-panel) !important;
   border-radius: 10px;
   padding      : 20px !important;
+      color: var(--text);
+
+    border: 2px solid var(--line);
+    margin: 20px 0 0 !important;
+}
+.sceditor-container {
+    border: none !important;
+}
+div.sceditor-grip::before {
+    content: 'zoom_out_map';
+    color: var(--accent);
+}
+div.sceditor-grip {
+    background: none;
+    font-family: 'Material Icons';
+    width: fit-content;
+    height: fit-content;
+    right: 10px;
+    bottom: 10px;
 }
