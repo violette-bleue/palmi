@@ -3749,7 +3749,8 @@ div#pfiche br {
 
 .post-wrap:has(#pfiche) .post,
 .post-wrap:has(#pfiche) .post-content {
-  padding: 0;
+  padding: 0;line-height: normal;
+
 }
 
 .pfiche-banniere {
@@ -3861,8 +3862,47 @@ div#pfiche br {
     background: var(--group-4);
     opacity: .2;
 }
+
+.pfiche-h2:empty {
+    display: none;
+}
+.pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) > div {
+    background: var(--panel);
+    border: 2px solid var(--line);
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+.pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) > div .pfiche-label {
+    color: var(--accent);
+    font-weight: 600;
+}
+.pfiche-tag {
+    display: inline-flex;
+    background: var(--panel);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0px 10px 0;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+}
+.pfiche-h2 {
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    font-size: 30px;
+    width: fit-content;
+    background: none !important;
+    border: none !important;
+}
 .pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) {
     height: 300px;
+    padding-left: 320px;    flex-direction: column;
 }
 .pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled {
     position: absolute;
@@ -3874,6 +3914,8 @@ div#pfiche br {
 }
 .pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled {
     position: absolute;
+    
+    left: 0;
     width: auto;
     height: 100%;
     background: var(--panel);
@@ -3928,6 +3970,7 @@ div#pfiche br {
     padding-bottom: 10px;}
 .pfiche-panel {
   display: none;
+    line-height: 27px;
 }
 
 #pfiche-tab1:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab1"], #pfiche-tab2:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab2"], #pfiche-tab3:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab3"] {
