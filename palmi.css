@@ -3741,10 +3741,29 @@ input:checked+.checkbox-check:after {
 }
 
 .pfiche-header, .pjournal-header {
-  border-bottom: var(--border);
-  text-align: center;
+    border-bottom: var(--border);
+    text-align: center;
+    position: relative;
 }
-
+.pjournal-banniere {
+    height: 170px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: var(--flash);
+    mask-image: var(--icon-pokeball);
+    mask-size: 60px;
+    mask-position: 60px -5px;
+  animation: 4s linear 0s infinite test;
+}
+@keyframes test {
+  from {
+    mask-position: 60px -5px;
+  }
+  to {
+    mask-position: 600px -5px;
+  }
+}
 /* --- Masquage éléments post natifs FA quand la fiche est présente --- */
 .post-wrap:has(#pfiche) .post-aside,
 .post-wrap:has(#pfiche) .post-author-title,
@@ -3772,7 +3791,25 @@ div#pfiche br, .pjournal br {
   z-index: -1;
   border-bottom: 2px solid var(--line);
 }
-
+.pjournal-banniere {
+    height: 170px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.pjournal-poke {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    border: 2px solid var(--line);
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--panel);
+}
 .pfiche-avatar {
   width: 200px;
   height: 170px;
@@ -4089,7 +4126,7 @@ div#pfiche br, .pjournal br {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
   gap: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 40px;
 }
 
 .pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled {
@@ -4108,11 +4145,11 @@ div#pfiche br, .pjournal br {
     height: fit-content;
     position: relative;
 }
-.pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled  > div > span {
+.pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled > span {
     display: none;
 }
 
-.pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled  > span {
+.palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled::before {
     font-family: var(--font-label);
     font-size: 11px;
     color: var(--bg);
@@ -4130,7 +4167,7 @@ div#pfiche br, .pjournal br {
     display: flex;
     flex-direction: row;
     gap: 6px;
-    margin-bottom: 8px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
 }
 .pjournal-item-row {
@@ -4161,7 +4198,12 @@ margin: 5px 0 0px 0;
 .pjournal-item-row img {
     height: 30px;
     position: absolute;
-    border-radius: 10px;
+    border-radius: 10px;z-index:1;
+}
+.--conso .pjournal-item-row img {
+    position: relative;
+    order: -2;
+    height: 20px;
 }
 .pjournal-item-row span {
     display: inline;
@@ -4186,6 +4228,7 @@ margin: 5px 0 0px 0;
     padding: 0;
     position: relative;
     max-width: 80%;
+    gap: 3px;
 }
 .pjournal-item-list.--conso .pjournal-item-row div {
     margin: 0;
