@@ -2281,7 +2281,7 @@ input:checked+.checkbox-check:after {
   max-width: 700px;
   margin: 0 auto;
 }
-.post-wrap:has(#pfiche) .post-aside, .post-wrap:has(#pfiche) .post-author-title, .post-wrap:has(#pfiche) .post-date, div#pfiche br {
+.post-wrap:has(#pfiche) .post-aside, .post-wrap:has(#pfiche) .post-author-title, .post-wrap:has(#pfiche) .post-date, .post-wrap:has(#pfiche) .post-author-name, div#pfiche br {
     display: none;
 }
 .post-wrap:has(#pfiche) .post, .post-wrap:has(#pfiche) .post-content {
@@ -2313,10 +2313,18 @@ input:checked+.checkbox-check:after {
     padding: 15px;
     margin-left: 220px;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 5px 5px;
     height: 200px;
     align-content: flex-end;
     width: 60%;
+}
+.pfiche-infos > div:not(.pfiche-title, .pfiche-legend, .pfiche-avatar) {
+    background: var(--accent);
+    border-radius: 10px;
+    font-family: var(--font-label);
+    font-weight: 600;
+    padding: 2px 10px 0px;
+    color: var(--bg);
 }
 .pfiche-title {
     position: absolute;
@@ -2325,6 +2333,25 @@ input:checked+.checkbox-check:after {
     font-size: 60px;
     top: -5px;
     text-shadow: 0px 0 20px black;
+    
+    background: none;
+}
+.pfiche-legend {
+    position: absolute;
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    top: 70px;
+    text-shadow: 0 0 10px black;
+    font-weight: 500;
+    background: none;
+}
+.pfiche-text br {
+    display: block !important;
+}
+.pfiche-text {
+    margin: 0 auto;
+    width: 700px;
+    font-size: 15px;
 }
 /* --- Onglets CSS purs (radio hack) --- */
 .pfiche-radio {
@@ -2348,9 +2375,6 @@ input:checked+.checkbox-check:after {
 
 .pfiche-panel {
   display: none;
-  padding: 24px;
-  flex-direction: column;
-  gap: 16px;
 }
 
 #pfiche-tab1:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab1"],
