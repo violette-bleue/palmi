@@ -3750,18 +3750,20 @@ input:checked+.checkbox-check:after {
     overflow: hidden;
     display: flex;
     align-items: center;
-    background: var(--flash);
+}
+.pjournal-banniere:has(img:empty) {
+      background: var(--flash);
     mask-image: var(--icon-pokeball);
     mask-size: 60px;
     mask-position: 60px -5px;
-  animation: 4s linear 0s infinite test;
+  animation: 10s linear 0s infinite test;
 }
 @keyframes test {
   from {
     mask-position: 60px -5px;
   }
   to {
-    mask-position: 600px -5px;
+    mask-position: 120px -65px;
   }
 }
 /* --- Masquage éléments post natifs FA quand la fiche est présente --- */
