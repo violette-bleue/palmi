@@ -3724,279 +3724,348 @@ input:checked+.checkbox-check:after {
 }
 
 
-/* ============================================= */
-/* === FICHE DE PRÉSENTATION === */
-/* ============================================= */
+/* =============================================================== */
+/* FICHES ET JOURNAUX */
+/* =============================================================== */
 
-.pfiche {
-  background   : var(--panel);
-  border       : var(--border);
+/* 1. Conteneur principal */
+/* AVANT : .pfiche { ... } */
+/* APRÈS : */
+.pfiche, .pjournal {
+  background: var(--panel);
+  border: var(--border);
   border-radius: 12px;
-  overflow     : hidden;
-  font-family  : var(--font-body);
-  color        : var(--text);
-  max-width    : 700px;
-  margin       : 0 auto;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--text);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.pjournal {
+  max-width: 900px; /* override : le journal est plus large */
 }
 
-.post-wrap:has(#pfiche) .post-aside,
-.post-wrap:has(#pfiche) .post-author-title,
-.post-wrap:has(#pfiche) .post-date,
-.post-wrap:has(#pfiche) .post-author-name,
-div#pfiche br {
+/* 2. En-tête */
+/* AVANT : .pfiche-header { ... } */
+/* APRÈS : */
+.pfiche-header, .pjournal-header {
+  padding: 20px 24px;
+  border-bottom: var(--border);
+  text-align: center;
+}
+
+/* 3. Radios (onglets, invisibles) */
+/* AVANT : .pfiche-radio { display: none; } */
+/* APRÈS : */
+.pfiche-radio, .pjournal-radio {
   display: none;
 }
 
-.post-wrap:has(#pfiche) .post,
-.post-wrap:has(#pfiche) .post-content {
-  padding: 0;line-height: normal;
-
+/* 4. Barre d'onglets */
+/* AVANT : .pfiche-tabbar { ... } */
+/* APRÈS : */
+.pfiche-tabbar, .pjournal-tabbar {
+  display: flex;
+  background: var(--bg);
+  border-bottom: 2px solid var(--line);
+  height: 40px;
+  align-items: flex-end;
 }
 
-.pfiche-banniere {
-  position      : absolute;
-  top           : 0;
-  left          : 0;
-  width         : 100%;
-  height        : 200px;
-  overflow      : hidden;
-  pointer-events: none;
-  z-index       : -1;
-  border-bottom : 2px solid var(--line);
-}
-
-.pfiche-avatar {
-  width        : 200px;
-  height       : 170px;
-  overflow     : hidden;
-  border-radius: 10px;
-  position     : absolute;
-  left         : 15px;
-  border       : 2px solid var(--accent);
-}
-
-.pfiche-infos {
-  display       : flex;
-  flex-direction: row;
-  padding       : 15px;
-  margin-left   : 220px;
-  flex-wrap     : wrap;
-  gap           : 5px 5px;
-  height        : 200px;
-  align-content : flex-end;
-  width         : 60%;
-}
-
-.pfiche-infos>div:not(.pfiche-title, .pfiche-legend, .pfiche-avatar) {
-  background   : var(--accent);
-  border-radius: 10px;
-  font-family  : var(--font-label);
-  font-weight  : 600;
-  padding      : 2px 10px 0px;
-  color        : var(--bg);
-}
-
-.pfiche-title {
-  position      : absolute;
-  font-family   : var(--font-title);
+/* 5. Label d'onglet */
+/* AVANT : .pfiche-tab-label { ... } */
+/* APRÈS : */
+.pfiche-tab-label, .pjournal-tab-label {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-label);
+  font-size: 12px;
   text-transform: uppercase;
-  font-size     : 60px;
-  top           : 0px;
-  text-shadow   : 0px 0 20px black;
-
-  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  margin: 0;
+  padding-bottom: 7px;
+  border-bottom: 0px solid transparent;
+  transition: color .15s ease, border-bottom .05s ease;
+}
+.pfiche-tab-label:hover, .pjournal-tab-label:hover {
+  color: var(--accent);
+  padding-bottom: 10px;
 }
 
-.pfiche-legend {
-  position      : absolute;
-  font-family   : var(--font-label);
-  text-transform: uppercase;
-  top           : 70px;
-  text-shadow   : 0 0 10px black;
-  font-weight   : 500;
-  background    : none;
-}
-
-.pfiche-text > span br {
-  display: block !important;
-}
-
-.pfiche-text {
-  width    : 700px;
-  font-size: 15px;
-border-left: 2px solid var(--line);
-    padding-left: 20px;
-    margin: 20px auto;
-}
-.pfiche-panel.pfiche-panel-3 {
-    padding: 20px 100px;    gap: 15px;
-
-}
-.pfiche-panel.pfiche-panel-3 > div {
-    display: flex;
-    position: relative;
-    gap: 15px;
-}
-.pfiche-label[data-reponse] {
-    background: var(--accent);
-    border-radius: 10px;
-    color: var(--bg);
-    font-weight: 600;
-    font-family: var(--font-label);
-    padding: 2px 10px 0px;
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-.pfiche-label[data-reponse*="ui"]::before {
-    font-family: 'Material Icons';
-    content: 'check_circle';
-    font-size: 18px;
-    line-height: 1;
-}
-.pfiche-label[data-reponse*="on"]::before {
-    font-family: 'Material Icons';
-    content: 'cancel';
-    font-size: 18px;
-    line-height: 1;
-}
-.pfiche-label[data-reponse*="on"] {
-    background: var(--group-4);
-    opacity: .2;
-}
-
-.pfiche-h2:empty {
-    display: none;
-}
-
-.pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) > div .pfiche-label {
-    color: var(--accent);
-    font-weight: 600;
-}
-.pfiche-tag {
-    display: inline-flex;
-    background: var(--panel);
-    width: fit-content;
-    border-radius: 10px;
-    padding: 0px 10px 0;
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-family: var(--font-label);
-    text-transform: uppercase;
-    font-size: 10px;
-    font-weight: 500;
-}
-.pfiche-panel.pfiche-panel-2 .pfiche-tag {
-    top: initial;
-    display: flex;
-    justify-content: flex-end;
-    right: 870px;
-    left: unset;
-}
-.pfiche-h2 {
-    font-family: var(--font-title);
-    text-transform: uppercase;
-    font-size: 30px;
-    width: fit-content;
-    background: none !important;
-    border: none !important;
-}
-.pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) > div {
-    background: var(--panel);
-    border: 2px solid var(--line);
-    border-radius: 10px;
-    padding: 4px 10px;
-}
-.pfiche-panel.pfiche-panel-3 > div:has(.palmi-poke-inline) {
-    height: 300px;
-    padding-left: 320px;    flex-direction: column;
-}
-.pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled {
-    position: absolute;
-    width: auto;
-    height: 100%;
-}
-.pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled img {
-    height: 100%;
-}
-.pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled {
-    position: absolute;
-    
-    left: 0;
-    width: auto;
-    height: 100%;
-    background: var(--panel);
-    border-radius: 10px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-        overflow: hidden;
-    border: 2px solid var(--line);z-index: -1;
-}
-.pfiche-panel.pfiche-panel-3 > div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled span {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    background: var(--bg);
-    padding: 5px 20px 0;
-    font-family: var(--font-label);
-    font-weight: 600;
-    color: var(--text);
-    text-transform: uppercase;
-}
-
-/* --- Onglets CSS purs (radio hack) --- */
-.pfiche-radio {
+/* 6. Panneau de contenu */
+/* AVANT : .pfiche-panel { ... } */
+/* APRÈS : */
+.pfiche-panel, .pjournal-panel {
   display: none;
-}
-
-.pfiche-tabbar {
-    display: flex;
-    background: var(--bg);
-    border-bottom: 2px solid var(--line);
-    height: 40px;
-    align-items: flex-end;
-}
-
-.pfiche-tab-label {
-    flex: 1;
-    text-align: center;
-    padding-bottom: 7px;
-    font-family: var(--font-label);
-    font-size: 12px;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: pointer;
-    transition: color .15s ease, border-bottom .05s ease;
-    margin: 0;
-    border-bottom: 0px solid transparent;
-}
-.pfiche-tab-label:hover {
-    color: var(--accent);
-    padding-bottom: 10px;}
-.pfiche-panel {
-  display: none;
-    line-height: 27px;
-}
-
-#pfiche-tab1:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab1"], #pfiche-tab2:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab2"], #pfiche-tab3:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab3"] {
-    color: var(--accent);
-    border-bottom: 2px solid var(--accent);
-}
-
-#pfiche-tab1:checked~.pfiche-panel-1,
-#pfiche-tab2:checked~.pfiche-panel-2,
-#pfiche-tab3:checked~.pfiche-panel-3 {
-  display       : flex;
+  padding: 24px;
   flex-direction: column;
-    position: relative;
+  gap: 16px;
+  line-height: 27px;
 }
 
-/* --- Champs --- */
+/* 7. États actifs des onglets (checked) — ajouter les sélecteurs pjournal à la liste */
+/* AVANT :
+#pfiche-tab1:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab1"],
+#pfiche-tab2:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab2"],
+#pfiche-tab3:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab3"] { ... }
+*/
+/* APRÈS : */
+#pfiche-tab1:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab1"],
+#pfiche-tab2:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab2"],
+#pfiche-tab3:checked ~ .pfiche-tabbar .pfiche-tab-label[for="pfiche-tab3"],
+#pjournal-tab1:checked ~ .pjournal-tabbar .pjournal-tab-label[for="pjournal-tab1"],
+#pjournal-tab2:checked ~ .pjournal-tabbar .pjournal-tab-label[for="pjournal-tab2"],
+#pjournal-tab3:checked ~ .pjournal-tabbar .pjournal-tab-label[for="pjournal-tab3"] {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* 8. Affichage du panneau actif — idem, ajouter les sélecteurs pjournal */
+/* APRÈS : */
+#pfiche-tab1:checked ~ .pfiche-panel-1,
+#pfiche-tab2:checked ~ .pfiche-panel-2,
+#pfiche-tab3:checked ~ .pfiche-panel-3,
+#pjournal-tab1:checked ~ .pjournal-panel-1,
+#pjournal-tab2:checked ~ .pjournal-panel-2,
+#pjournal-tab3:checked ~ .pjournal-panel-3 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 9. Optionnel (texte grisé entre parenthèses) */
+/* AVANT : .pfiche-optional { ... } */
+/* APRÈS : */
+.pfiche-optional, .pjournal-optional {
+  opacity: .6;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* 10. Sous-titre de section */
+/* AVANT : .pfiche-subtitle { ... } */
+/* APRÈS : */
+.pfiche-subtitle, .pjournal-subtitle {
+  font-family: var(--font-title);
+  font-size: 17px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-top: var(--border);
+  padding-top: 16px;
+  margin-top: 4px;
+}
+.pfiche-panel > .pfiche-subtitle:first-child,
+.pjournal-panel > .pjournal-subtitle:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* JOURNAL SPE */
+
+.pjournal-subtitle-main {
+  font-family: var(--font-label);
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* --- Inventaire : PC Pokémon --- */
+.pjournal-pc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.pjournal-pc-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border: var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  text-align: center;
+}
+.pjournal-pc-nickname {
+  font-family: var(--font-label);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* --- Inventaire : objets --- */
+.pjournal-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.pjournal-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border: var(--border);
+  border-radius: 8px;
+  background: var(--bg-soft);
+}
+.pjournal-item-name {
+  font-family: var(--font-label);
+  font-size: 13px;
+  color: var(--text);
+}
+.pjournal-item-desc {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: right;
+  flex: 1;
+}
+.pjournal-item-qty {
+  font-family: var(--font-label);
+  font-size: 12px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* --- Équipe : grille 6 cartes --- */
+.pjournal-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.pjournal-team-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border: var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+}
+.pjournal-team-card--empty {
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 13px;
+  border-style: dashed;
+}
+
+.pjournal-team-species .palmi-poke-inline {
+  flex-direction: column;
+  gap: 4px;
+}
+.pjournal-team-species .palmi-poke-inline-sprite {
+  width: 72px;
+  height: 72px;
+}
+.pjournal-team-species .palmi-poke-inline-name {
+  font-family: var(--font-title);
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.pjournal-team-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+.pjournal-team-label {
+  font-family: var(--font-label);
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: .04em;
+}
+.pjournal-team-value {
+  color: var(--text);
+  text-align: right;
+}
+
+.pjournal-team-attacks {
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+.pjournal-team-attack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+.pjournal-team-attack {
+  font-size: 12px;
+  color: var(--text);
+  padding: 2px 6px;
+  background: var(--panel);
+  border-radius: 4px;
+}
+
+.pjournal-team-contest {
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+.pjournal-contest-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  padding: 2px 0;
+}
+.pjournal-contest-val {
+  color: var(--accent);
+  font-family: var(--font-label);
+}
+
+/* --- Suivi RP : tableau --- */
+.pjournal-rp-table {
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pjournal-rp-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line);
+}
+.pjournal-rp-row:last-child {
+  border-bottom: none;
+}
+.pjournal-rp-row--head {
+  background: var(--bg-soft);
+  font-family: var(--font-label);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+.pjournal-rp-row a {
+  color: var(--accent);
+}
+
+/* ============================================= */
+/* === RESPONSIVE === */
+/* ============================================= */
+@media (max-width: 700px) {
+  .pjournal-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pjournal-rp-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
 
 
 
