@@ -3721,6 +3721,7 @@ input:checked+.checkbox-check:after {
 /* =============================================================== */
 /* FICHES ET JOURNAUX */
 /* =============================================================== */
+
 /* ============================================= */
 /* === FICHE DE PRÉSENTATION === */
 /* ============================================= */
@@ -3740,7 +3741,6 @@ input:checked+.checkbox-check:after {
 }
 
 .pfiche-header, .pjournal-header {
-  padding: 20px 24px;
   border-bottom: var(--border);
   text-align: center;
 }
@@ -3750,7 +3750,7 @@ input:checked+.checkbox-check:after {
 .post-wrap:has(#pfiche) .post-author-title,
 .post-wrap:has(#pfiche) .post-date,
 .post-wrap:has(#pfiche) .post-author-name,
-div#pfiche br {
+div#pfiche br, .pjournal br {
   display: none;
 }
 
@@ -3871,7 +3871,7 @@ div#pfiche br {
   display: flex;
   background: var(--bg);
   border-bottom: 2px solid var(--line);
-  height: 40px;
+  height: 35px;
   align-items: flex-end;
 }
 
