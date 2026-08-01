@@ -4607,6 +4607,8 @@ div#pfiche br,
   flex-wrap      : wrap;
   align-content  : flex-end;
   justify-content: flex-start;
+  
+    pointer-events: none;
 }
 span.pjournal-surnom {
     display: flex;
@@ -4616,8 +4618,7 @@ span.pjournal-surnom {
     flex-direction: row-reverse;
 }
 .pjournal-team-field span.pjournal-surnom::after {
-    position: absolute;
-    top: -10px;
+    position: relative;
     background: var(--flash);
     border-radius: 10px;
     padding: 1px 10px 0;
@@ -4912,11 +4913,13 @@ div#palmi-topics-sousforum .palmi-zone-caption {
 }
 
 .palmi-poke-inline-types {
-  display: flex;
-  gap: 4px;
-  margin-top: 2px;
+    position: absolute;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    left: 10px;
 }
 .palmi-poke-inline-type svg {
-  width: 18px;
-  height: 18px;
+    width: 30px;
+    height: 30px;
 }
