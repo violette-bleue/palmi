@@ -2005,7 +2005,58 @@ span.post-heading-wrap>a {
   padding   : 0 !important;
 }
 
-
+.palmi-badges {
+    display: flex;
+    height: 100%;
+}
+.palmi-badges .palmi-badge {
+    border: none;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    margin: 0;
+}
+.palmi-badges {
+    display: flex;
+    height: 100%;
+    gap: 3px;
+    align-items: center;
+}
+.palmi-badges .palmi-badge {
+    border: none;
+    height: 30px;
+    width: 25px;
+    padding: 0px;
+    margin: 0;
+    position: relative;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+span.award_tooltiptext {
+    background: var(--accent);
+    border: none;
+    color: var(--bg);
+    text-transform: uppercase;
+    height: fit-content;
+    padding: 4px 10px 0;
+    margin: 0;
+    width: fit-content;
+    word-break: unset;
+    white-space: nowrap;
+    border-radius: 10px;
+    display: flex;
+    left: 30px;
+    top: 15px;
+    font-family: var(--font-label);
+}
+.award_tooltiptext_title {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: normal;
+    padding: 0;
+}
+.award_tooltiptext::after {display:none;}
 .post-wrap {
   background   : var(--panel);
   border       : var(--border);
@@ -2154,7 +2205,6 @@ span.post-heading-wrap>a {
 }
 
 .post-author {
-  min-width: 200px;
   height   : 40px;
   overflow : visible;
   position : relative;
@@ -2973,12 +3023,13 @@ div.sceditor-toolbar {
 }
 
 .palmi-poke-header-row {
-  order        : -1;
-  width        : 100%;
-  /* margin-top: -40px; */
-  z-index      : -1;
+    order: -1;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    flex-wrap: wrap;
 }
-
+ 
 .palmi-poke-header-slot img {
   height: 60px;
 }
