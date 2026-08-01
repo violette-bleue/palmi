@@ -2041,6 +2041,9 @@ span.post-heading-wrap>a {
   font-size    : 0 !important;
   border-radius: 8px;
 }
+.topic-actions-inline a {
+    font-size: 0 !important;
+}
 
 .topic-actions-inline>a {
   background: transparent !important;
@@ -3932,8 +3935,6 @@ input:checked+.checkbox-check:after {
 
 .pfiche-header,
 .pjournal-header {
-  border-bottom: var(--border);
-  text-align   : center;
   position     : relative;
 }
 
@@ -3975,15 +3976,17 @@ div#pfiche br,
 
 /* --- Bannière et avatar --- */
 .pfiche-banniere {
-  position      : absolute;
-  top           : 0;
-  left          : 0;
-  width         : 100%;
-  height        : 200px;
-  overflow      : hidden;
-  pointer-events: none;
-  z-index       : -1;
-  border-bottom : 2px solid var(--line);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+    border-bottom: 2px solid var(--line);
+    display: flex;
+    align-items: center;
 }
 
 .pjournal-banniere {
@@ -4016,17 +4019,17 @@ div#pfiche br,
   left         : 15px;
   border       : 2px solid var(--accent);
 }
-
 .pfiche-infos {
-  display       : flex;
-  flex-direction: row;
-  padding       : 15px;
-  margin-left   : 220px;
-  flex-wrap     : wrap;
-  gap           : 5px 5px;
-  height        : 200px;
-  align-content : flex-end;
-  width         : 60%;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    margin-left: 220px;
+    flex-wrap: wrap;
+    gap: 5px 5px;
+    height: 300px;
+    align-content: flex-end;
+    width: 60%;
+    align-items: flex-end;
 }
 
 .pfiche-infos>div:not(.pfiche-title, .pfiche-legend, .pfiche-avatar) {
@@ -4040,23 +4043,25 @@ div#pfiche br,
 
 /* --- Titre et légende (superposés à la bannière) --- */
 .pfiche-title {
-  position      : absolute;
-  font-family   : var(--font-title);
-  text-transform: uppercase;
-  font-size     : 60px;
-  top           : 0px;
-  text-shadow   : 0px 0 20px black;
-  background    : none;
+    position: relative;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    font-size: 60px;
+    top: 0px;
+    text-shadow: 0px 0 20px black;
+    background: none;
+    width: 100%;
 }
 
 .pfiche-legend {
-  position      : absolute;
-  font-family   : var(--font-label);
-  text-transform: uppercase;
-  top           : 70px;
-  text-shadow   : 0 0 10px black;
-  font-weight   : 500;
-  background    : none;
+    position: relative;
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    text-shadow: 0 0 10px black;
+    font-weight: 500;
+    background: none;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 /* --- Tag (badge coin) --- */
@@ -4560,7 +4565,7 @@ div#pfiche br,
   top     : 0;
   left    : 0;
   width   : 100%;
-  z-index : 0;
+  z-index : 1;
   overflow: hidden;
   height  : 222px;
 }
@@ -4603,24 +4608,42 @@ div#pfiche br,
   align-content  : flex-end;
   justify-content: flex-start;
 }
-
-.pjournal-team-field span.pjournal-surnom {
-  position      : absolute;
-  top           : -10px;
-  background    : var(--flash);
-  border-radius : 10px;
-  padding       : 1px 10px 0;
-  font-family   : var(--font-label);
-  font-weight   : 600;
-  color         : var(--bg);
-  line-height   : normal;
-  text-transform: uppercase;
+span.pjournal-surnom {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    flex-direction: row-reverse;
 }
-
-.pjournal-surnom:empty {
-  display: none;
+.pjournal-team-field span.pjournal-surnom::after {
+    position: absolute;
+    top: -10px;
+    background: var(--flash);
+    border-radius: 10px;
+    padding: 1px 10px 0;
+    font-family: var(--font-label);
+    font-weight: 600;
+    color: var(--bg);
+    line-height: normal;
+    text-transform: uppercase;
+    content: attr(data-surnom);
 }
-
+.pjournal:has(.palmi-poke-inline--shiny) .pjournal-surnom::before {
+    content: 'auto_awesome';
+    font-family: 'Material Symbols Outlined';
+    text-transform: none;
+    font-size: 20px;
+    position: relative;
+    color: var(--flash);
+    z-index: 165;
+    top: -10px;
+    line-height: 18px;
+    top: 0px;
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 0px 5px;
+    height: 100%;
+}
 .pjournal-tag {
   background    : var(--accent);
   color         : var(--bg);
@@ -4850,7 +4873,7 @@ form#quick_reply {
 }
 
 
-div#palmi-topics-sousforum .palmi-cat-title.palmi-cat-reglement-contexte-fonctionnement {
+div#palmi-topics-sousforum .palmi-cat-title {
     display: none;
 }
 div#palmi-topics-sousforum {
@@ -4859,13 +4882,41 @@ div#palmi-topics-sousforum {
 
 div#palmi-topics-sousforum .palmi-zones-grid {
     gap: 5px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
-.palmi-zones-grid:not(.palmi-cat-administration) .palmi-zone-media {
+div#palmi-topics-sousforum .palmi-zones-grid .palmi-zone-media {
     min-height: fit-content;
 }
-.palmi-zone-caption {
+div#palmi-topics-sousforum .palmi-zone-caption {
     padding: 0px 15px !important;
     max-width: unset;
     display: flex;
+}
+.post-wrap:has(.pjournal) .palmi-badges {
+    position: absolute;
+    left: 250px;
+    top: 230px;
+    width: 690px;
+    height: 0;
+}
+.post-wrap:has(.pjournal) .palmi-badges .palmi-badge {
+    border: none;
+    height: 60px;
+    width: 65px;
+    padding: 0px;
+    margin: 0;
+    position: relative;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.palmi-poke-inline-types {
+  display: flex;
+  gap: 4px;
+  margin-top: 2px;
+}
+.palmi-poke-inline-type svg {
+  width: 18px;
+  height: 18px;
 }
