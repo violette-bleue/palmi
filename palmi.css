@@ -3675,6 +3675,33 @@ div#palmi-sommaire > div:first-of-type a {
     color: var(--muted) !important;
     font-weight: 500;
     padding: 0;
+    gap: 10px;
+}
+[id] {
+    scroll-margin-top: 115px;
+}
+.palmi-listing br {
+    display: none;
+}
+.palmi-listing > div:not(:first-of-type) > a {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+    border: 2px solid var(--line);
+    position: relative;
+}
+.palmi-listing > div > div {
+    width: 100%;
+    margin: 10px 0;
+}
+.palmi-listing > div > div:first-of-type {
+    margin: 0;
+}
+.palmi-listing > div:not(:first-of-type) > a img {
+    width: 100%;
+    position: absolute;
+    max-width: none;
 }
 /*ENVOIS MESSAGE*/
 #palmi-page>form {
@@ -4157,7 +4184,37 @@ div#pfiche br, .pjournal br {
   gap: 12px;
   margin-bottom: 40px;
 }
+.pjournal-pc-grid > div {
+    position: relative;
+}
 
+.pjournal-pc-grid > div > div:last-of-type {
+    position: absolute;
+    top: 100px;
+    background: var(--bg);
+    border: 2px solid var(--line);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px 10px 5px 10px;    right: 0;
+    width: 102px;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+}
+.pjournal-pc-grid > div:hover > div:last-of-type {
+    opacity: 1;
+}
+.pjournal-pc-grid > div > div:last-of-type span {
+    line-height: normal;
+    font-size: 10px;
+    display: flex;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--muted);
+}
 .pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled {
     height: 50px;
     display: flex;
@@ -4190,6 +4247,7 @@ div#pfiche br, .pjournal br {
     font-weight: 600;
     bottom: -10px;
     content: attr(data-surnom);
+    z-index: 5;
 }
 
 /* --- Inventaire : objets --- */
