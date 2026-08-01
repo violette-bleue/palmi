@@ -1725,7 +1725,7 @@ h1 {
     flex-direction: column;
     align-items: flex-end;
 }
-.btn-flat {
+.topic-actions-inline .btn-flat{
     background: transparent;
     color: var(--text);
     font-size: 0;
@@ -3907,7 +3907,116 @@ input:checked+.checkbox-check:after {
 .checkbox {
   border: none;
 }
+/* ============================================= */
+/* === SCEDITOR TOOLBAR (icônes Material Symbols) === */
+/* ============================================= */
 
+.sceditor-toolbar .sceditor-button {
+  background-image: none !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+  transition: background .15s ease !important;
+}
+.sceditor-toolbar .sceditor-button:hover {
+  background: var(--bg-soft) !important;
+}
+
+.sceditor-toolbar .sceditor-button div {
+  display: none !important;
+}
+
+.sceditor-toolbar .sceditor-button::before {
+  font-family: 'Material Symbols Outlined' !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  color: var(--muted) !important;
+  speak: none !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+.sceditor-toolbar .sceditor-button:hover::before {
+  color: var(--accent) !important;
+}
+.sceditor-toolbar .sceditor-button.disabled::before {
+  opacity: .35 !important;
+}
+.sceditor-toolbar .sceditor-button.active::before,
+.sceditor-toolbar .sceditor-button.hover::before {
+  color: var(--accent) !important;
+}
+
+/* --- Mise en forme texte --- */
+.sceditor-button-bold::before        { content: 'format_bold' !important; }
+.sceditor-button-italic::before      { content: 'format_italic' !important; }
+.sceditor-button-underline::before   { content: 'format_underlined' !important; }
+.sceditor-button-strike::before      { content: 'format_strikethrough' !important; }
+
+/* --- Alignement --- */
+.sceditor-button-left::before        { content: 'format_align_left' !important; }
+.sceditor-button-center::before      { content: 'format_align_center' !important; }
+.sceditor-button-right::before       { content: 'format_align_right' !important; }
+.sceditor-button-justify::before     { content: 'format_align_justify' !important; }
+
+/* --- Listes --- */
+.sceditor-button-bulletlist::before  { content: 'format_list_bulleted' !important; }
+.sceditor-button-orderedlist::before { content: 'format_list_numbered' !important; }
+.sceditor-button-horizontalrule::before { content: 'horizontal_rule' !important; }
+
+/* --- Contenus spéciaux --- */
+.sceditor-button-quote::before       { content: 'format_quote' !important; }
+.sceditor-button-code::before        { content: 'code' !important; }
+.sceditor-button-faspoiler::before   { content: 'visibility_off' !important; }
+.sceditor-button-fahide::before      { content: 'lock' !important; }
+.sceditor-button-table::before       { content: 'table_chart' !important; }
+
+/* --- Médias --- */
+.sceditor-button-servimg::before     { content: 'cloud_upload' !important; }
+.sceditor-button-image::before       { content: 'image' !important; }
+.sceditor-button-link::before        { content: 'link' !important; }
+.sceditor-button-embed::before       { content: 'add_link' !important; }
+.sceditor-button-youtube::before     { content: 'smart_display' !important; }
+
+/* --- Typographie --- */
+.sceditor-button-headers::before     { content: 'title' !important; }
+.sceditor-button-size::before        { content: 'format_size' !important; }
+.sceditor-button-color::before       { content: 'palette' !important; }
+.sceditor-button-font::before        { content: 'font_download' !important; }
+.sceditor-button-removeformat::before { content: 'format_clear' !important; }
+
+/* --- Divers --- */
+.sceditor-button-more::before        { content: 'more_horiz' !important; }
+.sceditor-button-subscript::before   { content: 'subscript' !important; }
+.sceditor-button-superscript::before { content: 'superscript' !important; }
+.sceditor-button-fascroll::before    { content: 'swap_horiz' !important; }
+.sceditor-button-faupdown::before    { content: 'swap_vert' !important; }
+.sceditor-button-farand::before      { content: 'shuffle' !important; }
+.sceditor-button-twemojifa::before   { content: 'mood' !important; }
+.sceditor-button-date::before        { content: 'calendar_today' !important; }
+.sceditor-button-time::before        { content: 'schedule' !important; }
+.sceditor-button-pastetext::before   { content: 'content_paste' !important; }
+.sceditor-button-source::before      { content: 'terminal' !important; }
+
+/* --- Toolbar générale (fond, séparateurs) --- */
+.sceditor-toolbar {
+  background: var(--bg-soft) !important;
+  border-bottom: var(--border) !important;
+  padding: 4px 6px !important;
+}
+.sceditor-group {
+  border-right: 1px solid var(--line) !important;
+  padding-right: 4px !important;
+  margin-right: 4px !important;
+}
+.sceditor-group:last-child {
+  border-right: none !important;
+}
 
 /* =============================================================== */
 /* FICHES ET JOURNAUX */
@@ -4676,11 +4785,12 @@ span.pjournal-surnom {
 }
 
 .pjournal-team-attack-list {
-  display              : grid;
-  gap                  : 2px;
-  grid-template-columns: repeat(3, 1fr);
-  height               : 90px;
-  align-content        : start;
+    display: flex;
+    gap: 2px;
+    height: 90px;
+    align-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .pjournal-team-attack {
@@ -4899,6 +5009,7 @@ div#palmi-topics-sousforum .palmi-zone-caption {
     top: 230px;
     width: 690px;
     height: 0;
+    align-items: flex-end;
 }
 .post-wrap:has(.pjournal) .palmi-badges .palmi-badge {
     border: none;
