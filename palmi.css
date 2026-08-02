@@ -1089,13 +1089,46 @@ ul#header-navigation>li>a>span {
 }
 
 ul#header-navigation>li>a>i {
-  font-size: 18px;
+    font-size: 18px;
+    font-family: 'material symbols outlined';
+    font-style: normal;
 }
 
 #header-navigation i+span {
   margin-left  : 4px;
   padding-right: 0;
 }
+#header-navigation li:has([href^="/"]) {
+    order: 1;
+}
+#header-navigation li:has([href^="/h2"]) {
+    order: 2;
+}
+#header-navigation li:has([href^="/faq"]) {
+    order: 5;
+}
+#header-navigation li:has([href^="/search"]) {
+    order: 10;
+}
+#header-navigation li:has([href^="/memberlist"]) {
+    order: 15;
+}
+#header-navigation li:has([href^="/groups"]) {
+    order: 20;
+}
+#header-navigation li:has([href^="/profile"]) {
+    order: 25;
+}
+#header-navigation li:has([href^="/priv"]) {
+    order: 30;
+}
+#header-navigation li:has([href^="/register"]) {
+    order: 35;
+}
+#header-navigation li:has([href^="/login"]) {
+    order: 40;
+}
+
 
 
 /* === Switcheroo === */
@@ -1853,6 +1886,35 @@ h1 {
     border-radius: 10px;
     background: var(--panel);
     border: 2px solid var(--line);overflow: hidden;
+}
+.btn-default, .mainoption, .button, .button1, .button2, .liteoption {
+    background-color: var(--accent);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / .14), 0 3px 1px -2px rgb(0 0 0 / .2), 0 1px 5px 0 rgb(0 0 0 / .12);
+    color: var(--bg);
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: normal;
+    padding: 0 10px;
+    cursor: pointer;
+    font-family: var(--font-label);
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+}
+.forum-lastpost, .posts-lastpost {
+    color: var(--muted);
+    font-size: 12px;
+}
+.notification-row {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 8px 16px;
+}
+.form-buttons {
+    padding: 0 10px;
 }
 .btn-default {
   background    : var(--accent) !important;
