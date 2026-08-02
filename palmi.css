@@ -3481,14 +3481,39 @@ span.palmi-dice-type {
     flex-direction: row;
     flex-wrap: wrap;
 }
-
+.palmi-dice-result {
+    background: var(--panel);
+    border: 2px solid var(--line);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.palmi-dice-result > div {
+    padding: 0 10px;
+}
+.palmi-dice-block--shiny > div > div {
+    font-size: 22px;
+    font-family: var(--font-label);
+    background: linear-gradient(90deg, var(--text) 0%, var(--text) 40%, var(--accent) 50%, var(--text) 60%, var(--text) 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: palmiShine 3s linear infinite;
+}
 .palmi-dice-block span.palmi-dice-label {
     position: relative;
     text-transform: uppercase;
     font-weight: 700;
     width: 100%;
 }
-
+.palmi-dice-block--shiny .palmi-dice-result--pokemon::before {
+    color: var(--flash);
+    content: 'auto_awesome';
+    font-family: 'Material Icons';
+    font-size: 35px;
+}
 /** MISE EN PAGE **/
 hr,
 hrpoke {
@@ -4032,7 +4057,7 @@ fieldset.form-buttons {
     gap: 5px;
     flex-wrap: wrap;
 }
-.btn {
+fieldset.form-buttons .btn {
     padding: 3px 10px !important;
     margin: 0 !important;
     background: var(--accent);
@@ -5007,7 +5032,10 @@ form#quick_reply {
     mask-position: 240px -65px;
   }
 }
-
+@keyframes palmiShine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
 
 div#palmi-topics-sousforum .palmi-cat-title {
     display: none;
