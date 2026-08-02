@@ -186,7 +186,11 @@ body.day {
   text-shadow   : 0 2px 10px rgba(0, 0, 0, .6);
   text-transform: uppercase;
 }
-
+div.award {
+    border: none !important;
+    width: 30px;
+    height: 30px;
+}
 .palmi-hero-badges-left,
 .palmi-hero-badges-right {
   position: absolute;
@@ -1705,6 +1709,17 @@ h1 {
     line-height: normal;
     white-space: nowrap;
 }
+.btn > span {
+    font-family: 'Material Icons';
+}
+
+.palmi-profile-stat-links > a {
+    color: var(--accent) !important;
+    display: inline-flex;
+    padding: 0;
+    font-size: 25px;
+    margin: 0 !important;
+}
 .block .block-content > br {
     display: none;
 }
@@ -2803,10 +2818,7 @@ div.sceditor-toolbar {
   flex-wrap       : wrap;
   gap             : 15px;
   position        : relative;
-  background-color: transparent;
-  box-shadow      : none;
-  border-radius   : 0;
-  padding         : 10px 0px;
+    flex-direction: row;
 }
 
 .cp .block-content label {
@@ -2821,6 +2833,7 @@ div.sceditor-toolbar {
 .cp .block {
   border: 2px solid var(--line);
 }
+
 
 .block-content>p {
   position  : absolute;
@@ -2893,7 +2906,13 @@ div.sceditor-toolbar {
 .palmi-profile-header {
   overflow: visible;
 }
-
+.palmi-profile-awards > div {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0 !important;
+background: transparent !important;    gap: 0;
+}
 .palmi-profile-banner {
   position     : absolute;
   height       : 150px;
@@ -3158,9 +3177,17 @@ div.sceditor-toolbar {
 
 /* Stats */
 .palmi-profile-stats-list {
-  margin: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
-
+.palmi-profile-stat-links {
+    position: relative;
+    order: 5;
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
 .palmi-profile-stat-row {
   display         : flex;
   justify-content : space-between;
@@ -5395,4 +5422,10 @@ div#palmi-topics-sousforum .palmi-zone-caption {
 .palmi-poke-inline-type svg {
   width : 30px;
   height: 30px;
+}
+
+/*AJUSTEMENTS*/
+label:has(input#profile_field_3_-10),
+label:has(input#profile_field_3_-21) {
+    display: none;
 }
