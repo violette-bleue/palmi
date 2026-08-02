@@ -1697,58 +1697,64 @@ h1 {
 }
 
 .btn-default {
-    background: var(--accent) !important;
-    color: var(--bg) !important;
-    width: fit-content;
-    padding: 2px 10px;
-    height: fit-content;
-    line-height: normal;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 12px;
+  background    : var(--accent) !important;
+  color         : var(--bg) !important;
+  width         : fit-content;
+  padding       : 2px 10px;
+  height        : fit-content;
+  line-height   : normal;
+  font-weight   : 600;
+  text-transform: uppercase;
+  font-size     : 12px;
 }
-.sort-form > div {
-    display: flex;
-    gap: 10px;
+
+.sort-form>div {
+  display: flex;
+  gap    : 10px;
 }
+
 .sort-form label {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-    gap: 5px;
+  height        : auto;
+  display       : flex;
+  flex-direction: row;
+  margin        : 0;
+  padding       : 0;
+  gap           : 5px;
 }
+
 #sort-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  position      : relative;
+  display       : flex;
+  flex-direction: column;
+  align-items   : flex-end;
 }
-.topic-actions-inline .btn-flat{
-    background: transparent;
-    color: var(--text);
-    font-size: 0;
-    padding: 0;
-    display: flex;
-    margin: 0;
-    align-items: center;
+
+.topic-actions-inline .btn-flat {
+  background : transparent;
+  color      : var(--text);
+  font-size  : 0;
+  padding    : 0;
+  display    : flex;
+  margin     : 0;
+  align-items: center;
 }
+
 #sort-btn.expanded+.sort-form {
-    display: flex;
+  display: flex;
 }
+
 .sort-form {
-    position: absolute;
-    width: auto;
-    z-index: 10000000000000000000000000;
-    display: none;
-    border-radius: 10px;
-    top: 45px;
-    box-shadow: none;
-    background: var(--panel);
-    border: 2px solid var(--line);
-    padding: 10px;
-    flex-direction: column;
+  position      : absolute;
+  width         : auto;
+  z-index       : 10000000000000000000000000;
+  display       : none;
+  border-radius : 10px;
+  top           : 45px;
+  box-shadow    : none;
+  background    : var(--panel);
+  border        : 2px solid var(--line);
+  padding       : 10px;
+  flex-direction: column;
 }
 
 .btn-red {
@@ -2041,8 +2047,9 @@ span.post-heading-wrap>a {
   font-size    : 0 !important;
   border-radius: 8px;
 }
+
 .topic-actions-inline a {
-    font-size: 0 !important;
+  font-size: 0 !important;
 }
 
 .topic-actions-inline>a {
@@ -2053,57 +2060,66 @@ span.post-heading-wrap>a {
 }
 
 .palmi-badges {
-    display: flex;
-    height: 100%;
+  display: flex;
+  height : 100%;
 }
+
 .palmi-badges .palmi-badge {
-    border: none;
-    height: 25px;
-    width: 25px;
-    padding: 0;
-    margin: 0;
+  border : none;
+  height : 25px;
+  width  : 25px;
+  padding: 0;
+  margin : 0;
 }
+
 .palmi-badges {
-    display: flex;
-    height: 100%;
-    gap: 3px;
-    align-items: center;
+  display    : flex;
+  height     : 100%;
+  gap        : 3px;
+  align-items: center;
 }
+
 .palmi-badges .palmi-badge {
-    border: none;
-    height: 30px;
-    width: 25px;
-    padding: 0px;
-    margin: 0;
-    position: relative;
-    background-size: 25px;
-    background-repeat: no-repeat;
-    background-position: center;
+  border             : none;
+  height             : 30px;
+  width              : 25px;
+  padding            : 0px;
+  margin             : 0;
+  position           : relative;
+  background-size    : 25px;
+  background-repeat  : no-repeat;
+  background-position: center;
 }
+
 span.award_tooltiptext {
-    background: var(--accent);
-    border: none;
-    color: var(--bg);
-    text-transform: uppercase;
-    height: fit-content;
-    padding: 4px 10px 0;
-    margin: 0;
-    width: fit-content;
-    word-break: unset;
-    white-space: nowrap;
-    border-radius: 10px;
-    display: flex;
-    left: 30px;
-    top: 15px;
-    font-family: var(--font-label);
+  background    : var(--accent);
+  border        : none;
+  color         : var(--bg);
+  text-transform: uppercase;
+  height        : fit-content;
+  padding       : 4px 10px 0;
+  margin        : 0;
+  width         : fit-content;
+  word-break    : unset;
+  white-space   : nowrap;
+  border-radius : 10px;
+  display       : flex;
+  left          : 30px;
+  top           : 15px;
+  font-family   : var(--font-label);
 }
+
 .award_tooltiptext_title {
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: normal;
-    padding: 0;
+  font-weight   : 700;
+  font-size     : 11px;
+  letter-spacing: normal;
+  padding       : 0;
 }
-.award_tooltiptext::after {display:none;}
+
+.award_tooltiptext::after {
+  display: none;
+}
+
 .post-wrap {
   background   : var(--panel);
   border       : var(--border);
@@ -2145,7 +2161,7 @@ span.award_tooltiptext {
   mask-image      : url(https://violette-bleue.github.io/palmi/dice.svg);
   mask-position   : 80px 30px;
   opacity         : .2;
-  animation    : 10s linear 0s infinite dicetranslate;
+  animation       : 10s linear 0s infinite dicetranslate;
 }
 
 .post-header {
@@ -2252,9 +2268,9 @@ span.award_tooltiptext {
 }
 
 .post-author {
-  height   : 40px;
-  overflow : visible;
-  position : relative;
+  height  : 40px;
+  overflow: visible;
+  position: relative;
 }
 
 .post-author-links img {
@@ -2278,23 +2294,24 @@ span.award_tooltiptext {
 }
 
 .post-author-title {
-    font-family: var(--font-label);
-    font-size: 11px;
-    background: var(--accent);
-    color: var(--bg);
-    padding: 2px 8px 0;
-    width: fit-content;
-    border-radius: 8px;
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 12px;
-    font-weight: 600;
-    max-width: 160px;
-    max-height: 30px;
-    line-height: 10px;
-    align-items: center;
+  font-family  : var(--font-label);
+  font-size    : 11px;
+  background   : var(--accent);
+  color        : var(--bg);
+  padding      : 2px 8px 0;
+  width        : fit-content;
+  border-radius: 8px;
+  display      : flex;
+  position     : absolute;
+  top          : 0;
+  right        : 12px;
+  font-weight  : 600;
+  max-width    : 160px;
+  max-height   : 30px;
+  line-height  : 10px;
+  align-items  : center;
 }
+
 .post-author-avatar {
   order  : -1;
   margin : 0;
@@ -2472,7 +2489,7 @@ div#breadcrumbs {
   text-transform: uppercase;
   border-bottom : 2px solid var(--line);
   height        : 40px;
-  overflow: visible;
+  overflow      : visible;
 }
 
 #breadcrumbs a i {
@@ -3074,13 +3091,13 @@ div.sceditor-toolbar {
 }
 
 .palmi-poke-header-row {
-    order: -1;
-    width: 100%;
-    z-index: -1;
-    display: flex;
-    flex-wrap: wrap;
+  order    : -1;
+  width    : 100%;
+  z-index  : -1;
+  display  : flex;
+  flex-wrap: wrap;
 }
- 
+
 .palmi-poke-header-slot img {
   height: 60px;
 }
@@ -3431,8 +3448,8 @@ main#forum {
   align-items    : center;
   justify-content: center;
   position       : relative;
-    background: none!important;
-    border: none!important;
+  background     : none !important;
+  border         : none !important;
 }
 
 .palmi-dice-block--d100 .palmi-dice-result.palmi-dice-result--number span.palmi-dice-value {
@@ -3463,15 +3480,15 @@ main#forum {
   gap     : 5px;
 }
 
-.palmi-dice-pokemon-info > span {
-    position: absolute;
-    bottom: 0;
-    background: var(--bg-soft);
-    padding: 5px 10px;
-    text-transform: uppercase;
-    font-weight: 700;
-    width: 100%;
-    left: 0;
+.palmi-dice-pokemon-info>span {
+  position      : absolute;
+  bottom        : 0;
+  background    : var(--bg-soft);
+  padding       : 5px 10px;
+  text-transform: uppercase;
+  font-weight   : 700;
+  width         : 100%;
+  left          : 0;
 }
 
 span.palmi-dice-type {
@@ -3480,113 +3497,134 @@ span.palmi-dice-type {
 }
 
 .palmi-dice-block {
-  display    : flex;
-  gap        : 15px;
-  padding-top: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display       : flex;
+  gap           : 15px;
+  padding-top   : 20px;
+  flex-direction: row;
+  flex-wrap     : wrap;
 }
+
 .palmi-dice-result {
-    background: var(--panel);
-    border: 2px solid var(--line);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
-        min-height: 80px;
-    min-width: 80px;
-    justify-content: center;
+  background     : var(--panel);
+  border         : 2px solid var(--line);
+  border-radius  : 10px;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  padding        : 0 10px;
+  min-height     : 80px;
+  min-width      : 80px;
+  justify-content: center;
+  font-weight    : 500;
 }
 
 
 .palmi-dice-block span.palmi-dice-label {
-    position: relative;
-    text-transform: uppercase;
-    font-weight: 700;
-    width: 100%;
+  position      : relative;
+  text-transform: uppercase;
+  font-weight   : 700;
+  width         : 100%;
 }
-.palmi-dice-block--shiny > div > div {
-    font-size: 22px;
-    font-family: var(--font-label);
-    background: linear-gradient(50deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%);
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: palmiShine 3s linear infinite;
-    font-weight: 500;
+
+.palmi-dice-block--shiny .--shiny {
+  font-size              : 22px;
+  font-family            : var(--font-label);
+  background             : linear-gradient(50deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%);
+  background-size        : 200% 100%;
+  background-clip        : text;
+  -webkit-background-clip: text;
+  color                  : transparent;
+  animation              : palmiShine 3s linear infinite;
+  font-weight            : 500;
 }
-.palmi-dice-block--shiny .palmi-dice-result--reward::before {
-    color: var(--flash);
-    content: 'auto_awesome';
-    font-family: 'Material Icons';
-    font-size: 35px;
-    background: linear-gradient(90deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%);
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: palmiShine 3s linear infinite;
-    line-height: normal;
-    top: 5px;
-    position: relative;
+
+.palmi-dice-block--shiny .palmi-dice-result--reward .--shiny::before {
+  color                  : var(--flash)!important;
+  content                : 'auto_awesome'!important;
+  font-family            : 'Material Icons'!important;
+  font-size              : 35px!important;
+  background             : linear-gradient(90deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%)!important;
+  background-size        : 200% 100%!important;
+  background-clip        : text!important;
+  background-repeat: repeat!important;
+  -webkit-background-clip: text!important;
+  color                  : transparent!important;
+  animation              : palmiShine 3s linear infinite;
+  line-height            : normal!important;
+  top                    : 5px!important;
+  position               : relative!important;
 }
+
 .palmi-dice-block--shiny .palmi-dice-result--number::after {
-    content: 'Rien...';
-    font-size: 15px;
-    color: var(--muted);
+  content  : 'Rien...';
+  font-size: 15px;
+  color    : var(--muted);
 }
+
 .palmi-dice-block--shiny .palmi-dice-result--number span {
-    font-size: 0;
-}.palmi-dice-block--shiny .palmi-dice-result--number:nth-child(1n)::before {
-    content: 'sick' !important;
+  font-size: 0;
 }
+
+.palmi-dice-block--shiny .palmi-dice-result--number:nth-child(1n)::before {
+  content: 'sick' !important;
+}
+
 .palmi-dice-block--shiny .palmi-dice-result--number:nth-child(2n)::before {
-    content: 'sentiment_very_dissatisfied' !important;
+  content: 'sentiment_very_dissatisfied' !important;
 }
+
 .palmi-dice-block--shiny .palmi-dice-result--number:nth-child(3n)::before {
-    content: 'sentiment_dissatisfied' !important;
+  content: 'sentiment_dissatisfied' !important;
 }
+
 .palmi-dice-block--shiny .palmi-dice-result--number:nth-child(4n)::before {
-    content: 'mood_bad' !important;
+  content: 'mood_bad' !important;
 }
+
 .palmi-dice-block--shiny .palmi-dice-result--number::before {
-    font-family: 'Material Symbols Outlined';
-    font-size: 35px;
-    position: relative;
-    height: 38px;
-    top: -6px;
-    color: var(--muted);
+  font-family: 'Material Symbols Outlined';
+  font-size  : 35px;
+  position   : relative;
+  height     : 38px;
+  top        : -6px;
+  color      : var(--muted);
 }
-.palmi-dice-result > span {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.palmi-dice-result>span {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
 }
-.palmi-dice-result:has([class*=" --"]) {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 40px;
-    background-size: contain;
-    background-repeat: no-repeat;
+
+:not(.palmi-dice-block--shiny) .palmi-dice-result:has([class*=" --"]) .palmi-dice-reward::before {
+  content          : '';
+  display          : block;
+  width            : 40px;
+  height           : 40px;
+  background-size  : contain;
+  background-repeat: no-repeat;
 }
+
 .--pierre.--plante::before {
-    background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Plante-CA.png);
+  background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Plante-CA.png);
 }
+
 .--pierre.--foudre::before {
-    background-image: url(https://www.pokepedia.fr/images/e/ea/Pierre_Foudre-CA.png);
+  background-image: url(https://www.pokepedia.fr/images/e/ea/Pierre_Foudre-CA.png);
 }
+
 .--pierre.--eau::before {
-    background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Eau-CA.png);
+  background-image: url(https://www.pokepedia.fr/images/2/2a/Pierre_Eau-CA.png);
 }
+
 .--pierre.--feu::before {
-    background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Feu-CA.png);
+  background-image: url(https://www.pokepedia.fr/images/6/6c/Pierre_Feu-CA.png);
 }
+
 .--baie::before {
-    background-image: url(https://www.pokepedia.fr/images/b/bf/Miniature_Baie_Oran_LPZA.png);
+  background-image: url(https://www.pokepedia.fr/images/b/bf/Miniature_Baie_Oran_LPZA.png);
 }
+
 /** MISE EN PAGE **/
 hr,
 hrpoke {
@@ -3896,35 +3934,38 @@ div#palmi-sommaire>div:first-of-type a {
   display: none;
 }
 
-.palmi-listing > div:not(:first-of-type) > a {
-    display: flex;
-    flex-direction: row;
-    background: var(--bg);
-    border: none;
-    position: relative;
-    color: var(--text) !important;
-    font-weight: 400;
-    gap: 5px;
-    align-items: center;
+.palmi-listing>div:not(:first-of-type)>a {
+  display       : flex;
+  flex-direction: row;
+  background    : var(--bg);
+  border        : none;
+  position      : relative;
+  color         : var(--text) !important;
+  font-weight   : 400;
+  gap           : 5px;
+  align-items   : center;
 }
-.palmi-listing > div:not(:first-of-type) > a > p {
-    order: -1;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    height: 100%;
+
+.palmi-listing>div:not(:first-of-type)>a>p {
+  order      : -1;
+  font-weight: 600;
+  display    : flex;
+  align-items: center;
+  height     : 100%;
 }
-.palmi-listing > div:not(:first-of-type) > a > p::after {
-    font-family: 'Material Icons';
-    content: 'catching_pokemon';
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 17px;
+
+.palmi-listing>div:not(:first-of-type)>a>p::after {
+  font-family           : 'Material Icons';
+  content               : 'catching_pokemon';
+  text-transform        : none;
+  line-height           : 1;
+  -webkit-font-smoothing: antialiased;
+  height                : 100%;
+  display               : flex;
+  align-items           : center;
+  font-size             : 17px;
 }
+
 .palmi-listing>div>div {
   width : 100%;
   margin: 10px 0;
@@ -4006,31 +4047,37 @@ input:checked+.checkbox-check:after {
 .checkbox {
   border: none;
 }
+
 /* ============================================= */
 /* === SCEDITOR TOOLBAR (icônes Material Symbols) === */
 /* ============================================= */
-.sceditor-group, .sceditor-toolbar {
-    background: none !important;border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
+.sceditor-group,
 .sceditor-toolbar {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0 30px;
+  background: none !important;
+  border    : none !important;
+  padding   : 0 !important;
+  margin    : 0 !important;
 }
+
+.sceditor-toolbar {
+  display              : grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap                  : 0 30px;
+}
+
 .sceditor-toolbar .sceditor-button {
   background-image: none !important;
-  width: 32px !important;
-  height: 32px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 6px !important;
-  transition: background .15s ease !important;
-  
-    text-indent: unset;
+  width           : 32px !important;
+  height          : 32px !important;
+  display         : inline-flex !important;
+  align-items     : center !important;
+  justify-content : center !important;
+  border-radius   : 6px !important;
+  transition      : background .15s ease !important;
+
+  text-indent: unset;
 }
+
 .sceditor-toolbar .sceditor-button:hover {
   background: var(--bg-soft) !important;
 }
@@ -4040,107 +4087,220 @@ input:checked+.checkbox-check:after {
 }
 
 .sceditor-toolbar .sceditor-button::before {
-  font-family: 'Material Symbols Outlined' !important;
-  font-size: 18px !important;
-  line-height: 1 !important;
-  color: var(--muted) !important;
-  speak: none !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
+  font-family           : 'Material Symbols Outlined' !important;
+  font-size             : 18px !important;
+  line-height           : 1 !important;
+  color                 : var(--muted) !important;
+  speak                 : none !important;
+  font-style            : normal !important;
+  font-weight           : normal !important;
+  font-variant          : normal !important;
+  text-transform        : none !important;
   -webkit-font-smoothing: antialiased !important;
 }
+
 .sceditor-toolbar .sceditor-button:hover::before {
   color: var(--accent) !important;
 }
+
 .sceditor-toolbar .sceditor-button.disabled::before {
   opacity: .35 !important;
 }
+
 .sceditor-toolbar .sceditor-button.active::before,
 .sceditor-toolbar .sceditor-button.hover::before {
   color: var(--accent) !important;
 }
 
 /* --- Mise en forme texte --- */
-.sceditor-button-bold::before        { content: 'format_bold' !important; }
-.sceditor-button-italic::before      { content: 'format_italic' !important; }
-.sceditor-button-underline::before   { content: 'format_underlined' !important; }
-.sceditor-button-strike::before      { content: 'format_strikethrough' !important; }
+.sceditor-button-bold::before {
+  content: 'format_bold' !important;
+}
+
+.sceditor-button-italic::before {
+  content: 'format_italic' !important;
+}
+
+.sceditor-button-underline::before {
+  content: 'format_underlined' !important;
+}
+
+.sceditor-button-strike::before {
+  content: 'format_strikethrough' !important;
+}
 
 /* --- Alignement --- */
-.sceditor-button-left::before        { content: 'format_align_left' !important; }
-.sceditor-button-center::before      { content: 'format_align_center' !important; }
-.sceditor-button-right::before       { content: 'format_align_right' !important; }
-.sceditor-button-justify::before     { content: 'format_align_justify' !important; }
+.sceditor-button-left::before {
+  content: 'format_align_left' !important;
+}
+
+.sceditor-button-center::before {
+  content: 'format_align_center' !important;
+}
+
+.sceditor-button-right::before {
+  content: 'format_align_right' !important;
+}
+
+.sceditor-button-justify::before {
+  content: 'format_align_justify' !important;
+}
 
 /* --- Listes --- */
-.sceditor-button-bulletlist::before  { content: 'format_list_bulleted' !important; }
-.sceditor-button-orderedlist::before { content: 'format_list_numbered' !important; }
-.sceditor-button-horizontalrule::before { content: 'horizontal_rule' !important; }
+.sceditor-button-bulletlist::before {
+  content: 'format_list_bulleted' !important;
+}
+
+.sceditor-button-orderedlist::before {
+  content: 'format_list_numbered' !important;
+}
+
+.sceditor-button-horizontalrule::before {
+  content: 'horizontal_rule' !important;
+}
 
 /* --- Contenus spéciaux --- */
-.sceditor-button-quote::before       { content: 'format_quote' !important; }
-.sceditor-button-code::before        { content: 'code' !important; }
-.sceditor-button-faspoiler::before   { content: 'visibility_off' !important; }
-.sceditor-button-fahide::before      { content: 'lock' !important; }
-.sceditor-button-table::before       { content: 'table_chart' !important; }
+.sceditor-button-quote::before {
+  content: 'format_quote' !important;
+}
+
+.sceditor-button-code::before {
+  content: 'code' !important;
+}
+
+.sceditor-button-faspoiler::before {
+  content: 'visibility_off' !important;
+}
+
+.sceditor-button-fahide::before {
+  content: 'lock' !important;
+}
+
+.sceditor-button-table::before {
+  content: 'table_chart' !important;
+}
 
 /* --- Médias --- */
-.sceditor-button-servimg::before     { content: 'cloud_upload' !important; }
-.sceditor-button-image::before       { content: 'image' !important; }
-.sceditor-button-link::before        { content: 'link' !important; }
-.sceditor-button-embed::before       { content: 'add_link' !important; }
-.sceditor-button-youtube::before     { content: 'smart_display' !important; }
+.sceditor-button-servimg::before {
+  content: 'cloud_upload' !important;
+}
+
+.sceditor-button-image::before {
+  content: 'image' !important;
+}
+
+.sceditor-button-link::before {
+  content: 'link' !important;
+}
+
+.sceditor-button-embed::before {
+  content: 'add_link' !important;
+}
+
+.sceditor-button-youtube::before {
+  content: 'smart_display' !important;
+}
 
 /* --- Typographie --- */
-.sceditor-button-headers::before     { content: 'title' !important; }
-.sceditor-button-size::before        { content: 'format_size' !important; }
-.sceditor-button-color::before       { content: 'palette' !important; }
-.sceditor-button-font::before        { content: 'font_download' !important; }
-.sceditor-button-removeformat::before { content: 'format_clear' !important; }
+.sceditor-button-headers::before {
+  content: 'title' !important;
+}
+
+.sceditor-button-size::before {
+  content: 'format_size' !important;
+}
+
+.sceditor-button-color::before {
+  content: 'palette' !important;
+}
+
+.sceditor-button-font::before {
+  content: 'font_download' !important;
+}
+
+.sceditor-button-removeformat::before {
+  content: 'format_clear' !important;
+}
 
 /* --- Divers --- */
-.sceditor-button-more::before        { content: 'more_horiz' !important; }
-.sceditor-button-subscript::before   { content: 'subscript' !important; }
-.sceditor-button-superscript::before { content: 'superscript' !important; }
-.sceditor-button-fascroll::before    { content: 'swap_horiz' !important; }
-.sceditor-button-faupdown::before    { content: 'swap_vert' !important; }
-.sceditor-button-farand::before      { content: 'shuffle' !important; }
-.sceditor-button-twemojifa::before   { content: 'mood' !important; }
-.sceditor-button-date::before        { content: 'calendar_today' !important; }
-.sceditor-button-time::before        { content: 'schedule' !important; }
-.sceditor-button-pastetext::before   { content: 'content_paste' !important; }
-.sceditor-button-source::before      { content: 'terminal' !important; }
+.sceditor-button-more::before {
+  content: 'more_horiz' !important;
+}
+
+.sceditor-button-subscript::before {
+  content: 'subscript' !important;
+}
+
+.sceditor-button-superscript::before {
+  content: 'superscript' !important;
+}
+
+.sceditor-button-fascroll::before {
+  content: 'swap_horiz' !important;
+}
+
+.sceditor-button-faupdown::before {
+  content: 'swap_vert' !important;
+}
+
+.sceditor-button-farand::before {
+  content: 'shuffle' !important;
+}
+
+.sceditor-button-twemojifa::before {
+  content: 'mood' !important;
+}
+
+.sceditor-button-date::before {
+  content: 'calendar_today' !important;
+}
+
+.sceditor-button-time::before {
+  content: 'schedule' !important;
+}
+
+.sceditor-button-pastetext::before {
+  content: 'content_paste' !important;
+}
+
+.sceditor-button-source::before {
+  content: 'terminal' !important;
+}
 
 /* --- Toolbar générale (fond, séparateurs) --- */
 .sceditor-toolbar {
-  background: var(--bg-soft) !important;
+  background   : var(--bg-soft) !important;
   border-bottom: var(--border) !important;
-  padding: 4px 6px !important;
+  padding      : 4px 6px !important;
 }
+
 .sceditor-group:last-child {
   border-right: none !important;
 }
-#smiley-box iframe, .smile-status-box iframe {
-    height: 520px!important;
+
+#smiley-box iframe,
+.smile-status-box iframe {
+  height: 520px !important;
 }
+
 fieldset.form-buttons {
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
+  display  : flex;
+  gap      : 5px;
+  flex-wrap: wrap;
 }
+
 fieldset.form-buttons .btn {
-    padding: 3px 10px !important;
-    margin: 0 !important;
-    background: var(--accent);
-    display: flex;
-    box-shadow: none;
-    height: auto;
-    align-items: center;
-    line-height: 0 !important;
-    font-size: 0;
+  padding    : 3px 10px !important;
+  margin     : 0 !important;
+  background : var(--accent);
+  display    : flex;
+  box-shadow : none;
+  height     : auto;
+  align-items: center;
+  line-height: 0 !important;
+  font-size  : 0;
 }
+
 /* =============================================================== */
 /* FICHES ET JOURNAUX */
 /* =============================================================== */
@@ -4167,7 +4327,7 @@ fieldset.form-buttons .btn {
 
 .pfiche-header,
 .pjournal-header {
-  position     : relative;
+  position: relative;
 }
 
 .pjournal-banniere {
@@ -4208,17 +4368,17 @@ div#pfiche br,
 
 /* --- Bannière et avatar --- */
 .pfiche-banniere {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: -1;
-    border-bottom: 2px solid var(--line);
-    display: flex;
-    align-items: center;
+  position      : absolute;
+  top           : 0;
+  left          : 0;
+  width         : 100%;
+  height        : 300px;
+  overflow      : hidden;
+  pointer-events: none;
+  z-index       : -1;
+  border-bottom : 2px solid var(--line);
+  display       : flex;
+  align-items   : center;
 }
 
 .pjournal-banniere {
@@ -4251,17 +4411,18 @@ div#pfiche br,
   left         : 15px;
   border       : 2px solid var(--accent);
 }
+
 .pfiche-infos {
-    display: flex;
-    flex-direction: row;
-    padding: 15px;
-    margin-left: 220px;
-    flex-wrap: wrap;
-    gap: 5px 5px;
-    height: 300px;
-    align-content: flex-end;
-    width: 60%;
-    align-items: flex-end;
+  display       : flex;
+  flex-direction: row;
+  padding       : 15px;
+  margin-left   : 220px;
+  flex-wrap     : wrap;
+  gap           : 5px 5px;
+  height        : 300px;
+  align-content : flex-end;
+  width         : 60%;
+  align-items   : flex-end;
 }
 
 .pfiche-infos>div:not(.pfiche-title, .pfiche-legend, .pfiche-avatar) {
@@ -4275,25 +4436,25 @@ div#pfiche br,
 
 /* --- Titre et légende (superposés à la bannière) --- */
 .pfiche-title {
-    position: relative;
-    font-family: var(--font-title);
-    text-transform: uppercase;
-    font-size: 60px;
-    top: 0px;
-    text-shadow: 0px 0 20px black;
-    background: none;
-    width: 100%;
+  position      : relative;
+  font-family   : var(--font-title);
+  text-transform: uppercase;
+  font-size     : 60px;
+  top           : 0px;
+  text-shadow   : 0px 0 20px black;
+  background    : none;
+  width         : 100%;
 }
 
 .pfiche-legend {
-    position: relative;
-    font-family: var(--font-label);
-    text-transform: uppercase;
-    text-shadow: 0 0 10px black;
-    font-weight: 500;
-    background: none;
-    width: 100%;
-    margin-bottom: 10px;
+  position      : relative;
+  font-family   : var(--font-label);
+  text-transform: uppercase;
+  text-shadow   : 0 0 10px black;
+  font-weight   : 500;
+  background    : none;
+  width         : 100%;
+  margin-bottom : 10px;
 }
 
 /* --- Tag (badge coin) --- */
@@ -4839,44 +5000,48 @@ div#pfiche br,
   flex-wrap      : wrap;
   align-content  : flex-end;
   justify-content: flex-start;
-  
-    pointer-events: none;
+
+  pointer-events: none;
 }
+
 span.pjournal-surnom {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: -10px;
-    flex-direction: row-reverse;
+  display       : flex;
+  align-items   : center;
+  position      : absolute;
+  top           : -10px;
+  flex-direction: row-reverse;
 }
+
 .pjournal-team-field span.pjournal-surnom::after {
-    position: relative;
-    background: var(--flash);
-    border-radius: 10px;
-    padding: 1px 10px 0;
-    font-family: var(--font-label);
-    font-weight: 600;
-    color: var(--bg);
-    line-height: normal;
-    text-transform: uppercase;
-    content: attr(data-surnom);
+  position      : relative;
+  background    : var(--flash);
+  border-radius : 10px;
+  padding       : 1px 10px 0;
+  font-family   : var(--font-label);
+  font-weight   : 600;
+  color         : var(--bg);
+  line-height   : normal;
+  text-transform: uppercase;
+  content       : attr(data-surnom);
 }
+
 .pjournal:has(.palmi-poke-inline--shiny) .pjournal-surnom::before {
-    content: 'auto_awesome';
-    font-family: 'Material Symbols Outlined';
-    text-transform: none;
-    font-size: 20px;
-    position: relative;
-    color: var(--flash);
-    z-index: 165;
-    top: -10px;
-    line-height: 18px;
-    top: 0px;
-    background: var(--bg);
-    border-radius: 10px;
-    padding: 0px 5px;
-    height: 100%;
+  content       : 'auto_awesome';
+  font-family   : 'Material Symbols Outlined';
+  text-transform: none;
+  font-size     : 20px;
+  position      : relative;
+  color         : var(--flash);
+  z-index       : 165;
+  top           : -10px;
+  line-height   : 18px;
+  top           : 0px;
+  background    : var(--bg);
+  border-radius : 10px;
+  padding       : 0px 5px;
+  height        : 100%;
 }
+
 .pjournal-tag {
   background    : var(--accent);
   color         : var(--bg);
@@ -4908,12 +5073,12 @@ span.pjournal-surnom {
 }
 
 .pjournal-team-attack-list {
-    display: flex;
-    gap: 2px;
-    height: 90px;
-    align-content: start;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display       : flex;
+  gap           : 2px;
+  height        : 90px;
+  align-content : start;
+  flex-direction: row;
+  flex-wrap     : wrap;
 }
 
 .pjournal-team-attack {
@@ -5096,6 +5261,7 @@ form#quick_reply {
     mask-position: 120px -65px;
   }
 }
+
 @keyframes dicetranslate {
   from {
     mask-position: 120px -5px;
@@ -5105,58 +5271,70 @@ form#quick_reply {
     mask-position: 240px -65px;
   }
 }
+
 @keyframes palmiShine {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 div#palmi-topics-sousforum .palmi-cat-title {
-    display: none;
+  display: none;
 }
+
 div#palmi-topics-sousforum {
-    margin: 0 0 20px;
+  margin: 0 0 20px;
 }
 
 div#palmi-topics-sousforum .palmi-zones-grid {
-    gap: 5px;
-    grid-template-columns: repeat(3, 1fr);
+  gap                  : 5px;
+  grid-template-columns: repeat(3, 1fr);
 }
+
 div#palmi-topics-sousforum .palmi-zones-grid .palmi-zone-media {
-    min-height: fit-content;
+  min-height: fit-content;
 }
+
 div#palmi-topics-sousforum .palmi-zone-caption {
-    padding: 0px 15px !important;
-    max-width: unset;
-    display: flex;
+  padding  : 0px 15px !important;
+  max-width: unset;
+  display  : flex;
 }
+
 .post-wrap:has(.pjournal) .palmi-badges {
-    position: absolute;
-    left: 250px;
-    top: 230px;
-    width: 690px;
-    height: 0;
-    align-items: flex-end;
+  position   : absolute;
+  left       : 250px;
+  top        : 230px;
+  width      : 690px;
+  height     : 0;
+  align-items: flex-end;
 }
+
 .post-wrap:has(.pjournal) .palmi-badges .palmi-badge {
-    border: none;
-    height: 60px;
-    width: 65px;
-    padding: 0px;
-    margin: 0;
-    position: relative;
-    background-size: 50px;
-    background-repeat: no-repeat;
-    background-position: center;
+  border             : none;
+  height             : 60px;
+  width              : 65px;
+  padding            : 0px;
+  margin             : 0;
+  position           : relative;
+  background-size    : 50px;
+  background-repeat  : no-repeat;
+  background-position: center;
 }
 
 .palmi-poke-inline-types {
-    position: absolute;
-    top: 20px;
-    display: flex;
-    flex-direction: column;
-    left: 10px;
+  position      : absolute;
+  top           : 20px;
+  display       : flex;
+  flex-direction: column;
+  left          : 10px;
 }
+
 .palmi-poke-inline-type svg {
-    width: 30px;
-    height: 30px;
+  width : 30px;
+  height: 30px;
 }
