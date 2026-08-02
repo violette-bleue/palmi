@@ -1823,6 +1823,37 @@ h1 {
     
     width: 100% !important;
 }
+.select-wrap select, .select-wrap input, .jumpbox-wrap select, .jumpbox-wrap input, .quickmod-wrap select, .quickmod-wrap input {
+    border-radius: 10px !important;
+    display: inline-block;
+    margin-top: 0px;
+    height: fit-content;
+    line-height: normal;
+}
+.forumline thead th, .table1 thead th {
+    background-color: transparent;
+    color: var(--text);
+    font-weight: 600;
+}
+.forumline th, .forumline td, .table1 th, .table1 td {
+    border: none;
+}
+.forumline tbody tr, .table1 tbody tr {
+    background-color: transparent;
+}
+.forumline th, .forumline td, .table1 th, .table1 td {
+    background: var(--bg-soft);
+}
+.forumline, .table1 {
+    border-collapse: unset;
+    border-style: hidden;
+    box-shadow: none;
+    margin-bottom: 22px;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--panel);
+    border: 2px solid var(--line);overflow: hidden;
+}
 .btn-default {
   background    : var(--accent) !important;
   color         : var(--bg) !important;
