@@ -2922,8 +2922,6 @@ div.sceditor-toolbar {
     box-shadow: none;
     display: flex;
     align-items: center;
-    background-image: url(https://www.pokepedia.fr/images/3/39/Victor-EB.png);
-    background-size: cover;
     background-color: var(--bg-soft);
 }
 
@@ -3561,7 +3559,7 @@ span.palmi-dice-type {
   position               : relative!important;
 }
 
-.--rien::after {
+.palmi-dice-block--shiny .palmi-dice-result--number::after {
   content  : 'Rien...';
   font-size: 15px;
   color    : var(--muted);
@@ -3653,14 +3651,18 @@ span.palmi-dice-type {
 .palmi-dice-result:has(.--plusdeux) {
     color: var(--muted);
 }
-.palmi-dice-result:has(.--ressource) {
+.--ressource::before {
     content: 'inventory_2' !important;
 }
-.palmi-dice-result:has(.--tresor) {
+.--tresor::before {
     content: 'savings' !important;
 }
-.palmi-dice-result:has(.--joyau) {
+.--joyau::before {
     content: 'diamond' !important;
+}
+.--evolue::before {
+    background-image: var(--icon-dna);
+    animation: 10s linear 0s infinite dnarotate;
 }
 /** MISE EN PAGE **/
 hr,
@@ -5317,6 +5319,15 @@ form#quick_reply {
   100% {
     background-position: -200% 0;
   }
+}
+
+@keyframes dnarotate {
+  0% {
+transform: rotate3d(0, 1, 0, 360deg);
+  }
+
+  100% {
+transform: rotate3d(0, 1, 0, 0deg);  }
 }
 
 div#palmi-topics-sousforum .palmi-cat-title {
