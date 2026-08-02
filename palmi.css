@@ -3910,7 +3910,16 @@ input:checked+.checkbox-check:after {
 /* ============================================= */
 /* === SCEDITOR TOOLBAR (icônes Material Symbols) === */
 /* ============================================= */
-
+.sceditor-group, .sceditor-toolbar {
+    background: none !important;border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.sceditor-toolbar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 30px;
+}
 .sceditor-toolbar .sceditor-button {
   background-image: none !important;
   width: 32px !important;
@@ -3920,6 +3929,8 @@ input:checked+.checkbox-check:after {
   justify-content: center !important;
   border-radius: 6px !important;
   transition: background .15s ease !important;
+  
+    text-indent: unset;
 }
 .sceditor-toolbar .sceditor-button:hover {
   background: var(--bg-soft) !important;
