@@ -3494,6 +3494,9 @@ span.palmi-dice-type {
     flex-direction: column;
     align-items: center;
     padding: 0 10px;
+        min-height: 80px;
+    min-width: 80px;
+    justify-content: center;
 }
 
 
@@ -3514,7 +3517,7 @@ span.palmi-dice-type {
     animation: palmiShine 3s linear infinite;
     font-weight: 500;
 }
-.palmi-dice-block--shiny .palmi-dice-result--pokemon::before {
+.palmi-dice-block--shiny .palmi-dice-result--reward::before {
     color: var(--flash);
     content: 'auto_awesome';
     font-family: 'Material Icons';
@@ -3529,12 +3532,61 @@ span.palmi-dice-type {
     top: 5px;
     position: relative;
 }
-.palmi-dice-block.palmi-dice-block--shiny .palmi-dice-result.palmi-dice-result--number::after {
+.palmi-dice-block--shiny .palmi-dice-result--number::after {
     content: 'Rien...';
     font-size: 15px;
     color: var(--muted);
 }
-
+.palmi-dice-block--shiny .palmi-dice-result--number span {
+    font-size: 0;
+}.palmi-dice-block--shiny .palmi-dice-result--number:nth-child(1n)::before {
+    content: 'sick' !important;
+}
+.palmi-dice-block--shiny .palmi-dice-result--number:nth-child(2n)::before {
+    content: 'sentiment_very_dissatisfied' !important;
+}
+.palmi-dice-block--shiny .palmi-dice-result--number:nth-child(3n)::before {
+    content: 'sentiment_dissatisfied' !important;
+}
+.palmi-dice-block--shiny .palmi-dice-result--number:nth-child(4n)::before {
+    content: 'mood_bad' !important;
+}
+.palmi-dice-block--shiny .palmi-dice-result--number::before {
+    font-family: 'Material Symbols Outlined';
+    font-size: 35px;
+    position: relative;
+    height: 38px;
+    top: -6px;
+    color: var(--muted);
+}
+.palmi-dice-result > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.palmi-dice-result:has([class*=" --"]) {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.--pierre.--plante::before {
+    background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Plante-CA.png);
+}
+.--pierre.--foudre::before {
+    background-image: url(https://www.pokepedia.fr/images/e/ea/Pierre_Foudre-CA.png);
+}
+.--pierre.--eau::before {
+    background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Eau-CA.png);
+}
+.--pierre.--feu::before {
+    background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Feu-CA.png);
+}
+.--baie::before {
+    background-image: url(https://www.pokepedia.fr/images/b/bf/Miniature_Baie_Oran_LPZA.png);
+}
 /** MISE EN PAGE **/
 hr,
 hrpoke {
