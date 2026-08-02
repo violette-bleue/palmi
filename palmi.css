@@ -1444,7 +1444,20 @@ select {
   margin: 0;
 }
 
-
+.select select {
+    padding-right: 0;
+    color: var(--accent);
+    font-weight: 500;
+    height: fit-content;
+    line-height: normal;
+}
+.select select option {
+    background: var(--bg);
+    border: none;
+}
+.select:after {
+    line-height: normal;
+  }
 /* === Icones === */
 .icon {
   display       : inline-block;
@@ -1679,15 +1692,41 @@ h1 {
 }
 
 .cp-sidebar {
-  background  : var(--bg-soft);
-  border-right: var(--border);
-  width       : 100vw !important;
-  position    : sticky;
-  top         : 54px;
-  margin      : 0 !important;
-  z-index     : 100;
+    background: var(--bg-soft);
+    border-right: var(--border);
+    width: 100vw !important;
+    position: sticky !important;
+    top: 54px;
+    margin: 0 !important;
+    z-index: 100;
+    order: 0;
+    display: flex;
+    align-items: center;
 }
-
+.cp-sidebar #privmsgs-menu+.btn {
+    width: fit-content;
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    background: none !important;
+    box-shadow: none;
+    color: var(--text) !important;
+}
+.btn-default i, .mainoption i, .button i, .button1 i, .button2 i, .liteoption i {
+    font-size: 18px;
+}
+#privmsgs-menu li {
+    color: var(--text);
+}
+#privmsgs-menu ul {
+    border: none;
+}
+.cp-sidebar #privmsgs-menu+.btn > span {
+    display: none;
+}
+.cp-inner .mark-buttons {
+    display: none;
+}
 .tabs a {
   font-family: var(--font-label);
   color      : var(--text);
@@ -1709,9 +1748,7 @@ h1 {
     line-height: normal;
     white-space: nowrap;
 }
-.btn > span {
-    font-family: 'Material Icons';
-}
+
 
 .palmi-profile-stat-links > a {
     color: var(--accent) !important;
@@ -5427,5 +5464,9 @@ div#palmi-topics-sousforum .palmi-zone-caption {
 /*AJUSTEMENTS*/
 label:has(input#profile_field_3_-10),
 label:has(input#profile_field_3_-21) {
+    display: none;
+}
+
+.cp-inner > a {
     display: none;
 }
