@@ -3411,7 +3411,7 @@ main#forum {
 }
 
 /* === Dice === */
-.palmi-dice-result.palmi-dice-result--number::before {
+.palmi-dice-block--d100 .palmi-dice-result.palmi-dice-result--number::before {
   content      : '';
   mask-image   : url(https://violette-bleue.github.io/palmi/d20.svg);
   display      : block;
@@ -3424,16 +3424,18 @@ main#forum {
   position     : absolute;
 }
 
-.palmi-dice-result.palmi-dice-result--number {
+.palmi-dice-block--d100 .palmi-dice-result.palmi-dice-result--number {
   width          : 100px;
   min-height     : 140px;
   display        : flex;
   align-items    : center;
   justify-content: center;
   position       : relative;
+    background: none!important;
+    border: none!important;
 }
 
-.palmi-dice-result.palmi-dice-result--number span.palmi-dice-value {
+.palmi-dice-block--d100 .palmi-dice-result.palmi-dice-result--number span.palmi-dice-value {
   position     : relative;
   z-index      : 1;
   background   : var(--bg);
@@ -3449,7 +3451,6 @@ main#forum {
   display       : flex;
   flex-direction: column;
   background    : var(--bg);
-  border        : 2px solid var(--line);
   border-radius : 10px;
   overflow      : hidden;
 }
@@ -3462,11 +3463,15 @@ main#forum {
   gap     : 5px;
 }
 
-.palmi-dice-pokemon-info {
-  background    : var(--bg-soft);
-  padding       : 5px 10px;
-  text-transform: uppercase;
-  font-weight   : 700;
+.palmi-dice-pokemon-info > span {
+    position: absolute;
+    bottom: 0;
+    background: var(--bg-soft);
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+    left: 0;
 }
 
 span.palmi-dice-type {
@@ -3488,32 +3493,48 @@ span.palmi-dice-type {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.palmi-dice-result > div {
     padding: 0 10px;
 }
-.palmi-dice-block--shiny > div > div {
-    font-size: 22px;
-    font-family: var(--font-label);
-    background: linear-gradient(90deg, var(--text) 0%, var(--text) 40%, var(--accent) 50%, var(--text) 60%, var(--text) 100%);
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: palmiShine 3s linear infinite;
-}
+
+
 .palmi-dice-block span.palmi-dice-label {
     position: relative;
     text-transform: uppercase;
     font-weight: 700;
     width: 100%;
 }
+.palmi-dice-block--shiny > div > div {
+    font-size: 22px;
+    font-family: var(--font-label);
+    background: linear-gradient(50deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: palmiShine 3s linear infinite;
+    font-weight: 500;
+}
 .palmi-dice-block--shiny .palmi-dice-result--pokemon::before {
     color: var(--flash);
     content: 'auto_awesome';
     font-family: 'Material Icons';
     font-size: 35px;
+    background: linear-gradient(90deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: palmiShine 3s linear infinite;
+    line-height: normal;
+    top: 5px;
+    position: relative;
 }
+.palmi-dice-block.palmi-dice-block--shiny .palmi-dice-result.palmi-dice-result--number::after {
+    content: 'Rien...';
+    font-size: 15px;
+    color: var(--muted);
+}
+
 /** MISE EN PAGE **/
 hr,
 hrpoke {
