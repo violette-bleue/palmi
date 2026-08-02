@@ -85,6 +85,15 @@ body.day {
 }
 
 
+#palmi-page>div {
+  width   : 1000px;
+  margin  : 20px auto;
+  position: relative;
+}
+
+#palmi-page>div:empty {
+  margin: 0;
+}
 /* HEADER / HERO */
 .palmi-header {
   position     : relative;
@@ -1685,17 +1694,27 @@ h1 {
   border-bottom: 2px solid var(--accent);
 }
 
-.btn,
-.btn-default,
-.btn-flat,
-.btn-red,
-.btn-fixed {
-  font-family  : var(--font-label);
-  border-radius: 8px;
-  border       : none;
-  cursor       : pointer;
+.btn, .btn-default, .btn-flat, .btn-red, .btn-fixed {
+    font-family: var(--font-label);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+    white-space: nowrap;
 }
-
+.block .block-content > br {
+    display: none;
+}
+.block-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: none !important;
+    border-radius: 10px !important;
+}
 .btn-default {
   background    : var(--accent) !important;
   color         : var(--bg) !important;
@@ -1909,15 +1928,6 @@ span.mod-recent-author i {
   align-items   : center;
 }
 
-#palmi-page>div {
-  width   : 1000px;
-  margin  : 20px auto;
-  position: relative;
-}
-
-#palmi-page>div:empty {
-  margin: 0;
-}
 
 
 /* === viewtopic === */
@@ -2913,16 +2923,16 @@ div.sceditor-toolbar {
 }
 
 .palmi-profile-avatar-wrap {
-    position: relative;
-    width: 200px;
-    height: 220px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 2px solid var(--line);
-    box-shadow: none;
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-soft);
+  position        : relative;
+  width           : 200px;
+  height          : 220px;
+  border-radius   : 10px;
+  overflow        : hidden;
+  border          : 2px solid var(--line);
+  box-shadow      : none;
+  display         : flex;
+  align-items     : center;
+  background-color: var(--bg-soft);
 }
 
 .palmi-profile-avatar-wrap .avatar-big {
@@ -2942,19 +2952,19 @@ div.sceditor-toolbar {
 }
 
 .palmi-profile-admin-link {
-    position: absolute;
-    top: -30px;
-    right: 0;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: fit-content;
-    background: var(--flash);
-    color: var(--bg);
-    font-weight: 600;
-    border-radius: 10px;
-    padding: 0 10px 0 7px;
-    text-transform: uppercase;
+  position      : absolute;
+  top           : -30px;
+  right         : 0;
+  display       : flex;
+  align-items   : center;
+  gap           : 5px;
+  height        : fit-content;
+  background    : var(--flash);
+  color         : var(--bg);
+  font-weight   : 600;
+  border-radius : 10px;
+  padding       : 0 10px 0 7px;
+  text-transform: uppercase;
 }
 
 .palmi-profile-admin-link span {
@@ -2983,9 +2993,11 @@ div.sceditor-toolbar {
   gap       : 6px;
   margin-top: 8px;
 }
+
 .palmi-profile-groups [href="/groups"] {
-    display: none;
+  display: none;
 }
+
 .palmi-profile-group-tag {
   font-family    : var(--font-label);
   font-size      : 11px;
@@ -3432,39 +3444,9 @@ main#forum {
 }
 
 /* === Dice === */
-.palmi-dice-block--d100 .palmi-dice-result.palmi-dice-result--number::before {
-  content      : '';
-  mask-image   : url(https://violette-bleue.github.io/palmi/d20.svg);
-  display      : block;
-  width        : 100px;
-  height       : 100px;
-  background   : var(--accent);
-  mask-position: center;
-  mask-size    : contain;
-  mask-repeat  : no-repeat;
-  position     : absolute;
-}
 
-.palmi-dice-block--d100 .palmi-dice-result.palmi-dice-result--number {
-  width          : 100px;
-  min-height     : 140px;
-  display        : flex;
-  align-items    : center;
-  justify-content: center;
-  position       : relative;
-  background     : none !important;
-  border         : none !important;
-}
 
-.palmi-dice-block--d100 .palmi-dice-result.palmi-dice-result--number span.palmi-dice-value {
-  position     : relative;
-  z-index      : 1;
-  background   : var(--bg);
-  padding      : 0 10px;
-  border-radius: 8px;
-  font-weight  : 700;
-  font-size    : 30px;
-}
+
 
 .palmi-dice-pokemon {
   width         : 200px;
@@ -3543,20 +3525,20 @@ span.palmi-dice-type {
 }
 
 .palmi-dice-block--shiny .palmi-dice-result--reward .--shiny::before {
-  color                  : var(--flash)!important;
-  content                : 'auto_awesome'!important;
-  font-family            : 'Material Icons'!important;
-  font-size              : 35px!important;
-  background             : linear-gradient(90deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%)!important;
-  background-size        : 200% 100%!important;
-  background-clip        : text!important;
-  background-repeat: repeat!important;
-  -webkit-background-clip: text!important;
-  color                  : transparent!important;
+  color                  : var(--flash) !important;
+  content                : 'auto_awesome' !important;
+  font-family            : 'Material Icons' !important;
+  font-size              : 35px !important;
+  background             : linear-gradient(90deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%) !important;
+  background-size        : 200% 100% !important;
+  background-clip        : text !important;
+  background-repeat      : repeat !important;
+  -webkit-background-clip: text !important;
+  color                  : transparent !important;
   animation              : palmiShine 3s linear infinite;
-  line-height            : normal!important;
-  top                    : 5px!important;
-  position               : relative!important;
+  line-height            : normal !important;
+  top                    : 5px !important;
+  position               : relative !important;
 }
 
 .palmi-dice-block--shiny .palmi-dice-result--number::after {
@@ -3599,21 +3581,25 @@ span.palmi-dice-type {
   flex-direction: column;
   align-items   : center;
 }
+
 .palmi-dice-reward::before {
-    font-family: 'Material Icons';
-    font-size: 30px;
+  font-family: 'Material Icons';
+  font-size  : 30px;
 }
 
-:not(.palmi-dice-block--shiny) .palmi-dice-result:has([class*=" --"]) .palmi-dice-reward::before {
-    content: '';
-    display: flex;
-    width: 40px;
-    height: 40px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    justify-content: center;
+:not(.palmi-dice-block--shiny) .palmi-dice-result:has([class*=" --"]) .palmi-dice-reward::before,
+:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
+  content          : '';
+  display          : flex;
+  width            : 40px;
+  height           : 40px;
+  background-size  : contain;
+  background-repeat: no-repeat;
+  justify-content  : center;
 }
-
+:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
+    background-image: url(https://www.pokepedia.fr/images/5/5a/Miniature_D%C3%A9_Pip%C3%A9_EV.png);
+}
 .--pierre.--plante::before {
   background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Plante-CA.png);
 }
@@ -3633,37 +3619,61 @@ span.palmi-dice-type {
 .--baie::before {
   background-image: url(https://www.pokepedia.fr/images/b/bf/Miniature_Baie_Oran_LPZA.png);
 }
+
 .palmi-dice-block--expedition .palmi-dice-reward::before {
-    content: 'crisis_alert' !important;
+  content: 'crisis_alert' !important;
 }
+
 .palmi-dice-result:has(.--danger) {
-    border-color: var(--accent);
-    color: var(--accent);
+  border-color: var(--accent);
+  color       : var(--accent);
 }
+
 .palmi-dice-result:has(.--baron) {
-    border-color: #e05555;
-    color: #e05555;
+  border-color: #e05555;
+  color       : #e05555;
 }
+
 .palmi-dice-block--expedition .--baron::before {
-    background-image: url(https://www.pokepedia.fr/images/e/e8/Ic%C3%B4ne_Pok%C3%A9mon_Baron_LPA.png);
-    content: '' !important;
+  background-image: url(https://www.pokepedia.fr/images/e/e8/Ic%C3%B4ne_Pok%C3%A9mon_Baron_LPA.png);
+  content         : '' !important;
 }
+
 .palmi-dice-result:has(.--plusdeux) {
-    color: var(--muted);
+  color: var(--muted);
 }
+
 .--ressource::before {
-    content: 'inventory_2' !important;
+  background-image: url(https://www.pokepedia.fr/images/7/7c/Miniature_%C3%89pice_Secr%C3%A8te_Am%C3%A8re_EV.png);
 }
+
 .--tresor::before {
-    content: 'savings' !important;
+  background-image: url(https://www.pokepedia.fr/images/e/e3/Miniature_Pi%C3%A8ce_de_Mordudor_LPZA.png);
 }
+
 .--joyau::before {
-    content: 'diamond' !important;
+  background-image: url(https://www.pokepedia.fr/images/5/5d/Miniature_Joyau_Normal_LPZA.png);
+}
+.--evolue  {
+    background: linear-gradient(90deg, var(--group-8) 0%, var(--group-6) 20%, var(--group-4) 40%, var(--group-7) 60%, var(--group-5) 80%, var(--group-8) 100%);
+    background-size: 200% 100% !important;
+    color: transparent;
+    background-repeat: repeat !important;
+    animation: palmiShine 5s linear infinite;
+    background-clip: text;
+    font-weight: 600;
+    font-family: var(--font-label);
 }
 .--evolue::before {
-    background-image: var(--icon-dna);
-    animation: 10s linear 0s infinite dnarotate;
+    mask-image: var(--icon-dna);
+    mask-size: 100%;
+    background: linear-gradient(90deg, var(--group-8) 0%, var(--group-6) 20%, var(--group-4) 40%, var(--group-7) 60%, var(--group-5) 80%, var(--group-8) 100%);
+    background-size: 200% 100% !important;
+    color: transparent;
+    background-repeat: repeat !important;
+    animation: palmiShine 5s linear infinite;
 }
+
 /** MISE EN PAGE **/
 hr,
 hrpoke {
@@ -4329,15 +4339,14 @@ fieldset.form-buttons {
 }
 
 fieldset.form-buttons .btn {
-  padding    : 3px 10px !important;
-  margin     : 0 !important;
-  background : var(--accent);
-  display    : flex;
-  box-shadow : none;
-  height     : auto;
-  align-items: center;
-  line-height: 0 !important;
-  font-size  : 0;
+    padding: 3px 10px !important;
+    margin: 0 !important;
+    background: var(--accent);
+    display: flex;
+    box-shadow: none;
+    height: auto;
+    align-items: center;
+    line-height: normal !important;
 }
 
 /* =============================================================== */
@@ -5323,11 +5332,12 @@ form#quick_reply {
 
 @keyframes dnarotate {
   0% {
-transform: rotate3d(0, 1, 0, 360deg);
+    transform: rotate3d(0, 1, 0, 360deg);
   }
 
   100% {
-transform: rotate3d(0, 1, 0, 0deg);  }
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
 }
 
 div#palmi-topics-sousforum .palmi-cat-title {
