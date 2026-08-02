@@ -3478,14 +3478,15 @@ span.palmi-dice-type {
   display    : flex;
   gap        : 15px;
   padding-top: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .palmi-dice-block span.palmi-dice-label {
-  position      : absolute;
-  top           : 0;
-  padding       : 10px 0;
-  text-transform: uppercase;
-  font-weight   : 700;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
 }
 
 /** MISE EN PAGE **/
@@ -4020,15 +4021,28 @@ input:checked+.checkbox-check:after {
   border-bottom: var(--border) !important;
   padding: 4px 6px !important;
 }
-.sceditor-group {
-  border-right: 1px solid var(--line) !important;
-  padding-right: 4px !important;
-  margin-right: 4px !important;
-}
 .sceditor-group:last-child {
   border-right: none !important;
 }
-
+#smiley-box iframe, .smile-status-box iframe {
+    height: 520px!important;
+}
+fieldset.form-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.btn {
+    padding: 3px 10px !important;
+    margin: 0 !important;
+    background: var(--accent);
+    display: flex;
+    box-shadow: none;
+    height: auto;
+    align-items: center;
+    line-height: 0 !important;
+    font-size: 0;
+}
 /* =============================================================== */
 /* FICHES ET JOURNAUX */
 /* =============================================================== */
