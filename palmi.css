@@ -516,19 +516,17 @@ section.palmi-card:has(.palmi-topsites-grid) {
   font-family: var(--font-title);
   font-size  : 18px;
   margin     : 1px 0 0;
-  color      : #1A181B;
+  color      : var(--bg);
 }
-
 .palmi-zone-caption h3 a {
-  color          : #1A181B;
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .palmi-zone-caption p {
   font-family: var(--font-body);
   font-size  : 12.5px;
-  margin     : 0;
-  color      : #3a3440;
+  margin     : 0;color: var(--bg-soft);
+
 }
 
 .palmi-zone-caption p img {
@@ -589,18 +587,19 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-zone-stats {
-  font-family  : var(--font-label);
-  font-size    : 11px;
-  color        : var(--muted);
-  white-space  : nowrap;
-  position     : absolute;
-  top          : -17px;
-  background   : var(--bg);
-  padding      : 0 4px;
-  border-radius: 5px;
-  font-weight  : 500;
+    font-family: var(--font-label);
+    font-size: 9px;
+    color: var(--muted);
+    white-space: nowrap;
+    position: absolute;
+    top: -15px;
+    background: var(--bg);
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 10px;
 }
-
 .palmi-zone-last {
   display    : flex;
   align-items: center;
@@ -769,10 +768,11 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-footer-card h3 {
-  font-family: var(--font-title);
-  font-size  : 15px;
-  margin     : 0 0 8px;
-  color      : var(--text);
+    font-family: var(--font-label);
+    font-size: 15px;
+    margin: 0 0 8px;
+    color: var(--text);
+    text-transform: uppercase;
 }
 
 .palmi-footer-card p {
@@ -3769,19 +3769,23 @@ span.palmi-dice-type {
   font-size: 0;
 }
 
-.--rien:nth-child(1n)::before {
+.--rien:nth-child(1n)::before,
+.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(1n)::before {
   content: 'sick' !important;
 }
 
-.--rien:nth-child(2n)::before {
+.--rien:nth-child(2n)::before,
+.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(2n)::before {
   content: 'sentiment_very_dissatisfied' !important;
 }
 
-.--rien:nth-child(3n)::before {
+.--rien:nth-child(3n)::before,
+.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(3n)::before {
   content: 'sentiment_dissatisfied' !important;
 }
 
-.--rien:nth-child(4n)::before {
+.--rien:nth-child(4n)::before,
+.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(4n)::before {
   content: 'mood_bad' !important;
 }
 
@@ -3805,8 +3809,8 @@ span.palmi-dice-type {
   font-size  : 30px;
 }
 
-:not(.palmi-dice-block--shiny) .palmi-dice-result:has([class*=" --"]) .palmi-dice-reward::before,
-:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
+.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result:has([class*=" --"]) .palmi-dice-reward::before,
+.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
   content          : '';
   display          : flex;
   width            : 40px;
@@ -3815,7 +3819,7 @@ span.palmi-dice-type {
   background-repeat: no-repeat;
   justify-content  : center;
 }
-:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
+.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
     background-image: url(https://www.pokepedia.fr/images/5/5a/Miniature_D%C3%A9_Pip%C3%A9_EV.png);
 }
 .--pierre.--plante::before {
