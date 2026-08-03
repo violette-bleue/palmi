@@ -1129,7 +1129,9 @@ ul#header-navigation>li>a>i {
     order: 40;
 }
 
-
+[class^="material"], [class*=" material"] {
+    font-family: 'Material Symbols Outlined' !important;
+}
 
 /* === Switcheroo === */
 #switcheroo.switcheroo,
@@ -2385,8 +2387,11 @@ span.award_tooltiptext {
   border-bottom  : 2px solid var(--line);
   border-radius  : 8px 8px 0 0px;
   gap            : 15px;
+      background-color: var(--panel);
 }
-
+.post-author-title:empty {
+    display: none;
+}
 .post-header h2 {
   padding-left   : 25px;
   display        : flex;
