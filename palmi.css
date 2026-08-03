@@ -1,4 +1,4 @@
-/* === Palmi === */
+﻿/* === Palmi === */
 
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
 
@@ -15,6 +15,7 @@ body {
   --group-7: #944dcf;
   /*CHERCHEURS*/
   --group-8: #fddc2d;
+  /* TODO: --group-9, --group-10, --group-11 sont utilisées (tagg7-9, .group-9) mais jamais définies ici */
 
   /* --- Fonts: un seul endroit a toucher --- */
   --font-title: 'Sharpie', sans-serif;
@@ -71,6 +72,15 @@ body.day {
 }
 
 
+/* === Defauts globaux design === */
+/* 10px et var(--line) sont les valeurs dominantes du design : posées ici une seule
+   fois, chaque règle qui s'en écarte (50%, 6px, 8px, 12px, 999px, couleur d'accent...)
+   garde sa valeur explicite qui la surchargera automatiquement (specificité > 0). */
+* {
+  border-radius: 10px;
+  border-color: var(--line);
+}
+
 #palmi-page * {
   box-sizing: border-box;
 }
@@ -125,13 +135,12 @@ body.day {
 }
 
 .palmi-theme-toggle {
-  position     : relative;
   display      : flex;
   align-items  : center;
   gap          : 8px;
   padding      : 3px 5px;
   border-radius: 999px;
-  border       : 2px solid var(--line);
+  border: var(--border);
   background   : var(--panel);
   cursor       : pointer;
   z-index      : 5;
@@ -205,28 +214,6 @@ div.award {
 
 .palmi-hero-badges-right {
   right: 16px;
-}
-
-.palmi-badge-flash {
-  font-family   : var(--font-label);
-  font-size     : 12px;
-  letter-spacing: .08em;
-  padding       : 5px 10px;
-  border-radius : 10px;
-  background    : var(--flash);
-  color         : #1A181B;
-  font-weight   : 700;
-}
-
-.palmi-badge-dim {
-  font-family   : var(--font-label);
-  font-size     : 12px;
-  letter-spacing: .08em;
-  padding       : 5px 10px;
-  border-radius : 10px;
-  background    : rgba(0, 0, 0, .45);
-  border        : var(--border);
-  color         : #EDEAF0;
 }
 
 
@@ -335,7 +322,6 @@ div.award {
 .palmi-triorow {
   background           : var(--panel);
   border               : var(--border);
-  border-radius        : 10px;
   padding              : 12px 16px;
   display              : grid;
   grid-template-columns: 1.3fr 1fr 1fr;
@@ -503,7 +489,6 @@ section.palmi-card:has(.palmi-topsites-grid) {
 .palmi-zone-caption {
   margin       : 10px;
   padding      : 12px 15px;
-  border-radius: 10px;
   background   : var(--text);
   max-width    : 78%;
 }
@@ -611,7 +596,6 @@ section.palmi-card:has(.palmi-topsites-grid) {
 .palmi-zone-avatar {
   width        : 100px;
   height       : 50px;
-  border-radius: 10px;
   overflow     : hidden;
   border       : var(--border);
   flex-shrink  : 0;
@@ -802,7 +786,6 @@ section.palmi-card:has(.palmi-topsites-grid) {
 .palmi-partner {
   width        : 50px;
   height       : 50px;
-  border-radius: 10px;
   overflow     : hidden;
   border       : var(--border);
 }
@@ -869,24 +852,27 @@ section.palmi-card:has(.palmi-topsites-grid) {
 
 
 /* === Badges & boutons === */
-.palmi-badge {
+.palmi-badge,
+.palmi-badge-flash,
+.palmi-badge-dim {
   font-family   : var(--font-label);
   font-size     : 12px;
   letter-spacing: .08em;
   padding       : 5px 10px;
-  border-radius : 10px;
   line-height   : normal;
   display       : inline-flex;
   align-items   : center;
 }
 
-.palmi-badge--flash {
+.palmi-badge--flash,
+.palmi-badge-flash {
   background : var(--flash);
   color      : #1A181B;
   font-weight: 700;
 }
 
-.palmi-badge--dim {
+.palmi-badge--dim,
+.palmi-badge-dim {
   background: rgba(0, 0, 0, .45);
   border    : var(--border);
   color     : #EDEAF0;
@@ -896,7 +882,6 @@ section.palmi-card:has(.palmi-topsites-grid) {
   font-family    : var(--font-label);
   font-size      : 13px;
   line-height    : normal;
-  border-radius  : 10px;
   border         : none;
   cursor         : pointer;
   display        : inline-flex;
@@ -946,10 +931,6 @@ header.palmi-realnav {
   font-family  : var(--font-label);
 }
 
-header.palmi-realnav::after {
-  display: none;
-}
-
 header.palmi-realnav #main-menu-btn {
   color      : var(--nav-text);
   cursor     : pointer;
@@ -985,7 +966,6 @@ header.palmi-realnav .button {
   color          : #101014;
   background     : var(--accent);
   padding        : 6px 14px;
-  border-radius  : 10px;
   text-decoration: none;
 }
 
@@ -1011,7 +991,6 @@ header.palmi-realnav #search-main {
   align-items  : center;
   background   : var(--bg-soft);
   border       : var(--border);
-  border-radius: 10px;
   padding      : 2px 4px 2px 10px;
 }
 
@@ -1159,7 +1138,6 @@ nav#switcheroo.switcheroo {
 .switcheroo__squircle {
   width          : 36px;
   height         : 36px;
-  border-radius  : 10px;
   background     : var(--panel);
   border         : var(--border);
   display        : flex;
@@ -1317,7 +1295,6 @@ nav#switcheroo.switcheroo {
 .palmi-card {
   background   : var(--panel);
   border       : var(--border);
-  border-radius: 10px;
   overflow     : hidden;
   position     : relative;
 }
@@ -1525,7 +1502,6 @@ select {
   background-position: center;
   background-size    : cover;
   background-repeat  : no-repeat;
-  border-radius      : 10px;
   height             : 100px;
   width              : 120px;
   transition         : all 200ms ease;
@@ -1594,10 +1570,6 @@ select {
   white-space   : nowrap;
   font-size     : 0;
   padding       : 0;
-}
-
-#page-footer .wrap strong {
-  display: none;
 }
 
 #page-footer .wrap a {
@@ -1698,13 +1670,12 @@ h1 {
 
 .block,
 .cp {
-  border-radius: 10px;
   overflow     : hidden;
 }
 
 .block {
   margin-bottom: 22px;
-  border       : 2px solid var(--line);
+  border: var(--border);
 }
 
 .cp {
@@ -1763,12 +1734,6 @@ h1 {
 #privmsgs-menu ul {
     border: none;
 }
-.cp-sidebar #privmsgs-menu+.btn > span {
-    display: none;
-}
-.cp-inner .mark-buttons {
-    display: none;
-}
 .tabs a {
   font-family: var(--font-label);
   color      : var(--text);
@@ -1795,7 +1760,6 @@ h1 {
     background-color: var(--accent);
     box-shadow: none;
     color: var(--bg);
-    border-radius: 10px;
     display: flex;
     font-size: 13px;
     font-weight: 600;
@@ -1806,7 +1770,6 @@ h1 {
 .forum-section, .posts-section {
     background-color: var(--panel);
     box-shadow: none;
-    border-radius: 10px;
     display: flex;
     line-height: 22px;
     margin-top: 6px;
@@ -1827,13 +1790,6 @@ h1 {
     .forum-lastpost-location i, .forum-lastpost-author i, .forum-lastpost-time i, .posts-lastpost-author i, .posts-lastpost-time i {
     color: currentColor;}
 
-.forum-icon, .posts-icon,
-.forum-description h3:after, .posts-description h3:after {
-    display: none;
-}
-.forum-statistics, .forum-statistics-header, .posts-statistics, .posts-statistics-header {
-    display: none;
-}
 .category-title, .posts-title {
     margin-left: 0;
     padding-right: 0;
@@ -1845,9 +1801,6 @@ h1 {
     padding: 0;
     font-size: 25px;
     margin: 0 !important;
-}
-.block .block-content > br {
-    display: none;
 }
 .block-content {
     display: flex;
@@ -1881,19 +1834,16 @@ h1 {
 }
 .forumline, .table1 {
     border-collapse: unset;
-    border-style: hidden;
     box-shadow: none;
     margin-bottom: 22px;
     width: 100%;
-    border-radius: 10px;
     background: var(--panel);
-    border: 2px solid var(--line);overflow: hidden;
+    border: var(--border);overflow: hidden;
 }
 .btn-default, .mainoption, .button, .button1, .button2, .liteoption {
     background-color: var(--accent);
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / .14), 0 3px 1px -2px rgb(0 0 0 / .2), 0 1px 5px 0 rgb(0 0 0 / .12);
     color: var(--bg);
-    border-radius: 10px;
     font-size: 13px;
     line-height: normal;
     padding: 0 10px;
@@ -1970,11 +1920,10 @@ h1 {
   width         : auto;
   z-index       : 10000000000000000000000000;
   display       : none;
-  border-radius : 10px;
   top           : 45px;
   box-shadow    : none;
   background    : var(--panel);
-  border        : 2px solid var(--line);
+  border: var(--border);
   padding       : 10px;
   flex-direction: column;
 }
@@ -2045,7 +1994,6 @@ select:focus {
 .box {
   background   : var(--panel);
   border       : var(--border);
-  border-radius: 10px;
   overflow     : hidden;
 }
 
@@ -2148,7 +2096,7 @@ main#topic>div {
 .block-comment .avatar-default img {
   height  : auto;
   width   : 150px;
-  border  : 2px solid var(--line);
+  border: var(--border);
   position: absolute;
   left    : -50px;
   top     : 20px;
@@ -2165,10 +2113,6 @@ div#breadcrumbs>div {
   flex-direction: row-reverse;
   gap           : 20px;
   align-items   : center;
-}
-
-#breadcrumbs a:last-child::after {
-  display: none;
 }
 
 dd.palmi-detail-messages::before,
@@ -2205,8 +2149,7 @@ dd.palmi-detail-date-d-inscription::before {
   display      : inline-flex;
   align-items  : center;
   background   : var(--bg);
-  border       : 2px solid var(--line);
-  border-radius: 10px;
+  border: var(--border);
   padding      : 4px 10px 3px;
   gap          : 5px;
 }
@@ -2217,25 +2160,31 @@ dd.palmi-detail-date-d-inscription::before {
   flex-wrap: wrap;
 }
 
-/* === Masquages === */
-.post-header::after {
-  display: none;
-}
-
+/* === Masquages (chrome natif FA qu'on ne veut jamais afficher) === */
+.post-header::after,
 .post-header h2 i,
-.post-header h2 img {
-  display: none;
-}
-
-span.post-heading-wrap>a {
-  display: none;
-}
-
-.post-author-status {
-  display: none;
-}
-
-#comments_scroll_div:after {
+.post-header h2 img,
+span.post-heading-wrap>a,
+.post-author-status,
+#comments_scroll_div:after,
+header.palmi-realnav::after,
+#page-footer .wrap strong,
+.cp-sidebar #privmsgs-menu+.btn > span,
+.cp-inner .mark-buttons,
+.forum-icon,
+.posts-icon,
+.forum-description h3:after,
+.posts-description h3:after,
+.forum-statistics,
+.forum-statistics-header,
+.posts-statistics,
+.posts-statistics-header,
+.block .block-content > br,
+.award_tooltiptext::after,
+.post-author-links img,
+#breadcrumbs a:last-child::after,
+#breadcrumbs>a:first-child span::before,
+#breadcrumbs a+a:before {
   display: none;
 }
 
@@ -2273,19 +2222,6 @@ span.post-heading-wrap>a {
 }
 
 .palmi-badges {
-  display: flex;
-  height : 100%;
-}
-
-.palmi-badges .palmi-badge {
-  border : none;
-  height : 25px;
-  width  : 25px;
-  padding: 0;
-  margin : 0;
-}
-
-.palmi-badges {
   display    : flex;
   height     : 100%;
   gap        : 3px;
@@ -2315,7 +2251,6 @@ span.award_tooltiptext {
   width         : fit-content;
   word-break    : unset;
   white-space   : nowrap;
-  border-radius : 10px;
   display       : flex;
   left          : 30px;
   top           : 15px;
@@ -2329,14 +2264,9 @@ span.award_tooltiptext {
   padding       : 0;
 }
 
-.award_tooltiptext::after {
-  display: none;
-}
-
 .post-wrap {
   background   : var(--panel);
   border       : var(--border);
-  border-radius: 10px;
   margin-bottom: 12px;
   position     : relative;
   z-index      : 1;
@@ -2428,7 +2358,6 @@ span.award_tooltiptext {
   font-size      : 11px;
   color          : var(--muted);
   background     : transparent;
-  border-radius  : 10px;
   padding        : 5px !important;
   text-decoration: none;
   display        : inline-flex;
@@ -2469,11 +2398,10 @@ span.award_tooltiptext {
 
 .post-buttons {
   position   : absolute;
-  right      : 0;
+  right      : 10px;
   height     : 100%;
   display    : flex;
   align-items: center;
-  right      : 10px;
 }
 
 .post-buttons li {
@@ -2487,10 +2415,6 @@ span.award_tooltiptext {
   height  : 40px;
   overflow: visible;
   position: relative;
-}
-
-.post-author-links img {
-  display: none;
 }
 
 .post-author-name {
@@ -2667,10 +2591,6 @@ span.award_tooltiptext {
   gap        : 10px;
 }
 
-#breadcrumbs>a:first-child span::before {
-  display: none;
-}
-
 #breadcrumbs>a:hover span::before {
   color: var(--text);
 }
@@ -2685,10 +2605,6 @@ span.award_tooltiptext {
 
 #breadcrumbs i+span {
   margin-left: 0;
-}
-
-#breadcrumbs a+a:before {
-  display: none;
 }
 
 div#breadcrumbs {
@@ -2957,7 +2873,6 @@ div.sceditor-toolbar {
 .quick-reply-textarea-wrap .sceditor-button {
   margin       : 4px;
   background   : var(--accent);
-  border-radius: 10px;
   border       : none !important;
 }
 
@@ -3005,11 +2920,10 @@ div.sceditor-toolbar {
 }
 
 .cp .block-content {
-  display         : flex;
-  flex-wrap       : wrap;
-  gap             : 15px;
-  position        : relative;
-    flex-direction: row;
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 15px;
+  position : relative;
 }
 
 .cp .block-content label {
@@ -3022,7 +2936,7 @@ div.sceditor-toolbar {
 }
 
 .cp .block {
-  border: 2px solid var(--line);
+  border: var(--border);
 }
 
 
@@ -3041,7 +2955,7 @@ div.sceditor-toolbar {
 
 .input-subtle,
 .inputbox {
-  border       : 2px solid var(--line);
+  border: var(--border);
   border-radius: 8px !important;
   padding      : 0 10px;
   color        : var(--text);
@@ -3136,9 +3050,8 @@ background: transparent !important;    gap: 0;
   position        : relative;
   width           : 200px;
   height          : 220px;
-  border-radius   : 10px;
   overflow        : hidden;
-  border          : 2px solid var(--line);
+  border: var(--border);
   box-shadow      : none;
   display         : flex;
   align-items     : center;
@@ -3172,7 +3085,6 @@ background: transparent !important;    gap: 0;
   background    : var(--flash);
   color         : var(--bg);
   font-weight   : 600;
-  border-radius : 10px;
   padding       : 0 10px 0 7px;
   text-transform: uppercase;
 }
@@ -3214,7 +3126,6 @@ background: transparent !important;    gap: 0;
   color          : var(--text);
   text-decoration: none;
   padding        : 4px 10px;
-  border-radius  : 10px;
   border         : var(--border);
   background     : var(--bg-soft);
 }
@@ -3267,7 +3178,6 @@ background: transparent !important;    gap: 0;
 
 .palmi-poke-slot {
   border        : var(--border);
-  border-radius : 10px;
   overflow      : hidden;
   background    : var(--bg-soft);
   display       : flex;
@@ -3431,7 +3341,7 @@ section.palmi-card.palmi-profile-contact {
   background   : var(--bg);
   padding      : 5px 10px;
   border-radius: 8px;
-  border       : 2px solid var(--line);
+  border: var(--border);
   font-weight  : 500;
 
 }
@@ -3466,8 +3376,7 @@ section.palmi-card.palmi-profile-contact {
 main#forum {
   width        : 1000px;
   background   : var(--bg-soft);
-  border-radius: 10px;
-  border       : 2px solid var(--line);
+  border: var(--border);
 }
 
 .palmi-topics-header {
@@ -3672,7 +3581,6 @@ main#forum {
   display       : flex;
   flex-direction: column;
   background    : var(--bg);
-  border-radius : 10px;
   overflow      : hidden;
 }
 
@@ -3710,8 +3618,7 @@ span.palmi-dice-type {
 
 .palmi-dice-result {
   background     : var(--panel);
-  border         : 2px solid var(--line);
-  border-radius  : 10px;
+  border: var(--border);
   display        : flex;
   flex-direction : column;
   align-items    : center;
@@ -3743,7 +3650,6 @@ span.palmi-dice-type {
 }
 
 .palmi-dice-block--shiny .palmi-dice-result--reward .--shiny::before {
-  color                  : var(--flash) !important;
   content                : 'auto_awesome' !important;
   font-family            : 'Material Icons' !important;
   font-size              : 35px !important;
@@ -3938,7 +3844,7 @@ note,
   width        : fit-content;
   padding      : 5px 15px;
   color        : var(--text);
-  border       : 2px solid var(--line);
+  border: var(--border);
   margin       : 10px 0;
   background   : var(--bg);
 }
@@ -3962,7 +3868,6 @@ note {
   position      : absolute;
   right         : 25px;
   padding       : 0px 8px;
-  border-radius : 10px;
   background    : var(--flash);
   text-transform: uppercase;
   color         : var(--bg);
@@ -3983,7 +3888,6 @@ blockquote cite {
   display       : inline-block;
   background    : var(--line);
   padding       : 0px 8px;
-  border-radius : 10px;
   text-transform: uppercase;
   color         : var(--text);
   font-weight   : 600;
@@ -4079,7 +3983,6 @@ blockquote cite {
 
 .spoiler_title {
   background   : var(--accent);
-  border-radius: 10px;
   z-index      : 2;
 }
 
@@ -4087,8 +3990,7 @@ blockquote cite {
   padding      : 23px 15px 8px 15px;
   margin       : -15px 0 0 0;
   background   : var(--bg);
-  border-radius: 10px;
-  border       : 2px solid var(--line);
+  border: var(--border);
 }
 
 g1,
@@ -4112,7 +4014,6 @@ tagg6,
 tagg7,
 tagg8,
 tagg9 {
-  border-radius: 10px;
   padding      : 1px 10px 0;
   font-weight  : 500;
   font-family  : var(--font-label);
@@ -4310,10 +4211,9 @@ input:checked+.checkbox-check:after {
   content  : "circle";
   height   : auto;
   font-size: 20px;
-  opacity  : 1;
   border   : none;
   opacity  : .4;
-    color: currentColor;
+  color    : currentColor;
 }
 
 .checkbox {
@@ -4663,8 +4563,7 @@ div#pfiche br,
   position       : absolute;
   top            : 10px;
   right          : 10px;
-  border         : 2px solid var(--line);
-  border-radius  : 10px;
+  border: var(--border);
   width          : 60px;
   height         : 60px;
   display        : flex;
@@ -4677,7 +4576,6 @@ div#pfiche br,
   width        : 200px;
   height       : 170px;
   overflow     : hidden;
-  border-radius: 10px;
   position     : absolute;
   left         : 15px;
   border       : 2px solid var(--accent);
@@ -4698,7 +4596,6 @@ div#pfiche br,
 
 .pfiche-infos>div:not(.pfiche-title, .pfiche-legend, .pfiche-avatar) {
   background   : var(--accent);
-  border-radius: 10px;
   font-family  : var(--font-label);
   font-weight  : 600;
   padding      : 2px 10px 0px;
@@ -4733,7 +4630,6 @@ div#pfiche br,
   display       : inline-flex;
   background    : var(--panel);
   width         : fit-content;
-  border-radius : 10px;
   padding       : 0px 10px 0;
   border        : 2px solid var(--accent);
   color         : var(--accent);
@@ -4887,7 +4783,6 @@ div#pfiche br,
 /* --- Réponses Oui/Non stylées en badge --- */
 .pfiche-label[data-reponse] {
   background   : var(--accent);
-  border-radius: 10px;
   color        : var(--bg);
   font-weight  : 600;
   font-family  : var(--font-label);
@@ -4964,8 +4859,7 @@ div#pfiche br,
 
 .pfiche-panel.pfiche-panel-3>div:has(.palmi-poke-inline)>div {
   background   : var(--panel);
-  border       : 2px solid var(--line);
-  border-radius: 10px;
+  border: var(--border);
   padding      : 4px 10px;
 }
 
@@ -4980,12 +4874,11 @@ div#pfiche br,
   width         : auto;
   height        : 100%;
   background    : var(--panel);
-  border-radius : 10px;
   padding       : 15px;
   display       : flex;
   flex-direction: column;
   overflow      : hidden;
-  border        : 2px solid var(--line);
+  border: var(--border);
   z-index       : -1;
 }
 
@@ -5031,8 +4924,7 @@ div#pfiche br,
   position      : absolute;
   top           : 100px;
   background    : var(--bg);
-  border        : 2px solid var(--line);
-  border-radius : 10px;
+  border: var(--border);
   display       : flex;
   flex-direction: column;
 
@@ -5063,16 +4955,12 @@ div#pfiche br,
 }
 
 .pjournal-panel.pjournal-panel-1 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled {
-  height        : 50px;
-  display       : flex;
-  align-items   : center;
   display       : flex;
   flex-direction: column;
   align-items   : center;
   gap           : 4px;
   padding       : 8px;
   border        : var(--border);
-  border-radius : 10px;
   background    : var(--bg-soft);
   text-align    : center;
   height        : fit-content;
@@ -5090,7 +4978,6 @@ div#pfiche br,
   position     : absolute;
   background   : var(--accent);
   line-height  : normal;
-  border-radius: 10px;
   padding      : 2px 10px 0;
   font-weight  : 600;
   bottom       : -10px;
@@ -5123,7 +5010,6 @@ div#pfiche br,
   order        : -1;
   background   : var(--accent2);
   line-height  : normal;
-  border-radius: 10px;
   padding      : 2px 10px 0;
   color        : var(--bg);
   font-weight  : 600;
@@ -5138,7 +5024,6 @@ div#pfiche br,
 .pjournal-item-row img {
   height       : 30px;
   position     : absolute;
-  border-radius: 10px;
   z-index      : 1;
 }
 
@@ -5190,7 +5075,6 @@ div#pfiche br,
   min-width      : 60px;
   position       : absolute;
   right          : -30px;
-  border-radius  : 10px;
   display        : flex;
   justify-content: flex-end;
   color          : var(--accent);
@@ -5215,7 +5099,6 @@ div#pfiche br,
   gap           : 8px;
   padding       : 14px;
   border        : var(--border);
-  border-radius : 10px;
   background    : var(--bg-soft);
   position      : relative;
 }
@@ -5262,17 +5145,14 @@ div#pfiche br,
 
 .pjournal-team-field {
   display        : flex;
-  justify-content: space-between;
   gap            : 8px;
   font-size      : 12px;
   z-index        : 1;
   height         : 200px;
-  display        : flex;
   flex-wrap      : wrap;
   align-content  : flex-end;
   justify-content: flex-start;
-
-  pointer-events: none;
+  pointer-events : none;
 }
 
 span.pjournal-surnom {
@@ -5286,7 +5166,6 @@ span.pjournal-surnom {
 .pjournal-team-field span.pjournal-surnom::after {
   position      : relative;
   background    : var(--flash);
-  border-radius : 10px;
   padding       : 1px 10px 0;
   font-family   : var(--font-label);
   font-weight   : 600;
@@ -5304,11 +5183,9 @@ span.pjournal-surnom {
   position      : relative;
   color         : var(--flash);
   z-index       : 165;
-  top           : -10px;
   line-height   : 18px;
   top           : 0px;
   background    : var(--bg);
-  border-radius : 10px;
   padding       : 0px 5px;
   height        : 100%;
 }
@@ -5320,7 +5197,6 @@ span.pjournal-surnom {
   text-transform: uppercase;
   font-weight   : 600;
   padding       : 2px 10px 0px;
-  border-radius : 10px;
   line-height   : normal;
   height        : fit-content;
 }
@@ -5357,7 +5233,6 @@ span.pjournal-surnom {
   color        : var(--text);
   padding      : 2px 10px;
   background   : var(--panel);
-  border-radius: 10px;
   line-height  : normal;
   height       : fit-content;
   font-weight  : 600;
@@ -5382,7 +5257,6 @@ span.pjournal-surnom {
   color          : var(--muted);
   padding        : 2px 0;
   line-height    : normal;
-  display        : flex;
   align-items    : flex-end;
 }
 
@@ -5410,7 +5284,6 @@ span.pjournal-surnom {
   display       : flex;
   flex-direction: column;
   border        : var(--border);
-  border-radius : 10px;
   overflow      : hidden;
 }
 
@@ -5485,11 +5358,10 @@ span.pjournal-surnom {
 #message-box textarea {
   width        : 100% !important;
   background   : var(--panel) !important;
-  border-radius: 10px;
   padding      : 20px !important;
   color        : var(--text);
 
-  border: 2px solid var(--line);
+  border: var(--border);
   margin: 20px 0 0 !important;
 }
 
