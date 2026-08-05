@@ -71,11 +71,28 @@ body.day {
   --accent-panel-text: #F1EAF9;
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
 
-/* === Defauts globaux design === */
-/* 10px et var(--line) sont les valeurs dominantes du design : posées ici une seule
-   fois, chaque règle qui s'en écarte (50%, 6px, 8px, 12px, 999px, couleur d'accent...)
-   garde sa valeur explicite qui la surchargera automatiquement (specificité > 0). */
+body::-webkit-scrollbar-track {
+  background: var(--bg-soft);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--accent)
+                     var(--bg-soft);
+  }
+}
+
 * {
   border-radius: 10px;
   border-color: var(--line);
@@ -1698,6 +1715,7 @@ h1 {
   color      : var(--text);
   font-family: var(--font-body);
   background : var(--bg-soft) !important;
+    position: relative;
 }
 
 .cp-sidebar {
@@ -2300,7 +2318,7 @@ span.award_tooltiptext {
   position        : absolute;
   top             : 0;
   left            : 0;
-  mask-size       : 120px 120px;
+  mask-size       : 120px -5px;
   mask-image      : url(https://violette-bleue.github.io/palmi/dice.svg);
   mask-position   : 80px 30px;
   opacity         : .2;
@@ -2623,7 +2641,9 @@ div#breadcrumbs {
   height        : 40px;
   overflow      : visible;
 }
-
+.topic-actions-inline > span {
+    height: 100%;
+}
 #breadcrumbs a i {
   font-size: 18px;
 }
@@ -2871,11 +2891,17 @@ div.sceditor-toolbar {
 }
 
 .quick-reply-textarea-wrap .sceditor-button {
-  margin       : 4px;
-  background   : var(--accent);
   border       : none !important;
 }
-
+#smiley-box, .smile-status-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
 .avatar-default img {
   box-shadow   : none;
   border-radius: 8px;
@@ -3628,7 +3654,9 @@ span.palmi-dice-type {
   justify-content: center;
   font-weight    : 500;
 }
-
+.palmi-dice-result:has(.--rien) {
+    opacity: 25%;
+}
 
 .palmi-dice-block span.palmi-dice-label {
   position      : relative;
