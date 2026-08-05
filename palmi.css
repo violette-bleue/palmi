@@ -97,6 +97,10 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   border-color: var(--line);
 }
+/*EXCEPTIONS*/
+#page-footer, .pfiche-tab-label, .pjournal-tab-label,.pfiche-tabbar, .pjournal-tabbar, .pjournal-team-card>div, .pjournal-rp-row, .quick-reply-textarea-wrap .sceditor-container iframe, .quick-reply-textarea-wrap .sceditor-container textarea, div#breadcrumbs, .palmi-realnav, .palmi-header {
+  border-radius: 0;
+}
 
 #palmi-page * {
   box-sizing: border-box;
@@ -4670,14 +4674,18 @@ div#pfiche br,
   font-weight   : 500;
 }
 
-.pfiche-panel.pfiche-panel-2 .pfiche-tag {
+.pfiche-panel.pfiche-panel-2 .pfiche-tag,
+.pfiche-panel.pfiche-panel-1 .pfiche-tag {
   top            : initial;
   display        : flex;
   justify-content: flex-end;
   right          : 870px;
   left           : unset;
 }
-
+.pfiche-panel.pfiche-panel-3>div:has(.palmi-poke-inline)>.pfiche-tag {
+    padding: 2px 10px 0;
+    line-height: normal;
+}
 /* --- Titre de section h2 --- */
 .pfiche-h2 {
   font-family   : var(--font-title);
@@ -5050,19 +5058,26 @@ div#pfiche br,
 .pjournal-item-row:has(img) div {
   margin-left: 35px;
 }
-
+.pjournal-item-row:has(img[src="LIENICI"]) div {
+    margin-left: 0;
+}
 .pjournal-item-row img {
   height       : 30px;
   position     : absolute;
   z-index      : 1;
 }
-
+.topic-admin .btn-flat i {
+    margin: 0;
+    font-size: 15px;
+}
 .--conso .pjournal-item-row img {
   position: relative;
   order   : -2;
   height  : 20px;
 }
-
+.pjournal-item-row img[src="LIENICI"], img[src="LIENICI"] {
+    display: none;
+}
 .pjournal-item-row span {
   display    : inline;
   overflow-y : auto;
@@ -5132,11 +5147,13 @@ div#pfiche br,
   background    : var(--bg-soft);
   position      : relative;
 }
-
-.pjournal-team-card:has(.palmi-poke-inline:empty) {
-  display: none;
+.pjournal-team-card:has(.palmi-poke-inline--notfound) > * {
+    display: none;
 }
-
+.pjournal-team-card:has(.palmi-poke-inline--notfound)::before {
+    content: 'Pokémon non trouvé';
+    opacity: 50%;
+}
 .pjournal-team-card .palmi-poke-inline {
   position: absolute;
   top     : 0;
@@ -5386,13 +5403,14 @@ span.pjournal-surnom {
 }
 
 #message-box textarea {
-  width        : 100% !important;
-  background   : var(--panel) !important;
-  padding      : 20px !important;
-  color        : var(--text);
-
-  border: var(--border);
-  margin: 20px 0 0 !important;
+    width: 100% !important;
+    background: var(--panel) !important;
+    padding: 20px !important;
+    color: var(--text);
+    border: var(--border);
+    margin: 20px 0 0 !important;
+    font-family: var(--font-body) !important;
+    line-height: 22px;
 }
 
 .sceditor-container {
