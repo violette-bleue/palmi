@@ -4819,7 +4819,9 @@ div#pfiche br,
   gap          : 5px;
   align-items  : center;
 }
-
+.pfiche-label[data-reponse]::before {
+    text-transform: lowercase;
+}
 .pfiche-label[data-reponse*="ui"]::before {
   font-family: 'Material Icons';
   content    : 'check_circle';
