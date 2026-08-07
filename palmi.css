@@ -15,7 +15,7 @@ body {
   --group-7: #944dcf;
   /*CHERCHEURS*/
   --group-8: #fddc2d;
-  /* TODO: --group-9, --group-10, --group-11 sont utilisées (tagg7-9, .group-9) mais jamais définies ici */
+  /* TODO  : --group-9, --group-10, --group-11 sont utilisées (tagg7-9, .group-9) mais jamais définies ici */
 
   /* --- Fonts: un seul endroit a toucher --- */
   --font-title: 'Sharpie', sans-serif;
@@ -76,29 +76,41 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--bg-soft);
+  background   : var(--bg-soft);
   border-radius: 3px;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background   : var(--accent);
   border-radius: 3px;
-  
+
 }
 
 @supports not selector(::-webkit-scrollbar) {
   body {
-    scrollbar-color: var(--accent)
-                     var(--bg-soft);
+    scrollbar-color: var(--accent) var(--bg-soft);
   }
 }
 
-* {
+*, ::after, ::before {
   border-radius: 10px;
-  border-color: var(--line);
+  border-color : var(--line);
 }
+
 /*EXCEPTIONS*/
-#page-footer, .pfiche-tab-label, .pjournal-tab-label,.pfiche-tabbar, .pjournal-tabbar, .pjournal-team-card>div, .pjournal-rp-row, .quick-reply-textarea-wrap .sceditor-container iframe, .quick-reply-textarea-wrap .sceditor-container textarea, div#breadcrumbs, .palmi-realnav, .palmi-header {
+p,
+#page-footer,
+.pfiche-tab-label,
+.pjournal-tab-label,
+.pfiche-tabbar,
+.pjournal-tabbar,
+.pjournal-team-card>div,
+.pjournal-rp-row,
+.quick-reply-textarea-wrap .sceditor-container iframe,
+.quick-reply-textarea-wrap .sceditor-container textarea,
+div#breadcrumbs,
+.palmi-realnav,
+.palmi-header {
   border-radius: 0;
 }
 
@@ -125,6 +137,7 @@ body::-webkit-scrollbar-thumb {
 #palmi-page>div:empty {
   margin: 0;
 }
+
 /* HEADER / HERO */
 .palmi-header {
   position     : relative;
@@ -161,7 +174,7 @@ body::-webkit-scrollbar-thumb {
   gap          : 8px;
   padding      : 3px 5px;
   border-radius: 999px;
-  border: var(--border);
+  border       : var(--border);
   background   : var(--panel);
   cursor       : pointer;
   z-index      : 5;
@@ -216,11 +229,13 @@ body::-webkit-scrollbar-thumb {
   text-shadow   : 0 2px 10px rgba(0, 0, 0, .6);
   text-transform: uppercase;
 }
+
 div.award {
-    border: none !important;
-    width: 30px;
-    height: 30px;
+  border: none !important;
+  width : 30px;
+  height: 30px;
 }
+
 .palmi-hero-badges-left,
 .palmi-hero-badges-right {
   position: absolute;
@@ -508,10 +523,10 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-zone-caption {
-  margin       : 10px;
-  padding      : 12px 15px;
-  background   : var(--text);
-  max-width    : 78%;
+  margin    : 10px;
+  padding   : 12px 15px;
+  background: var(--text);
+  max-width : 78%;
 }
 
 .palmi-zone-tag {
@@ -524,14 +539,16 @@ section.palmi-card:has(.palmi-topsites-grid) {
   margin     : 1px 0 0;
   color      : var(--bg);
 }
+
 .palmi-zone-caption h3 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .palmi-zone-caption p {
   font-family: var(--font-body);
   font-size  : 12.5px;
-  margin     : 0;color: var(--bg-soft);
+  margin     : 0;
+  color      : var(--bg-soft);
 
 }
 
@@ -593,19 +610,20 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-zone-stats {
-    font-family: var(--font-label);
-    font-size: 9px;
-    color: var(--muted);
-    white-space: nowrap;
-    position: absolute;
-    top: -15px;
-    background: var(--bg);
-    padding: 0px 5px;
-    border-radius: 5px;
-    font-weight: 500;
-    text-transform: uppercase;
-    line-height: 10px;
+  font-family   : var(--font-label);
+  font-size     : 9px;
+  color         : var(--muted);
+  white-space   : nowrap;
+  position      : absolute;
+  top           : -17px;
+  background    : var(--bg);
+  padding       : 2px 5px;
+  border-radius : 5px;
+  font-weight   : 500;
+  text-transform: uppercase;
+  line-height   : 10px;
 }
+
 .palmi-zone-last {
   display    : flex;
   align-items: center;
@@ -615,11 +633,11 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-zone-avatar {
-  width        : 100px;
-  height       : 50px;
-  overflow     : hidden;
-  border       : var(--border);
-  flex-shrink  : 0;
+  width      : 100px;
+  height     : 50px;
+  overflow   : hidden;
+  border     : var(--border);
+  flex-shrink: 0;
 }
 
 .palmi-zone-avatar img {
@@ -773,11 +791,11 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-footer-card h3 {
-    font-family: var(--font-label);
-    font-size: 15px;
-    margin: 0 0 8px;
-    color: var(--text);
-    text-transform: uppercase;
+  font-family   : var(--font-label);
+  font-size     : 15px;
+  margin        : 0 0 8px;
+  color         : var(--text);
+  text-transform: uppercase;
 }
 
 .palmi-footer-card p {
@@ -805,10 +823,10 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-partner {
-  width        : 50px;
-  height       : 50px;
-  overflow     : hidden;
-  border       : var(--border);
+  width   : 50px;
+  height  : 50px;
+  overflow: hidden;
+  border  : var(--border);
 }
 
 .palmi-partner img {
@@ -1008,11 +1026,11 @@ header.palmi-realnav #header-user img {
 }
 
 header.palmi-realnav #search-main {
-  display      : flex;
-  align-items  : center;
-  background   : var(--bg-soft);
-  border       : var(--border);
-  padding      : 2px 4px 2px 10px;
+  display    : flex;
+  align-items: center;
+  background : var(--bg-soft);
+  border     : var(--border);
+  padding    : 2px 4px 2px 10px;
 }
 
 header.palmi-realnav #search-main input {
@@ -1089,48 +1107,59 @@ ul#header-navigation>li>a>span {
 }
 
 ul#header-navigation>li>a>i {
-    font-size: 18px;
-    font-family: 'material symbols outlined';
-    font-style: normal;
+  font-size  : 18px;
+  font-family: 'material symbols outlined';
+  font-style : normal;
 }
 
 #header-navigation i+span {
   margin-left  : 4px;
   padding-right: 0;
 }
+
 #header-navigation li:has([href^="/"]) {
-    order: 1;
-}
-#header-navigation li:has([href^="/h2"]) {
-    order: 2;
-}
-#header-navigation li:has([href^="/faq"]) {
-    order: 5;
-}
-#header-navigation li:has([href^="/search"]) {
-    order: 10;
-}
-#header-navigation li:has([href^="/memberlist"]) {
-    order: 15;
-}
-#header-navigation li:has([href^="/groups"]) {
-    order: 20;
-}
-#header-navigation li:has([href^="/profile"]) {
-    order: 25;
-}
-#header-navigation li:has([href^="/priv"]) {
-    order: 30;
-}
-#header-navigation li:has([href^="/register"]) {
-    order: 35;
-}
-#header-navigation li:has([href^="/login"]) {
-    order: 40;
+  order: 1;
 }
 
-[class^="material"], [class*=" material"] {
-    font-family: 'Material Symbols Outlined' !important;
+#header-navigation li:has([href^="/h2"]) {
+  order: 2;
+}
+
+#header-navigation li:has([href^="/faq"]) {
+  order: 5;
+}
+
+#header-navigation li:has([href^="/search"]) {
+  order: 10;
+}
+
+#header-navigation li:has([href^="/memberlist"]) {
+  order: 15;
+}
+
+#header-navigation li:has([href^="/groups"]) {
+  order: 20;
+}
+
+#header-navigation li:has([href^="/profile"]) {
+  order: 25;
+}
+
+#header-navigation li:has([href^="/priv"]) {
+  order: 30;
+}
+
+#header-navigation li:has([href^="/register"]) {
+  order: 35;
+}
+
+#header-navigation li:has([href^="/login"]) {
+  order: 40;
+}
+
+[class^="material"],
+[class*=" material"] {
+  font-family: 'Material Symbols Outlined' !important;
 }
 
 /* === Switcheroo === */
@@ -1314,10 +1343,10 @@ nav#switcheroo.switcheroo {
 
 /* === Cards communes === */
 .palmi-card {
-  background   : var(--panel);
-  border       : var(--border);
-  overflow     : hidden;
-  position     : relative;
+  background: var(--panel);
+  border    : var(--border);
+  overflow  : hidden;
+  position  : relative;
 }
 
 .palmi-card--accent {
@@ -1430,13 +1459,13 @@ section.palmi-card.palmi-profile-fields {
 
 /* === Typographie globale === */
 h2 {
-    text-transform: uppercase;
-    font-size: 25px;
-    text-shadow: 0px 3px var(--accent2);
-    font-family: var(--font-label);
-    font-weight: 700 !important;
-    text-align: left !important;
-    margin: 0 0 0 0 !important;
+  text-transform: uppercase;
+  font-size     : 25px;
+  text-shadow   : 0px 3px var(--accent2);
+  font-family   : var(--font-label);
+  font-weight   : 700 !important;
+  text-align    : left !important;
+  margin        : 0 0 0 0 !important;
 }
 
 section h2 {
@@ -1481,19 +1510,22 @@ select {
 }
 
 .select select {
-    padding-right: 0;
-    color: var(--accent);
-    font-weight: 500;
-    height: fit-content;
-    line-height: normal;
+  padding-right: 0;
+  color        : var(--accent);
+  font-weight  : 500;
+  height       : fit-content;
+  line-height  : normal;
 }
+
 .select select option {
-    background: var(--bg);
-    border: none;
+  background: var(--bg);
+  border    : none;
 }
+
 .select:after {
-    line-height: normal;
-  }
+  line-height: normal;
+}
+
 /* === Icones === */
 .icon {
   display       : inline-block;
@@ -1691,12 +1723,12 @@ h1 {
 
 .block,
 .cp {
-  overflow     : hidden;
+  overflow: hidden;
 }
 
 .block {
   margin-bottom: 22px;
-  border: var(--border);
+  border       : var(--border);
 }
 
 .cp {
@@ -1714,48 +1746,54 @@ h1 {
   box-shadow : none !important;
 }
 
-.block-content {
-  padding    : 14px 16px !important;
-  color      : var(--text);
-  font-family: var(--font-body);
-  background : var(--bg-soft) !important;
-    position: relative;
-}
+
 
 .cp-sidebar {
-    background: var(--bg-soft);
-    border-right: var(--border);
-    width: 100vw !important;
-    position: sticky !important;
-    top: 54px;
-    margin: 0 !important;
-    z-index: 100;
-    order: 0;
-    display: flex;
-    align-items: center;
+  background  : var(--bg-soft);
+  border-right: var(--border);
+  width       : 100vw !important;
+  position    : sticky !important;
+  top         : 54px;
+  margin      : 0 !important;
+  z-index     : 100;
+  order       : 0;
+  display     : flex;
+  align-items : center;
 }
+
 .cp-sidebar #privmsgs-menu+.btn {
-    width: fit-content;
-    margin: 0;
-    position: absolute;
-    right: 20px;
-    background: none !important;
-    box-shadow: none;
-    color: var(--text) !important;
+  width     : fit-content;
+  margin    : 0;
+  position  : absolute;
+  right     : 20px;
+  background: none !important;
+  box-shadow: none;
+  color     : var(--text) !important;
 }
-.btn-default i, .mainoption i, .button i, .button1 i, .button2 i, .liteoption i {
-    font-size: 18px;    margin: 0;
+
+.btn-default i,
+.mainoption i,
+.button i,
+.button1 i,
+.button2 i,
+.liteoption i {
+  font-size: 18px;
+  margin   : 0;
 }
-.block-login, .block-modal {
-    max-width: unset;
+
+.block-login,
+.block-modal {
+  max-width: unset;
 }
 
 #privmsgs-menu li {
-    color: var(--text);
+  color: var(--text);
 }
+
 #privmsgs-menu ul {
-    border: none;
+  border: none;
 }
+
 .tabs a {
   font-family: var(--font-label);
   color      : var(--text);
@@ -1766,130 +1804,211 @@ h1 {
   border-bottom: 2px solid var(--accent);
 }
 
-.btn, .btn-default, .btn-flat, .btn-red, .btn-fixed {
-    font-family: var(--font-label);
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    line-height: normal;
-    white-space: nowrap;
+.btn,
+.btn-default,
+.btn-flat,
+.btn-red,
+.btn-fixed {
+  font-family  : var(--font-label);
+  border-radius: 8px;
+  border       : none;
+  cursor       : pointer;
+  height       : auto;
+  padding      : 0;
+  margin       : 0;
+  line-height  : normal;
+  white-space  : nowrap;
 }
 
-.forum-header, .posts-header {
-    background-color: var(--accent);
-    box-shadow: none;
-    color: var(--bg);
-    display: flex;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 10px 20px;
-    position: relative;    justify-content: space-between;
+.forum-header,
+.posts-header {
+  background-color: var(--accent);
+  box-shadow      : none;
+  color           : var(--bg);
+  display         : flex;
+  font-size       : 13px;
+  font-weight     : 600;
+  padding         : 10px 20px;
+  position        : relative;
+  justify-content : space-between;
 
 }
-.forum-section, .posts-section {
-    background-color: var(--panel);
-    box-shadow: none;
-    display: flex;
-    line-height: 22px;
-    margin-top: 6px;
-    padding: 19px 16px;
-    align-items: center;
-    justify-content: flex-start;
-}
-.forum-content, .posts-content {
-    margin-left: 0;
-    position: relative;
-    display: flex;    width: 100%;
-}
-.forum-description, .posts-description {
-    width: 60%;
-}
-.forum-description h3, .posts-description h3, .forum-description p, .posts-description p {
-    color: var(--text);}
-    .forum-lastpost-location i, .forum-lastpost-author i, .forum-lastpost-time i, .posts-lastpost-author i, .posts-lastpost-time i {
-    color: currentColor;}
 
-.category-title, .posts-title {
-    margin-left: 0;
-    padding-right: 0;
-    width: 45%;
+.forum-section,
+.posts-section {
+  background-color: var(--panel);
+  box-shadow      : none;
+  display         : flex;
+  line-height     : 22px;
+  margin-top      : 6px;
+  padding         : 19px 16px;
+  align-items     : center;
+  justify-content : flex-start;
 }
-.palmi-profile-stat-links > a {
-    color: var(--accent) !important;
-    display: inline-flex;
-    padding: 0;
-    font-size: 25px;
-    margin: 0 !important;
+
+.forum-content,
+.posts-content {
+  margin-left: 0;
+  position   : relative;
+  display    : flex;
+  width      : 100%;
 }
+
+.forum-description,
+.posts-description {
+  width: 60%;
+}
+
+.forum-description h3,
+.posts-description h3,
+.forum-description p,
+.posts-description p {
+  color: var(--text);
+}
+
+.forum-lastpost-location i,
+.forum-lastpost-author i,
+.forum-lastpost-time i,
+.posts-lastpost-author i,
+.posts-lastpost-time i {
+  color: currentColor;
+}
+
+.category-title,
+.posts-title {
+  margin-left  : 0;
+  padding-right: 0;
+  width        : 45%;
+}
+
+.palmi-profile-stat-links>a {
+  color    : var(--accent) !important;
+  display  : inline-flex;
+  padding  : 0;
+  font-size: 25px;
+  margin   : 0 !important;
+}
+
 .block-content {
+  display       : flex;
+  flex-direction: column;
+  gap           : 10px;
+  box-shadow    : none !important;
+  border-radius : 10px !important;
+  width         : 100% !important;
+  padding       : 14px 16px !important;
+  color         : var(--text);
+  font-family   : var(--font-body);
+  background    : var(--bg-soft) !important;
+  position      : relative;
+    margin: 0 !important;
+    
+    min-height: 100% !important;
+}
+.block-content .content {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    box-shadow: none !important;
-    border-radius: 10px !important;
-    
-    width: 100% !important;
 }
-.select-wrap select, .select-wrap input, .jumpbox-wrap select, .jumpbox-wrap input, .quickmod-wrap select, .quickmod-wrap input {
-    border-radius: 10px !important;
-    display: inline-block;
-    margin-top: 0px;
-    height: fit-content;
-    line-height: normal;
-}
-.forumline thead th, .table1 thead th {
-    background-color: transparent;
-    color: var(--text);
-    font-weight: 600;
-}
-.forumline th, .forumline td, .table1 th, .table1 td {
-    border: none;
-}
-.forumline tbody tr, .table1 tbody tr {
-    background-color: transparent;
-}
-.forumline th, .forumline td, .table1 th, .table1 td {
-    background: var(--bg-soft);
-}
-.forumline, .table1 {
-    border-collapse: unset;
-    box-shadow: none;
-    margin-bottom: 22px;
-    width: 100%;
-    background: var(--panel);
-    border: var(--border);overflow: hidden;
-}
-.btn-default, .mainoption, .button, .button1, .button2, .liteoption {
-    background-color: var(--accent);
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / .14), 0 3px 1px -2px rgb(0 0 0 / .2), 0 1px 5px 0 rgb(0 0 0 / .12);
-    color: var(--bg);
-    font-size: 13px;
-    line-height: normal;
-    padding: 0 10px;
-    cursor: pointer;
-    font-family: var(--font-label);
-    font-weight: 600;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-}
-.forum-lastpost, .posts-lastpost {
-    color: var(--muted);
-    font-size: 12px;
-}
-.notification-row {
-    background-color: transparent;
-    box-shadow: none;
-    border-radius: 0;
+.block .block-footer {
+    display: flex;
+    order: -1;
+    padding: 2px 10px;
     margin: 0;
-    padding: 8px 16px;
+    background: var(--panel);
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-label);
+    color: var(--muted);
 }
+.select-wrap select,
+.select-wrap input,
+.jumpbox-wrap select,
+.jumpbox-wrap input,
+.quickmod-wrap select,
+.quickmod-wrap input {
+  border-radius: 10px !important;
+  display      : inline-block;
+  margin-top   : 0px;
+  height       : fit-content;
+  line-height  : normal;
+}
+
+.forumline thead th,
+.table1 thead th {
+  background-color: transparent;
+  color           : var(--text);
+  font-weight     : 600;
+}
+
+.forumline th,
+.forumline td,
+.table1 th,
+.table1 td {
+  border: none;
+}
+
+.forumline tbody tr,
+.table1 tbody tr {
+  background-color: transparent;
+}
+
+.forumline th,
+.forumline td,
+.table1 th,
+.table1 td {
+  background: var(--bg-soft);
+}
+
+.forumline,
+.table1 {
+  border-collapse: unset;
+  box-shadow     : none;
+  margin-bottom  : 22px;
+  width          : 100%;
+  background     : var(--panel);
+  border         : var(--border);
+  overflow       : hidden;
+}
+
+.btn-default,
+.mainoption,
+.button,
+.button1,
+.button2,
+.liteoption {
+  background-color: var(--accent);
+  box-shadow      : 0 2px 2px 0 rgb(0 0 0 / .14), 0 3px 1px -2px rgb(0 0 0 / .2), 0 1px 5px 0 rgb(0 0 0 / .12);
+  color           : var(--bg);
+  font-size       : 13px;
+  line-height     : normal;
+  padding         : 0 10px;
+  cursor          : pointer;
+  font-family     : var(--font-label);
+  font-weight     : 600;
+  text-transform  : uppercase;
+  display         : inline-flex;
+  align-items     : center;
+}
+
+.forum-lastpost,
+.posts-lastpost {
+  color    : var(--muted);
+  font-size: 12px;
+}
+
+.notification-row {
+  background-color: transparent;
+  box-shadow      : none;
+  border-radius   : 0;
+  margin          : 0;
+  padding         : 8px 16px;
+}
+
 .form-buttons {
-    padding: 0 10px;
+  padding: 0 10px;
 }
+
 .btn-default {
   background    : var(--accent) !important;
   color         : var(--bg) !important;
@@ -1945,7 +2064,7 @@ h1 {
   top           : 45px;
   box-shadow    : none;
   background    : var(--panel);
-  border: var(--border);
+  border        : var(--border);
   padding       : 10px;
   flex-direction: column;
 }
@@ -2014,9 +2133,9 @@ select:focus {
 }
 
 .box {
-  background   : var(--panel);
-  border       : var(--border);
-  overflow     : hidden;
+  background: var(--panel);
+  border    : var(--border);
+  overflow  : hidden;
 }
 
 .box-head {
@@ -2116,16 +2235,22 @@ main#topic>div {
 }
 
 .block-comment .avatar-default img {
-  height  : auto;
-  width   : 150px;
-  border: var(--border);
-  position: absolute;
-  left    : -50px;
-  top     : 20px;
+height: auto;
+    width: 150px;
+    position: relative;
+}
+
+.block.block-comment {
+    min-height: 200px;
+    display: flex;
 }
 
 .block.block-comment .block-content {
-  padding-left: 50px !important;
+  padding-left: 20px 40px!important;
+}
+
+.block.block-comment:has(.palmi-dice-container) .block-content {
+  margin: 0;
 }
 
 div#breadcrumbs>div {
@@ -2167,13 +2292,13 @@ dd.palmi-detail-date-d-inscription::before {
 
 .post-author-details dd,
 .post-author-links a {
-  margin       : 0;
-  display      : inline-flex;
-  align-items  : center;
-  background   : var(--bg);
-  border: var(--border);
-  padding      : 4px 10px 3px;
-  gap          : 5px;
+  margin     : 0;
+  display    : inline-flex;
+  align-items: center;
+  background : var(--bg);
+  border     : var(--border);
+  padding    : 4px 10px 3px;
+  gap        : 5px;
 }
 
 .post-author-links {
@@ -2191,7 +2316,7 @@ span.post-heading-wrap>a,
 #comments_scroll_div:after,
 header.palmi-realnav::after,
 #page-footer .wrap strong,
-.cp-sidebar #privmsgs-menu+.btn > span,
+.cp-sidebar #privmsgs-menu+.btn>span,
 .cp-inner .mark-buttons,
 .forum-icon,
 .posts-icon,
@@ -2201,7 +2326,7 @@ header.palmi-realnav::after,
 .forum-statistics-header,
 .posts-statistics,
 .posts-statistics-header,
-.block .block-content > br,
+.block .block-content>br,
 .award_tooltiptext::after,
 .post-author-links img,
 #breadcrumbs a:last-child::after,
@@ -2330,20 +2455,22 @@ span.award_tooltiptext {
 }
 
 .post-header {
-  display        : flex;
-  margin         : 0;
-  padding        : 0;
-  height         : 40px;
-  justify-content: flex-start;
-  box-shadow     : none;
-  border-bottom  : 2px solid var(--line);
-  border-radius  : 8px 8px 0 0px;
-  gap            : 15px;
-      background-color: var(--panel);
+  display         : flex;
+  margin          : 0;
+  padding         : 0;
+  height          : 40px;
+  justify-content : flex-start;
+  box-shadow      : none;
+  border-bottom   : 2px solid var(--line);
+  border-radius   : 8px 8px 0 0px;
+  gap             : 15px;
+  background-color: var(--panel);
 }
+
 .post-author-title:empty {
-    display: none;
+  display: none;
 }
+
 .post-header h2 {
   padding-left   : 25px;
   display        : flex;
@@ -2534,6 +2661,11 @@ span.award_tooltiptext {
   padding    : 10px 15px 10px 15px;
 }
 
+.quick-reply-upload {
+  background: none !important;
+  color     : var(--text) !important;
+}
+
 .post-content a,
 .block-content>a,
 .palmi-gb-section a {
@@ -2645,9 +2777,11 @@ div#breadcrumbs {
   height        : 40px;
   overflow      : visible;
 }
-.topic-actions-inline > span {
-    height: 100%;
+
+.topic-actions-inline>span {
+  height: 100%;
 }
+
 #breadcrumbs a i {
   font-size: 18px;
 }
@@ -2679,31 +2813,38 @@ div#breadcrumbs {
   font-size: 0;
 }
 
-section.palmi-profile-header.palmi-card:has(.group-3) .palmi-profile-banner {
+section.palmi-profile-header.palmi-card:has(.group-3) .palmi-profile-banner,
+.block.block-comment:has(.group-3) {
   border-color: var(--group-3);
 }
 
-section.palmi-profile-header.palmi-card:has(.group-4) .palmi-profile-banner {
+section.palmi-profile-header.palmi-card:has(.group-4) .palmi-profile-banner,
+.block.block-comment:has(.group-4) {
   border-color: var(--group-4);
 }
 
-section.palmi-profile-header.palmi-card:has(.group-5) .palmi-profile-banner {
+section.palmi-profile-header.palmi-card:has(.group-5) .palmi-profile-banner,
+.block.block-comment:has(.group-5) {
   border-color: var(--group-5);
 }
 
-section.palmi-profile-header.palmi-card:has(.group-6) .palmi-profile-banner {
+section.palmi-profile-header.palmi-card:has(.group-6) .palmi-profile-banner,
+.block.block-comment:has(.group-6) {
   border-color: var(--group-6);
 }
 
-section.palmi-profile-header.palmi-card:has(.group-7) .palmi-profile-banner {
+section.palmi-profile-header.palmi-card:has(.group-7) .palmi-profile-banner,
+.block.block-comment:has(.group-7) {
   border-color: var(--group-7);
 }
 
-section.palmi-profile-header.palmi-card:has(.group-8) .palmi-profile-banner {
+section.palmi-profile-header.palmi-card:has(.group-8) .palmi-profile-banner,
+.block.block-comment:has(.group-8) {
   border-color: var(--group-8);
 }
 
-section.palmi-profile-header.palmi-card:has(.group-9) .palmi-profile-banner {
+section.palmi-profile-header.palmi-card:has(.group-9) .palmi-profile-banner,
+.block.block-comment:has(.group-9) {
   border-color: var(--group-9);
 }
 
@@ -2895,17 +3036,20 @@ div.sceditor-toolbar {
 }
 
 .quick-reply-textarea-wrap .sceditor-button {
-  border       : none !important;
+  border: none !important;
 }
-#smiley-box, .smile-status-box {
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
+
+#smiley-box,
+.smile-status-box {
+  position       : absolute;
+  right          : 0;
+  top            : 0;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  height         : 100%;
 }
+
 .avatar-default img {
   box-shadow   : none;
   border-radius: 8px;
@@ -2985,7 +3129,7 @@ div.sceditor-toolbar {
 
 .input-subtle,
 .inputbox {
-  border: var(--border);
+  border       : var(--border);
   border-radius: 8px !important;
   padding      : 0 10px;
   color        : var(--text);
@@ -3041,13 +3185,16 @@ div.sceditor-toolbar {
 .palmi-profile-header {
   overflow: visible;
 }
-.palmi-profile-awards > div {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0 !important;
-background: transparent !important;    gap: 0;
+
+.palmi-profile-awards>div {
+  display       : flex;
+  flex-direction: row;
+  margin        : 0;
+  padding       : 0 !important;
+  background    : transparent !important;
+  gap           : 0;
 }
+
 .palmi-profile-banner {
   position     : absolute;
   height       : 150px;
@@ -3081,7 +3228,7 @@ background: transparent !important;    gap: 0;
   width           : 200px;
   height          : 220px;
   overflow        : hidden;
-  border: var(--border);
+  border          : var(--border);
   box-shadow      : none;
   display         : flex;
   align-items     : center;
@@ -3308,17 +3455,19 @@ background: transparent !important;    gap: 0;
 
 /* Stats */
 .palmi-profile-stats-list {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  margin        : 0;
+  display       : flex;
+  flex-direction: column;
 }
+
 .palmi-profile-stat-links {
-    position: relative;
-    order: 5;
-    display: flex;
-    gap: 5px;
-    margin-top: 10px;
+  position  : relative;
+  order     : 5;
+  display   : flex;
+  gap       : 5px;
+  margin-top: 10px;
 }
+
 .palmi-profile-stat-row {
   display         : flex;
   justify-content : space-between;
@@ -3371,7 +3520,7 @@ section.palmi-card.palmi-profile-contact {
   background   : var(--bg);
   padding      : 5px 10px;
   border-radius: 8px;
-  border: var(--border);
+  border       : var(--border);
   font-weight  : 500;
 
 }
@@ -3404,9 +3553,9 @@ section.palmi-card.palmi-profile-contact {
 
 /* === Topics list === */
 main#forum {
-  width        : 1000px;
-  background   : var(--bg-soft);
-  border: var(--border);
+  width     : 1000px;
+  background: var(--bg-soft);
+  border    : var(--border);
 }
 
 .palmi-topics-header {
@@ -3648,7 +3797,7 @@ span.palmi-dice-type {
 
 .palmi-dice-result {
   background     : var(--panel);
-  border: var(--border);
+  border         : var(--border);
   display        : flex;
   flex-direction : column;
   align-items    : center;
@@ -3658,8 +3807,9 @@ span.palmi-dice-type {
   justify-content: center;
   font-weight    : 500;
 }
+
 .palmi-dice-result:has(.--rien) {
-    opacity: 25%;
+  opacity: 25%;
 }
 
 .palmi-dice-block span.palmi-dice-label {
@@ -3757,9 +3907,12 @@ span.palmi-dice-type {
   background-repeat: no-repeat;
   justify-content  : center;
 }
+
+
 .palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
-    background-image: url(https://www.pokepedia.fr/images/5/5a/Miniature_D%C3%A9_Pip%C3%A9_EV.png);
+  background-image: url(https://www.pokepedia.fr/images/5/5a/Miniature_D%C3%A9_Pip%C3%A9_EV.png);
 }
+
 .--pierre.--plante::before {
   background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Plante-CA.png);
 }
@@ -3814,24 +3967,26 @@ span.palmi-dice-type {
 .--joyau::before {
   background-image: url(https://www.pokepedia.fr/images/5/5d/Miniature_Joyau_Normal_LPZA.png);
 }
-.--evolue  {
-    background: linear-gradient(90deg, var(--group-8) 0%, var(--group-6) 20%, var(--group-4) 40%, var(--group-7) 60%, var(--group-5) 80%, var(--group-8) 100%);
-    background-size: 200% 100% !important;
-    color: transparent;
-    background-repeat: repeat !important;
-    animation: palmiShine 5s linear infinite;
-    background-clip: text;
-    font-weight: 600;
-    font-family: var(--font-label);
+
+.--evolue {
+  background       : linear-gradient(90deg, var(--group-8) 0%, var(--group-6) 20%, var(--group-4) 40%, var(--group-7) 60%, var(--group-5) 80%, var(--group-8) 100%);
+  background-size  : 200% 100% !important;
+  color            : transparent;
+  background-repeat: repeat !important;
+  animation        : palmiShine 5s linear infinite;
+  background-clip  : text;
+  font-weight      : 600;
+  font-family      : var(--font-label);
 }
+
 .--evolue::before {
-    mask-image: var(--icon-dna);
-    mask-size: 100%;
-    background: linear-gradient(90deg, var(--group-8) 0%, var(--group-6) 20%, var(--group-4) 40%, var(--group-7) 60%, var(--group-5) 80%, var(--group-8) 100%);
-    background-size: 200% 100% !important;
-    color: transparent;
-    background-repeat: repeat !important;
-    animation: palmiShine 5s linear infinite;
+  mask-image       : var(--icon-dna);
+  mask-size        : 100%;
+  background       : linear-gradient(90deg, var(--group-8) 0%, var(--group-6) 20%, var(--group-4) 40%, var(--group-7) 60%, var(--group-5) 80%, var(--group-8) 100%);
+  background-size  : 200% 100% !important;
+  color            : transparent;
+  background-repeat: repeat !important;
+  animation        : palmiShine 5s linear infinite;
 }
 
 /** MISE EN PAGE **/
@@ -3876,7 +4031,7 @@ note,
   width        : fit-content;
   padding      : 5px 15px;
   color        : var(--text);
-  border: var(--border);
+  border       : var(--border);
   margin       : 10px 0;
   background   : var(--bg);
 }
@@ -4014,15 +4169,15 @@ blockquote cite {
 }
 
 .spoiler_title {
-  background   : var(--accent);
-  z-index      : 2;
+  background: var(--accent);
+  z-index   : 2;
 }
 
 .spoiler_content {
-  padding      : 23px 15px 8px 15px;
-  margin       : -15px 0 0 0;
-  background   : var(--bg);
-  border: var(--border);
+  padding   : 23px 15px 8px 15px;
+  margin    : -15px 0 0 0;
+  background: var(--bg);
+  border    : var(--border);
 }
 
 g1,
@@ -4046,11 +4201,11 @@ tagg6,
 tagg7,
 tagg8,
 tagg9 {
-  padding      : 1px 10px 0;
-  font-weight  : 500;
-  font-family  : var(--font-label);
-  border       : 2px solid;
-  background   : var(--bg);
+  padding    : 1px 10px 0;
+  font-weight: 500;
+  font-family: var(--font-label);
+  border     : 2px solid;
+  background : var(--bg);
 }
 
 tagg1 {
@@ -4494,14 +4649,14 @@ fieldset.form-buttons {
 }
 
 fieldset.form-buttons .btn {
-    padding: 3px 10px !important;
-    margin: 0 !important;
-    background: var(--accent);
-    display: flex;
-    box-shadow: none;
-    height: auto;
-    align-items: center;
-    line-height: normal !important;
+  padding    : 3px 10px !important;
+  margin     : 0 !important;
+  background : var(--accent);
+  display    : flex;
+  box-shadow : none;
+  height     : auto;
+  align-items: center;
+  line-height: normal !important;
 }
 
 /* =============================================================== */
@@ -4559,7 +4714,8 @@ fieldset.form-buttons .btn {
 .post-wrap:has(#pfiche) .post-date,
 .post-wrap:has(#pfiche) .post-author-name,
 div#pfiche br,
-.pjournal br {
+.pjournal br,
+.block.block-comment:has(.palmi-dice-container) .avatar-default {
   display: none;
 }
 
@@ -4595,22 +4751,23 @@ div#pfiche br,
   position       : absolute;
   top            : 10px;
   right          : 10px;
-  border: var(--border);
+  border         : var(--border);
   width          : 60px;
   height         : 60px;
   display        : flex;
   align-items    : center;
   justify-content: center;
   background     : var(--panel);
+  border-radius: 10px !important;
 }
 
 .pfiche-avatar {
-  width        : 200px;
-  height       : 170px;
-  overflow     : hidden;
-  position     : absolute;
-  left         : 15px;
-  border       : 2px solid var(--accent);
+  width   : 200px;
+  height  : 170px;
+  overflow: hidden;
+  position: absolute;
+  left    : 15px;
+  border  : 2px solid var(--accent);
 }
 
 .pfiche-infos {
@@ -4627,11 +4784,11 @@ div#pfiche br,
 }
 
 .pfiche-infos>div:not(.pfiche-title, .pfiche-legend, .pfiche-avatar) {
-  background   : var(--accent);
-  font-family  : var(--font-label);
-  font-weight  : 600;
-  padding      : 2px 10px 0px;
-  color        : var(--bg);
+  background : var(--accent);
+  font-family: var(--font-label);
+  font-weight: 600;
+  padding    : 2px 10px 0px;
+  color      : var(--bg);
 }
 
 /* --- Titre et légende (superposés à la bannière) --- */
@@ -4682,10 +4839,12 @@ div#pfiche br,
   right          : 870px;
   left           : unset;
 }
+
 .pfiche-panel.pfiche-panel-3>div:has(.palmi-poke-inline)>.pfiche-tag {
-    padding: 2px 10px 0;
-    line-height: normal;
+  padding    : 2px 10px 0;
+  line-height: normal;
 }
+
 /* --- Titre de section h2 --- */
 .pfiche-h2 {
   font-family   : var(--font-title);
@@ -4818,18 +4977,20 @@ div#pfiche br,
 
 /* --- Réponses Oui/Non stylées en badge --- */
 .pfiche-label[data-reponse] {
-  background   : var(--accent);
-  color        : var(--bg);
-  font-weight  : 600;
-  font-family  : var(--font-label);
-  padding      : 2px 10px 0px;
-  display      : flex;
-  gap          : 5px;
-  align-items  : center;
+  background : var(--accent);
+  color      : var(--bg);
+  font-weight: 600;
+  font-family: var(--font-label);
+  padding    : 2px 10px 0px;
+  display    : flex;
+  gap        : 5px;
+  align-items: center;
 }
+
 .pfiche-label[data-reponse]::before {
-    text-transform: lowercase;
+  text-transform: lowercase;
 }
+
 .pfiche-label[data-reponse*="ui"]::before {
   font-family: 'Material Icons';
   content    : 'check_circle';
@@ -4896,9 +5057,9 @@ div#pfiche br,
 }
 
 .pfiche-panel.pfiche-panel-3>div:has(.palmi-poke-inline)>div {
-  background   : var(--panel);
-  border: var(--border);
-  padding      : 4px 10px;
+  background: var(--panel);
+  border    : var(--border);
+  padding   : 4px 10px;
 }
 
 .pfiche-panel.pfiche-panel-3>div:has(.palmi-poke-inline)>div .pfiche-label {
@@ -4916,7 +5077,7 @@ div#pfiche br,
   display       : flex;
   flex-direction: column;
   overflow      : hidden;
-  border: var(--border);
+  border        : var(--border);
   z-index       : -1;
 }
 
@@ -4962,7 +5123,7 @@ div#pfiche br,
   position      : absolute;
   top           : 100px;
   background    : var(--bg);
-  border: var(--border);
+  border        : var(--border);
   display       : flex;
   flex-direction: column;
 
@@ -5010,17 +5171,17 @@ div#pfiche br,
 }
 
 .palmi-poke-inline.palmi-poke-inline--pixel.palmi-poke-inline--filled::before {
-  font-family  : var(--font-label);
-  font-size    : 11px;
-  color        : var(--bg);
-  position     : absolute;
-  background   : var(--accent);
-  line-height  : normal;
-  padding      : 2px 10px 0;
-  font-weight  : 600;
-  bottom       : -10px;
-  content      : attr(data-surnom);
-  z-index      : 5;
+  font-family: var(--font-label);
+  font-size  : 11px;
+  color      : var(--bg);
+  position   : absolute;
+  background : var(--accent);
+  line-height: normal;
+  padding    : 2px 10px 0;
+  font-weight: 600;
+  bottom     : -10px;
+  content    : attr(data-surnom);
+  z-index    : 5;
 }
 
 /* --- Inventaire : objets --- */
@@ -5045,39 +5206,52 @@ div#pfiche br,
 }
 
 .pjournal-item-row div {
-  order        : -1;
-  background   : var(--accent2);
-  line-height  : normal;
-  padding      : 2px 10px 0;
-  color        : var(--bg);
-  font-weight  : 600;
-  font-family  : var(--font-label);
-  margin       : 5px 0 0px 0;
+  order      : -1;
+  background : var(--accent2);
+  line-height: normal;
+  padding    : 2px 10px 0;
+  color      : var(--bg);
+  font-weight: 600;
+  font-family: var(--font-label);
+  margin     : 5px 0 0px 0;
 }
 
 .pjournal-item-row:has(img) div {
   margin-left: 35px;
 }
+
 .pjournal-item-row:has(img[src="LIENICI"]) div {
-    margin-left: 0;
+  margin-left: 0;
 }
+
 .pjournal-item-row img {
-  height       : 30px;
-  position     : absolute;
-  z-index      : 1;
+  height  : 30px;
+  position: absolute;
+  z-index : 1;
 }
+
+.topic-admin {
+  margin-bottom: 22px;
+  display      : flex;
+  gap          : 20px;
+}
+
 .topic-admin .btn-flat i {
-    margin: 0;
-    font-size: 15px;
+  margin   : 0;
+  font-size: 15px;
 }
+
 .--conso .pjournal-item-row img {
   position: relative;
   order   : -2;
   height  : 20px;
 }
-.pjournal-item-row img[src="LIENICI"], img[src="LIENICI"] {
-    display: none;
+
+.pjournal-item-row img[src="LIENICI"],
+img[src="LIENICI"] {
+  display: none;
 }
+
 .pjournal-item-row span {
   display    : inline;
   overflow-y : auto;
@@ -5147,13 +5321,16 @@ div#pfiche br,
   background    : var(--bg-soft);
   position      : relative;
 }
-.pjournal-team-card:has(.palmi-poke-inline--notfound) > * {
-    display: none;
+
+.pjournal-team-card:has(.palmi-poke-inline--notfound)>* {
+  display: none;
 }
+
 .pjournal-team-card:has(.palmi-poke-inline--notfound)::before {
-    content: 'Pokémon non trouvé';
-    opacity: 50%;
+  content: 'Pokémon non trouvé';
+  opacity: 50%;
 }
+
 .pjournal-team-card .palmi-poke-inline {
   position: absolute;
   top     : 0;
@@ -5201,7 +5378,9 @@ div#pfiche br,
   justify-content: flex-start;
   pointer-events : none;
 }
-
+span.pjournal-surnom[data-surnom*="surnom"] {
+    display: none;
+}
 span.pjournal-surnom {
   display       : flex;
   align-items   : center;
@@ -5276,13 +5455,13 @@ span.pjournal-surnom {
 }
 
 .pjournal-team-attack {
-  font-size    : 12px;
-  color        : var(--text);
-  padding      : 2px 10px;
-  background   : var(--panel);
-  line-height  : normal;
-  height       : fit-content;
-  font-weight  : 600;
+  font-size  : 12px;
+  color      : var(--text);
+  padding    : 2px 10px;
+  background : var(--panel);
+  line-height: normal;
+  height     : fit-content;
+  font-weight: 600;
 }
 
 .pjournal-team-attack:empty,
@@ -5403,14 +5582,14 @@ span.pjournal-surnom {
 }
 
 #message-box textarea {
-    width: 100% !important;
-    background: var(--panel) !important;
-    padding: 20px !important;
-    color: var(--text);
-    border: var(--border);
-    margin: 20px 0 0 !important;
-    font-family: var(--font-body) !important;
-    line-height: 22px;
+  width      : 100% !important;
+  background : var(--panel) !important;
+  padding    : 20px !important;
+  color      : var(--text);
+  border     : var(--border);
+  margin     : 20px 0 0 !important;
+  font-family: var(--font-body) !important;
+  line-height: 22px;
 }
 
 .sceditor-container {
@@ -5539,13 +5718,46 @@ div#palmi-topics-sousforum .palmi-zone-caption {
   width : 30px;
   height: 30px;
 }
+[data-type] {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: auto;
+}
+[data-type]::before {
+    content: '';
+    display: flex;
+    width: 20px;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+
+[data-type^="normal"]::before {background-image: var(--icon-normal);}
+[data-type^="feu"]::before {background-image: var(--icon-fire);}
+[data-type^="eau"]::before {background-image: var(--icon-water);}
+[data-type^="electrique"]::before {background-image: var(--icon-electric);}
+[data-type^="plante"]::before {background-image: var(--icon-grass);}
+[data-type^="glace"]::before {background-image: var(--icon-ice);}
+[data-type^="poison"]::before {background-image: var(--icon-poison);}
+[data-type^="sol"]::before {background-image: var(--icon-ground);}
+[data-type^="vol"]::before {background-image: var(--icon-flying);}
+[data-type^="psy"]::before {background-image: var(--icon-psychic);}
+[data-type^="insecte"]::before {background-image: var(--icon-bug);}
+[data-type^="roche"]::before {background-image: var(--icon-rock);}
+[data-type^="spectre"]::before {background-image: var(--icon-ghost);}
+[data-type^="dragon"]::before {background-image: var(--icon-dragon);}
+[data-type^="tenebres"]::before {background-image: var(--icon-dark);}
+[data-type^="acier"]::before {background-image: var(--icon-steel);}
+[data-type^="fee"]::before {background-image: var(--icon-fairy);}
 
 /*AJUSTEMENTS*/
 label:has(input#profile_field_3_-10),
 label:has(input#profile_field_3_-21) {
-    display: none;
+  display: none;
 }
 
-.cp-inner > a {
-    display: none;
+.cp-inner>a {
+  display: none;
 }
