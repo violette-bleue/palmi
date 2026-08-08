@@ -152,6 +152,7 @@ div#breadcrumbs,
   width       : 100%;
   aspect-ratio: 16/6;
   min-height  : 280px;
+    border-radius: unset;
 }
 
 .palmi-hero-img {
@@ -159,6 +160,7 @@ div#breadcrumbs,
   height    : 100%;
   object-fit: cover;
   display   : block;
+    border-radius: unset;
 }
 
 .palmi-hero-overlay {
@@ -450,7 +452,9 @@ div.award {
 section.palmi-card:has(.palmi-topsites-grid) {
   min-width: 185px;
 }
-
+.palmi-card:has([data-widget="predefinis"]) {
+    min-width: 225px;
+}
 /* === ZONES (BOARD_INDEX) === */
 .palmi-forum-section {
   padding: 0;
@@ -1079,7 +1083,22 @@ header.palmi-realnav #header-navigation li a {
   white-space    : nowrap;
   height         : 40px;
 }
-
+header.palmi-realnav #header-navigation li a svg {
+    height: 18px;
+    width: auto;
+}
+header.palmi-realnav #header-navigation li a path {
+    fill: currentColor;
+}
+header.palmi-realnav #header-navigation li a[href*="https://discord"] {
+    position: absolute;
+    right: 100px;
+    top: 0;
+    opacity: 50%;
+}
+header.palmi-realnav #header-navigation li a[href*="https://discord"]:hover {
+    opacity: 100%;
+}
 header.palmi-realnav #header-navigation li a:hover,
 header.palmi-realnav #header-navigation li a.active {
   color     : var(--nav-accent);
@@ -2447,7 +2466,7 @@ span.award_tooltiptext {
   position        : absolute;
   top             : 0;
   left            : 0;
-  mask-size       : 120px -5px;
+  mask-size       : 60px 60px;
   mask-image      : url(https://violette-bleue.github.io/palmi/dice.svg);
   mask-position   : 80px 30px;
   opacity         : .2;
