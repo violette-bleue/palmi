@@ -1,6 +1,6 @@
 ﻿/* === Palmi === */
 a:has(img[src="https://2img.net/h/www.aht.li/2859284/5050C.png"]) {
-    display: none;
+  display: none;
 }
 
 body::-webkit-scrollbar {
@@ -24,7 +24,9 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   border-radius: 10px;
   border-color : var(--line);
 }
@@ -80,19 +82,19 @@ div#breadcrumbs,
 }
 
 .palmi-hero-wrap {
-  position    : relative;
-  width       : 100%;
-  aspect-ratio: 16/6;
-  min-height  : 280px;
-    border-radius: unset;
+  position     : relative;
+  width        : 100%;
+  aspect-ratio : 16/6;
+  min-height   : 280px;
+  border-radius: unset;
 }
 
 .palmi-hero-img {
-  width     : 100%;
-  height    : 100%;
-  object-fit: cover;
-  display   : block;
-    border-radius: unset;
+  width        : 100%;
+  height       : 100%;
+  object-fit   : cover;
+  display      : block;
+  border-radius: unset;
 }
 
 .palmi-hero-overlay {
@@ -156,15 +158,15 @@ div#breadcrumbs,
 }
 
 .palmi-hero-sub {
-    margin: 10px 0 0;
-    font-family: var(--font-label);
-    font-size: 16px;
-    color: #EDEAF0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, .6);
-    text-transform: uppercase;
-    max-width: 50%;
-    white-space: normal;
-    line-height: normal;
+  margin        : 10px 0 0;
+  font-family   : var(--font-label);
+  font-size     : 16px;
+  color         : #EDEAF0;
+  text-shadow   : 0 2px 10px rgba(0, 0, 0, .6);
+  text-transform: uppercase;
+  max-width     : 50%;
+  white-space   : normal;
+  line-height   : normal;
 }
 
 div.award {
@@ -387,9 +389,11 @@ div.award {
 section.palmi-card:has(.palmi-topsites-grid) {
   min-width: 185px;
 }
+
 .palmi-card:has([data-widget="predefinis"]) {
-    min-width: 225px;
+  min-width: 225px;
 }
+
 /* === ZONES (BOARD_INDEX) === */
 .palmi-forum-section {
   padding: 0;
@@ -546,8 +550,8 @@ section.palmi-card:has(.palmi-topsites-grid) {
   border         : 0;
   position       : relative;
   height         : 70px;
-  
-    border-radius: 10px 10px 0 0;
+
+  border-radius: 10px 10px 0 0;
 }
 
 .palmi-zone-stats {
@@ -643,10 +647,10 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-zones-grid.palmi-cat-administration .palmi-zone-media {
-    min-height: 110px;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
+  min-height : 110px;
+  height     : 100%;
+  display    : flex;
+  align-items: flex-start;
 }
 
 .palmi-zones-grid.palmi-cat-administration .palmi-forum-1 .palmi-zone-caption p {
@@ -725,157 +729,186 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 
 .palmi-footer-grid {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    flex-direction: column;
+  display       : flex;
+  gap           : 15px;
+  flex-wrap     : wrap;
+  flex-direction: column;
 }
-.palmi-footer-grid>div {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-}
-.palmi-card.palmi-footer-card {
-    padding: 14px 16px;
-    display: flex;
-    justify-content: flex-start;
-    min-width: 260px;
-}
-.palmi-card.palmi-footer-card.--stats p {
-    font-size: 0;
-    display: flex;
-    flex-direction: row;gap: 5px;
-}
-.palmi-card.palmi-footer-card.--stats p > span {
-    display: flex;
-    gap: 2px;
-    flex-direction: row-reverse;
-    background: var(--accent);
-    color: var(--bg);
-    padding: 0 6px;
-    line-height: normal;
 
-    flex-wrap: nowrap;
-    align-items: center;
+.palmi-footer-grid>div {
+  display        : flex;
+  gap            : 10px;
+  justify-content: space-between;
 }
+
+.palmi-card.palmi-footer-card {
+  padding        : 14px 16px;
+  display        : flex;
+  justify-content: flex-start;
+  min-width      : 260px;
+}
+
+.palmi-card.palmi-footer-card.--stats p {
+  font-size     : 0;
+  display       : flex;
+  flex-direction: row;
+  gap           : 5px;
+}
+
+.palmi-card.palmi-footer-card.--stats p>span {
+  display       : flex;
+  gap           : 2px;
+  flex-direction: row-reverse;
+  background    : var(--accent);
+  color         : var(--bg);
+  padding       : 0 6px;
+  line-height   : normal;
+
+  flex-wrap  : nowrap;
+  align-items: center;
+}
+
 .palmi-card.palmi-footer-card.--stats,
 .palmi-card.palmi-footer-card.--groups {
-    width: 100px;
-    background: none;
-    width: fit-content;
-    border: none;
-    padding: 0;
+  width     : 100px;
+  background: none;
+  width     : fit-content;
+  border    : none;
+  padding   : 0;
 }
+
 .palmi-card.palmi-footer-card.--stats strong {
-    font-size: 13px;
-    font-family: var(--font-label);
-    font-weight: 600;
+  font-size  : 13px;
+  font-family: var(--font-label);
+  font-weight: 600;
 }
-.palmi-card.palmi-footer-card.--stats span>span, .palmi-card.palmi-footer-card.--stats strong {
-    font-size: 15px;
-    line-height: 11px;}
+
+.palmi-card.palmi-footer-card.--stats span>span,
+.palmi-card.palmi-footer-card.--stats strong {
+  font-size  : 15px;
+  line-height: 11px;
+}
+
 .palmi-card.palmi-footer-card.--groups {
-    display: flex;
-    gap: 0 5px;
-    align-items: center;
+  display    : flex;
+  gap        : 0 5px;
+  align-items: center;
 }
+
 .palmi-card.palmi-footer-card.--groups a {
-    background: currentColor;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
+  background : currentColor;
+  display    : flex;
+  align-items: center;
+  padding    : 0 10px;
 }
+
 .palmi-card.palmi-footer-card.--groups a span {
-    color: var(--bg);
-    font-weight: 600;
+  color      : var(--bg);
+  font-weight: 600;
 }
+
 p.palmi-newest-user span.palmi-newest-user-avatar {
-    height: 100px;
-    width: 100px;
-    display: flex;
-    overflow: hidden;
-    border: 2px solid var(--line);
+  height  : 100px;
+  width   : 100px;
+  display : flex;
+  overflow: hidden;
+  border  : 2px solid var(--line);
 }
+
 p.palmi-newest-user span.palmi-newest-user-avatar img {
-    width: 100%;
-    height: max-content;
+  width : 100%;
+  height: max-content;
 }
+
 .palmi-newest-user a::before {
-    content: 'Bienvenue ';    font-weight: 400;
+  content    : 'Bienvenue ';
+  font-weight: 400;
 
 }
+
 .palmi-newest-user a {
-    font-size: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    line-height: normal;
+  font-size     : 20px;
+  display       : flex;
+  flex-wrap     : wrap;
+  flex-direction: column;
+  line-height   : normal;
 }
 
 .palmi-card.palmi-footer-card.--historic {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    min-width: 400px;
-}
-.palmi-card.palmi-footer-card.--historic strong {
-    font-size: 14px;
-    font-weight: 500;
-}
-.palmi-card.palmi-footer-card.--historic >p:first-of-type > strong::before {
-    content: 'Le record d\'utilisateurices connectées simultanément est de ';
-}
-.palmi-card.palmi-footer-card.--historic >p:first-of-type > strong {
-    font-size: 12px;
-    color: var(--muted);
-    font-style: italic;
-}
-.palmi-card.palmi-footer-card.--historic > p:last-child {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3px 0;
-    line-height: normal;
-    position: relative;
-    padding-top: 22px;
-    margin-left: -10px;
-    height: 125px;
-    overflow-y: auto;
-    align-content: flex-start;
-}
-.palmi-card.palmi-footer-card.--historic > p:last-child a {
-    font-size: 12px;
-}
-.palmi-card.palmi-footer-card.--historic > p:last-child::before {
-    content: 'Ils étaient là :';
-    font-size: 14px;
-    position: absolute;
-    top: 0;
-    left: 10px;
-}
-.palmi-card.palmi-footer-card>br {
-    display: none;
-}
-.palmi-card.palmi-footer-card.--online {
-    width: -webkit-fill-available;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-.palmi-footer-card p a> span {
-    display: flex;
-    padding: 0 10px;
-    align-items: center;
-    line-height: normal;
-}
-.palmi-footer-card p a:hover > span {
-    background: currentColor;
+  display       : flex;
+  flex-direction: column;
+  gap           : 10px;
+  min-width     : 400px;
 }
 
-.palmi-footer-card p a> span > strong {
-    line-height: 14px;
+.palmi-card.palmi-footer-card.--historic strong {
+  font-size  : 14px;
+  font-weight: 500;
 }
-.palmi-footer-card p a:hover > span > strong {
-    color: var(--bg);
+
+.palmi-card.palmi-footer-card.--historic>p:first-of-type>strong::before {
+  content: 'Le record d\'utilisateurices connectées simultanément est de ';
+}
+
+.palmi-card.palmi-footer-card.--historic>p:first-of-type>strong {
+  font-size : 12px;
+  color     : var(--muted);
+  font-style: italic;
+}
+
+.palmi-card.palmi-footer-card.--historic>p:last-child {
+  display      : flex;
+  flex-wrap    : wrap;
+  gap          : 3px 0;
+  line-height  : normal;
+  position     : relative;
+  padding-top  : 22px;
+  margin-left  : -10px;
+  height       : 125px;
+  overflow-y   : auto;
+  align-content: flex-start;
+}
+
+.palmi-card.palmi-footer-card.--historic>p:last-child a {
+  font-size: 12px;
+}
+
+.palmi-card.palmi-footer-card.--historic>p:last-child::before {
+  content  : 'Ils étaient là :';
+  font-size: 14px;
+  position : absolute;
+  top      : 0;
+  left     : 10px;
+}
+
+.palmi-card.palmi-footer-card>br {
+  display: none;
+}
+
+.palmi-card.palmi-footer-card.--online {
+  width         : -webkit-fill-available;
+  display       : flex;
+  flex-direction: column;
+  gap           : 5px;
+}
+
+.palmi-footer-card p a>span {
+  display    : flex;
+  padding    : 0 10px;
+  align-items: center;
+  line-height: normal;
+}
+
+.palmi-footer-card p a:hover>span {
+  background: currentColor;
+}
+
+.palmi-footer-card p a>span>strong {
+  line-height: 14px;
+}
+
+.palmi-footer-card p a:hover>span>strong {
+  color: var(--bg);
 }
 
 
@@ -1157,27 +1190,33 @@ header.palmi-realnav #header-navigation li a {
   white-space    : nowrap;
   height         : 40px;
 }
+
 header.palmi-realnav #header-navigation li a[data-tip-content*="nouveau"][data-tip-content*="message"] {
-    color: var(--flash);
-    text-shadow: 0px 0 5px var(--flash);
-    animation: alternate PalmiBounce 1.5s ease-in-out infinite;
+  color      : var(--flash);
+  text-shadow: 0px 0 5px var(--flash);
+  animation  : alternate PalmiBounce 1.5s ease-in-out infinite;
 }
+
 header.palmi-realnav #header-navigation li a svg {
-    height: 18px;
-    width: auto;
+  height: 18px;
+  width : auto;
 }
+
 header.palmi-realnav #header-navigation li a path {
-    fill: currentColor;
+  fill: currentColor;
 }
+
 header.palmi-realnav #header-navigation li a[href*="https://discord"] {
-    position: absolute;
-    right: 100px;
-    top: 0;
-    opacity: 50%;
+  position: absolute;
+  right   : 100px;
+  top     : 0;
+  opacity : 50%;
 }
+
 header.palmi-realnav #header-navigation li a[href*="https://discord"]:hover {
-    opacity: 100%;
+  opacity: 100%;
 }
+
 header.palmi-realnav #header-navigation li a:hover,
 header.palmi-realnav #header-navigation li a.active {
   color     : var(--nav-accent);
@@ -1446,11 +1485,13 @@ nav#switcheroo.switcheroo {
   overflow  : hidden;
   position  : relative;
 }
+
 section#forum-list .palmi-card {
-    flex-direction: column;
-    justify-content: flex-end;
-    display: flex;
+  flex-direction : column;
+  justify-content: flex-end;
+  display        : flex;
 }
+
 .palmi-card--accent {
   background: var(--accent-panel);
 }
@@ -1852,7 +1893,6 @@ h1 {
 
 .cp-sidebar {
   background  : var(--bg-soft);
-  border-right: var(--border);
   width       : 100vw !important;
   position    : sticky !important;
   top         : 54px;
@@ -2003,26 +2043,29 @@ h1 {
   font-family   : var(--font-body);
   background    : var(--bg-soft) !important;
   position      : relative;
-    margin: 0 !important;
-    
-    min-height: 100% !important;
+  margin        : 0 !important;
+
+  min-height: 100% !important;
 }
+
 .block-content .content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display       : flex;
+  flex-direction: column;
+  gap           : 10px;
 }
+
 .block .block-footer {
-    display: flex;
-    order: -1;
-    padding: 2px 10px;
-    margin: 0;
-    background: var(--panel);
-    border: none;
-    border-radius: 10px;
-    font-family: var(--font-label);
-    color: var(--muted);
+  display      : flex;
+  order        : -1;
+  padding      : 2px 10px;
+  margin       : 0;
+  background   : var(--panel);
+  border       : none;
+  border-radius: 10px;
+  font-family  : var(--font-label);
+  color        : var(--muted);
 }
+
 .select-wrap select,
 .select-wrap input,
 .jumpbox-wrap select,
@@ -2080,7 +2123,7 @@ h1 {
 .button2,
 .liteoption {
   background-color: var(--accent);
-  box-shadow      : 0 2px 2px 0 rgb(0 0 0 / .14), 0 3px 1px -2px rgb(0 0 0 / .2), 0 1px 5px 0 rgb(0 0 0 / .12);
+  box-shadow      : none;
   color           : var(--bg);
   font-size       : 13px;
   line-height     : normal;
@@ -2091,6 +2134,7 @@ h1 {
   text-transform  : uppercase;
   display         : inline-flex;
   align-items     : center;
+    border: 2px solid transparent;
 }
 
 .forum-lastpost,
@@ -2121,6 +2165,8 @@ h1 {
   font-weight   : 600;
   text-transform: uppercase;
   font-size     : 12px;
+    margin: 10px 0 5px;
+
 }
 
 .sort-form>div {
@@ -2337,18 +2383,18 @@ main#topic>div {
 }
 
 .block-comment .avatar-default img {
-height: auto;
-    width: 150px;
-    position: relative;
+  height  : auto;
+  width   : 150px;
+  position: relative;
 }
 
 .block.block-comment {
-    min-height: 200px;
-    display: flex;
+  min-height: 200px;
+  display   : flex;
 }
 
 .block.block-comment .block-content {
-  padding-left: 20px 40px!important;
+  padding-left: 20px 40px !important;
 }
 
 .block.block-comment:has(.palmi-dice-container) .block-content {
@@ -2375,17 +2421,18 @@ dd.palmi-detail-date-d-inscription::before,
   line-height: 1;
   display    : inline-block;
 }
+
 dd.palmi-detail-pokedollars::before {
-    content: '';
-    background: currentColor;
-    display: flex;
-    width: 13px;
-    height: 100%;
-    mask-image: var(--icon-pokedollar);
-    mask-repeat: no-repeat;
-    mask-size: contain;
-    mask-position: 0px 2px;
-    border-radius: 0;
+  content      : '';
+  background   : currentColor;
+  display      : flex;
+  width        : 13px;
+  height       : 100%;
+  mask-image   : var(--icon-pokedollar);
+  mask-repeat  : no-repeat;
+  mask-size    : contain;
+  mask-position: 0px 2px;
+  border-radius: 0;
 }
 
 dd.palmi-detail-date-d-inscription::before {
@@ -2406,14 +2453,14 @@ dd.palmi-detail-date-d-inscription::before {
 
 .post-author-details dd,
 .post-author-links a {
-    margin: 0;
-    display: inline-flex;
-    align-items: center;
-    background: var(--bg);
-    border: var(--border);
-    padding: 2px 10px;
-    gap: 5px;
-    line-height: 0;
+  margin     : 0;
+  display    : inline-flex;
+  align-items: center;
+  background : var(--bg);
+  border     : var(--border);
+  padding    : 2px 10px;
+  gap        : 5px;
+  line-height: 0;
 }
 
 .post-author-links {
@@ -2690,7 +2737,8 @@ span.award_tooltiptext {
   padding-left: 10px;
 }
 
-.post-author-name span, .post-author-name > a {
+.post-author-name span,
+.post-author-name>a {
   font-family   : var(--font-title);
   text-transform: uppercase;
   font-size     : 25px;
@@ -2781,36 +2829,43 @@ span.award_tooltiptext {
   color     : var(--text) !important;
 }
 
-.post-content a, .block-content>a, .palmi-gb-section a {
-    text-decoration: none;
-    background: var(--accent);
-    border-radius: 8px;
-    padding: 1px 10px 0;
-    color: var(--bg) !important;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 10px;
-    line-height: normal;
-    top: -2px;
-    position: relative;
-    border: 2px solid transparent;
+.post-content a,
+.block-content>a,
+.palmi-gb-section a {
+  text-decoration: none;
+  background     : var(--accent);
+  border-radius  : 8px;
+  padding        : 1px 10px 0;
+  color          : var(--bg) !important;
+  font-weight    : 600;
+  text-transform : uppercase;
+  font-size      : 10px;
+  line-height    : normal;
+  top            : -2px;
+  position       : relative;
+  border         : 2px solid transparent;
 }
-.post-content a:hover, .block-content>a:hover, .palmi-gb-section a:hover {
-    background: var(--bg);
-    color: var(--accent) !important;
-    border: 2px solid currentColor;
+
+.post-content a:hover,
+.block-content>a:hover,
+.palmi-gb-section a:hover,
+.btn-default:hover, .mainoption:hover, .button:hover, .button1:hover, .button2:hover, .liteoption:hover {
+  background: var(--bg);
+  color     : var(--accent) !important;
+  border    : 2px solid currentColor;box-shadow: none;
 }
+
 .post-signature {
-  border-top : var(--border);
-  padding-top: 8px;
-  margin-top : 10px;
-  font-family: 'General Sans', sans-serif;
-  font-size  : 11.5px;
-  font-style : italic;
-  color      : var(--muted);
-  max-height : 300px;
-  overflow   : hidden;
-    border-radius: 0;
+  border-top   : var(--border);
+  padding-top  : 8px;
+  margin-top   : 10px;
+  font-family  : 'General Sans', sans-serif;
+  font-size    : 11.5px;
+  font-style   : italic;
+  color        : var(--muted);
+  max-height   : 300px;
+  overflow     : hidden;
+  border-radius: 0;
 }
 
 #breadcrumbs a:first-child {
@@ -3195,6 +3250,7 @@ div.sceditor-toolbar {
 #tabs,
 .tabs {
   margin-bottom: 0;
+    width: 100%;
 }
 
 #tabs span,
@@ -3214,11 +3270,11 @@ div.sceditor-toolbar {
 }
 
 .cp .block-content {
-  display  : flex;
-  flex-wrap: wrap;
-  gap      : 15px;
-  position : relative;
-    flex-direction: row;
+  display       : flex;
+  flex-wrap     : wrap;
+  gap           : 15px;
+  position      : relative;
+  flex-direction: row;
 }
 
 .cp .block-content label {
@@ -3301,7 +3357,9 @@ div.sceditor-toolbar {
   flex-direction: column;
   gap           : 15px;
 }
-
+[action="/profile"] .block .block-content img {
+    width: 200px!important;
+}
 /* Header */
 .palmi-profile-header {
   overflow: visible;
@@ -3474,7 +3532,8 @@ div.sceditor-toolbar {
   gap                  : 12px;
 }
 
-.palmi-poke-slot, .palmi-poke-inline {
+.palmi-poke-slot,
+.palmi-poke-inline {
   border        : var(--border);
   overflow      : hidden;
   background    : var(--bg-soft);
@@ -3482,13 +3541,17 @@ div.sceditor-toolbar {
   flex-direction: column;
   position      : relative;
 }
-.post-content .palmi-poke-inline, .palmi-gb .palmi-poke-inline {
-    width: 100px;
-    overflow: visible;
+
+.post-content .palmi-poke-inline,
+.palmi-gb .palmi-poke-inline {
+  width   : 100px;
+  overflow: visible;
 }
+
 .palmi-poke-inline:has(:not([data-surnom]))::before {
-  display: none; 
+  display: none;
 }
+
 .palmi-poke-types {
   position      : absolute;
   top           : 10px;
@@ -3513,7 +3576,8 @@ div.sceditor-toolbar {
   background  : var(--bg);
 }
 
-.palmi-poke-name, .palmi-poke-inline-name {
+.palmi-poke-name,
+.palmi-poke-inline-name {
   display       : block;
   font-family   : var(--font-label);
   font-size     : 15px;
@@ -3522,11 +3586,13 @@ div.sceditor-toolbar {
   text-transform: uppercase;
   font-weight   : 600;
 }
+
 span.palmi-poke-inline-name {
-    background: var(--bg);
-    font-size: 10px;
-    padding: 2px 10px;
+  background: var(--bg);
+  font-size : 10px;
+  padding   : 2px 10px;
 }
+
 .palmi-poke-slot--empty {
   aspect-ratio: 1;
   opacity     : .3;
@@ -3701,7 +3767,7 @@ main#forum {
   letter-spacing       : .05em;
   border-bottom        : var(--border);
   align-items          : center;
-    border-radius: 0;
+  border-radius        : 0;
 }
 
 .palmi-topics-separator {
@@ -3768,19 +3834,21 @@ main#forum {
 }
 
 .palmi-topic-type {
-    font-family: var(--font-label);
-    font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 6px;
-    background: var(--accent-panel);
-    color: var(--accent-panel-text);
-    white-space: nowrap;
-    flex-shrink: 0;
-    text-transform: uppercase;
+  font-family   : var(--font-label);
+  font-size     : 12px;
+  padding       : 2px 6px;
+  border-radius : 6px;
+  background    : var(--accent-panel);
+  color         : var(--accent-panel-text);
+  white-space   : nowrap;
+  flex-shrink   : 0;
+  text-transform: uppercase;
 }
+
 .palmi-topic-type strong {
-    font-weight: 600;
+  font-weight: 600;
 }
+
 .palmi-topic-link {
   font-family    : var(--font-body);
   font-size      : 17px;
@@ -4034,24 +4102,26 @@ span.palmi-dice-reward.--shiny {
 }
 
 .palmi-dice-reward::before,
-.palmi-dice-block--shiny .palmi-dice-result--number span::before, 
+.palmi-dice-block--shiny .palmi-dice-result--number span::before,
 .palmi-dice-block--charme_chroma .palmi-dice-result--number span::before {
   font-family: 'Material Icons';
-  font-size: 30px;
+  font-size  : 30px;
 }
-.palmi-dice-block--shiny .palmi-dice-result--number span::before, 
+
+.palmi-dice-block--shiny .palmi-dice-result--number span::before,
 .palmi-dice-block--charme_chroma .palmi-dice-result--number span::before {
-    color: var(--muted);
+  color: var(--muted);
 }
+
 .palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-reward--has-image::before {
-  content: '';
-  display: flex;
-  width: 40px;
-  height: 40px;
-  background-image: var(--dice-icon);
-  background-size: contain;
+  content          : '';
+  display          : flex;
+  width            : 40px;
+  height           : 40px;
+  background-image : var(--dice-icon);
+  background-size  : contain;
   background-repeat: no-repeat;
-  justify-content: center;
+  justify-content  : center;
 }
 
 .palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-reward--has-materialicon::before {
@@ -4074,7 +4144,7 @@ span.palmi-dice-reward.--shiny {
 }
 
 .palmi-dice-block--expedition .--baron::before {
-  content         : '' !important;
+  content: '' !important;
 }
 
 .palmi-dice-result:has(.--plusdeux) {
@@ -4235,14 +4305,15 @@ blockquote cite {
   font-family: var(--font-label);
 }
 
-.palmi-gb-section ul, .palmi-gb-section ol {
-    margin: 0 0 14px;
-    padding-left: 22px;
-    color: var(--muted);
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.palmi-gb-section ul,
+.palmi-gb-section ol {
+  margin        : 0 0 14px;
+  padding-left  : 22px;
+  color         : var(--muted);
+  font-size     : 14px;
+  display       : flex;
+  flex-direction: column;
+  width         : 100%;
 }
 
 .post-content ul li br,
@@ -4250,33 +4321,35 @@ blockquote cite {
   display: none;
 }
 
-.post-content ul li, .palmi-gb-section ul li {
-    list-style: none;
-    height: fit-content;
-    display: block;
-    align-items: center;
-    position: relative;
-    float: left;
-    margin: 10px 0;
-    background: var(--bg-soft);
-    padding: 5px 15px;
+.post-content ul li,
+.palmi-gb-section ul li {
+  list-style : none;
+  height     : fit-content;
+  display    : block;
+  align-items: center;
+  position   : relative;
+  float      : left;
+  margin     : 10px 0;
+  background : var(--bg-soft);
+  padding    : 5px 15px;
 }
 
-.post-content ul li::before, .palmi-gb-section ul li::before {
-    content: '';
-    display: inline-block;
-    width: 17px;
-    height: 17px;
-    background-color: var(--accent);
-    -webkit-mask-image: var(--icon-pokeball);
-    mask-image: var(--icon-pokeball);
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    position: absolute;
-    left: -25px;
-    top: 3px;
+.post-content ul li::before,
+.palmi-gb-section ul li::before {
+  content            : '';
+  display            : inline-block;
+  width              : 17px;
+  height             : 17px;
+  background-color   : var(--accent);
+  -webkit-mask-image : var(--icon-pokeball);
+  mask-image         : var(--icon-pokeball);
+  -webkit-mask-size  : contain;
+  mask-size          : contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat        : no-repeat;
+  position           : absolute;
+  left               : -25px;
+  top                : 3px;
 }
 
 .spoiler_title {
@@ -4768,7 +4841,7 @@ fieldset.form-buttons .btn {
   height     : auto;
   align-items: center;
   line-height: normal !important;
-    color: var(--bg);
+  color      : var(--bg);
 }
 
 /* =============================================================== */
@@ -4870,7 +4943,7 @@ div#pfiche br,
   align-items    : center;
   justify-content: center;
   background     : var(--panel);
-  border-radius: 10px !important;
+  border-radius  : 10px !important;
 }
 
 .pfiche-avatar {
@@ -5442,21 +5515,23 @@ img[src="LIENICI"] {
 }
 
 .pjournal-team-card .palmi-poke-inline {
-  position: absolute;
-  top     : 0;
-  left    : 0;
-  width   : 100%;
-  z-index : 1;
-  overflow: hidden;
-  height  : 222px;display: flex;
-    justify-content: center;
-    align-items: center;
+  position       : absolute;
+  top            : 0;
+  left           : 0;
+  width          : 100%;
+  z-index        : 1;
+  overflow       : hidden;
+  height         : 222px;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
 
 }
 
 .pjournal-team-card:has(.palmi-poke-inline--notfound)>* {
-  display: none!important;
+  display: none !important;
 }
+
 .pjournal-team-card--empty {
   align-items    : center;
   justify-content: center;
@@ -5494,9 +5569,11 @@ img[src="LIENICI"] {
   justify-content: flex-start;
   pointer-events : none;
 }
+
 span.pjournal-surnom[data-surnom*="surnom"] {
-    display: none;
+  display: none;
 }
+
 span.pjournal-surnom {
   display       : flex;
   align-items   : center;
@@ -5772,10 +5849,12 @@ form#quick_reply {
   from {
     transform: translate(0px, 0px);
   }
-  
+
   to {
-transform: translate(0px, -3px);  }
+    transform: translate(0px, -3px);
+  }
 }
+
 @keyframes dnarotate {
   0% {
     transform: rotate3d(0, 1, 0, 360deg);
@@ -5842,43 +5921,104 @@ div#palmi-topics-sousforum .palmi-zone-caption {
   width : 30px;
   height: 30px;
 }
+
 [data-type] {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: auto;
-}
-[data-type]::before {
-    content: '';
-    display: flex;
-    width: 20px;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    justify-content: center;
+  display    : flex;
+  align-items: center;
+  gap        : 5px;
+  height     : auto;
 }
 
-[data-type^="normal"]::before {background-image: var(--icon-normal);}
-[data-type^="feu"]::before {background-image: var(--icon-fire);}
-[data-type^="eau"]::before {background-image: var(--icon-water);}
-[data-type^="electrique"]::before {background-image: var(--icon-electric);}
-[data-type^="plante"]::before {background-image: var(--icon-grass);}
-[data-type^="glace"]::before {background-image: var(--icon-ice);}
-[data-type^="poison"]::before {background-image: var(--icon-poison);}
-[data-type^="sol"]::before {background-image: var(--icon-ground);}
-[data-type^="vol"]::before {background-image: var(--icon-flying);}
-[data-type^="psy"]::before {background-image: var(--icon-psychic);}
-[data-type^="insecte"]::before {background-image: var(--icon-bug);}
-[data-type^="roche"]::before {background-image: var(--icon-rock);}
-[data-type^="spectre"]::before {background-image: var(--icon-ghost);}
-[data-type^="dragon"]::before {background-image: var(--icon-dragon);}
-[data-type^="tenebres"]::before {background-image: var(--icon-dark);}
-[data-type^="acier"]::before {background-image: var(--icon-steel);}
-[data-type^="fee"]::before {background-image: var(--icon-fairy);}
+[data-type]::before {
+  content          : '';
+  display          : flex;
+  width            : 20px;
+  height           : 100%;
+  background-size  : contain;
+  background-repeat: no-repeat;
+  justify-content  : center;
+}
+
+[data-type^="normal"]::before {
+  background-image: var(--icon-normal);
+}
+
+[data-type^="feu"]::before {
+  background-image: var(--icon-fire);
+}
+
+[data-type^="eau"]::before {
+  background-image: var(--icon-water);
+}
+
+[data-type^="electrique"]::before {
+  background-image: var(--icon-electric);
+}
+
+[data-type^="plante"]::before {
+  background-image: var(--icon-grass);
+}
+
+[data-type^="glace"]::before {
+  background-image: var(--icon-ice);
+}
+
+[data-type^="poison"]::before {
+  background-image: var(--icon-poison);
+}
+
+[data-type^="sol"]::before {
+  background-image: var(--icon-ground);
+}
+
+[data-type^="vol"]::before {
+  background-image: var(--icon-flying);
+}
+
+[data-type^="psy"]::before {
+  background-image: var(--icon-psychic);
+}
+
+[data-type^="insecte"]::before {
+  background-image: var(--icon-bug);
+}
+
+[data-type^="roche"]::before {
+  background-image: var(--icon-rock);
+}
+
+[data-type^="spectre"]::before {
+  background-image: var(--icon-ghost);
+}
+
+[data-type^="dragon"]::before {
+  background-image: var(--icon-dragon);
+}
+
+[data-type^="tenebres"]::before {
+  background-image: var(--icon-dark);
+}
+
+[data-type^="acier"]::before {
+  background-image: var(--icon-steel);
+}
+
+[data-type^="fee"]::before {
+  background-image: var(--icon-fairy);
+}
 
 /*AJUSTEMENTS*/
 label:has(input#profile_field_3_-10),
-label:has(input#profile_field_3_-21) {
+label:has(input#profile_field_3_-21),
+label:has(#profile_field_4_-12_0),
+label:has(#profile_field_16_-7),
+label:has(#profile_field_13_-11),
+label:has(#profile_field_13_-9),
+label:has(#profile_field_13_-8),
+label:has(#profile_field_2_-20),
+label:has(#profile_field_3_-22),
+label:has(#profile_field_3_-23),
+label:has(#profile_field_3_-19) {
   display: none;
 }
 
@@ -5888,92 +6028,107 @@ label:has(input#profile_field_3_-21) {
 
 /*LISTE DES MEMBRES*/
 #form-block {
-    padding: 0;
-    margin: 0;
-    background: none;
-    border-radius: unset;
-    width: 1000px !important;
+  padding      : 0;
+  margin       : 0;
+  background   : none;
+  border-radius: unset;
+  width        : 1000px !important;
 }
+
 #memberlist {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-start;
+  display        : flex;
+  flex-wrap      : wrap;
+  gap            : 10px;
+  justify-content: flex-start;
 }
+
 #memberlist .member-block {
-    background: var(--panel);
-    border-radius: 10px;
-    border: 2px solid var(--line);
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+  background    : var(--panel);
+  border-radius : 10px;
+  border        : 2px solid var(--line);
+  display       : flex;
+  flex-direction: column;
+  padding       : 0;
 }
+
 #memberlist .member-block .avatar-medium img {
-    margin: 0;
-    border-radius: 10px;
-    min-width: 200px;
+  margin       : 0;
+  border-radius: 10px;
+  min-width    : 200px;
 }
+
 .avatar-default.avatar-medium {
-    font-size: 0;
+  font-size: 0;
 }
+
 #memberlist .member-block>.member-rigth {
-    position: absolute;
-    bottom: 0;
-    background: var(--bg);
-    width: 100%;
-    padding: 0px 20px 10px;
-    height: 100px;
+  position  : absolute;
+  bottom    : 0;
+  background: var(--bg);
+  width     : 100%;
+  padding   : 0px 20px 10px;
+  height    : 100px;
 }
+
 .members-block {
-    display: flex;
-    flex-wrap: wrap;
+  display  : flex;
+  flex-wrap: wrap;
 }
+
 #memberlist .member-block .member-details {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 5px;
+  position : relative;
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 0 5px;
 }
+
 #memberlist .member-block .member-header {
-    font-size: 16px;
-    margin-bottom: 0;
-    min-height: 60%;
-    display: flex;
-    align-items: center;
+  font-size    : 16px;
+  margin-bottom: 0;
+  min-height   : 60%;
+  display      : flex;
+  align-items  : center;
 }
+
 #memberlist .member-block .member-details b {
-    display: none;
+  display: none;
 }
+
 #memberlist span.member-icons a {
-    position: absolute;
-top: -287px;
-    right: 10px;
-    background: var(--bg);
-    font-size: 10px;
-    margin: 0 !important;
-    padding: 5px 10px;
-    transition:all .2s ease;
+  position  : absolute;
+  top       : -287px;
+  right     : 10px;
+  background: var(--bg);
+  font-size : 10px;
+  margin    : 0 !important;
+  padding   : 5px 10px;
+  transition: all .2s ease;
 }
+
 #memberlist span.member-icons i {
-    font-size: 15px;
+  font-size: 15px;
 }
+
 #memberlist span.member-icons a:hover i {
-    color: var(--accent);
+  color: var(--accent);
 }
-#memberlist .member-header> a strong {
-    font-weight: 500;
-    font-size: 17px;
-    /* white-space: nowrap; */
-    line-height: normal;
+
+#memberlist .member-header>a strong {
+  font-weight   : 500;
+  font-size     : 17px;
+  /* white-space: nowrap; */
+  line-height   : normal;
 }
+
 .quick-options {
-    line-height: normal;
-    text-align: unset;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  line-height: normal;
+  text-align : unset;
+  display    : flex;
+  align-items: center;
+  gap        : 10px;
 }
+
 .quick-options .option {
-    display: inline-block;
-    margin: 0;
+  display: inline-block;
+  margin : 0;
 }
