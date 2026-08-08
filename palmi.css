@@ -728,7 +728,9 @@ section.palmi-card:has(.palmi-topsites-grid) {
     flex-wrap: wrap;
     flex-direction: column;
 }
-
+.palmi-footer-grid>div {
+    display: flex;
+}
 .palmi-card.palmi-footer-card {
     padding: 14px 16px;
     display: flex;
@@ -736,13 +738,34 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 .palmi-card.palmi-footer-card.--stats p {
     font-size: 0;
+    display: flex;
+    flex-direction: column;gap: 5px;
+}
+.palmi-card.palmi-footer-card.--stats p > span {
+    display: flex;
+    gap: 2px;
+    flex-direction: row-reverse;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 0 6px;
+    line-height: normal;
+
+    flex-wrap: nowrap;
+    align-items: center;
 }
 .palmi-card.palmi-footer-card.--stats {
     width: 100px;
     background: none;
+    width: fit-content;
     border: none;
+    padding: 0;
 }
-.palmi-card.palmi-footer-card.--stats span, .palmi-card.palmi-footer-card.--stats strong {
+.palmi-card.palmi-footer-card.--stats strong {
+    font-size: 13px;
+    font-family: var(--font-label);
+    font-weight: 600;
+}
+.palmi-card.palmi-footer-card.--stats span>span, .palmi-card.palmi-footer-card.--stats strong {
     font-size: initial;
 }
 p.palmi-newest-user span.palmi-newest-user-avatar {
