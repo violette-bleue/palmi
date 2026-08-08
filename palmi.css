@@ -3971,15 +3971,6 @@ span.palmi-dice-type {
   font-family      : var(--font-label);
 }
 
-.--evolue::before {
-  mask-image       : var(--icon-dna);
-  mask-size        : 100%;
-  background       : linear-gradient(90deg, var(--group-8) 0%, var(--group-6) 20%, var(--group-4) 40%, var(--group-7) 60%, var(--group-5) 80%, var(--group-8) 100%);
-  background-size  : 200% 100% !important;
-  color            : transparent;
-  background-repeat: repeat !important;
-  animation        : palmiShine 5s linear infinite;
-}
 
 /** MISE EN PAGE **/
 hr,
