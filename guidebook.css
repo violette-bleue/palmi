@@ -204,13 +204,14 @@ p.palmi-hero-sub:before {
 }
 
 .palmi-gb-section h2 {
-  font-family: var(--font-title);
-  font-size: 26px;
-  text-transform: uppercase;
-  color: var(--text);
-  margin: 0 0 16px;
-  padding-bottom: 10px;
-  border-bottom: var(--border);
+    font-family: var(--font-title);
+    font-size: 26px;
+    text-transform: uppercase;
+    color: var(--text);
+    border-bottom: var(--border);
+    border-radius: 0;
+    line-height: normal;
+    margin-bottom: 10px !important;
 }
 .palmi-gb-section h3 {
   font-family: var(--font-label);
