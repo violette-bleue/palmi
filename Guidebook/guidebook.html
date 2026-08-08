@@ -1,0 +1,540 @@
+<link rel="stylesheet" href="https://violette-bleue.github.io/palmi/palmi.css" />
+<link rel="stylesheet" href="https://violette-bleue.github.io/palmi/guidebook.css" /><div class="palmi-gb">
+    <!-- ===== ⭕⭕⭕ HEADER / PAS TOUCHER ⭕⭕⭕===== -->
+    <div class="palmi-gb-header">
+        <div class="palmi-gb-search-wrap">
+            <input type="text" id="palmi-gb-search" class="palmi-gb-search" placeholder="Rechercher dans le guide..." />
+        </div>
+    </div>
+    <!-- ===== ✴️ MENU MOBILE bouton / PAS TOUCHER ✴️ ===== -->
+    <div class="palmi-gb-mobile-bar" id="palmi-gb-mobile-bar">
+        <button class="palmi-gb-mobile-cat-btn" id="palmi-gb-mobile-toggle">
+            <span id="palmi-gb-mobile-current">Choisir une catégorie</span>
+            <i class="material-symbols-outlined">expand_more</i>
+        </button>
+    </div>
+    <!-- ===== ⭕⭕⭕ LAYOUT PRINCIPAL ⭕⭕⭕ ===== -->
+    <div class="palmi-gb-layout">
+        <!-- ✴️ MENU VERSION MOBILE / PAS TOUCHER ✴️-->
+        <div class="palmi-gb-mobile-overlay" id="palmi-gb-mobile-overlay"></div>
+        <nav class="palmi-gb-mobile-sidebar" id="palmi-gb-mobile-sidebar">
+            <div class="palmi-gb-mobile-sidebar-head">
+                <span id="palmi-gb-mobile-sidebar-title">Catégorie</span>
+                <button id="palmi-gb-mobile-close">
+                    <i class="material-symbols-outlined">close</i>
+                </button>
+            </div>
+            <div class="palmi-gb-mobile-sidebar-items" id="palmi-gb-mobile-sidebar-items"></div>
+        </nav>
+
+        <!-- ✴️ MENU LATERAL ✴️ -->
+        <nav class="palmi-gb-sidebar" id="palmi-gb-sidebar">
+            <!-- ⚠️⚠️ AJOUTER UNE NOUVELLE CATEGORIE APRES CETTE LIGNE ⚠️⚠️================================================= -->
+            <div class="palmi-gb-cat" data-cat="bienvenue">
+
+<!-- BOUTON POUR DEPLIER LA CATEGORIE 1 BIENVENUE --><button class="palmi-gb-cat-btn">
+                    <!-- ▫️ icon à choisir dans https://fonts.google.com/icons?icon.set=Material+Icons et tu changes juste le nom de l'icône -->
+                    <!-- exemple avec https://fonts.google.com/icons?icon.set=Material+Icons&selected=Material+Icons+Outlined:star_rate:&icon.size=24&icon.color=%231f1f1f-->
+
+                    <i class="material-symbols-outlined">auto_awesome</i>
+                    <span>Bienvenue</span>
+
+<!-- ⛔ touche pas --><i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button><!-- touche pas ⛔ -->
+<!-- FIN DU BOUTON -->
+
+                <!-- LES DIFFERENTES SECTIONS DE LA CATEGORIE 1 : BIENVENUE -->
+                <div class="palmi-gb-cat-items">
+                    <!-- ⚠️⚠️ AJOUTER UNE NOUVELLE SECTION APRES CETTE LIGNE ⚠️⚠️====================================================================== -->
+                    <a href="#" class="palmi-gb-item" data-section="avantpropos">Avant Propos</a>
+                    <a href="#" class="palmi-gb-item" data-section="contexte">Contexte</a>
+                    <a href="#" class="palmi-gb-item" data-section="histoire">Histoire</a>
+                    <a href="#" class="palmi-gb-item" data-section="groupes">Groupes /  Métiers</a>
+                    <a href="#" class="palmi-gb-item" data-section="geographie">Géographie / Carte</a>
+                    <a href="#" class="palmi-gb-item" data-section="typesrp">Les types de RP</a>
+                    <a href="#" class="palmi-gb-item" data-section="partenairesrp">Factions</a>
+                        
+
+                    <!-- FIN DES SECTIONS DE BIENVENUE-->
+                </div>
+            </div>
+			
+			<!-- FIN DE BIENVENUE -->
+			
+			<!-- DEBUT DE CAT 2 FONCTIONNEMENT-->
+		<div class="palmi-gb-cat" data-cat="fonctionnement">
+
+<!-- BOUTON POUR DEPLIER LA CATEGORIE --><button class="palmi-gb-cat-btn">
+                    <!-- ▫️ icon à choisir dans https://fonts.google.com/icons?icon.set=Material+Icons et tu changes juste le nom de l'icône -->
+                    <!-- exemple avec https://fonts.google.com/icons?icon.set=Material+Icons&selected=Material+Icons+Outlined:star_rate:&icon.size=24&icon.color=%231f1f1f-->
+
+                    <i class="material-symbols-outlined">settings_applications</i>
+                    <span>Fonctionnement</span>
+
+<!-- ⛔ touche pas --><i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button><!-- touche pas ⛔ -->
+<!-- FIN DU BOUTON -->
+
+                <!-- LES DIFFERENTES SECTIONS DE LA CATEGORIE 2 : FONCTIONNEMENT -->
+                <div class="palmi-gb-cat-items">
+                    <!-- ⚠️⚠️ AJOUTER UNE NOUVELLE SECTION APRES CETTE LIGNE ⚠️⚠️====================================================================== -->
+                    <a href="#" class="palmi-gb-item" data-section="premierspas">Premiers pas</a>
+                    <a href="#" class="palmi-gb-item" data-section="lesrps">Les RPs</a>
+                    <a href="#" class="palmi-gb-item" data-section="expeditions">Les expéditions</a>
+                    <a href="#" class="palmi-gb-item" data-section="missions">Les missions</a>
+                    <a href="#" class="palmi-gb-item" data-section="objets">Les objets</a>
+                    <a href="#" class="palmi-gb-item" data-section="modérations">Les modérations</a>
+                  
+					
+			    </div>
+	</div>			
+					 <!-- FIN DE CAT 2 FONCTIONNEMENT --> 
+					 
+					 <!-- DEBUT CAT 3 POKEMON --> 
+	<div class="palmi-gb-cat" data-cat="pokemon">
+                <button class="palmi-gb-cat-btn">
+                   
+                    <i class="material-symbols-outlined">catching_pokemon</i> <!-- ICON -->
+                    <span>Pokémon</span> <!-- TITRE VISIBLE -->
+
+<!-- ⛔ touche pas --><i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button><!-- touche pas ⛔ -->
+<!-- FIN DU BOUTON -->
+
+
+<!-- ➕➕ LES DIFFERENTES SECTIONS DE LA CATEGORIE -->
+                <div class="palmi-gb-cat-items">
+<!-- ⚠️⚠️ AJOUTER UNE NOUVELLE SECTION APRES CETTE LIGNE ⚠️⚠️====================================================================== -->
+<!-- ❕️ data-section doit matcher l'ID de la section correspondante (plus bas) + pas daccent pas d'espaces / laisse pas lemoji entre les "" -->
+
+					<a href="#" class="palmi-gb-item" data-section="starter">Starter</a>
+					<a href="#" class="palmi-gb-item" data-section="maitrise">Niveau de maîtrise</a>
+					<a href="#" class="palmi-gb-item" data-section="rencontrer">Rencontrer des Pokemon</a>
+					<a href="#" class="palmi-gb-item" data-section="capturer">Capturer des Pokémon</a>
+					<a href="#" class="palmi-gb-item" data-section="shiny">Obtenir un shiny</a>
+					<a href="#" class="palmi-gb-item" data-section="evoluer">Faire évoluer ses Pokémon</a>
+					<a href="#" class="palmi-gb-item" data-section="shiny">Combattre</a>
+					
+				</div>
+	</div>
+ <!-- FIN CAT POKEMON --> 
+
+
+<!-- ➕ DEBUT DU BLOC POUR AJOUTER UNE NOUVELLE CATEGORIE - Dupliquer ce bloc pour chaque nouvelle catégorie que tu veux ajouter ===================================================== -->
+
+		
+			 
+<!-- ➕➕ BOUTON POUR DEPLIER LA CATEGORIE -->
+<!-- nom en un mot sans espace ni accent dans le ❗ data-cat / laisse pas lemoji entre les "" -->
+            <div class="palmi-gb-cat" data-cat="❗XXXnomcategoriesansespacesansaccentsXXX">
+                <button class="palmi-gb-cat-btn">
+                   
+                    <i class="material-symbols-outlined">star_rate</i> <!-- ICON -->
+                    <span>Titre de la catégorie affiché</span> <!-- TITRE VISIBLE -->
+
+<!-- ⛔ touche pas --><i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button><!-- touche pas ⛔ -->
+<!-- FIN DU BOUTON -->
+
+
+<!-- ➕➕ LES DIFFERENTES SECTIONS DE LA CATEGORIE -->
+                <div class="palmi-gb-cat-items">
+<!-- ⚠️⚠️ AJOUTER UNE NOUVELLE SECTION APRES CETTE LIGNE ⚠️⚠️====================================================================== -->
+<!-- ❕️ data-section doit matcher l'ID de la section correspondante (plus bas) + pas daccent pas d'espaces / laisse pas lemoji entre les "" -->
+
+<!-- ➡️ SECTION 1 --><a href="#" class="palmi-gb-item" data-section="❕XXnomdelasection1XX">Nom</a><!--⬅️-->
+<!-- ➡️ SECTION 2 --><a href="#" class="palmi-gb-item" data-section="❕XXnomdelasection2XX">Nom</a><!--⬅️-->
+
+<!-- FIN DES SECTIONS--></div></div>
+
+<!-- ➕ FIN DU BLOC POUR AJOUTER UNE NOUVELLE CATEGORIE ===================================================== -->
+
+<!-- ⚠️⚠️ AJOUTER LES CATEGORIES ET SECTIONS AVANT CETTE LIGNE ⚠️⚠️====================================================================== -->
+</nav><!-- ✴️ FIN DU MENU LATERAL ✴️ -->
+
+
+
+
+        <!-- ✴️ CONTENU CENTRAL ✴️ -->
+        <main class="palmi-gb-content">
+            <!-- ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ -->
+            <!-- Un bloc section par section définie dans le menu latéral. -->
+            <!-- ⚠️ son ❕id doit matcher le ️❕data-section (exact meme terme) que tu as défini dans le menu latéral -->
+            <!-- ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ -->
+
+<!-- ➕➕➕ DEBUT DES SECTIONS TU AJOUTES APRES CETTE LIGNE -->
+
+            <section class="palmi-gb-section active" data-categorie="bienvenue" id="lerp"><!-- data-catégorie = data-cat / id = data-section || unique, minuscule, pas d'espace -->
+                <!-- ✨ CONTENU DE LA SECTION APRES CETTE LIGNE -->
+
+                <p>Le role play, ou RP, c’est quoi ?</p>
+
+                <blockquote>
+                    Au sein d'un jeu de rôle, l'interprétation d'un rôle (ou role playing
+                    en anglais) est l'ensemble des apports perceptibles d'un participant,
+                    pour le jeu du personnage qu’il interprète. L'interprétation résulte
+                    du choix de comportements que le participant manifeste pour le
+                    personnage et qu'il exprime aux autres participants.
+                </blockquote>
+
+                <p>
+                    De manière plus simple, sur les forums en ligne, il s’agit d’incarner
+                    un personnage dans un univers précis et un contexte donné.
+                </p>
+
+                <p>
+                    Dans le cadre de Palmi, il s’agit de l’univers des jeux-vidéos de la
+                    licence Pokémon. Palmi s’inscrit dans la continuité des jeux
+                    principaux (les derniers en date étant Violet/Écarlate), ainsi que la
+                    série Legends.
+                </p>
+
+                <p>
+                    En réalisant des RPs avec d’autres personnes dans ce cadre fantasy,
+                    vous serez amener à développer votre personnage et faire progresser
+                    votre équipe et votre équipement.
+                </p>
+
+                <p>
+                    Le forum se veut interactif, l’avis des joueurs est parfois sollicité
+                    pour choisir la direction à prendre. Toutefois, le Staff se réserve le
+                    droit de ne pas appliquer des idées si elles semblent se détourner du
+                    projet d’origine.
+                </p>
+
+                <p>
+                    Les actions des joueurs peuvent également avoir un impact sur le
+                    scénario et les zones du forum.
+                </p>
+
+                <p>
+                    Il n’y a pas de minimum de lignes, tant que vous fournissez assez de
+                    matière à vos partenaires pour répondre.
+                </p>
+
+                <note>Les thématiques abordées sur Palmi comprennent, entre autres choses :
+                    des scènes de chasse face à des créatures sauvages féroces, des
+                    intrigues impliquant des actions violentes ; ainsi que des scènes de
+                    romances qui peuvent être explicites et toujours consenties entre les
+                    joueurs.</note>
+
+                <p>
+                    Pour ces raisons, le forum est réservé à un public averti : les
+                    joueurs doivent avoir 18 ans minimum et être considérés majeur dans
+                    leur pays d’origine. Les personnages joués sur le forum doivent avoir
+                    18 ans minimum.
+                </p>
+
+                <p>
+                    Pour plus d’informations sur le contexte de Palmi, référez-vous à la
+                    rubrique “contexte” -> www
+                </p>
+
+<!-- ✨ FIN DU CONTENU DE LA SECTION PLUS RIEN APRES CETTE LIGNE --></section>
+<!-- ✏️ FIN SECTION ======================================================= -->
+
+
+<!-- ✏️ DEBUT SECTION Premiers pas ===================================================== -->
+            <section class="palmi-gb-section active" data-categorie="bienvenue" id="premierspas"> <!-- id = data-section unique, minuscule, pas d'espace -->
+            <!-- ✨ CONTENU DE LA SECTION APRES CETTE LIGNE -->
+
+                <p>Avant de commencer à RP avec d’autres joueurs, une fois que vous vous êtes inscrits sur le forum, il est impératif de lire et signer le règlement. Il définit de manière plus détaillée la charte de conduite à adopter sur Palmi.</p>
+
+                <p> www </p>
+
+
+            <!-- ✨ FIN DU CONTENU DE LA SECTION PLUS RIEN APRES CETTE LIGNE --></section>
+<!-- ✏️ FIN Premiers pas======================================================= -->
+
+<!-- ✏️ DEBUT SECTION Présentation ===================================================== -->
+            <section class="palmi-gb-section active" data-categorie="bienvenue" id="fiche"> <!-- id = data-section unique, minuscule, pas d'espace -->
+            <!-- ✨ CONTENU DE LA SECTION APRES CETTE LIGNE -->
+
+                <p>Une fois le règlement signé, vous pouvez poster votre fiche de personnage dans cette section : </p>
+
+				<p>->www</p>
+
+				<p>Le modèle de la fiche se trouve ici, et vous pouvez solliciter le Staff en MP ou sur le discord si vous rencontrez un problème avec le code : </p>
+
+				<p>->www</p>
+
+				<p>Pour la partie physique, nous ne demandons pas une description en 200 mots de votre personnage, nous considérons que l’avatar est là pour l’illustrer. Nous demandons en revanche que figurent les informations suivantes : </p>
+
+				<p>-la taille de votre personnage (même une approximation).</p>
+
+				<p>-s’il y a des éléments qui ne sont pas montrés sur l’avatar (une blessure, une cicatrice, un tatouage, etc.). Cette rubrique est optionnelle.</p>
+
+				<p>-la condition physique de votre personnage (s’il peut courir longtemps, s’il est sédentaire, etc). </p>
+
+				<p>-dire quelques mots sur sa manière de se tenir, ses mimiques et gestuelles physiques (il sourit lorsqu’il est nerveux, il est souvent avachi, etc).</p>
+
+				<p>Pour la partie maison, vous avez le choix. Si votre personnage est natif de Palmi et possède une maison, et vous devez indiquer au Staff dans quelle ville l’implanter. S’il vient d’une autre région et il s’installe temporairement au centre de Novela jusqu’à pouvoir acheter sa propre maison.</p>
+
+				<note>Dans un cas comme dans l’autre, vous devrez payer pour l’achat complet de la maison.</note>
+
+				<p>Pour la partie starter (plus d’infos dans la rubrique correspondante : www), il vous est proposé : sélection par le Staff, à vous de répondre oui ou non. Si vous n’avez pas d’idée pour votre Pokémon de départ, cochez “Oui”. Le Staff vous propose alors une sélection de trois Pokémon (à vous de les accepter ou de refuser, si vous avez finalement une idée). </p>
+
+				<note>Une fois votre choix fait, vous éditez votre fiche en ajoutant le Starter en rentrant le nom du Pokémon en français dans le champ dédié. </note>
+
+
+            <!-- ✨ FIN DU CONTENU DE LA SECTION PLUS RIEN APRES CETTE LIGNE --></section>
+<!-- ✏️ FIN SECTION Présentation======================================================= -->  
+
+<!-- ✏️ DEBUT SECTION 3 ===================================================== -->
+            <section class="palmi-gb-section active" data-categorie="❗XXdata-catXX" id="❕️XXnomdelasection1XX"> <!-- id = data-section unique, minuscule, pas d'espace -->
+            <!-- ✨ CONTENU DE LA SECTION APRES CETTE LIGNE -->
+
+                <h2>Bienvenue</h2>
+                <p>Contenu à remplir par le staff.</p>
+
+            <!-- ✨ FIN DU CONTENU DE LA SECTION PLUS RIEN APRES CETTE LIGNE --></section>
+<!-- ✏️ FIN SECTION 3======================================================= -->
+
+<!-- ➕➕➕ FIN DES SECTIONS || TU AJOUTES DU CONTENU AVANT CETTE LIGNE ========================================= -->
+<!-- ⛔ ON TOUCHE PLUS RIEN APRES CETTE LIGNE ⛔ --></main></div></div>
+
+<script>
+    (function () {
+        function init() {
+            var sidebar = document.getElementById("palmi-gb-sidebar");
+            var items = sidebar.querySelectorAll(".palmi-gb-item");
+            var sections = document.querySelectorAll(".palmi-gb-section");
+            var catBtns = sidebar.querySelectorAll(".palmi-gb-cat-btn");
+
+            // Accordéon : ouvrir la catégorie qui contient l'item actif au chargement
+            catBtns.forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    var cat = btn.closest(".palmi-gb-cat");
+                    var wasOpen = cat.classList.contains("open");
+                    sidebar.querySelectorAll(".palmi-gb-cat").forEach(function (c) {
+                        c.classList.remove("open");
+                    });
+                    if (!wasOpen) cat.classList.add("open");
+                });
+            });
+
+            function activateSection(id, pushHash) {
+                sections.forEach(function (s) {
+                    s.classList.toggle("active", s.id === id);
+                });
+                items.forEach(function (a) {
+                    a.classList.toggle("active", a.dataset.section === id);
+                });
+
+                // Ouvrir la bonne catégorie dans la sidebar desktop
+                var activeItem = sidebar.querySelector(
+                    '.palmi-gb-item[data-section="' + id + '"]',
+                );
+                if (activeItem) {
+                    var cat = activeItem.closest(".palmi-gb-cat");
+                    sidebar.querySelectorAll(".palmi-gb-cat").forEach(function (c) {
+                        c.classList.remove("open");
+                    });
+                    cat.classList.add("open");
+
+                    // Mettre à jour le libellé mobile
+                    var catLabel = cat.querySelector(
+                        ".palmi-gb-cat-btn span",
+                    ).textContent;
+                    var mobileLabel = document.getElementById("palmi-gb-mobile-current");
+                    if (mobileLabel)
+                        mobileLabel.textContent = catLabel + " — " + activeItem.textContent;
+                }
+
+                if (pushHash !== false) {
+                    history.replaceState(null, "", "#" + id);
+                }
+
+                // Scroll en haut du contenu sur mobile
+                var content = document.querySelector(".palmi-gb-content");
+                if (content && window.innerWidth < 900) {
+                    content.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            }
+
+            items.forEach(function (a) {
+                a.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    activateSection(a.dataset.section);
+                    closeMobileSidebar();
+                });
+            });
+
+            // Activation initiale : via hash d'URL sinon premier item
+            var initial = location.hash ? location.hash.slice(1) : null;
+            if (initial && document.getElementById(initial)) {
+                activateSection(initial, false);
+            } else {
+                var first = sidebar.querySelector(".palmi-gb-item");
+                if (first) activateSection(first.dataset.section, false);
+            }
+
+            // ===== MOBILE : bouton "catégories" ouvre la sidebar slide-in =====
+            var mobileToggle = document.getElementById("palmi-gb-mobile-toggle");
+            var mobileSidebar = document.getElementById("palmi-gb-mobile-sidebar");
+            var mobileOverlay = document.getElementById("palmi-gb-mobile-overlay");
+            var mobileClose = document.getElementById("palmi-gb-mobile-close");
+            var mobileItemsWrap = document.getElementById(
+                "palmi-gb-mobile-sidebar-items",
+            );
+            var mobileSidebarTitle = document.getElementById(
+                "palmi-gb-mobile-sidebar-title",
+            );
+
+            function buildMobileSidebar() {
+                mobileItemsWrap.innerHTML = "";
+                sidebar.querySelectorAll(".palmi-gb-cat").forEach(function (cat) {
+                    var catLabel = cat.querySelector(
+                        ".palmi-gb-cat-btn span",
+                    ).textContent;
+                    var group = document.createElement("div");
+                    group.className = "palmi-gb-mobile-group";
+
+                    var groupTitle = document.createElement("div");
+                    groupTitle.className = "palmi-gb-mobile-group-title";
+                    groupTitle.textContent = catLabel;
+                    group.appendChild(groupTitle);
+
+                    cat.querySelectorAll(".palmi-gb-item").forEach(function (item) {
+                        var link = document.createElement("a");
+                        link.href = "#";
+                        link.className = "palmi-gb-mobile-item";
+                        link.textContent = item.textContent;
+                        link.dataset.section = item.dataset.section;
+                        link.addEventListener("click", function (e) {
+                            e.preventDefault();
+                            activateSection(link.dataset.section);
+                            closeMobileSidebar();
+                        });
+                        group.appendChild(link);
+                    });
+
+                    mobileItemsWrap.appendChild(group);
+                });
+            }
+
+            function openMobileSidebar() {
+                buildMobileSidebar();
+                mobileSidebar.classList.add("open");
+                mobileOverlay.classList.add("open");
+            }
+
+            function closeMobileSidebar() {
+                mobileSidebar.classList.remove("open");
+                mobileOverlay.classList.remove("open");
+            }
+
+            if (mobileToggle)
+                mobileToggle.addEventListener("click", openMobileSidebar);
+            if (mobileClose)
+                mobileClose.addEventListener("click", closeMobileSidebar);
+            if (mobileOverlay)
+                mobileOverlay.addEventListener("click", closeMobileSidebar);
+
+            // ===== RECHERCHE =====
+            var search = document.getElementById("palmi-gb-search");
+            if (search) {
+                search.addEventListener("input", function () {
+                    var q = search.value.trim().toLowerCase();
+                    var anyMatch = false;
+                    sidebar.querySelectorAll(".palmi-gb-cat").forEach(function (cat) {
+                        var catMatch = false;
+                        cat.querySelectorAll(".palmi-gb-item").forEach(function (item) {
+                            var match = !q || item.textContent.toLowerCase().indexOf(q) !==
+                                -1;
+                            item.style.display = match ? "" : "none";
+                            if (match) catMatch = true;
+                        });
+                        cat.style.display = catMatch ? "" : "none";
+                        if (catMatch && q) cat.classList.add("open");
+                        if (catMatch) anyMatch = true;
+                    });
+                });
+            }
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+        } else {
+            init();
+        }
+    })();
+
+    /* === Palmi - Codebox from raw source (script type="text/plain") === */
+
+    function palmiInitCodeboxCopy() {
+        document.querySelectorAll(".codebox").forEach(function (box) {
+            if (box.dataset.copyDone) return;
+            box.dataset.copyDone = "1";
+
+            var label = box.querySelector("p");
+            var source = box.querySelector(
+                'script[type="text/plain"].palmi-code-source',
+            );
+            var code = box.querySelector("code");
+            if (!label || !code) return;
+
+            // Si une source brute existe, on l'utilise pour remplir le code (préserve tout tel quel)
+            if (source) {
+                var raw = source.textContent;
+                // Retirer l'indentation commune en trop au début/fin
+                raw = raw.replace(/^\n/, "").replace(/\s+$/, "");
+                code.textContent = raw;
+                code.style.whiteSpace = "pre-line";
+                code.style.display = "block";
+            }
+
+            var btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "palmi-code-copy-btn";
+            btn.textContent = "Copier";
+
+            btn.addEventListener("click", function () {
+                var text = code.innerText;
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard
+                        .writeText(text)
+                        .then(function () {
+                            palmiCodeCopyFeedback(btn);
+                        })
+                        .catch(function () {
+                            palmiCodeCopyFallback(text, btn);
+                        });
+                } else {
+                    palmiCodeCopyFallback(text, btn);
+                }
+            });
+
+            label.appendChild(btn);
+        });
+    }
+
+    function palmiCodeCopyFallback(text, btn) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand("copy");
+        } catch (e) {
+            void 0;
+        }
+        document.body.removeChild(ta);
+        palmiCodeCopyFeedback(btn);
+    }
+
+    function palmiCodeCopyFeedback(btn) {
+        var original = btn.textContent;
+        btn.textContent = "Copié !";
+        btn.classList.add("palmi-code-copy-btn--done");
+        setTimeout(function () {
+            btn.textContent = original;
+            btn.classList.remove("palmi-code-copy-btn--done");
+        }, 1500);
+    }
+
+    $(document).ready(function () {
+        palmiInitCodeboxCopy();
+    });
+</script>
