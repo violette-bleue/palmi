@@ -176,7 +176,6 @@ p.palmi-hero-sub:before {
 .palmi-gb-item.active::before {
     width: 20px;
 }
-/* --- Contenu central --- */
 .codebox {
     width: fit-content;
 }
@@ -193,6 +192,12 @@ p.palmi-hero-sub:before {
   font-family: var(--font-body);
   color: var(--text);
   line-height: 1.7;
+}
+.palmi-gb-section h1 {
+    font-size: 40px;
+    line-height: 15px;
+    margin-bottom: 20px !important;
+    background: var(--nav-bg);
 }
 .palmi-gb-section.active {
   display: block;

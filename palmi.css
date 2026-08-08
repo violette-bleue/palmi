@@ -2850,7 +2850,7 @@ span.award_tooltiptext {
 .block-content>a:hover,
 .palmi-gb-section a:hover,
 .btn-default:hover, .mainoption:hover, .button:hover, .button1:hover, .button2:hover, .liteoption:hover {
-  background: var(--bg);
+  background: var(--bg)!important;
   color     : var(--accent) !important;
   border    : 2px solid currentColor;box-shadow: none;
 }
@@ -4634,7 +4634,6 @@ input:checked+.checkbox-check:after {
   font-size             : 18px !important;
   line-height           : 1 !important;
   color                 : var(--muted) !important;
-  speak                 : none !important;
   font-style            : normal !important;
   font-weight           : normal !important;
   font-variant          : normal !important;
@@ -5444,7 +5443,11 @@ img[src="LIENICI"] {
   height     : 100%;
   font-size  : 11px;
 }
-
+.cp-inner .posts {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    width: 1000px;
+}
 .pjournal-item-list.--conso {
   display              : grid;
   grid-template-columns: repeat(3, 1fr);
