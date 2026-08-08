@@ -249,6 +249,8 @@ div.award {
   font-size  : 25px;
   margin     : 0 0 5px;
   color      : var(--text);
+    position: relative;
+    z-index: 1;
 }
 
 .palmi-info-card p {
@@ -1528,12 +1530,14 @@ section.palmi-card.palmi-profile-fields {
 }
 
 .palmi-widget-slot img {
-  max-width    : 88px;
+  max-width    : 100%;
   height       : auto;
   border-radius: 8px;
   display      : block;
 }
-
+.palmi-widget-slot a {
+    position: relative;
+}
 .palmi-widget-slot p:first-child {
   margin-top: 0;
 }
@@ -1891,15 +1895,15 @@ h1 {
 
 
 .cp-sidebar {
-  background  : var(--bg-soft);
-  width       : 100vw !important;
-  position    : sticky !important;
-  top         : 54px;
-  margin      : 0 !important;
-  z-index     : 100;
-  order       : 0;
-  display     : flex;
-  align-items : center;
+  background : var(--bg-soft);
+  width      : 100vw !important;
+  position   : sticky !important;
+  top        : 54px;
+  margin     : 0 !important;
+  z-index    : 100;
+  order      : 0;
+  display    : flex;
+  align-items: center;
 }
 
 .cp-sidebar #privmsgs-menu+.btn {
@@ -2133,7 +2137,7 @@ h1 {
   text-transform  : uppercase;
   display         : inline-flex;
   align-items     : center;
-    border: 2px solid transparent;
+  border          : 2px solid transparent;
 }
 
 .forum-lastpost,
@@ -2164,7 +2168,7 @@ h1 {
   font-weight   : 600;
   text-transform: uppercase;
   font-size     : 12px;
-    margin: 10px 0 5px;
+  margin        : 10px 0 5px;
 
 }
 
@@ -2848,10 +2852,16 @@ span.award_tooltiptext {
 .post-content a:hover,
 .block-content>a:hover,
 .palmi-gb-section a:hover,
-.btn-default:hover, .mainoption:hover, .button:hover, .button1:hover, .button2:hover, .liteoption:hover {
-  background: var(--bg)!important;
+.btn-default:hover,
+.mainoption:hover,
+.button:hover,
+.button1:hover,
+.button2:hover,
+.liteoption:hover {
+  background: var(--bg) !important;
   color     : var(--accent) !important;
-  border    : 2px solid currentColor;box-shadow: none;
+  border    : 2px solid currentColor;
+  box-shadow: none;
 }
 
 .post-signature {
@@ -3249,7 +3259,7 @@ div.sceditor-toolbar {
 #tabs,
 .tabs {
   margin-bottom: 0;
-    width: 100%;
+  width        : 100%;
 }
 
 #tabs span,
@@ -3356,9 +3366,11 @@ div.sceditor-toolbar {
   flex-direction: column;
   gap           : 15px;
 }
+
 [action="/profile"] .block .block-content img {
-    width: 200px!important;
+  width: 200px !important;
 }
+
 /*HEADER*/
 .palmi-profile-header {
   overflow: visible;
@@ -3661,11 +3673,11 @@ span.palmi-poke-inline-name {
 }
 
 .palmi-profile-stat-row {
-  display         : flex;
-  justify-content : space-between;
-  padding         : 3px 0;
-  font-family     : var(--font-body);
-  font-size       : 12px;
+  display        : flex;
+  justify-content: space-between;
+  padding        : 3px 0;
+  font-family    : var(--font-body);
+  font-size      : 12px;
 }
 
 .palmi-profile-stat-row:last-child {
@@ -5432,14 +5444,26 @@ img[src="LIENICI"] {
   height     : 100%;
   font-size  : 11px;
 }
+
 .cp-inner .posts {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    width: 1000px;
+  display              : grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  width                : 1000px;
 }
-#memberlist > * {
-    min-width: 495px;
+
+.cp-inner .posts>* {
+  min-width: 495px;
 }
+
+.cp-inner .posts .posts-header {
+  display: none;
+}
+
+#memberlist>* {
+  min-width    : 495px;
+  border-radius: 10px;
+}
+
 .pjournal-item-list.--conso {
   display              : grid;
   grid-template-columns: repeat(3, 1fr);
@@ -6107,9 +6131,9 @@ label:has(#profile_field_3_-19) {
 }
 
 #memberlist .member-header>a strong {
-  font-weight   : 500;
-  font-size     : 17px;
-  line-height   : normal;
+  font-weight: 500;
+  font-size  : 17px;
+  line-height: normal;
 }
 
 .quick-options {
