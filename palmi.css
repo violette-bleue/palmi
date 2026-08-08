@@ -4572,6 +4572,7 @@ div#postingbox {
     width: 800px;
     display: flex;
     flex-direction: row-reverse;
+    position: relative;
 }
 
 #list_dice .single-roll>.label,
