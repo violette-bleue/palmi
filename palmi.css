@@ -14,8 +14,9 @@ body {
   /*ELEVEURS*/
   --group-7: #944dcf;
   /*CHERCHEURS*/
-  --group-8: #fddc2d;
-  /* TODO  : --group-9, --group-10, --group-11 sont utilisées (tagg7-9, .group-9) mais jamais définies ici */
+  --group-8: #c79904;
+  /*INGENIEURS*/
+  --group-9: #3A3B40;
 
   /* --- Fonts: un seul endroit a toucher --- */
   --font-title: 'Sharpie', sans-serif;
@@ -54,6 +55,8 @@ body {
 body.day {
   /*CHERCHEURS AJUSTEMENT*/
   --group-8          : #c5ac29;
+    /*INGENIEURS AJUSTEMENT*/
+  --group-9: #3A3B40;
   --bg               : #EAE6F1;
   --bg-soft          : #F2EFF6;
   --panel            : #F7F4FA;
@@ -67,7 +70,7 @@ body.day {
   --nav-text         : #F1EAF9;
   --nav-accent       : #d092a1;
   --hero-overlay     : linear-gradient(180deg, rgba(58, 42, 82, .1) 0%, rgba(58, 42, 82, .35) 70%, rgba(58, 42, 82, .6) 100%);
-  --accent-panel     : #3A2A52;
+  --accent-panel     : #a17cca;
   --accent-panel-text: #F1EAF9;
 }
 
@@ -2297,6 +2300,14 @@ dd.palmi-detail-date-d-inscription::before,
   line-height: 1;
   display    : inline-block;
 }
+dd.palmi-detail-pokedollars::before {
+    content: '';
+    background: currentColor;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    mask-image: var(--icon-pokedollar);
+}
 
 dd.palmi-detail-date-d-inscription::before {
   content: 'calendar_month';
@@ -2488,7 +2499,7 @@ span.award_tooltiptext {
   border-bottom   : 2px solid var(--line);
   border-radius   : 8px 8px 0 0px;
   gap             : 15px;
-  background-color: var(--panel);
+  background-color: var(--muted);
 }
 
 .post-author-title:empty {
@@ -2599,7 +2610,7 @@ span.award_tooltiptext {
   padding-left: 10px;
 }
 
-.post-author-name span {
+.post-author-name span, .post-author-name > a {
   font-family   : var(--font-title);
   text-transform: uppercase;
   font-size     : 25px;
@@ -2690,19 +2701,18 @@ span.award_tooltiptext {
   color     : var(--text) !important;
 }
 
-.post-content a,
-.block-content>a,
-.palmi-gb-section a {
-  text-decoration: none;
-  background     : var(--accent);
-  border-radius  : 8px;
-  padding        : 2px 10px 0;
-  color          : var(--bg) !important;
-  font-weight    : 600;
-  text-transform : uppercase;
-  width          : fit-content;
-  display        : flex;
-  align-items    : center;
+.post-content a, .block-content>a, .palmi-gb-section a {
+    text-decoration: none;
+    background: var(--accent);
+    border-radius: 8px;
+    padding: 2px 10px 0;
+    color: var(--bg) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
 }
 
 .post-signature {
@@ -2715,6 +2725,7 @@ span.award_tooltiptext {
   color      : var(--muted);
   max-height : 300px;
   overflow   : hidden;
+    border-radius: 0;
 }
 
 #breadcrumbs a:first-child {
@@ -3595,6 +3606,7 @@ main#forum {
   letter-spacing       : .05em;
   border-bottom        : var(--border);
   align-items          : center;
+    border-radius: 0;
 }
 
 .palmi-topics-separator {
@@ -3661,17 +3673,19 @@ main#forum {
 }
 
 .palmi-topic-type {
-  font-family  : var(--font-label);
-  font-size    : 14px;
-  padding      : 2px 6px;
-  border-radius: 6px;
-  background   : var(--accent-panel);
-  color        : var(--accent-panel-text);
-  white-space  : nowrap;
-  flex-shrink  : 0;
-  font-weight  : 500;
+    font-family: var(--font-label);
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: var(--accent-panel);
+    color: var(--accent-panel-text);
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-transform: uppercase;
 }
-
+.palmi-topic-type strong {
+    font-weight: 600;
+}
 .palmi-topic-link {
   font-family    : var(--font-body);
   font-size      : 17px;
@@ -5811,6 +5825,7 @@ label:has(input#profile_field_3_-21) {
 #memberlist .member-block .avatar-medium img {
     margin: 0;
     border-radius: 10px;
+    min-width: 200px;
 }
 .avatar-default.avatar-medium {
     font-size: 0;
