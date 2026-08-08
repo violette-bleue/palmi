@@ -1,2 +1,2 @@
 # palmi
-docs
+design réalisé en août 2026
