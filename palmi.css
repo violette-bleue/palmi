@@ -3883,22 +3883,25 @@ span.palmi-dice-type {
 
 .palmi-dice-reward::before {
   font-family: 'Material Icons';
-  font-size  : 30px;
+  font-size: 30px;
 }
 
-.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result:has([class*=" --"]) .palmi-dice-reward::before,
-.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
-  content          : '';
-  display          : flex;
-  width            : 40px;
-  height           : 40px;
-  background-size  : contain;
+.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-reward--has-image::before {
+  content: '';
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-image: var(--dice-icon);
+  background-size: contain;
   background-repeat: no-repeat;
-  justify-content  : center;
+  justify-content: center;
 }
 
+.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-reward--has-materialicon::before {
+  content: var(--dice-icon-content);
+}
 
-.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
+/**.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
   background-image: url(https://www.pokepedia.fr/images/5/5a/Miniature_D%C3%A9_Pip%C3%A9_EV.png);
 }
 
@@ -3924,7 +3927,7 @@ span.palmi-dice-type {
 
 .palmi-dice-block--expedition .palmi-dice-reward::before {
   content: 'crisis_alert' !important;
-}
+}**/
 
 .palmi-dice-result:has(.--danger) {
   border-color: var(--accent);
