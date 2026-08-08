@@ -730,6 +730,8 @@ section.palmi-card:has(.palmi-topsites-grid) {
 }
 .palmi-footer-grid>div {
     display: flex;
+    gap: 10px;
+    justify-content: space-between;
 }
 .palmi-card.palmi-footer-card {
     padding: 14px 16px;
@@ -769,6 +771,22 @@ section.palmi-card:has(.palmi-topsites-grid) {
 .palmi-card.palmi-footer-card.--stats span>span, .palmi-card.palmi-footer-card.--stats strong {
     font-size: initial;
 }
+.palmi-card.palmi-footer-card.--groups {
+    display: flex;
+    gap: 0 5px;
+    align-items: center;
+}
+.palmi-card.palmi-footer-card.--groups a {
+    background: currentColor;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.palmi-card.palmi-footer-card.--groups a span {
+    color: var(--bg);
+    font-weight: 600;
+    line-height: 0;
+}
 p.palmi-newest-user span.palmi-newest-user-avatar {
     height: 100px;
     width: 100px;
@@ -794,7 +812,67 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
 .palmi-card.palmi-footer-card.--online {
     width: 210px;
 }
+.palmi-card.palmi-footer-card.--historic {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+}
+.palmi-card.palmi-footer-card.--historic strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+.palmi-card.palmi-footer-card.--historic >p:first-of-type > strong::before {
+    content: 'Le record d\'utilisateurices connectées simultanément est de ';
+}
+.palmi-card.palmi-footer-card.--historic >p:first-of-type > strong {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+}
+.palmi-card.palmi-footer-card.--historic > p:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 0;
+    line-height: normal;
+    position: relative;
+    padding-top: 22px;
+    margin-left: -10px;
+    height: 125px;
+    overflow-y: auto;
+}
+.palmi-card.palmi-footer-card.--historic > p:last-child::before {
+    content: 'Ils étaient là :';
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+.palmi-card.palmi-footer-card>br {
+    display: none;
+}
+.palmi-card.palmi-footer-card.--online {
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.palmi-footer-card p a> span {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    line-height: normal;
+}
+.palmi-footer-card p a:hover > span {
+    background: currentColor;
+}
 
+.palmi-footer-card p a> span > strong {
+    line-height: 14px;
+}
+.palmi-footer-card p a:hover > span > strong {
+    color: var(--bg);
+}
 
 
 .palmi-footer-card h3 {
@@ -817,10 +895,6 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
 .palmi-footer-card p a {
   color          : var(--accent);
   text-decoration: none;
-}
-
-.palmi-footer-card p a:hover {
-  text-decoration: underline;
 }
 
 .palmi-partners-grid {
