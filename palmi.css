@@ -1,78 +1,5 @@
 ﻿/* === Palmi === */
 
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
-
-body {
-  /*CIVILS*/
-  --group-3: #4ca25d;
-  /*RANGERS*/
-  --group-4: #d84646;
-  /*COMPETITEURS*/
-  --group-5: #46afd8;
-  /*AVENTURIERS*/
-  --group-6: #d87646;
-  /*ELEVEURS*/
-  --group-7: #944dcf;
-  /*CHERCHEURS*/
-  --group-8: #c79904;
-  /*INGENIEURS*/
-  --group-9: #3A3B40;
-
-  /* --- Fonts: un seul endroit a toucher --- */
-  --font-title: 'Sharpie', sans-serif;
-  --font-label: 'Clash Display', sans-serif;
-  --font-body : 'General Sans', sans-serif;
-  --font-mono : 'JetBrains Mono', monospace;
-
-  /* --- Theme: nuit par defaut --- */
-  --bg               : #1A181B;
-  --bg-soft          : #221F24;
-  --panel            : #2A262E;
-  --line             : #564d65;
-  --text             : #EDEAF0;
-  --muted            : #B6ADC2;
-  --accent           : #2CDA9D;
-  --accent2          : #3e8989;
-  --flash            : #F0F600;
-  --nav-bg           : #1A181B;
-  --nav-text         : #EDEAF0;
-  --nav-accent       : #2CDA9D;
-  --hero-overlay     : linear-gradient(180deg, rgba(26, 24, 27, .15) 0%, rgba(26, 24, 27, .55) 70%, rgba(26, 24, 27, .85) 100%);
-  --accent-panel     : #233b3a;
-  --accent-panel-text: #9BF3D6;
-  --border-width     : 2px;
-  --border           : var(--border-width) solid var(--line);
-  min-width          : 800px;
-  background         : var(--bg);
-  color              : var(--text);
-  font-family        : var(--font-body);
-  transition         : background .3s, color .3s;
-  display            : flex;
-  flex-direction     : column;
-
-}
-
-body.day {
-  /*CHERCHEURS AJUSTEMENT*/
-  --group-8          : #c5ac29;
-    /*INGENIEURS AJUSTEMENT*/
-  --group-9: #3A3B40;
-  --bg               : #EAE6F1;
-  --bg-soft          : #F2EFF6;
-  --panel            : #F7F4FA;
-  --line             : #CBBEDD;
-  --text             : #2E2140;
-  --muted            : #796988;
-  --accent           : #9453dc;
-  --accent2          : #d092a1;
-  --flash            : #FF3CC7;
-  --nav-bg           : #3A2A52;
-  --nav-text         : #F1EAF9;
-  --nav-accent       : #d092a1;
-  --hero-overlay     : linear-gradient(180deg, rgba(58, 42, 82, .1) 0%, rgba(58, 42, 82, .35) 70%, rgba(58, 42, 82, .6) 100%);
-  --accent-panel     : #a17cca;
-  --accent-panel-text: #F1EAF9;
-}
 
 body::-webkit-scrollbar {
   width: 10px;
@@ -2316,9 +2243,13 @@ dd.palmi-detail-pokedollars::before {
     content: '';
     background: currentColor;
     display: flex;
-    width: 20px;
-    height: 20px;
+    width: 13px;
+    height: 100%;
     mask-image: var(--icon-pokedollar);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: 0px 2px;
+    border-radius: 0;
 }
 
 dd.palmi-detail-date-d-inscription::before {
@@ -2339,13 +2270,14 @@ dd.palmi-detail-date-d-inscription::before {
 
 .post-author-details dd,
 .post-author-links a {
-  margin     : 0;
-  display    : inline-flex;
-  align-items: center;
-  background : var(--bg);
-  border     : var(--border);
-  padding    : 4px 10px 3px;
-  gap        : 5px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg);
+    border: var(--border);
+    padding: 2px 10px;
+    gap: 5px;
+    line-height: 0;
 }
 
 .post-author-links {
@@ -3897,37 +3829,44 @@ span.palmi-dice-type {
   position               : relative !important;
 }
 
-.palmi-dice-block--shiny .palmi-dice-result--number::after {
+.palmi-dice-block--shiny .palmi-dice-result--number::after,
+.palmi-dice-block--charme_chroma .palmi-dice-result--number::after {
   content  : 'Rien...';
   font-size: 15px;
   color    : var(--muted);
 }
 
-.palmi-dice-block--shiny .palmi-dice-result--number span {
+.palmi-dice-block--shiny .palmi-dice-result--number span,
+.palmi-dice-block--charme_chroma .palmi-dice-result--number span {
   font-size: 0;
 }
 
 .--rien:nth-child(1n)::before,
-.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(1n)::before {
+.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(1n)::before,
+.palmi-dice-block--charme_chroma .palmi-dice-result--number span:nth-child(1n)::before {
   content: 'sick' !important;
 }
 
 .--rien:nth-child(2n)::before,
-.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(2n)::before {
+.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(2n)::before,
+.palmi-dice-block--charme_chroma .palmi-dice-result--number span:nth-child(2n)::before {
   content: 'sentiment_very_dissatisfied' !important;
 }
 
 .--rien:nth-child(3n)::before,
-.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(3n)::before {
+.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(3n)::before,
+.palmi-dice-block--charme_chroma .palmi-dice-result--number span:nth-child(3n)::before {
   content: 'sentiment_dissatisfied' !important;
 }
 
 .--rien:nth-child(4n)::before,
-.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(4n)::before {
+.palmi-dice-block--shiny .palmi-dice-result--number span:nth-child(4n)::before,
+.palmi-dice-block--charme_chroma .palmi-dice-result--number span:nth-child(4n)::before {
   content: 'mood_bad' !important;
 }
 
-.palmi-dice-block--shiny .palmi-dice-result--number::before {
+.palmi-dice-block--shiny .palmi-dice-result--number::before,
+.palmi-dice-block--charme_chroma .palmi-dice-result--number::before {
   font-family: 'Material Symbols Outlined';
   font-size  : 35px;
   position   : relative;
