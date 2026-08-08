@@ -3462,7 +3462,7 @@ div.sceditor-toolbar {
   gap                  : 12px;
 }
 
-.palmi-poke-slot {
+.palmi-poke-slot, .palmi-poke-inline {
   border        : var(--border);
   overflow      : hidden;
   background    : var(--bg-soft);
@@ -5405,9 +5405,7 @@ img[src="LIENICI"] {
   position      : relative;
 }
 
-.pjournal-team-card:has(.palmi-poke-inline--notfound)>* {
-  display: none;
-}
+
 
 .pjournal-team-card:has(.palmi-poke-inline--notfound)::before {
   content: 'Pokémon non trouvé';
@@ -5421,9 +5419,15 @@ img[src="LIENICI"] {
   width   : 100%;
   z-index : 1;
   overflow: hidden;
-  height  : 222px;
+  height  : 222px;display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
+.pjournal-team-card:has(.palmi-poke-inline--notfound)>* {
+  display: none!important;
+}
 .pjournal-team-card--empty {
   align-items    : center;
   justify-content: center;
