@@ -1,9 +1,5 @@
 
-- calibrage css jour/nuit
-
-- gestion shiny/baron (pour le futur)
-
-- commentary et orga docs
+- profil hover modal
 
 ________________________________________
 

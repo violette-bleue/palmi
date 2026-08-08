@@ -224,12 +224,15 @@ div#breadcrumbs,
 }
 
 .palmi-hero-sub {
-  margin        : 10px 0 0;
-  font-family   : var(--font-label);
-  font-size     : 16px;
-  color         : #EDEAF0;
-  text-shadow   : 0 2px 10px rgba(0, 0, 0, .6);
-  text-transform: uppercase;
+    margin: 10px 0 0;
+    font-family: var(--font-label);
+    font-size: 16px;
+    color: #EDEAF0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .6);
+    text-transform: uppercase;
+    max-width: 50%;
+    white-space: normal;
+    line-height: normal;
 }
 
 div.award {
@@ -611,6 +614,8 @@ section.palmi-card:has(.palmi-topsites-grid) {
   border         : 0;
   position       : relative;
   height         : 70px;
+  
+    border-radius: 10px 10px 0 0;
 }
 
 .palmi-zone-stats {
@@ -5779,4 +5784,95 @@ label:has(input#profile_field_3_-21) {
 
 .cp-inner>a {
   display: none;
+}
+
+/*LISTE DES MEMBRES*/
+#form-block {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border-radius: unset;
+    width: 1000px !important;
+}
+#memberlist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+#memberlist .member-block {
+    background: var(--panel);
+    border-radius: 10px;
+    border: 2px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+#memberlist .member-block .avatar-medium img {
+    margin: 0;
+    border-radius: 10px;
+}
+.avatar-default.avatar-medium {
+    font-size: 0;
+}
+#memberlist .member-block>.member-rigth {
+    position: absolute;
+    bottom: 0;
+    background: var(--bg);
+    width: 100%;
+    padding: 0px 20px 10px;
+    height: 100px;
+}
+.members-block {
+    display: flex;
+    flex-wrap: wrap;
+}
+#memberlist .member-block .member-details {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 5px;
+}
+#memberlist .member-block .member-header {
+    font-size: 16px;
+    margin-bottom: 0;
+    min-height: 60%;
+    display: flex;
+    align-items: center;
+}
+#memberlist .member-block .member-details b {
+    display: none;
+}
+#memberlist span.member-icons a {
+    position: absolute;
+top: -287px;
+    right: 10px;
+    background: var(--bg);
+    font-size: 10px;
+    margin: 0 !important;
+    padding: 5px 10px;
+    transition:all .2s ease;
+}
+#memberlist span.member-icons i {
+    font-size: 15px;
+}
+#memberlist span.member-icons a:hover i {
+    color: var(--accent);
+}
+#memberlist .member-header> a strong {
+    font-weight: 500;
+    font-size: 17px;
+    /* white-space: nowrap; */
+    line-height: normal;
+}
+.quick-options {
+    line-height: normal;
+    text-align: unset;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.quick-options .option {
+    display: inline-block;
+    margin: 0;
 }
