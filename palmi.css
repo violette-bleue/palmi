@@ -3801,7 +3801,7 @@ span.palmi-dice-type {
   width         : 100%;
 }
 
-.palmi-dice-block--shiny .--shiny {
+span.palmi-dice-reward.--shiny {
   font-size              : 22px;
   font-family            : var(--font-label);
   background             : linear-gradient(50deg, var(--flash) 0%, var(--accent) 50%, var(--flash) 100%);
@@ -3813,7 +3813,7 @@ span.palmi-dice-type {
   font-weight            : 500;
 }
 
-.palmi-dice-block--shiny .palmi-dice-result--reward .--shiny::before {
+.palmi-dice-result--reward .--shiny::before {
   content                : 'auto_awesome' !important;
   font-family            : 'Material Icons' !important;
   font-size              : 35px !important;
@@ -3865,6 +3865,7 @@ span.palmi-dice-type {
   content: 'mood_bad' !important;
 }
 
+
 .palmi-dice-block--shiny .palmi-dice-result--number::before,
 .palmi-dice-block--charme_chroma .palmi-dice-result--number::before {
   font-family: 'Material Symbols Outlined';
@@ -3881,9 +3882,13 @@ span.palmi-dice-type {
   align-items   : center;
 }
 
-.palmi-dice-reward::before {
+.palmi-dice-reward::before,
+.palmi-dice-block--shiny .palmi-dice-result--number span::before, 
+.palmi-dice-block--charme_chroma .palmi-dice-result--number span::before {
   font-family: 'Material Icons';
   font-size: 30px;
+  
+    color: var(--muted);
 }
 
 .palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-reward--has-image::before {
