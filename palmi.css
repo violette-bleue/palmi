@@ -3251,16 +3251,7 @@ div.sceditor-toolbar {
   border: none !important;
 }
 
-#smiley-box,
-.smile-status-box {
-  position       : absolute;
-  right          : 0;
-  top            : 0;
-  display        : flex;
-  flex-direction : column;
-  justify-content: center;
-  height         : 100%;
-}
+
 
 .avatar-default img {
   box-shadow   : none;
@@ -4853,11 +4844,51 @@ input:checked+.checkbox-check:after {
   border-right: none !important;
 }
 
-#smiley-box iframe,
-.smile-status-box iframe {
-  height: 520px !important;
+#smiley-box iframe, .smile-status-box iframe {
+    height: 100% !important;
 }
-
+html#sceditor_smilies {
+    overflow-y: hidden!important;
+}
+#smiley-box, .smile-status-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    font-size: 0;
+    padding-top: 70px;
+}
+#smileyContainer {
+    height: 100%!important;
+}
+.smiley-element img {
+    margin: 0;
+    max-width: 40px;
+}
+.smiley-element {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    margin: 0;
+    padding: 0 20px 0 0 !important;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100px;
+    height: 400px;
+    overflow-y: auto;
+}
+#sce_smilies_body {
+    background-color: #fff0;
+    background-image: none;
+    margin: 0 !important;
+    min-width: 1px !important;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
 fieldset.form-buttons {
   display  : flex;
   gap      : 5px;
