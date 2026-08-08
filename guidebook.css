@@ -192,12 +192,26 @@ p.palmi-hero-sub:before {
   font-family: var(--font-body);
   color: var(--text);
   line-height: 1.7;
+    position: relative;
 }
-.palmi-gb-section h1 {
-    font-size: 40px;
-    line-height: 15px;
+.palmi-gb-section h1:first-of-type {
+    font-size: 15px;
+    line-height: normal;
     margin-bottom: 20px !important;
-    background: var(--nav-bg);
+    background: var(--accent);
+    color: var(--bg);
+    position: absolute;
+    top: -30px;
+    left: -36px;
+    padding: 3px 30px 1px;
+    display: flex;
+    width: 696px;
+    border-radius: 10px 10px 0 0;
+    font-family: var(--font-label);
+    font-weight: 600;
+}
+.palmi-gb-section:has(>h1) {
+    padding-top: 10px;
 }
 .palmi-gb-section.active {
   display: block;
