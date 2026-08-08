@@ -1,5 +1,7 @@
 ﻿/* === Palmi === */
-
+a:has(img[src="https://2img.net/h/www.aht.li/2859284/5050C.png"]) {
+    display: none;
+}
 
 body::-webkit-scrollbar {
   width: 10px;
@@ -737,6 +739,7 @@ section.palmi-card:has(.palmi-topsites-grid) {
     padding: 14px 16px;
     display: flex;
     justify-content: flex-start;
+    min-width: 260px;
 }
 .palmi-card.palmi-footer-card.--stats p {
     font-size: 0;
@@ -769,8 +772,8 @@ section.palmi-card:has(.palmi-topsites-grid) {
     font-weight: 600;
 }
 .palmi-card.palmi-footer-card.--stats span>span, .palmi-card.palmi-footer-card.--stats strong {
-    font-size: initial;
-}
+    font-size: 15px;
+    line-height: 11px;}
 .palmi-card.palmi-footer-card.--groups {
     display: flex;
     gap: 0 5px;
@@ -785,7 +788,6 @@ section.palmi-card:has(.palmi-topsites-grid) {
 .palmi-card.palmi-footer-card.--groups a span {
     color: var(--bg);
     font-weight: 600;
-    line-height: 0;
 }
 p.palmi-newest-user span.palmi-newest-user-avatar {
     height: 100px;
@@ -814,7 +816,7 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 400px;
+    min-width: 400px;
 }
 .palmi-card.palmi-footer-card.--historic strong {
     font-size: 14px;
@@ -831,13 +833,17 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
 .palmi-card.palmi-footer-card.--historic > p:last-child {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 0;
+    gap: 3px 0;
     line-height: normal;
     position: relative;
     padding-top: 22px;
     margin-left: -10px;
     height: 125px;
     overflow-y: auto;
+    align-content: flex-start;
+}
+.palmi-card.palmi-footer-card.--historic > p:last-child a {
+    font-size: 12px;
 }
 .palmi-card.palmi-footer-card.--historic > p:last-child::before {
     content: 'Ils étaient là :';
@@ -4223,12 +4229,14 @@ blockquote cite {
   font-family: var(--font-label);
 }
 
-.post-content ul,
-.post-content ol {
-  margin-left   : 35px;
-  display       : flex;
-  flex-direction: column;
-  gap           : 5px;
+.palmi-gb-section ul, .palmi-gb-section ol {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    color: var(--muted);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .post-content ul li br,
@@ -4236,28 +4244,33 @@ blockquote cite {
   display: none;
 }
 
-.post-content ul li,
-.palmi-gb-section ul li {
-  list-style : none;
-  height     : fit-content;
-  display    : flex;
-  align-items: center;
-  gap        : 7px;
+.post-content ul li, .palmi-gb-section ul li {
+    list-style: none;
+    height: fit-content;
+    display: block;
+    align-items: center;
+    position: relative;
+    float: left;
+    margin: 10px 0;
+    background: var(--bg-soft);
+    padding: 5px 15px;
 }
 
-.post-content ul li::before,
-.palmi-gb-section ul li::before {
-  content            : '';
-  display            : inline-block;
-  width              : 20px;
-  height             : 20px;
-  background-color   : currentColor;
-  -webkit-mask-image : var(--icon-pokeball);
-  mask-image         : var(--icon-pokeball);
-  -webkit-mask-size  : contain;
-  mask-size          : contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat        : no-repeat;
+.post-content ul li::before, .palmi-gb-section ul li::before {
+    content: '';
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-color: var(--accent);
+    -webkit-mask-image: var(--icon-pokeball);
+    mask-image: var(--icon-pokeball);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    position: absolute;
+    left: -25px;
+    top: 3px;
 }
 
 .spoiler_title {

@@ -115,7 +115,7 @@ p.palmi-hero-sub:before {
 .palmi-gb-cat-btn span {
   flex: 1;
 }
-.palmi-gb-cat-btn .material-symbols-outlined {
+.palmi-gb-cat-btn i {
     font-size: 18px;
     color: inherit;
 }
