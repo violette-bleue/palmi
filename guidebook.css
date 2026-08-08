@@ -2,6 +2,9 @@
 /* ============================================= */
 /* === GUIDEBOOK === */
 /* ============================================= */
+.palmi-gb-cat[data-cat="❗XXXnomcategoriesansespacesansaccentsXXX"] {
+    display: none;
+}
 .palmi-hero-wrap {
     max-height: 200px;
     min-height: auto;
