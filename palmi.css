@@ -3901,33 +3901,10 @@ span.palmi-dice-type {
   content: var(--dice-icon-content);
 }
 
-/**.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
+.palmi-dice-block:not(.palmi-dice-block--shiny) .palmi-dice-result--number span:before {
   background-image: url(https://www.pokepedia.fr/images/5/5a/Miniature_D%C3%A9_Pip%C3%A9_EV.png);
 }
 
-.--pierre.--plante::before {
-  background-image: url(https://www.pokepedia.fr/images/5/52/Pierre_Plante-CA.png);
-}
-
-.--pierre.--foudre::before {
-  background-image: url(https://www.pokepedia.fr/images/e/ea/Pierre_Foudre-CA.png);
-}
-
-.--pierre.--eau::before {
-  background-image: url(https://www.pokepedia.fr/images/2/2a/Pierre_Eau-CA.png);
-}
-
-.--pierre.--feu::before {
-  background-image: url(https://www.pokepedia.fr/images/6/6c/Pierre_Feu-CA.png);
-}
-
-.--baie::before {
-  background-image: url(https://www.pokepedia.fr/images/b/bf/Miniature_Baie_Oran_LPZA.png);
-}
-
-.palmi-dice-block--expedition .palmi-dice-reward::before {
-  content: 'crisis_alert' !important;
-}**/
 
 .palmi-dice-result:has(.--danger) {
   border-color: var(--accent);
@@ -3940,24 +3917,11 @@ span.palmi-dice-type {
 }
 
 .palmi-dice-block--expedition .--baron::before {
-  background-image: url(https://www.pokepedia.fr/images/e/e8/Ic%C3%B4ne_Pok%C3%A9mon_Baron_LPA.png);
   content         : '' !important;
 }
 
 .palmi-dice-result:has(.--plusdeux) {
   color: var(--muted);
-}
-
-.--ressource::before {
-  background-image: url(https://www.pokepedia.fr/images/7/7c/Miniature_%C3%89pice_Secr%C3%A8te_Am%C3%A8re_EV.png);
-}
-
-.--tresor::before {
-  background-image: url(https://www.pokepedia.fr/images/e/e3/Miniature_Pi%C3%A8ce_de_Mordudor_LPZA.png);
-}
-
-.--joyau::before {
-  background-image: url(https://www.pokepedia.fr/images/5/5d/Miniature_Joyau_Normal_LPZA.png);
 }
 
 .--evolue {
