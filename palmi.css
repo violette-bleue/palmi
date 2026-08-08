@@ -809,9 +809,7 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
     flex-direction: column;
     line-height: normal;
 }
-.palmi-card.palmi-footer-card.--online {
-    width: 210px;
-}
+
 .palmi-card.palmi-footer-card.--historic {
     display: flex;
     flex-direction: column;
@@ -852,7 +850,7 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
     display: none;
 }
 .palmi-card.palmi-footer-card.--online {
-    width: 210px;
+    width: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -1253,7 +1251,7 @@ ul#header-navigation>li>a>i {
 
 [class^="material"],
 [class*=" material"] {
-  font-family: 'Material Symbols Outlined' !important;
+  font-family: 'Material Icons' !important;
 }
 
 /* === Switcheroo === */
@@ -1483,7 +1481,7 @@ section.palmi-card.palmi-profile-fields {
 }
 
 .palmi-widget-slot img {
-  max-width    : 100%;
+  max-width    : 88px;
   height       : auto;
   border-radius: 8px;
   display      : block;
