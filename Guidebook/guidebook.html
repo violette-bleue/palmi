@@ -1,50 +1,20 @@
 <link rel="stylesheet" href="https://violette-bleue.github.io/palmi/palmi.css" />
 <link rel="stylesheet" href="https://violette-bleue.github.io/palmi/guidebook.css" /><div class="palmi-gb">
-    <!-- ===== ⭕⭕⭕ HEADER / PAS TOUCHER ⭕⭕⭕===== -->
-    <div class="palmi-gb-header">
-        <div class="palmi-gb-search-wrap">
-            <input type="text" id="palmi-gb-search" class="palmi-gb-search" placeholder="Rechercher dans le guide..." />
-        </div>
-    </div>
-    <!-- ===== ✴️ MENU MOBILE bouton / PAS TOUCHER ✴️ ===== -->
-    <div class="palmi-gb-mobile-bar" id="palmi-gb-mobile-bar">
-        <button class="palmi-gb-mobile-cat-btn" id="palmi-gb-mobile-toggle">
-            <span id="palmi-gb-mobile-current">Choisir une catégorie</span>
-            <i class="material-symbols-outlined">expand_more</i>
-        </button>
-    </div>
-    <!-- ===== ⭕⭕⭕ LAYOUT PRINCIPAL ⭕⭕⭕ ===== -->
-    <div class="palmi-gb-layout">
-        <!-- ✴️ MENU VERSION MOBILE / PAS TOUCHER ✴️-->
-        <div class="palmi-gb-mobile-overlay" id="palmi-gb-mobile-overlay"></div>
-        <nav class="palmi-gb-mobile-sidebar" id="palmi-gb-mobile-sidebar">
-            <div class="palmi-gb-mobile-sidebar-head">
-                <span id="palmi-gb-mobile-sidebar-title">Catégorie</span>
-                <button id="palmi-gb-mobile-close">
-                    <i class="material-symbols-outlined">close</i>
-                </button>
-            </div>
-            <div class="palmi-gb-mobile-sidebar-items" id="palmi-gb-mobile-sidebar-items"></div>
-        </nav>
 
-        <!-- ✴️ MENU LATERAL ✴️ -->
+<div class="palmi-gb-header"><div class="palmi-gb-search-wrap"><input type="text" id="palmi-gb-search" class="palmi-gb-search" placeholder="Rechercher dans le guide..." /></div></div><div class="palmi-gb-mobile-bar" id="palmi-gb-mobile-bar"><button class="palmi-gb-mobile-cat-btn" id="palmi-gb-mobile-toggle"><span id="palmi-gb-mobile-current">Choisir une catégorie</span><i class="material-symbols-outlined">expand_more</i></button></div><div class="palmi-gb-layout"><div class="palmi-gb-mobile-overlay" id="palmi-gb-mobile-overlay"></div><nav class="palmi-gb-mobile-sidebar" id="palmi-gb-mobile-sidebar"><div class="palmi-gb-mobile-sidebar-head"><span id="palmi-gb-mobile-sidebar-title">Catégorie</span><button id="palmi-gb-mobile-close"><i class="material-symbols-outlined">close</i></button></div><div class="palmi-gb-mobile-sidebar-items" id="palmi-gb-mobile-sidebar-items"></div></nav>
         <nav class="palmi-gb-sidebar" id="palmi-gb-sidebar">
-            <!-- ⚠️⚠️ AJOUTER UNE NOUVELLE CATEGORIE APRES CETTE LIGNE ⚠️⚠️================================================= -->
+
             <div class="palmi-gb-cat" data-cat="bienvenue">
 
-<!-- BOUTON POUR DEPLIER LA CATEGORIE 1 BIENVENUE --><button class="palmi-gb-cat-btn">
-                    <!-- ▫️ icon à choisir dans https://fonts.google.com/icons?icon.set=Material+Icons et tu changes juste le nom de l'icône -->
-                    <!-- exemple avec https://fonts.google.com/icons?icon.set=Material+Icons&selected=Material+Icons+Outlined:star_rate:&icon.size=24&icon.color=%231f1f1f-->
+<button class="palmi-gb-cat-btn">
 
                     <i class="material-symbols-outlined">auto_awesome</i>
                     <span>Bienvenue</span>
 
-<!-- ⛔ touche pas --><i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button><!-- touche pas ⛔ -->
-<!-- FIN DU BOUTON -->
+<i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button>
 
-                <!-- LES DIFFERENTES SECTIONS DE LA CATEGORIE 1 : BIENVENUE -->
                 <div class="palmi-gb-cat-items">
-                    <!-- ⚠️⚠️ AJOUTER UNE NOUVELLE SECTION APRES CETTE LIGNE ⚠️⚠️====================================================================== -->
+
                     <a href="#" class="palmi-gb-item" data-section="avantpropos">Avant Propos</a>
                     <a href="#" class="palmi-gb-item" data-section="contexte">Contexte</a>
                     <a href="#" class="palmi-gb-item" data-section="histoire">Histoire</a>
@@ -53,55 +23,39 @@
                     <a href="#" class="palmi-gb-item" data-section="factions">Factions</a>
                     <a href="#" class="palmi-gb-item" data-section="miseenpage">Mise en page</a>
 
-                    <!-- FIN DES SECTIONS DE BIENVENUE-->
                 </div>
             </div>
-			
-			<!-- FIN DE BIENVENUE -->
-			
-			<!-- DEBUT DE CAT 2 FONCTIONNEMENT-->
+
 		<div class="palmi-gb-cat" data-cat="fonctionnement">
 
-<!-- BOUTON POUR DEPLIER LA CATEGORIE --><button class="palmi-gb-cat-btn">
-                    <!-- ▫️ icon à choisir dans https://fonts.google.com/icons?icon.set=Material+Icons et tu changes juste le nom de l'icône -->
-                    <!-- exemple avec https://fonts.google.com/icons?icon.set=Material+Icons&selected=Material+Icons+Outlined:star_rate:&icon.size=24&icon.color=%231f1f1f-->
+<button class="palmi-gb-cat-btn">
 
                     <i class="material-symbols-outlined">settings_applications</i>
                     <span>Fonctionnement</span>
 
-<!-- ⛔ touche pas --><i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button><!-- touche pas ⛔ -->
-<!-- FIN DU BOUTON -->
+<i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button>
 
-                <!-- LES DIFFERENTES SECTIONS DE LA CATEGORIE 2 : FONCTIONNEMENT -->
                 <div class="palmi-gb-cat-items">
-                    <!-- ⚠️⚠️ AJOUTER UNE NOUVELLE SECTION APRES CETTE LIGNE ⚠️⚠️====================================================================== -->
+
                     <a href="#" class="palmi-gb-item" data-section="premierspas">Premiers pas</a>
                     <a href="#" class="palmi-gb-item" data-section="typesrp">Types de RP</a>
                     <a href="#" class="palmi-gb-item" data-section="expeditions">Les expéditions</a>
                     <a href="#" class="palmi-gb-item" data-section="monnaie">La monnaie</a>
                     <a href="#" class="palmi-gb-item" data-section="objets">Les objets</a>
                     <a href="#" class="palmi-gb-item" data-section="moderations">Les modérations</a>
-                  
-					
+
 			    </div>
-	</div>			
-					 <!-- FIN DE CAT 2 FONCTIONNEMENT --> 
-					 
-					 <!-- DEBUT CAT 3 POKEMON --> 
+	</div>
+
 	<div class="palmi-gb-cat" data-cat="pokemon">
                 <button class="palmi-gb-cat-btn">
-                   
-<i class="material-icons">catching_pokemon</i><!-- ICON -->
-                    <span>Pokémon</span> <!-- TITRE VISIBLE -->
 
-<!-- ⛔ touche pas --><i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button><!-- touche pas ⛔ -->
-<!-- FIN DU BOUTON -->
+<i class="material-icons">catching_pokemon</i>
+                    <span>Pokémon</span>
 
+<i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button>
 
-<!-- ➕➕ LES DIFFERENTES SECTIONS DE LA CATEGORIE -->
                 <div class="palmi-gb-cat-items">
-<!-- ⚠️⚠️ AJOUTER UNE NOUVELLE SECTION APRES CETTE LIGNE ⚠️⚠️====================================================================== -->
-<!-- ❕️ data-section doit matcher l'ID de la section correspondante (plus bas) + pas daccent pas d'espaces / laisse pas lemoji entre les "" -->
 
 					<a href="#" class="palmi-gb-item" data-section="starter">Starter</a>
 					<a href="#" class="palmi-gb-item" data-section="maitrise">Niveau de maîtrise</a>
@@ -110,56 +64,29 @@
 					<a href="#" class="palmi-gb-item" data-section="shiny">Obtenir un shiny</a>
 					<a href="#" class="palmi-gb-item" data-section="evoluer">Faire évoluer ses Pokémon</a>
 					<a href="#" class="palmi-gb-item" data-section="combattre">Combattre</a>
-					
+
 				</div>
 	</div>
- <!-- FIN CAT POKEMON --> 
 
-
-<!-- ➕ DEBUT DU BLOC POUR AJOUTER UNE NOUVELLE CATEGORIE - Dupliquer ce bloc pour chaque nouvelle catégorie que tu veux ajouter ===================================================== -->
-
-		
-			 
-<!-- ➕➕ BOUTON POUR DEPLIER LA CATEGORIE -->
-<!-- nom en un mot sans espace ni accent dans le ❗ data-cat / laisse pas lemoji entre les "" -->
             <div class="palmi-gb-cat" data-cat="❗XXXnomcategoriesansespacesansaccentsXXX">
                 <button class="palmi-gb-cat-btn">
-                   
-                    <i class="material-symbols-outlined">star_rate</i> <!-- ICON -->
-                    <span>Titre de la catégorie affiché</span> <!-- TITRE VISIBLE -->
 
-<!-- ⛔ touche pas --><i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button><!-- touche pas ⛔ -->
-<!-- FIN DU BOUTON -->
+                    <i class="material-symbols-outlined">star_rate</i>
+                    <span>Titre de la catégorie affiché</span>
 
+<i class="material-symbols-outlined palmi-gb-cat-chevron">expand_more</i></button>
 
-<!-- ➕➕ LES DIFFERENTES SECTIONS DE LA CATEGORIE -->
                 <div class="palmi-gb-cat-items">
-<!-- ⚠️⚠️ AJOUTER UNE NOUVELLE SECTION APRES CETTE LIGNE ⚠️⚠️====================================================================== -->
-<!-- ❕️ data-section doit matcher l'ID de la section correspondante (plus bas) + pas daccent pas d'espaces / laisse pas lemoji entre les "" -->
 
-<!-- ➡️ SECTION 1 --><a href="#" class="palmi-gb-item" data-section="❕XXnomdelasection1XX">Nom</a><!--⬅️-->
-<!-- ➡️ SECTION 2 --><a href="#" class="palmi-gb-item" data-section="❕XXnomdelasection2XX">Nom</a><!--⬅️-->
+<a href="#" class="palmi-gb-item" data-section="❕XXnomdelasection1XX">Nom</a>
+<a href="#" class="palmi-gb-item" data-section="❕XXnomdelasection2XX">Nom</a>
 
-<!-- FIN DES SECTIONS--></div></div>
+</div></div>
 
-<!-- ➕ FIN DU BLOC POUR AJOUTER UNE NOUVELLE CATEGORIE ===================================================== -->
+</nav>
 
-<!-- ⚠️⚠️ AJOUTER LES CATEGORIES ET SECTIONS AVANT CETTE LIGNE ⚠️⚠️====================================================================== -->
-</nav><!-- ✴️ FIN DU MENU LATERAL ✴️ -->
-
-
-
-
-        <!-- ✴️ CONTENU CENTRAL ✴️ -->
         <main class="palmi-gb-content">
-            <!-- ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ -->
-            <!-- Un bloc section par section définie dans le menu latéral. -->
-            <!-- ⚠️ son ❕id doit matcher le ️❕data-section (exact meme terme) que tu as défini dans le menu latéral -->
-            <!-- ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ -->
 
-<!-- ➕➕➕ DEBUT DES SECTIONS TU AJOUTES APRES CETTE LIGNE -->
-
-<!-- Avant propos -->
             <section class="palmi-gb-section active" data-categorie="bienvenue" id="avantpropos">
                 <h1>Avant Propos</h1>
 
@@ -201,7 +128,6 @@
 
 </section>
 
-<!-- Contexte -->
             <section class="palmi-gb-section active" data-categorie="bienvenue" id="contexte">
                 <h1>Contexte</h1>
 
@@ -231,7 +157,6 @@
 
 </section>
 
-<!-- Histoire -->
             <section class="palmi-gb-section active" data-categorie="bienvenue" id="histoire">
                 <h1>Histoire</h1>
 
@@ -277,7 +202,6 @@
 
 </section>
 
-<!-- Groupes / Métiers -->
             <section class="palmi-gb-section active" data-categorie="bienvenue" id="groupes">
                 <h1>Groupes / Métiers</h1>
 
@@ -311,17 +235,17 @@
 
                 <info>Gardez à l'esprit de choisir votre Groupe en fonction de vos envies plutôt que d'une quelconque récompense.</info>
 
-                <h2><g6>Aventuriers</g6></h2>
+                <h2>Aventuriers</h2>
 
                 <p>Vous êtes un expert de la récolte dans les terres sauvages, là où les autres ne voient que de simples cailloux, vous savez qu'ils ont en réalité de la valeur.<br/><br/>
 
                 Vous êtes au cœur du lancement des expéditions dans les Terres Sauvages, soit pour trouver un chemin sûr vers de nouvelles zones, soit pour y dénicher des trésors.<br/><br/>
 
-                Vous avez la possibilité d'aider les <g4>Rangers</g4> en utilisant vos joyaux élémentaires au cours d'un combat en Raid pour booster les attaques pendant un tour.<br/><br/>
+                Vous avez la possibilité d'aider les <g4>Rangers</g4> en utilisant vos joyaux élémentaires au cours d'un combat en Raid pour booster les attaques pendant un tour.</p>
 
-                <strong>Bonus :</strong><br/><br/>
+                <h3>Bonus</h3>
 
-                Une fois par semaine, vous pouvez gagner 20 Pokédollars en déclarant un RP terminé qui a lieu dans les Terres Sauvages.<br/><br/>
+                <p>Une fois par semaine, vous pouvez gagner 20 Pokédollars en déclarant un RP terminé qui a lieu dans les Terres Sauvages.<br/><br/>
 
                 Dans chacun de vos RP dans les Terres Sauvages, vous pouvez lancer un dé de récolte pour déterminer si vous trouvez un objet à ajouter dans votre inventaire. Il symbolise votre compétence à trouver des trésors. Les faces possibles sont :</p>
 
@@ -335,15 +259,15 @@
 
                 <p>Pour 500 Pokédollars vous pouvez installer une Base Secrète dans une zone des Terres Sauvages. Grâce à cette base, si vous avez une capacité de mobilité dans la liste suivante : Vol, Téléport, Tunnel (et pour une zone aquatique, Surf, Plongée, Cascade — la possibilité d'utiliser la capacité sera mentionnée dans la description de la zone), vous pouvez interrompre un combat de raid qui tourne en la défaveur du groupe, et tout le groupe se réfugie dans votre base.</p>
 
-                <h2><g3>Civil</g3></h2>
+                <h2>Civil</h2>
 
                 <p>Les <g3>civils</g3> font vivre l'économie et la culture de la région et vivent leur vie aux côtés de leurs compagnons Pokémon, que ce soit en tant qu'étudiants à l'Académie, commerçant ou encore dans les forces de police.<br/><br/>
 
                 Les <g3>Civils</g3> sont les seuls qui reçoivent un bonus pécuniaire lié à leur lieu de travail.<br/><br/>
 
-                Leur groupe est donc tourné vers la récolte des Pokédollars. Dans quel but ? Les <g3>civils</g3> pourront payer pour le développement de zones de Pokémon dans les villes et acheter des ressources pour proposer des objets uniques aux joueurs à ajouter dans leur carte de dresseur.<br/><br/>
+                Leur groupe est donc tourné vers la récolte des Pokédollars. Dans quel but ? Les <g3>civils</g3> pourront payer pour le développement de zones de Pokémon dans les villes et acheter des ressources pour proposer des objets uniques aux joueurs à ajouter dans leur carte de dresseur.</p>
 
-                <strong>Bonus :</strong></p>
+                <h3>Bonus</h3>
 
                 <ul>
                     <li>Les <g3>civils</g3> peuvent créer des articles RP que les autres joueurs pourront acheter et conserver dans leur inventaire. Pour les créer, il leur faudra acheter des ressources, soit à la boutique PNJ, soit auprès d'un <g6>aventurier</g6>. Le prix fixe : 75 Pokédollars.</li>
@@ -365,15 +289,15 @@
 
                 Pour toute raison, si le joueur employé décide de partir, il peut alors ouvrir son propre lieu de travail. Idem si le joueur propriétaire décide de mettre fin à la relation employé-employeur.</p>
 
-                <h2><g5>Compétiteur</g5></h2>
+                <h2>Compétiteur</h2>
 
                 <p>Le terme « dresseur » est vague, par exemple un boulanger peut participer à des combats Pokémon à côté de son emploi pour s'amuser. En tant que <g5>Compétiteur</g5>, vous désirez plus que réaliser des combats Pokémon pour vous amuser : vous souhaitez en faire votre carrière, devenir célèbre, décrocher des contrats de sponsors.<br/><br/>
 
                 En tant que combattant (même les Concours nécessitent une phase de combat), vous passez énormément de temps à entraîner vos Pokémon. Vous savez mieux que quiconque comment exploiter leur potentiel en combat et leur enseigner des attaques.<br/><br/>
 
-                Les plus téméraires pourront également participer à des expéditions dans les Terres Sauvages. Face aux dangers qui vous guettent, vous devez avoir de puissants Pokémon.<br/><br/>
+                Les plus téméraires pourront également participer à des expéditions dans les Terres Sauvages. Face aux dangers qui vous guettent, vous devez avoir de puissants Pokémon.</p>
 
-                <strong>Bonus :</strong></p>
+                <h3>Bonus</h3>
 
                 <ul>
                     <li>1 fois par mois, pour vous-même : apprendre une capacité « donneur de capacité / move tutor » à un Pokémon.</li>
@@ -383,13 +307,13 @@
                     <li>Vous gagnez le double de la récompense monétaire en cas de victoire pour les événements de la Compétition (arène, concours, Ligue, Grand Festival).</li>
                 </ul>
 
-                <h2><g7>Éleveurs</g7></h2>
+                <h2>Éleveurs</h2>
 
                 <p>Rien ne vous plaît plus que de vous occuper de Pokémon et de les chouchouter. Votre rêve est d'ouvrir une Pension, en ville ou dans la nature (limitée aux zones civilisées hors Terres Sauvages) et de vivre entouré par vos compagnons, et de prendre soin de ceux des autres.<br/><br/>
 
-                Pour 500 Pokédollars vous pouvez acheter une Pension à implanter dans une zone civilisée de Palmi, en ville ou en dehors.<br/><br/>
+                Pour 500 Pokédollars vous pouvez acheter une Pension à implanter dans une zone civilisée de Palmi, en ville ou en dehors.</p>
 
-                <strong>Bonus :</strong></p>
+                <h3>Bonus</h3>
 
                 <ul>
                     <li>1 fois par mois, pour vous-même : apprendre une « Capacité Œuf / Egg Move » à un Pokémon.</li>
@@ -398,15 +322,15 @@
                     <li>Une fois votre pension implantée, vous pouvez générer 2 œufs de bébés Pokémon par mois (Pichu, Mélo, Toudoudou, Togepi, Debugant, Lippouti, Elekid, Magby, Azurill, Okéoké, Rozbouton, Korillon, Manzaï, Mime Jr., Ptiravi, Goinfrex, Riolu, Babimanta et Toxizap). Prix de vente fixe : 50 Pokédollars.</li>
                 </ul>
 
-                <h2><g9>Ingénieurs</g9></h2>
+                <h2>Ingénieurs</h2>
 
                 <p>Vous êtes habiles de vos mains et de vos outils, vous fabriquez des chefs d'œuvre et le Gouvernement fait appel à vos services pour modeler l'image de la région. Vous réparez également l'arme des <g4>Rangers</g4> et les plus intrépides peuvent créer des munitions pour tenter d'infliger un Statut à un Pokémon Dominant pour un Raid.<br/><br/>
 
                 Vous utilisez les recettes de l'Amalgamach pour créer des munitions.<br/><br/>
 
-                Pour 500 Pokédollars, vous pouvez ouvrir votre Atelier, qui peut prendre une forme créative de votre choix, tant qu'elle reflète son utilité première. Par exemple, un ébéniste qui travaille le bois peut créer un petit parc avec des pantins et d'autres créations en bois ouvert au public, avec la partie privée de son atelier.<br/><br/>
+                Pour 500 Pokédollars, vous pouvez ouvrir votre Atelier, qui peut prendre une forme créative de votre choix, tant qu'elle reflète son utilité première. Par exemple, un ébéniste qui travaille le bois peut créer un petit parc avec des pantins et d'autres créations en bois ouvert au public, avec la partie privée de son atelier.</p>
 
-                <strong>Bonus :</strong></p>
+                <h3>Bonus</h3>
 
                 <ul>
                     <li>Vous produisez les munitions via l'Amalgamach.</li>
@@ -422,7 +346,7 @@
 
                 Les <g9>Ingénieurs</g9> peuvent également faire des propositions de projet, le Staff se réserve toutefois le droit de refuser s'il considère qu'un projet dénaturerait une zone.</p>
 
-                <h2><g4>Rangers</g4></h2>
+                <h2>Rangers</h2>
 
                 <p>Soldat dans la nature aux ordres du gouvernement, vous tentez au mieux de faire respecter l'équilibre entre les humains et les Pokémon. Mais vous avez conscience qu'il faut, hélas, parfois chasser les Pokémon lorsque la paix est impossible.<br/><br/>
 
@@ -441,9 +365,9 @@
 
                 Vos connaissances vous permettent de trouver des Baies qui ne peuvent pousser que dans les Terres Sauvages et qui sont précieuses pour les recettes des scientifiques.<br/><br/>
 
-                Enfin, votre expertise du milieu sauvage vous permet de trouver des cachettes de Pokémon sauvages, des Trouées Sauvages. Vous pouvez ainsi, à chaque topic dans les Terres Sauvages, demander à ce que l'un des Pokémon de vos rencontres apparaisse dans sa forme évoluée.<br/><br/>
+                Enfin, votre expertise du milieu sauvage vous permet de trouver des cachettes de Pokémon sauvages, des Trouées Sauvages. Vous pouvez ainsi, à chaque topic dans les Terres Sauvages, demander à ce que l'un des Pokémon de vos rencontres apparaisse dans sa forme évoluée.</p>
 
-                <strong>Bonus :</strong></p>
+                <h3>Bonus</h3>
 
                 <ul>
                     <li>Si un groupe en Expédition tombe sur la face « danger », vous intervenez pour les secourir. Récompense pour un sauvetage : 50 Pokédollars.</li>
@@ -465,9 +389,9 @@
 
                 À l'aide de l'Amalgamach, vous pouvez donc créer des médicaments et les utiliser au cours des combats de Raid.<br/><br/>
 
-                Votre lieu de travail acheté pour 500 Pokédollars prend la forme d'un Laboratoire / Centre de recherches. Vous restez libre pour la forme. Par exemple, un scientifique qui veut étudier un écosystème sous-marin peut ouvrir un laboratoire sur la mer.<br/><br/>
+                Votre lieu de travail acheté pour 500 Pokédollars prend la forme d'un Laboratoire / Centre de recherches. Vous restez libre pour la forme. Par exemple, un scientifique qui veut étudier un écosystème sous-marin peut ouvrir un laboratoire sur la mer.</p>
 
-                <strong>Bonus :</strong></p>
+                <h3>Bonus</h3>
 
                 <ul>
                     <li>1 fois par mois, pour vous-même : une Pilule Talent pour changer le Talent d'un Pokémon, y compris le Talent caché.</li>
@@ -477,7 +401,6 @@
 
 </section>
 
-<!-- Géographie / Carte -->
             <section class="palmi-gb-section active" data-categorie="bienvenue" id="geographie">
                 <h1>Géographie / Carte</h1>
 
@@ -522,7 +445,6 @@
 
 </section>
 
-<!-- Factions -->
             <section class="palmi-gb-section active" data-categorie="bienvenue" id="factions">
                 <h1>Factions</h1>
 
@@ -556,7 +478,7 @@
 
                 <p><strong>Cheffe de la police Lin Wu</strong>, femme d'une cinquantaine d'années, elle dirige les forces de la police d'une main de fer. Elle est souvent calme mais a peu de patience, mieux vaut ne pas l'énerver. Elle lutte activement contre la Team Libra depuis son apparition. Ses trois Pokémon sont un Scorvol, un Brutalibré et un Scalpion.</p>
 
-                <h2>Association des <g6>aventuriers</g6></h2>
+                <h2>Association des aventuriers</h2>
 
                 <p>L'Association a été fondée il y a 10 ans maintenant et s'est à présent développée. Après la Première Expédition, ses membres se sont préparés pour mener les futures sorties dans les Terres Sauvages afin de les cartographier et récolter ses ressources. Ils espèrent également comprendre le passé de Palmi et ce qui a mené à la Rupture.</p>
 
@@ -682,97 +604,78 @@
 
 </section>
 
-<!-- Mise en page -->
             <section class="palmi-gb-section active" data-categorie="bienvenue" id="miseenpage">
                 <h1>Mise en page</h1>
 
-                <!-- ========================== ➡️➡️➡️ TITRES ⬅️⬅️⬅️ ========================================================================-->
                 <h2>Titre h2 </h2>
-                <!-- ▪️ -->
+
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><h2>Titre h2 </h2></script></code>
                 </div>
-                <!-- ▪️ -->
+
                 <h3>Titre h3 </h3>
-                <!-- ▪️ -->
+
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><h3>Titre h3 </h3></script></code>
                 </div>
-                <!-- ▪️ -->
+
                 <h4>Titre h4 </h4>
-                <!-- ▪️ -->
+
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><h4>Titre h4 </h4></script></code>
                 </div>
-                <!-- ▪️ -->
 
-                <!-- ========================== ➡️➡️➡️ BLOCS ⬅️⬅️⬅️ ======================================================================== -->
                 <p>Un même bloc de texte peut contenir plusieurs paragraphes, il suffit de les séparer par une ligne vide.<br/><br/>
 
                 Tu n'as besoin d'ouvrir un nouveau &lt;p&gt; que lorsqu'un autre élément (titre, note, liste, etc.) s'intercale entre deux paragraphes.</p>
 
-                <!-- ▪️ -->
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><p>Un même bloc de texte peut contenir plusieurs paragraphes, il suffit de les séparer par une ligne vide.<br/><br/>
 
                 Tu n'as besoin d'ouvrir un nouveau &lt;p&gt; que lorsqu'un autre élément (titre, note, liste, etc.) s'intercale entre deux paragraphes.</p></script></code>
                 </div>
-                <!-- ▪️ -->
 
-                <!-- ========================== ➡️➡️➡️ INFO ⬅️⬅️⬅️ ========================================================================-->
                 <info>Bloc information</info>
 
-                <!-- ▪️ -->
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><info>Bloc information</info></script></code>
                 </div>
-                <!-- ▪️ -->
 
-                <!-- ========================== ➡️➡️➡️ NOTE ⬅️⬅️⬅️ ========================================================================-->
                 <note>Il n'y a pas de minimum de ligne.</note>
-                <!-- ▪️ -->
+
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><note>Il n'y a pas de minimum de ligne.</note></script></code>
                 </div>
-                <!-- ▪️ -->
 
-                <!-- ========================== ➡️➡️➡️ LIEN ⬅️⬅️⬅️ ========================================================================-->
                 <a href="LIEN_ICI" target="_blank">Ceci est un lien</a>
 
-                <!-- ▪️ -->
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source">
-                <!-- le target="_blank" ouvre le lien dans un nouvel onglet. Si tu veux pas que ce soit le cas, retire le target="_blank" -->
-                <!-- <a href="LIEN_ICI" target="_blank">Ceci est un lien</a> -->
+
                 <a href="LIEN_ICI" target="_blank">Ceci est un lien</a></script>
                     </code>
                 </div>
-                <!-- ▪️ -->
 
-                <!-- ========================== ➡️➡️➡️ CITATION ⬅️⬅️⬅️ ========================================================================-->
                 <blockquote>>Bloc citation</blockquote>
 
-                <!-- ▪️ -->
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><blockquote>Bloc citation</blockquote></script></code>
                 </div>
-                <!-- ▪️ -->
 
-                <!-- ========================== ➡️➡️➡️ LISTE ⬅️⬅️⬅️ ========================================================================-->
                 <ul> Petite liste
                     <li>point 1</li>
                     <li>point 2</li>
                     <li><a href="LIEN_ICI" target="_blank">point 3 qui serait un lien</a></li>
                 </ul>
-                <!-- ▪️ -->
+
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><ul> Petite liste
@@ -781,28 +684,23 @@
                     <li><a href="LIEN_ICI" target="_blank">point 3 qui serait un lien</a></li>
                 </ul></script></code>
                 </div>
-                <!--▪️-->
 
-                <!-- ========================== ➡️➡️➡️ SEPARATEUR ⬅️⬅️⬅️ ========================================================================-->
                 Ligne de séparation
                 <hr>
-                <!--▪️-->
+
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><hr></script></code>
                 </div>
-                <!--▪️ -->
 
                 Ligne de séparation 2
                 <hrpoke></hrpoke>
-                <!--▪️-->
+
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source"><hrpoke></hrpoke></script></code>
                 </div>
-                <!--▪️ -->
 
-                <!-- ========================== ➡️➡️➡️ DIVERS GROUPES ⬅️⬅️⬅️ ========================================================================-->
                 <p>
                     <g1>g1</g1>
                     <g2>g2</g2>
@@ -828,19 +726,15 @@
                     <tagg7>tagg7</tagg7>
                 </p>
 
-                <!-- ▪️ -->
                 <div class="codebox">
                     <p></p>
                     <code><script type="text/plain" class="palmi-code-source">
                         <tagg1>Tag groupe 1</tagg1>
                     </script></code>
                 </div>
-                <!-- ▪️ -->
-
 
             </section>
 
-<!-- Premiers pas -->
             <section class="palmi-gb-section active" data-categorie="fonctionnement" id="premierspas">
                 <h1>Premiers pas</h1>
 
@@ -909,7 +803,6 @@
 
 </section>
 
-<!-- Types de RP -->
             <section class="palmi-gb-section active" data-categorie="fonctionnement" id="typesrp">
                 <h1>Types de RP</h1>
 
@@ -941,7 +834,6 @@
 
 </section>
 
-<!-- Les expéditions -->
             <section class="palmi-gb-section active" data-categorie="fonctionnement" id="expeditions">
                 <h1>Les expéditions</h1>
 
@@ -956,7 +848,6 @@
 
 </section>
 
-<!-- La monnaie -->
             <section class="palmi-gb-section active" data-categorie="fonctionnement" id="monnaie">
                 <h1>La monnaie</h1>
 
@@ -994,7 +885,6 @@
 
 </section>
 
-<!-- Les objets -->
             <section class="palmi-gb-section active" data-categorie="fonctionnement" id="objets">
                 <h1>Les objets</h1>
 
@@ -1034,7 +924,6 @@
 
 </section>
 
-<!-- Les modérations -->
             <section class="palmi-gb-section active" data-categorie="fonctionnement" id="moderations">
                 <h1>Les modérations</h1>
 
@@ -1048,7 +937,6 @@
 
 </section>
 
-<!-- Starter -->
             <section class="palmi-gb-section active" data-categorie="pokemon" id="starter">
                 <h1>Starter</h1>
 
@@ -1062,7 +950,6 @@
 
 </section>
 
-<!-- Niveau de maîtrise -->
             <section class="palmi-gb-section active" data-categorie="pokemon" id="maitrise">
                 <h1>Niveau de maîtrise</h1>
 
@@ -1095,7 +982,6 @@
 
 </section>
 
-<!-- Rencontrer des Pokémon -->
             <section class="palmi-gb-section active" data-categorie="pokemon" id="rencontrer">
                 <h1>Rencontrer des Pokémon</h1>
 
@@ -1139,7 +1025,6 @@
 
 </section>
 
-<!-- Capturer des Pokémon -->
             <section class="palmi-gb-section active" data-categorie="pokemon" id="capturer">
                 <h1>Capturer des Pokémon</h1>
 
@@ -1155,7 +1040,6 @@
 
 </section>
 
-<!-- Obtenir un shiny -->
             <section class="palmi-gb-section active" data-categorie="pokemon" id="shiny">
                 <h1>Obtenir un shiny</h1>
 
@@ -1167,7 +1051,6 @@
 
 </section>
 
-<!-- Faire évoluer ses Pokémon -->
             <section class="palmi-gb-section active" data-categorie="pokemon" id="evoluer">
                 <h1>Faire évoluer ses Pokémon</h1>
 
@@ -1208,7 +1091,6 @@
 
 </section>
 
-<!-- Combattre -->
             <section class="palmi-gb-section active" data-categorie="pokemon" id="combattre">
                 <h1>Combattre</h1>
 
@@ -1306,7 +1188,7 @@
                     <li>+10 si vous utilisez un médicament qui booste une attaque / qui baisse la défense du Boss.</li>
                 </ul>
 
-                <h4>Le <g4>Ranger</g4> et son arme</h4>
+                <h4>Le Ranger et son arme</h4>
 
                 <p>Le groupe des <g4>Rangers</g4> reçoit une arme de jet qu'ils font évoluer avec leur rang. Au cours d'un raid, un <g4>Ranger</g4> peut faire une action, comme son Pokémon. Avec leur arme, ils peuvent :</p>
 
@@ -1385,17 +1267,13 @@
 
 </section>
 
-<!-- ✏️ DEBUT SECTION 3 ===================================================== -->
-            <section class="palmi-gb-section active" data-categorie="❗XXdata-catXX" id="❕️XXnomdelasection1XX"> <!-- id = data-section unique, minuscule, pas d'espace -->
-            <!-- ✨ CONTENU DE LA SECTION APRES CETTE LIGNE -->
+            <section class="palmi-gb-section active" data-categorie="❗XXdata-catXX" id="❕️XXnomdelasection1XX">
 
                 <h2>Bienvenue</h2>
                 <p>Contenu à remplir par le staff.</p>
 
-            <!-- ✨ FIN DU CONTENU DE LA SECTION PLUS RIEN APRES CETTE LIGNE --></section>
-<!-- ✏️ FIN SECTION 3======================================================= -->
+            </section>
 
-<!-- ➕➕➕ FIN DES SECTIONS || TU AJOUTES DU CONTENU AVANT CETTE LIGNE ========================================= -->
-<!-- ⛔ ON TOUCHE PLUS RIEN APRES CETTE LIGNE ⛔ --></main></div></div>
+</main></div></div>
 
 <script src="https://violette-bleue.github.io/palmi/guidebook.js"></script>

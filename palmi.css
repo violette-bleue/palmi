@@ -2785,16 +2785,21 @@ span.award_tooltiptext {
     text-decoration: none;
     background: var(--accent);
     border-radius: 8px;
-    padding: 2px 10px 0;
+    padding: 1px 10px 0;
     color: var(--bg) !important;
     font-weight: 600;
     text-transform: uppercase;
-    width: fit-content;
-    display: inline-flex;
-    align-items: center;
-    font-size: 12px;
+    font-size: 10px;
+    line-height: normal;
+    top: -2px;
+    position: relative;
+    border: 2px solid transparent;
 }
-
+.post-content a:hover, .block-content>a:hover, .palmi-gb-section a:hover {
+    background: var(--bg);
+    color: var(--accent) !important;
+    border: 2px solid currentColor;
+}
 .post-signature {
   border-top : var(--border);
   padding-top: 8px;
@@ -3213,6 +3218,7 @@ div.sceditor-toolbar {
   flex-wrap: wrap;
   gap      : 15px;
   position : relative;
+    flex-direction: row;
 }
 
 .cp .block-content label {
@@ -4762,6 +4768,7 @@ fieldset.form-buttons .btn {
   height     : auto;
   align-items: center;
   line-height: normal !important;
+    color: var(--bg);
 }
 
 /* =============================================================== */
