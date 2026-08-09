@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
 
 div#preview {
   width : 800px;
-  margin: auto;
+  margin: 10px auto;
 }
 
 *,
@@ -2262,8 +2262,11 @@ h1 {
   display       : flex;
   flex-direction: column;
   gap           : 10px;
+    line-height: 1.6;
 }
-
+div.post-content img[src*="smiles"] {
+    max-width: 30px;
+}
 .block .block-footer {
   display      : flex;
   order        : -1;
