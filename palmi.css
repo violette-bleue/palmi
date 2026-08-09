@@ -75,6 +75,16 @@ div#breadcrumbs,
 #palmi-page>div:empty {
   margin: 0;
 }
+colonne > br {
+    display: none;
+}
+colonne {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    justify-items: end;
+    gap: 0 15px;
+}
 /*GROUPES COLORS*/
 
 .group-3, g1, tagg1, [href^="/g3"],
