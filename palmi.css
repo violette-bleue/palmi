@@ -23,7 +23,11 @@ body::-webkit-scrollbar-thumb {
     scrollbar-color: var(--accent) var(--bg-soft);
   }
 }
-
+#message-box {margin:0}
+div#preview {
+    width: 800px;
+    margin: auto;
+}
 *,
 ::after,
 ::before {
@@ -2846,7 +2850,7 @@ span.award_tooltiptext {
   box-shadow   : none;
 }
 
-.post-content {
+div.post-content {
   font-family: 'General Sans', sans-serif;
   font-size  : 14px;
   line-height: 1.6;
@@ -2860,7 +2864,7 @@ span.award_tooltiptext {
   color     : var(--text) !important;
 }
 
-.post-content a,
+div.post-content a,
 .block-content>a,
 .palmi-gb-section a {
   text-decoration: none;
@@ -2877,7 +2881,7 @@ span.award_tooltiptext {
   border         : 2px solid transparent;
     width: fit-content;}
 
-.post-content a:hover,
+div.post-content a:hover,
 .block-content>a:hover,
 .palmi-gb-section a:hover,
 .btn-default:hover,
@@ -3575,7 +3579,11 @@ div.sceditor-toolbar {
   width   : 100px;
   overflow: visible;
 }
-
+.post-content ul, .post-content ol {
+    margin-left: 22px;
+    display: flex;
+    flex-direction: column;
+}
 .palmi-poke-inline:has(:not([data-surnom]))::before {
   display: none;
 }
@@ -3858,7 +3866,6 @@ main#forum {
   min-width  : 0;
     flex-wrap: wrap;
     align-items: center;
-    z-index: 2;
 }
 .palmi-topic-title > a {
     font-weight: 600;
@@ -4026,7 +4033,7 @@ main#forum {
     color: var(--accent);
     opacity: 0;
     transition: all 100ms ease;
-}
+    cursor: pointer;}
 .palmi-topic-row:hover .palmi-topic-lastpost-link::before {
     opacity: 1;
 }
