@@ -80,13 +80,39 @@ colonne > br {
 }
 colonne {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 2fr 4fr;
     align-items: center;
-    justify-items: end;
     gap: 0 15px;
 }
 /*GROUPES COLORS*/
 
+g1,
+g2,
+g3,
+g4,
+g5,
+g6,
+g7,
+g8,
+g9 {
+  font-weight: 600;
+}
+
+tagg1,
+tagg2,
+tagg3,
+tagg4,
+tagg5,
+tagg6,
+tagg7,
+tagg8,
+tagg9 {
+  padding    : 1px 10px 0;
+  font-weight: 500;
+  font-family: var(--font-label);
+  border     : 2px solid;
+  background : var(--bg);
+}
 .group-3, g1, tagg1, [href^="/g3"],
 section.palmi-profile-header.palmi-card:has(.group-3),
 .block.block-comment:has(.group-3),
@@ -148,33 +174,6 @@ tagg9 {
   background: var(--groupe);
 }
 
-g1,
-g2,
-g3,
-g4,
-g5,
-g6,
-g7,
-g8,
-g9 {
-  font-weight: 600;
-}
-
-tagg1,
-tagg2,
-tagg3,
-tagg4,
-tagg5,
-tagg6,
-tagg7,
-tagg8,
-tagg9 {
-  padding    : 1px 10px 0;
-  font-weight: 500;
-  font-family: var(--font-label);
-  border     : 2px solid;
-  background : var(--bg);
-}
 
 /*HEADER / HERO*/
 .palmi-header {
