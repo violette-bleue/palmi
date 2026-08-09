@@ -2808,7 +2808,9 @@ span.award_tooltiptext {
   position     : relative;
   z-index      : 1;
 }
-
+.post-wrap.dice {
+    border-color: var(--line);
+}
 .post-wrap.dice aside,
 .dice .post-author,
 .post-author-details dt {
@@ -4184,6 +4186,12 @@ span.palmi-dice-type {
 
 .palmi-dice-result:has(.--rien) {
   opacity: 25%;
+}
+
+.palmi-dice-reward-img {
+  max-width : 60px;
+  max-height: 60px;
+  object-fit: contain;
 }
 
 .palmi-dice-block span.palmi-dice-label {
