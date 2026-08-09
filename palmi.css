@@ -6186,7 +6186,7 @@ label:has(#profile_field_3_-19) {
   max-width    : 700px;
   margin       : 0 auto;
   font-family  : var(--font-body);
-  color        : var(--text);
+  color        : var(--text);position: relative;
 }
 
 .sm_ficherpg_avatar {
@@ -6255,8 +6255,7 @@ label:has(#profile_field_3_-19) {
   border-bottom: 2px solid var(--accent);
 }
 
-.sm_ficherpg_tab_contenu,
-.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type {
+.sm_ficherpg_tab_contenu {
   display       : none;
   flex-direction: column;
   gap           : 12px;
@@ -6265,12 +6264,25 @@ label:has(#profile_field_3_-19) {
 }
 
 #tab-1:checked~.sm_ficherpg_contenu-1,
-#tab-1:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type,
 #tab-2:checked~.sm_ficherpg_contenu-2,
 #tab-3:checked~.sm_ficherpg_contenu-3 {
   display: flex;
 }
-
+#tab-1:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#tab-2:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type,
+#tab-3:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type {
+    position: absolute;
+    width: 130px;
+    left: 10px;
+    top: 160px;
+}
 .sm_ficherpg_tab_contenu img {
   max-width    : 100%;
   border-radius: 8px;
@@ -6301,10 +6313,6 @@ label:has(#profile_field_3_-19) {
 }
 
 /*SIDEBAR INFOS*/
-.sm_ficherpg_info {
-  flex-shrink: 0;
-  width      : 200px;
-}
 
 .sm_ficherpg_info:empty {
   display: none;
