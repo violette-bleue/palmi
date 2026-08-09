@@ -195,7 +195,9 @@ section.palmi-profile-header.palmi-card:has(.group-9),
 .post-wrap:has(.group-9) {
   --groupe: var(--group-9);
 }
-
+.post-wrap:has(.post-header .post-author-name a[href="/u1"]) {
+  --groupe: var(--accent);
+}
 /*--conso*/
 .group-3,
 .group-4,
@@ -218,7 +220,7 @@ g7,
 [href^="/g7"],
 [href^="/g8"],
 [href^="/g9"] {
-  color: var(--groupe) !important;
+  color: var(--groupe, var(--muted)) !important;
 }
 
 section.palmi-profile-header.palmi-card .palmi-profile-banner,
@@ -232,12 +234,12 @@ tagg6,
 tagg7,
 tagg8,
 tagg9 {
-  border-color: var(--groupe);
+  border-color: var(--groupe, var(--muted));
 }
 
 .post-wrap span.post-author-title,
 .post-wrap .post-header {
-  background: var(--groupe);
+  background: var(--groupe, var(--muted));
 }
 
 
@@ -2507,19 +2509,18 @@ select:focus {
 }
 
 [data-widget="recents"] .box-body {
-  background     : none;
-  display        : flex;
-  flex-wrap      : wrap;
-  gap            : 10px;
-  justify-content: space-between;
-  padding        : 0;
-  box-shadow     : none;
-  height         : 170px;
+    background: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 0;
+    box-shadow: none;
+    height: 140px;
 }
 
 [data-widget="recents"] .box-body>div {
   background     : var(--bg);
-  width          : 30%;
   border-radius  : 8px;
   padding        : 5px 10px;
   display        : flex;
@@ -2528,17 +2529,21 @@ select:focus {
 }
 
 [data-widget="recents"] .box-body>div a {
-  font-size    : 15px;
-  text-overflow: ellipsis;
-  width        : 100%;
-  height       : 20px;
-  white-space  : nowrap;
-  overflow     : hidden;
-  display      : inline-block;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
-
+.mod-recent-row i {
+    width: 20px;
+    margin: 0;
+}
 span.mod-recent-time {
-  font-size     : 11px;
+  font-size     : 10px;
   text-transform: uppercase;
   font-weight   : 600;
 }
@@ -2547,15 +2552,18 @@ span.mod-recent-time {
   font-weight: 500;
 }
 
-span.mod-recent-author i {
-  font-size: 12px;
-  margin   : 0;
+.mod-recent-info > span i {
+    font-size: 12px;
+    margin: 0;
+    width: fit-content;
+    display: flex;
 }
 
-.mod-recent-author {
-  display    : flex;
-  align-items: center;
-  gap        : 4px;
+.mod-recent-info > span {
+    display: flex;
+    gap: 4px;
+    font-size: 10px !important;
+    height: 15px;
 }
 
 .activity-feed,
@@ -2783,7 +2791,7 @@ span.award_tooltiptext {
 
 .post-wrap {
   background   : var(--panel);
-  border       : var(--border);
+  border       : 2px solid var(--groupe);
   margin-bottom: 12px;
   position     : relative;
   z-index      : 1;
