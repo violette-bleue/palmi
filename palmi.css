@@ -6226,7 +6226,7 @@ label:has(#profile_field_3_-19) {
 
 .sm_ficherpg_tab_btn {
   display      : flex;
-  border-bottom: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);    border-radius: 0;
 }
 
 .sm_ficherpg_tab_btn label {
@@ -6283,6 +6283,10 @@ label:has(#profile_field_3_-19) {
     left: 10px;
     top: 160px;
 }
+#tab-2:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type .sm_ficherpg_infos_box span,
+#tab-3:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type .sm_ficherpg_infos_box span {
+    font-size: 10px;
+}
 .sm_ficherpg_tab_contenu img {
   max-width    : 100%;
   border-radius: 8px;
@@ -6296,6 +6300,7 @@ label:has(#profile_field_3_-19) {
   border-top    : var(--border);
   padding-top   : 12px;
   margin        : 0;
+    border-radius: 0;
 }
 
 .sm_ficherpg_tab_contenu h1:first-child {
@@ -6310,6 +6315,7 @@ label:has(#profile_field_3_-19) {
 .sm_ficherpgh {
   border-left : 2px solid var(--line);
   padding-left: 16px;
+    border-radius: 0;
 }
 
 /*SIDEBAR INFOS*/
@@ -6363,4 +6369,13 @@ label:has(#profile_field_3_-19) {
 
 .credit a {
   color: var(--accent);
+}
+.credit a::before {
+    content: 'crédit : ';
+}
+.credit::after {
+    content: 'fallback css par misen';
+    display: flex;
+    justify-content: center;
+    text-transform: none;
 }
