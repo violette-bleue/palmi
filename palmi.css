@@ -6276,8 +6276,8 @@ label:has(#profile_field_3_-19) {
     top: 0;
     left: 0;
 }
-#tab-2:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type,
-#tab-3:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_tabs>.sm_ficherpg_info:last-of-type {
+#tab-2:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_info:last-of-type,
+#tab-3:checked~.sm_ficherpg_contenu-1~.sm_ficherpg_info:last-of-type {
     position: absolute;
     width: 130px;
     left: 10px;
