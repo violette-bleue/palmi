@@ -90,8 +90,11 @@ colonne {
   grid-template-columns: 2fr 4fr;
   align-items          : center;
   gap                  : 0 15px;
+}colonne>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-
 /*GROUPES COLORS*/
 
 g1,
@@ -3037,19 +3040,22 @@ div.post-content {
 div.post-content a,
 .block-content>a,
 .palmi-gb-section a {
-  text-decoration: none;
-  background     : var(--accent);
-  border-radius  : 8px;
-  padding        : 1px 10px 0;
-  color          : var(--bg) !important;
-  font-weight    : 600;
-  text-transform : uppercase;
-  font-size      : 10px;
-  line-height    : normal;
-  top            : -2px;
-  position       : relative;
-  border         : 2px solid transparent;
-  width          : fit-content;
+text-decoration: none;
+    background: var(--accent);
+    border-radius: 8px;
+    padding: 0px 5px 0;
+    color: var(--bg) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 10px;
+    top: -2px;
+    position: relative;
+    border: 2px solid transparent;
+    width: fit-content;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
 }
 
 div.post-content a:hover,
@@ -4414,10 +4420,20 @@ blockquote cite {
   letter-spacing: 1px;
     white-space: normal;
 }
+tag, tagc {
+    background: var(--line);
+    padding: 0 10px;
+    font-weight: 500;
+    font-family: var(--font-label);
+    color: var(--muted);
+}
+tagc {
+    font-family: var(--font-mono);
 
+}
 .hljs-deletion {
   background-color: unset !important;
-  color           : #ff6d6d !important;
+  color           : var(--group-4) !important;
 }
 
 .hljs-symbol,
