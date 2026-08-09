@@ -106,7 +106,9 @@ g6,
 g7,
 g8,
 g9 {
-  font-weight: 600;
+    font-weight: 600;
+    display: inline;
+    width: fit-content;
 }
 
 tagg1,
@@ -1160,14 +1162,20 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
 }
 
 .palmi-credit {
-  text-align    : center;
-  font-family   : var(--font-label);
-  font-size     : 11px;
-  letter-spacing: .05em;
-  color         : var(--muted);
-  margin        : 6px 0 0;
+    text-align: center;
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: .05em;
+    color: var(--muted);
+    margin: 6px 0 0;
+    position: absolute;
+    top: -30px;
+    width: 100%;
 }
-
+.palmi-credit a {
+    color: var(--accent) !important;
+    font-weight: 500;
+}
 .palmi-credit span {
   color: var(--accent);
 }
@@ -1965,6 +1973,7 @@ select {
   font-family: var(--font-body);
   font-size  : 11px;
   color      : var(--muted);
+    position: relative;
 }
 
 #page-footer .wrap {
@@ -2264,7 +2273,7 @@ h1 {
   gap           : 10px;
     line-height: 1.6;
 }
-div.post-content img[src*="smiles"] {
+div.post-content img[src*="/smiles/"] {
     max-width: 30px;
 }
 .block .block-footer {
@@ -4547,6 +4556,10 @@ u {
   background : var(--bg-soft);
   padding    : 5px 15px;
   width: fit-content;
+}
+
+.palmi-gb-section ul li {
+    display: block!important;
 }
 .post-content ul li {
   background : var(--panel);
