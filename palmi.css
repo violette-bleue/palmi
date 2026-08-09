@@ -87,7 +87,7 @@ colonne>br {
 
 colonne {
   display              : grid;
-  grid-template-columns: 2fr 4fr;
+  grid-template-columns: 3fr 4fr;
   align-items          : center;
   gap                  : 0 15px;
 }colonne>div {
@@ -3617,7 +3617,14 @@ div.sceditor-toolbar {
   flex-direction: column;
   position      : relative;
 }
-
+.palmi-poke-inline .palmi-poke-inline-types {
+    top: 3px;
+    left: 3px;
+}
+.palmi-poke-inline .palmi-poke-inline-type svg {
+    width: 20px;
+    height: 20px;
+}
 .post-content .palmi-poke-inline,
 .palmi-gb .palmi-poke-inline {
   width   : 100px;
@@ -4426,6 +4433,7 @@ tag, tagc {
     font-weight: 500;
     font-family: var(--font-label);
     color: var(--muted);
+    white-space: nowrap;
 }
 tagc {
     font-family: var(--font-mono);
@@ -4597,7 +4605,10 @@ div#palmi-sommaire>div:first-of-type br {
 }
 
 #palmi-sommaire>div {
-  width: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 div#palmi-sommaire>div:first-of-type a {
@@ -4617,15 +4628,18 @@ div#palmi-sommaire>div:first-of-type a {
 }
 
 .palmi-listing>div:not(:first-of-type)>a {
-  display       : flex;
-  flex-direction: row;
-  background    : var(--bg);
-  border        : none;
-  position      : relative;
-  color         : var(--text) !important;
-  font-weight   : 400;
-  gap           : 5px;
-  align-items   : center;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    position: relative;
+    color: var(--text) !important;
+    font-weight: 400;
+    gap: 5px;
+    align-items: center;
+    font-size: inherit;
+    text-transform: unset;
+    font-family: var(--font-body);padding: 10px;
 }
 
 .palmi-listing>div:not(:first-of-type)>a>p {
@@ -4636,7 +4650,7 @@ div#palmi-sommaire>div:first-of-type a {
   height     : 100%;
 }
 
-.palmi-listing>div:not(:first-of-type)>a>p::after {
+.palmi-listing>div:not(:first-of-type)>a>p::before {
   font-family           : 'Material Icons';
   content               : 'catching_pokemon';
   text-transform        : none;
@@ -4647,7 +4661,17 @@ div#palmi-sommaire>div:first-of-type a {
   align-items           : center;
   font-size             : 17px;
 }
+.palmi-listing>div:not(:first-of-type)>a>p>span {
+    font-style: italic;
+    color: var(--muted);
+}
 
+.palmi-listing>div:not(:first-of-type)>a>p>span:first-child {
+    font-weight: 600;
+    color: var(--accent);
+    font-style: normal;
+    font-family: var(--font-label);
+}
 .palmi-listing>div>div {
   width : 100%;
   margin: 10px 0;
@@ -6072,6 +6096,7 @@ div#palmi-topics-sousforum .palmi-zone-caption {
   display       : flex;
   flex-direction: column;
   left          : 10px;
+    line-height: normal;
 }
 
 .palmi-poke-inline-type svg {
