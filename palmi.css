@@ -5078,7 +5078,7 @@ fieldset.form-buttons .btn {
 
 .pjournal-banniere:has(img[src=""]),
 .pjournal-banniere:has(img:not([src])),
-.pjournal-banniere:not(img) {
+.pjournal-banniere:not(:has(img)) {
   background   : var(--muted);
   mask-image   : var(--icon-pokeball);
   mask-size    : 60px;
