@@ -5464,6 +5464,7 @@ div#pfiche br,
 
 .pfiche-panel.pfiche-panel-3>div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled img {
   height: 100%;
+  width: auto;
 }
 
 .pfiche-panel.pfiche-panel-3>div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled span {
