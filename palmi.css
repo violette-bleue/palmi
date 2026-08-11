@@ -1078,7 +1078,7 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
 }
 
 .palmi-card.palmi-footer-card.--historic>p:last-child a {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .palmi-card.palmi-footer-card.--historic>p:last-child::before {
@@ -1111,6 +1111,9 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
 .palmi-card.palmi-footer-card.--online > a strong {
     font-size: 13px;
     font-weight: 600;
+}
+.palmi-card.palmi-footer-card.--historic a:not(:has(span)) {
+    padding: 0 10px;
 }
 .palmi-footer-card p a>span {
   display    : flex;
