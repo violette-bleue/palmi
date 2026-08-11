@@ -3076,7 +3076,7 @@ text-decoration: none;
     border: 2px solid transparent;
     width: fit-content;
     margin: 0 5px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 
@@ -4467,6 +4467,13 @@ tagc {
     font-family: var(--font-mono);
 
 }
+
+b, strong {
+    color: var(--accent);
+    font-family: var(--font-label);
+    font-weight: 500;
+}
+
 .hljs-deletion {
   background-color: unset !important;
   color           : var(--group-4) !important;
