@@ -1,5 +1,5 @@
 ﻿/*PALMI*/
-b, strong {
+b, div>strong {
     color: var(--accent);
     font-family: var(--font-label);
     font-weight: 500;
@@ -1105,7 +1105,9 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
     align-content: flex-start;
     font-size: 0;
 }
-
+.palmi-card.palmi-footer-card.--online > div {
+    font-size: 14px;
+}
 .palmi-card.palmi-footer-card.--online > a strong {
     font-size: 13px;
     font-weight: 600;
