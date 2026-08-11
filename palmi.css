@@ -1,9 +1,5 @@
 ﻿/*PALMI*/
-b, div>strong {
-    color: var(--accent);
-    font-family: var(--font-label);
-    font-weight: 500;
-}
+
 a:has(img[src="https://2img.net/h/www.aht.li/2859284/5050C.png"]) {
   display: none;
 }
@@ -1107,6 +1103,10 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
 }
 .palmi-card.palmi-footer-card.--online > div {
     font-size: 14px;
+}
+.palmi-card.palmi-footer-card.--online > a:first-of-type {
+    left: -5px;
+    position: relative;
 }
 .palmi-card.palmi-footer-card.--online > a strong {
     font-size: 13px;
@@ -4358,6 +4358,11 @@ span.palmi-dice-reward.--shiny {
 
 
 /*MISE EN PAGE*/
+b{
+    color: var(--accent);
+    font-family: var(--font-label);
+    font-weight: 500;
+}
 hr,
 hrpoke {
   border       : none;
