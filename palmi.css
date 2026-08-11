@@ -441,8 +441,6 @@ div.award {
 }
 
 .palmi-guide-inner {
-  padding        : 12px 14px;
-  width          : 110px;
   height         : 100%;
   display        : flex;
   flex-direction : column;
@@ -450,14 +448,21 @@ div.award {
   justify-content: center;
   text-align     : center;
   gap            : 6px;
+  padding        : 10px 4px;
+  width          : 130px;
+  flex-wrap      : wrap;
+  align-content  : center;
 }
 
 .palmi-guide-inner h2 {
-  font-family: var(--font-title);
-  font-size  : 14px;
-  line-height: 1.2;
   margin     : 0;
   color      : var(--accent-panel-text);
+  display    : flex;
+  flex-wrap  : wrap;
+  gap        : 0 5px;
+  font-family: var(--font-panel);
+  font-size  : 24px;
+  line-height: 0.9;
 }
 
 .palmi-guide-inner span {
@@ -466,6 +471,16 @@ div.award {
   color      : var(--accent-panel-text);
   white-space: nowrap;
   line-height: normal;
+}
+
+.palmi-guide-inner h2 div:last-child {
+    font-size: 22px;
+}
+
+.palmi-guide-inner i {
+    font-size: 40px;
+    font-style: normal;
+    color: var(--accent);
 }
 
 
