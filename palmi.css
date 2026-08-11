@@ -1093,12 +1093,22 @@ p.palmi-newest-user span.palmi-newest-user-avatar img {
 }
 
 .palmi-card.palmi-footer-card.--online {
-  width         : -webkit-fill-available;
-  display       : flex;
-  flex-direction: column;
-  gap           : 5px;
+    width: -webkit-fill-available;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    font-size: 0;
 }
-
+  .palmi-card.palmi-footer-card.--online::before {
+    content: 'Ils sont là :';
+    font-size: 14px;
+    color: var(--text);
+}
+.palmi-card.palmi-footer-card.--online > a strong {
+    font-size: 13px;
+    font-weight: 600;
+}
 .palmi-footer-card p a>span {
   display    : flex;
   padding    : 0 10px;
@@ -5075,7 +5085,7 @@ fieldset.form-buttons .btn {
 
 .pjournal-banniere:has(img[src=""]),
 .pjournal-banniere:has(img:not([src])),
-.pjournal-banniere:not(img) {
+.pjournal-banniere:not(:has(img)) {
   background   : var(--muted);
   mask-image   : var(--icon-pokeball);
   mask-size    : 60px;
@@ -5461,6 +5471,7 @@ div#pfiche br,
 
 .pfiche-panel.pfiche-panel-3>div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled img {
   height: 100%;
+  width: auto;
 }
 
 .pfiche-panel.pfiche-panel-3>div .pfiche-value.palmi-poke-inline.palmi-poke-inline--filled span {
