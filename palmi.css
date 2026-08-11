@@ -1,4 +1,9 @@
 ﻿/*PALMI*/
+b, strong {
+    color: var(--accent);
+    font-family: var(--font-label);
+    font-weight: 500;
+}
 a:has(img[src="https://2img.net/h/www.aht.li/2859284/5050C.png"]) {
   display: none;
 }
@@ -4474,11 +4479,7 @@ tagc {
 
 }
 
-b, strong {
-    color: var(--accent);
-    font-family: var(--font-label);
-    font-weight: 500;
-}
+
 
 .hljs-deletion {
   background-color: unset !important;
